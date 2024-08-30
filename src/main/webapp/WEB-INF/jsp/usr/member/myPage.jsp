@@ -2,16 +2,17 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<c:set var="pageTitle" value="회원가입"></c:set>
+<c:set var="pageTitle" value="내 정보"></c:set>
 <%@ include file="../common/head.jspf"%>
 
 
 <!-- p2 홈페이지 배경 -->
-<img class="bg"
+<img class="bg_img"
 	src="https://github.com/user-attachments/assets/57d5f274-24c1-486b-9679-7aa7b6fa9017"
 	alt="" />
 
 <div class="myPage_bg absolute">
+   <!-- p2 나무 판 -->
 	<img
 		src="https://github.com/user-attachments/assets/b3351b33-5547-48b5-9108-78ef3c69c204"
 		alt="" />

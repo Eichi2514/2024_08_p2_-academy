@@ -16,6 +16,18 @@ CREATE TABLE `member`(
       delDate DATETIME COMMENT '탈퇴 날짜'
 );
 
+CREATE TABLE `charac`(
+      id INT(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+      regDate DATETIME NOT NULL,
+      updateDate DATETIME NOT NULL,
+      memberId INT(10) NOT NULL,
+      `floor` INT(10) NOT NULL DEFAULT 0 COMMENT '캐릭터 도달 층 수',
+      room INT(10) NOT NULL DEFAULT 0 COMMENT '캐릭터 도달 층 수',
+      hp INT(10) NOT NULL DEFAULT 1 COMMENT '생명력',
+      weapon TEXT NOT NULL DEFAULT "" COMMENT '무기',
+      weaponNumber INT(10) NOT NULL DEFAULT 1 COMMENT '무기번호'
+);
+
 ## 테스트 회원 생성
 INSERT INTO `member`
 SET regDate = NOW(),

@@ -5,7 +5,7 @@
 <c:set var="pageTitle" value="메인"></c:set>
 <%@ include file="../common/head.jspf"%>
 	<!-- p2 홈페이지 배경 -->
-	<img class="bg"
+	<img class="bg_img"
 		src="https://github.com/user-attachments/assets/57d5f274-24c1-486b-9679-7aa7b6fa9017"
 		alt="" />
 	<form method="POST" action="../member/doLogin">
@@ -31,7 +31,7 @@
 			<div class="member_name1 absolute text-center">${loginedMember.nickname }님</div>
 			<div class="member_name2 absolute text-center">환영합니다</div>
 			<div class="start absolute cursor-pointer">
-				<a class="start-text absolute" href="../charac/choice">게임시작</a>
+				<a class="start-text absolute" href="../map/front">게임시작</a>
 				<!-- p2 게임시작 호버 전 -->
 				<img class="start-1"
 					src="https://github.com/user-attachments/assets/dddce550-c44d-45df-adfb-479191d45307"

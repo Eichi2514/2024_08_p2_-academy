@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<c:set var="pageTitle" value="회원가입"></c:set>
+<c:set var="pageTitle" value="내 정보 - 수정"></c:set>
 <%@ include file="../common/head.jspf"%>
 
 <script type="text/javascript">
@@ -21,7 +21,7 @@
 
 
 <!-- p2 홈페이지 배경 -->
-<img class="bg"
+<img class="bg_img"
 	src="https://github.com/user-attachments/assets/57d5f274-24c1-486b-9679-7aa7b6fa9017"
 	alt="" />
 <form onsubmit="MemberModify__submit(this); return false;"

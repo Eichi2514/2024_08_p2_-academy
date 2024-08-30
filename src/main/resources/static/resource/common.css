@@ -48,11 +48,23 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	height: 100vh;
 }
 
+.bg_img{
+	width: 100vh;
+	height: 100vh;	
+}
+
+.bar{
+	width: 20vh;
+	height: 100vh;
+	top: 0;
+	left: -20vh;	
+}
+
 /* 메인화면 */
 
 .logo{
-	left: 3vh;
-	top: 3vh;
+	left: 1vh;
+	top: 1vh;
 	width: 10vh;
 	height: 10vh;
 	border:1vh solid;
@@ -326,3 +338,5 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 		
 	background: rgb(255,71,48);
 }
+
+/* 인게임 */
