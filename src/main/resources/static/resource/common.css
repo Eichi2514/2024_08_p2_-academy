@@ -1,0 +1,328 @@
+@charset "UTF-8";
+
+html>body, button, input, select {
+	font-family: Galmuri11;
+	font-weight: 800;
+}
+
+img {
+	/* mix-blend-mode: multiply; */
+	/* opacity: 0.9; */
+}
+
+body {
+	background: rgb(0, 0, 30);
+}
+
+input {
+	padding-left: 1vh !important;
+	/* background-color: transparent; */ 
+}
+
+input::placeholder {
+   color: black !important;
+}
+
+input::-webkit-input-placeholder { /* 크롬, 사파리, 오페라 */
+  color: black;
+}
+
+input:-ms-input-placeholder { /* 인터넷 익스플로러 10-11 */
+  color: black;
+}
+
+input::-ms-input-placeholder { /* 엣지 */
+  color: black;
+}
+
+input::-moz-placeholder { /* 파이어폭스 19+ */
+  color: black;
+}
+
+input:-moz-placeholder { /* 파이어폭스 4-18 */
+  color: black;
+}
+
+.bg {
+	width: 100vh;
+	height: 100vh;
+}
+
+/* 메인화면 */
+
+.logo{
+	left: 3vh;
+	top: 3vh;
+	width: 10vh;
+	height: 10vh;
+	border:1vh solid;
+}
+
+.id {
+	font-size: 3vh;
+	height: 5vh;
+	left: 30vh;
+	top: 47vh;
+	-webkit-text-stroke: 0.05vh white;
+	padding-left: 0.7vh;
+}
+
+.pw {
+	font-size: 3vh;
+	height: 5vh;
+	left: 30vh;
+	top: 53vh;
+	-webkit-text-stroke: 0.05vh white;
+}
+
+.id>input, .pw>input {
+	width: 34vh;
+}
+
+.join_bt{
+	font-size: 3vh;
+	width: 18vh;
+	left: 30vh;
+	top: 36vh;
+	border : 0.3vh solid;
+	padding: 0.7vh;
+	border-radius:1vh; 
+	background: rgb(255,71,48);
+}
+.login_out_bt{
+	font-size: 3vh;
+	width: 19vh;
+	left: 51vh;
+	top: 36vh;
+	border : 0.3vh solid;
+	padding: 0.7vh;
+	border-radius:1vh;
+	background: rgb(255,71,48);
+}
+
+.start, .start-1, .start-2, start-text {
+	width: 15vh;
+	height: 15vh;
+	top: 46vh;
+	left: 53vh;
+}
+
+.start-2, .start-text {
+	display: none;
+}
+
+.start-text {
+	left: 1.8vh;
+	top: 7vh;
+	font-size: 3vh;
+	z-index: 10;
+}
+
+.start:hover>.start-2, .start:hover>.start-text {
+	display: block;
+}
+
+.start:hover>.start-1 {
+	display: none;
+}
+
+.member_name1,.member_name2{
+	font-size: 3vh;
+	-webkit-text-stroke: 0.05vh white;
+	width: 20vh;
+}
+
+.member_name1{
+	font-size: 4vh;
+	width: 25vh;
+	left: 27vh;
+	top: 45vh;
+	-webkit-text-stroke: 0.05vh white;
+	padding: 0.7vh;
+}
+
+.member_name2{
+	font-size: 4vh;
+	width: 25vh;
+	left: 27vh;
+	top: 51vh;
+	-webkit-text-stroke: 0.05vh white;
+	padding: 0.7vh;
+}
+
+/* 회원가입 화면 */
+.doJoin_bg{
+	top: 15vh;
+	left: 10vh;
+	width: 80vh;
+	height: 80vh;
+}
+
+.doJoin_title{
+	top: 8.5vh;
+	left: 5vh;
+	width: 70vh;
+	
+	font-size : 8vh;
+	-webkit-text-stroke: 0.1vh white;
+}
+
+.label{
+	padding-bottom: 1vh;
+}
+
+.doJoin_id{
+	top: 25vh;
+	left: 5vh;
+	-webkit-text-stroke: 0.05vh white;
+	font-size: 2.8vh;
+}
+
+.doJoin_pw{
+	top: 35vh;
+	left: 5vh;
+	-webkit-text-stroke: 0.05vh white;
+	font-size: 2.8vh;
+}
+
+.doJoin_pw2{
+	top: 45vh;
+	left: 5vh;
+	-webkit-text-stroke: 0.05vh white;
+	font-size: 2.8vh;
+}
+
+.doJoin_name{
+	top: 55vh;
+	left: 5vh;
+	-webkit-text-stroke: 0.05vh white;
+	font-size: 2.8vh;
+}
+
+.doJoin_nickname{
+	top: 65vh;
+	left: 5vh;
+	-webkit-text-stroke: 0.05vh white;
+	font-size: 2.8vh;
+}
+.doJoin_gender {
+	width: 10vh;
+	height: 5vh;
+	top: 25vh;
+	left: 50vh;
+	-webkit-text-stroke: 0.05vh white;
+	font-size: 2.8vh;
+}
+.doJoin_bt{
+	top: 55vh;
+	left: 50vh;	
+	width: 20vh;	
+	font-size: 3vh;
+	
+	border : 0.3vh solid;
+	padding: 0.7vh;
+	border-radius:1vh;
+	
+	background: rgb(255,71,48);
+}
+.doJoin_exit{
+	top: 65vh;
+	left: 50vh;
+	width: 20vh;
+	font-size: 3vh;
+	
+	border : 0.3vh solid;
+	padding: 0.7vh;	
+	border-radius:1vh;
+		
+	background: rgb(255,71,48);
+}
+
+/* 내 정보 화면 */
+
+.myPage_label{
+	width: 20vh;
+	display: inline-block;
+	font-size: 3vh;
+}
+.myPage_body{
+	width: 45vh;
+	display: inline-block;
+	font-size: 3vh;
+}
+
+.myPage_bg{
+	top: 15vh;
+	left: 10vh;
+	width: 80vh;
+	height: 80vh;
+}
+
+.myPage_title{
+	top: 8.5vh;
+	left: 5vh;
+	width: 70vh;
+	
+	font-size : 8vh;
+	-webkit-text-stroke: 0.1vh white;
+}
+
+.myPage_1{
+	top: 33vh;
+	left: 8vh;
+	-webkit-text-stroke: 0.05vh white;
+	
+}
+
+.myPage_2{
+	top: 39vh;
+	left: 8vh;
+	-webkit-text-stroke: 0.05vh white;
+	
+}
+
+.myPage_3{
+	top: 45vh;
+	left: 8vh;
+	-webkit-text-stroke: 0.05vh white;
+	
+}
+
+.myPage_4{
+	top: 51vh;
+	left: 8vh;
+	-webkit-text-stroke: 0.05vh white;
+	
+}
+
+.myPage_5{
+	top: 57vh;
+	left: 8vh;
+	-webkit-text-stroke: 0.05vh white;
+	
+}
+
+.myPage_bt{
+	top: 68vh;
+	left: 12vh;	
+	width: 20vh;	
+	font-size: 3vh;
+	
+	border : 0.3vh solid;
+	padding: 0.7vh;
+	border-radius:1vh;
+	
+	background: rgb(255,71,48);
+}
+.myPage_exit{
+	top: 68vh;
+	left: 45vh;
+	width: 20vh;
+	font-size: 3vh;
+	
+	border : 0.3vh solid;
+	padding: 0.7vh;	
+	border-radius:1vh;
+		
+	background: rgb(255,71,48);
+}
