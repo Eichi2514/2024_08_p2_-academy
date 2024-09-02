@@ -119,5 +119,13 @@ SELECT S.*, M.nickname extra__user
 FROM scoreboard S
 LEFT JOIN `member` M
 ON m.id = S.memberId
-ORDER BY `floor` DESC, room DESC
+ORDER BY `floor` DESC, room DESC, regDate ASC
 LIMIT 0, 3;
+
+
+## 스코어 테스트 데이터 랜덤 생성
+INSERT INTO scoreboard
+SET regDate = NOW(),
+memberId = FLOOR ((RAND()*2)+1),
+`floor` = FLOOR ((RAND()*99)+1),
+room = FLOOR ((RAND()*5)+1);

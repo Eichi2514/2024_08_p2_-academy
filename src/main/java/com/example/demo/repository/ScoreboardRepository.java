@@ -35,7 +35,17 @@ public interface ScoreboardRepository {
 			FROM scoreboard S
 			LEFT JOIN `member` M
 			ON m.id = S.memberId
-			ORDER BY `floor` DESC, room DESC
+			ORDER BY `floor` DESC, room DESC, regDate ASC
+			LIMIT #{limitFrom}, #{itemsInAPage}
 			""")
-	public List<Scoreboard> scoreboardList();
+	public List<Scoreboard> scoreboardList(int limitFrom, int itemsInAPage);
+
+	@Select("""
+			<script>
+			SELECT COUNT(*)
+			FROM scoreboard
+			ORDER BY `floor` DESC, room DESC, regDate ASC
+			</script>
+			""")
+	public int totalCnt();
 }

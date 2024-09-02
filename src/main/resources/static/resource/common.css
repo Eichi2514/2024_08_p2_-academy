@@ -341,6 +341,44 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	background: rgb(255, 71, 48);
 }
 
+/* 점수기록 */
+.scoreboard_bg{
+	top: 15vh;
+	left: 10vh;
+	width: 80vh;
+	height: 80vh;
+}
+
+.scoreboard_table{
+	top: 4vh;
+	left: 24vh;
+}
+
+.pagination{
+	width: 80vh;
+	top: 69.5vh;
+}
+.pagination > a{
+	padding: 0.5vh;
+	-webkit-text-stroke: 0.05vh gray;
+}
+
+.scoreboard_exit_bt{
+	top: 61vh;
+	left: 46vh;
+	padding-right: 10vh;
+}
+
+.pagination_left{
+	top: 33vh;
+	left: 16vh;
+}
+
+.pagination_right{
+	top: 33vh;
+	left: 54vh;	
+}
+
 /* 인게임 */
 .ingame_logo {
 	left: -18vh;

@@ -71,6 +71,5 @@
 			onclick="history.back()">취소</button>
 	</div>
 </form>
-</div>
 
 <%@ include file="../common/foot.jspf"%>

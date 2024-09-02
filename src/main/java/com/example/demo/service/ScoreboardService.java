@@ -21,6 +21,14 @@ public class ScoreboardService {
 
 	public List<Scoreboard> scoreboardTop3() {
 		return scoreboardRepository.scoreboardTop3();
-	};
+	}
+
+	public List<Scoreboard> scoreboardList(int limitFrom, int itemsInAPage) {
+		return scoreboardRepository.scoreboardList(limitFrom, itemsInAPage);
+	}
+
+	public int totalCnt() {
+		return scoreboardRepository.totalCnt();
+	}
 
 }

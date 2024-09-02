@@ -34,6 +34,5 @@
 			onclick="history.back()">취소</button>
 	</form>
 </div>
-</div>
 
 <%@ include file="../common/foot.jspf"%>

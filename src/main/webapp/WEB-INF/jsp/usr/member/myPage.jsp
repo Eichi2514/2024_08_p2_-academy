@@ -47,6 +47,5 @@
 	<a class="myPage_bt absolute text-center" href="../member/checkPw">수정</a>
 	<button class="myPage_exit absolute text-center" type="button" onclick="history.back()">취소</button>
 </div>
-</div>
 
 <%@ include file="../common/foot.jspf"%>
