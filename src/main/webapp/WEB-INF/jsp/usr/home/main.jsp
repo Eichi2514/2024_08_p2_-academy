@@ -58,7 +58,7 @@
 		<div class="member_name1 absolute text-center">${rq.loginedMember.nickname }님</div>
 		<div class="member_name2 absolute text-center">환영합니다</div>
 		<div class="start absolute cursor-pointer">
-			<a class="start-text absolute" href="../map/front">게임시작</a>
+			<a class="start-text absolute" href="../map/front?stage=${(charac.floor * 5) + charac.room}">게임시작</a>
 			<!-- p2 게임시작 호버 전 -->
 			<img class="start-1"
 				src="https://github.com/user-attachments/assets/dddce550-c44d-45df-adfb-479191d45307"

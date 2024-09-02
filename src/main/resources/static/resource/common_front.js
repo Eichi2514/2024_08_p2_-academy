@@ -41,6 +41,8 @@ function Up(something) {
 			if (data == 'success') {
 				UD -= 1.55;
 				$(".charac").css("top", UD + "vh");
+				stageUp();
+				console.log('LR : ' + LR + ', UD : ' + UD);
 			}
 		},
 		error: function(jqXHR, textStatus, errorThrown) {
@@ -60,6 +62,8 @@ function Down(something) {
 			if (data == 'success') {
 				UD += 1.55;
 				$(".charac").css("top", UD + "vh");
+				stageUp();
+				console.log('LR : ' + LR + ', UD : ' + UD);
 			}
 		},
 		error: function(jqXHR, textStatus, errorThrown) {
@@ -79,6 +83,8 @@ function Left(something) {
 			if (data == 'success') {
 				LR -= 1.55;
 				$(".charac").css("left", LR + "vh");
+				stageUp();
+				console.log('LR : ' + LR + ', UD : ' + UD);
 			}
 		},
 		error: function(jqXHR, textStatus, errorThrown) {
@@ -99,12 +105,20 @@ function Right(something) {
 			if (data == 'success') {
 				LR += 1.55;
 				$(".charac").css("left", LR + "vh");
+				stageUp();
+				console.log('LR : ' + LR + ', UD : ' + UD);
 			}
 		},
 		error: function(jqXHR, textStatus, errorThrown) {
 			alert('오류 발생 : ' + textStatus);
 		}
 	});
+}
+
+function stageUp() {
+	if (LR > 79 && 38 < UD && UD < 52){
+		location.href='../map/front?stage='+'${stage }';
+	};
 }
 
 function attackA() {

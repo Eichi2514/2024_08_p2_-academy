@@ -4,6 +4,7 @@
 
 <c:set var="pageTitle" value="튜토리얼"></c:set>
 <%@ include file="../common/ingame_head.jspf"%>
+<c:set var="stage" value='${(charac.floor*5)+charac.room+1}'></c:set>
 <script src="/resource/common_front.js" defer="defer"></script>
 
 <img class="bg_img"

@@ -39,6 +39,11 @@ public class MyWebMVCConfigurer implements WebMvcConfigurer {
 			ir.addPathPatterns("/usr/member/myPage");
 			ir.addPathPatterns("/usr/member/checkPw");
 			ir.addPathPatterns("/usr/member/doCheckPw");
+			ir.addPathPatterns("/usr/map/front");
+			ir.addPathPatterns("/usr/map/keyUp");
+			ir.addPathPatterns("/usr/map/keyDown");
+			ir.addPathPatterns("/usr/map/keyLeft");
+			ir.addPathPatterns("/usr/map/keyRight");
 
 			ir = registry.addInterceptor(needLogoutInterceptor);
 			ir.addPathPatterns("/usr/member/login");

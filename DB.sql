@@ -21,7 +21,7 @@ CREATE TABLE charac(
       regDate DATETIME NOT NULL,
       updateDate DATETIME NOT NULL,
       memberId INT(10) NOT NULL,
-      `floor` INT(10) NOT NULL DEFAULT 0 COMMENT '캐릭터 도달 층 수',
+      `floor` INT(10) NOT NULL DEFAULT 1 COMMENT '캐릭터 도달 층 수',
       room INT(10) NOT NULL DEFAULT 0 COMMENT '캐릭터 도달 방 번호',
       hp INT(10) NOT NULL DEFAULT 1 COMMENT '생명력',      
       weaponId INT(10) NOT NULL DEFAULT 1 COMMENT '무기번호'
@@ -38,6 +38,11 @@ CREATE TABLE scoreboard(
       memberId INT(10) NOT NULL,
       `floor` INT(10) NOT NULL COMMENT '캐릭터 도달 층 수',
       room INT(10) NOT NULL COMMENT '캐릭터 도달 방 번호'      
+);
+
+CREATE TABLE mob(
+      id INT(10) UNSIGNED NOT NULL PRIMARY KEY,
+      img TEXT NOT NULL
 );
 
 ## 테스트 회원 생성
@@ -108,6 +113,10 @@ INSERT INTO weapon SET id = 6, img = "";
 INSERT INTO weapon SET id = 7, img = "https://github.com/user-attachments/assets/7455a6ee-b319-44a7-9052-a0110205b2d7";
 INSERT INTO weapon SET id = 8, img = "https://github.com/user-attachments/assets/1a4d573e-752a-4801-b2e6-284ad76f3b60";
 INSERT INTO weapon SET id = 9, img = "https://github.com/user-attachments/assets/2225ee6a-f091-4866-a4f2-a21e3b4e3743";
+
+INSERT INTO mob SET id = 1, img = "https://github.com/user-attachments/assets/71e26463-fd7c-46d7-9364-273a363ac839";
+INSERT INTO mob SET id = 2, img = "https://github.com/user-attachments/assets/d31f5283-2225-4937-b476-e2792dc01bf0";
+INSERT INTO mob SET id = 3, img = "https://github.com/user-attachments/assets/9040384a-b3b3-406b-a11b-2498dad1d7ce";
 
 SELECT C.*, W.img extra__weapon
 FROM charac C

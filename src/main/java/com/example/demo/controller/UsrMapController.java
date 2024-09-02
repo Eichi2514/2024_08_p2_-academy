@@ -26,9 +26,11 @@ public class UsrMapController {
 	private MapService mapService;
 
 	@RequestMapping("/usr/map/front")
-	public String showFront(HttpServletRequest req, Model model) {
+	public String showFront(HttpServletRequest req, Model model, int stage) {
+		int floor = stage/5;
+		int room =  stage%5;
 
-		int[][] map = mapService.mapCreation(52, 52, 46, 22); // 높이와 넓이를 전달해서 맵 생성
+		int[][] map = mapService.mapCreation(52, 52, 46, 22, floor, room); // 높이와 넓이를 전달해서 맵 생성
 
 		Rq rq = (Rq) req.getAttribute("rq"); // HttpServletRequest에 저장돼 있는 정보 가져오기
 
