@@ -22,6 +22,6 @@ public class CharacService {
 
 	public Charac characChack(int loginedMemberId) {
 		return characRepository.characChack(loginedMemberId);
-	}
+	}	
 
 }

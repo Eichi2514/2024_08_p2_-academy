@@ -1,9 +1,13 @@
 package com.example.demo.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.service.CharacService;
 import com.example.demo.service.MapService;
@@ -37,12 +41,36 @@ public class UsrMapController {
 			charac = characService.characChack(rq.getLoginedMemberId()); // 가져와서
 
 			model.addAttribute("charac", charac); // 모델로 보내주고
-			
+
 		} else { // 있다면
-			
+
 			model.addAttribute("charac", charac); // 바로 보내주기
 		}
 
 		return "/usr/map/front";
+	}
+
+	@RequestMapping("/usr/map/keyUp")
+	@ResponseBody
+	public String keyUp(int something) {
+		return mapService.keyUp(something);
+	}
+
+	@RequestMapping("/usr/map/keyDown")
+	@ResponseBody
+	public String keyDown(int something) {
+		return mapService.keyDown(something);
+	}
+
+	@RequestMapping("/usr/map/keyLeft")
+	@ResponseBody
+	public String keyLeft(int something) {
+		return mapService.keyLeft(something);
+	}
+
+	@RequestMapping("/usr/map/keyRight")
+	@ResponseBody
+	public String keyRight(int something) {
+		return mapService.keyRight(something);
 	}
 }

@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<c:set var="pageTitle" value="점수기록"></c:set>
+<c:set var="pageTitle" value="점수 리스트"></c:set>
 <%@ include file="../common/head.jspf"%>
 
 
@@ -22,13 +22,13 @@
 		<tbody>
 			<c:forEach var="scoreboard" items="${scoreboards}">
 				<tr>
-					<td style="text-align: center; padding: 0;">${scoreboard.extra__user}</td>
-					<td
+					<td class="${scoreboard.memberId != rq.loginedMember.id ? 'text-gray-500' : '' }" style="text-align: center; padding: 0;">${scoreboard.extra__user}</td>
+					<td class="${scoreboard.memberId != rq.loginedMember.id ? 'text-gray-500' : '' }"
 						style="text-align: center; padding-left: 1vh; padding-right: 1vh; padding-top: 0; padding-bottom: 0;">
 						:</td>
-					<td
+					<td class="${scoreboard.memberId != rq.loginedMember.id ? 'text-gray-500' : '' }"
 						style="text-align: center; padding-left: 0; padding-right: 0.5vh; padding-top: 0; padding-bottom: 0;">${scoreboard.floor}층</td>
-					<td style="text-align: center; padding: 0;">${scoreboard.room}번방</td>
+					<td class="${scoreboard.memberId != rq.loginedMember.id ? 'text-gray-500' : '' }" style="text-align: center; padding: 0;">${scoreboard.room}번방</td>
 				</tr>
 			</c:forEach>
 		</tbody>

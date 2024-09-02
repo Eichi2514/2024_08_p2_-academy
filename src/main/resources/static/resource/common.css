@@ -69,22 +69,25 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	background: black;
 }
 
-.TOP3{
+.TOP3 {
 	left: 70vh;
 	top: 1vh;
 	width: 30vh;
-	height: 30vh;	
+	height: 30vh;
 }
-.TOP3_img{
+
+.TOP3_img {
 	width: 30vh;
 	height: 30vh;
 }
-.TOP3_table{
+
+.TOP3_table {
 	top: 6vh;
 	left: 5vh;
 	font-size: 2vh;
 }
-.TOP3_list_bt{
+
+.TOP3_list_bt {
 	top: 22.7vh;
 	left: 16vh;
 	width: 10vh;
@@ -342,41 +345,42 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 }
 
 /* 점수기록 */
-.scoreboard_bg{
+.scoreboard_bg {
 	top: 15vh;
 	left: 10vh;
 	width: 80vh;
 	height: 80vh;
 }
 
-.scoreboard_table{
+.scoreboard_table {
 	top: 4vh;
 	left: 24vh;
 }
 
-.pagination{
+.pagination {
 	width: 80vh;
 	top: 69.5vh;
 }
-.pagination > a{
+
+.pagination>a {
 	padding: 0.5vh;
 	-webkit-text-stroke: 0.05vh gray;
 }
 
-.scoreboard_exit_bt{
+.scoreboard_exit_bt {
 	top: 61vh;
 	left: 46vh;
 	padding-right: 10vh;
 }
 
-.pagination_left{
+.pagination_left {
 	top: 33vh;
 	left: 16vh;
 }
 
-.pagination_right{
+.pagination_right {
 	top: 33vh;
-	left: 54vh;	
+	left: 54vh;
 }
 
 /* 인게임 */
@@ -394,13 +398,6 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	height: 100vh;
 	top: 0;
 	left: -20vh;
-}
-
-.charac {
-	left: 45vh;
-	top: 80vh;
-	width: 10vh;
-	height: 10vh;
 }
 
 .door_top {
@@ -463,4 +460,40 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	top: 6vh;
 	width: 10vh;
 	height: 10vh;
+}
+
+/* 튜토리얼 */
+.guide1 {
+	top: 30vh;
+	left: 15vh;
+	width: 30vh;
+	padding: 1vh;
+}
+
+.guide2 {
+	top: 30vh;
+	left: 55vh; width : 30vh;
+	padding: 1vh;
+	width: 30vh;
+}
+
+.front_charac {
+	left: 42.55vh;
+	top: 80vh;
+	width: 10vh;
+	height: 10vh;
+}
+
+.front_charac_img {
+	width: 10vh;
+	height: 10vh;
+}
+
+.front_attack {
+	left: 4vh;
+	top: 4vh;
+	width: 2vh;
+	height: 2vh;
+/*	transform: normal; */
+/*	transition: all 1s; */
 }
