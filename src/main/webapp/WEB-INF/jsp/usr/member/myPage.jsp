@@ -13,7 +13,7 @@
 
 <div class="myPage_bg absolute">
    <!-- p2 나무 판 -->
-	<img
+	<img class="myPage_bg"
 		src="https://github.com/user-attachments/assets/b3351b33-5547-48b5-9108-78ef3c69c204"
 		alt="" />
 	<div class="myPage_title absolute text-center">내 정보</div>

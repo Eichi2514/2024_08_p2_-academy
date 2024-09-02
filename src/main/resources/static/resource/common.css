@@ -3,11 +3,13 @@
 html>body, button, input, select {
 	font-family: Galmuri11;
 	font-weight: 800;
+	font-size: 3vh;
 }
 
 img {
 	/* mix-blend-mode: multiply; */
 	/* opacity: 0.9; */
+	
 }
 
 body {
@@ -16,31 +18,31 @@ body {
 
 input {
 	padding-left: 1vh !important;
-	/* background-color: transparent; */ 
+	/* background-color: transparent; */
 }
 
 input::placeholder {
-   color: black !important;
+	color: black !important;
 }
 
 input::-webkit-input-placeholder { /* 크롬, 사파리, 오페라 */
-  color: black;
+	color: black;
 }
 
 input:-ms-input-placeholder { /* 인터넷 익스플로러 10-11 */
-  color: black;
+	color: black;
 }
 
 input::-ms-input-placeholder { /* 엣지 */
-  color: black;
+	color: black;
 }
 
 input::-moz-placeholder { /* 파이어폭스 19+ */
-  color: black;
+	color: black;
 }
 
 input:-moz-placeholder { /* 파이어폭스 4-18 */
-  color: black;
+	color: black;
 }
 
 .bg {
@@ -48,30 +50,49 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	height: 100vh;
 }
 
-.bg_img{
+.bg_img {
 	width: 100vh;
-	height: 100vh;	
+	height: 100vh;
 }
 
-.bar{
-	width: 20vh;
-	height: 100vh;
-	top: 0;
-	left: -20vh;	
+.bo {
+	border: 0.1vh solid;
 }
 
 /* 메인화면 */
-
-.logo{
+.logo {
 	left: 1vh;
 	top: 1vh;
 	width: 10vh;
 	height: 10vh;
-	border:1vh solid;
+	border: 1vh solid white;
+	background: black;
+}
+
+.TOP3{
+	left: 70vh;
+	top: 1vh;
+	width: 30vh;
+	height: 30vh;	
+}
+.TOP3_img{
+	width: 30vh;
+	height: 30vh;
+}
+.TOP3_table{
+	top: 6vh;
+	left: 5vh;
+	font-size: 2vh;
+}
+.TOP3_list_bt{
+	top: 22.7vh;
+	left: 16vh;
+	width: 10vh;
+	height: 2vh;
+	font-size: 1.5vh;
 }
 
 .id {
-	font-size: 3vh;
 	height: 5vh;
 	left: 30vh;
 	top: 47vh;
@@ -80,7 +101,6 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 }
 
 .pw {
-	font-size: 3vh;
 	height: 5vh;
 	left: 30vh;
 	top: 53vh;
@@ -91,25 +111,24 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	width: 34vh;
 }
 
-.join_bt{
-	font-size: 3vh;
+.join_bt {
 	width: 18vh;
 	left: 30vh;
 	top: 36vh;
-	border : 0.3vh solid;
+	border: 0.3vh solid;
 	padding: 0.7vh;
-	border-radius:1vh; 
-	background: rgb(255,71,48);
+	border-radius: 1vh;
+	background: rgb(255, 71, 48);
 }
-.login_out_bt{
-	font-size: 3vh;
+
+.login_out_bt {
 	width: 19vh;
 	left: 51vh;
 	top: 36vh;
-	border : 0.3vh solid;
+	border: 0.3vh solid;
 	padding: 0.7vh;
-	border-radius:1vh;
-	background: rgb(255,71,48);
+	border-radius: 1vh;
+	background: rgb(255, 71, 48);
 }
 
 .start, .start-1, .start-2, start-text {
@@ -126,7 +145,6 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 .start-text {
 	left: 1.8vh;
 	top: 7vh;
-	font-size: 3vh;
 	z-index: 10;
 }
 
@@ -138,13 +156,12 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	display: none;
 }
 
-.member_name1,.member_name2{
-	font-size: 3vh;
+.member_name1, .member_name2 {
 	-webkit-text-stroke: 0.05vh white;
 	width: 20vh;
 }
 
-.member_name1{
+.member_name1 {
 	font-size: 4vh;
 	width: 25vh;
 	left: 27vh;
@@ -153,7 +170,7 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	padding: 0.7vh;
 }
 
-.member_name2{
+.member_name2 {
 	font-size: 4vh;
 	width: 25vh;
 	left: 27vh;
@@ -163,60 +180,60 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 }
 
 /* 회원가입 화면 */
-.doJoin_bg{
+.doJoin_bg {
 	top: 15vh;
 	left: 10vh;
 	width: 80vh;
 	height: 80vh;
 }
 
-.doJoin_title{
+.doJoin_title {
 	top: 8.5vh;
 	left: 5vh;
 	width: 70vh;
-	
-	font-size : 8vh;
+	font-size: 8vh;
 	-webkit-text-stroke: 0.1vh white;
 }
 
-.label{
+.label {
 	padding-bottom: 1vh;
 }
 
-.doJoin_id{
+.doJoin_id {
 	top: 25vh;
 	left: 5vh;
 	-webkit-text-stroke: 0.05vh white;
 	font-size: 2.8vh;
 }
 
-.doJoin_pw{
+.doJoin_pw {
 	top: 35vh;
 	left: 5vh;
 	-webkit-text-stroke: 0.05vh white;
 	font-size: 2.8vh;
 }
 
-.doJoin_pw2{
+.doJoin_pw2 {
 	top: 45vh;
 	left: 5vh;
 	-webkit-text-stroke: 0.05vh white;
 	font-size: 2.8vh;
 }
 
-.doJoin_name{
+.doJoin_name {
 	top: 55vh;
 	left: 5vh;
 	-webkit-text-stroke: 0.05vh white;
 	font-size: 2.8vh;
 }
 
-.doJoin_nickname{
+.doJoin_nickname {
 	top: 65vh;
 	left: 5vh;
 	-webkit-text-stroke: 0.05vh white;
 	font-size: 2.8vh;
 }
+
 .doJoin_gender {
 	width: 10vh;
 	height: 5vh;
@@ -225,118 +242,187 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	-webkit-text-stroke: 0.05vh white;
 	font-size: 2.8vh;
 }
-.doJoin_bt{
+
+.doJoin_bt {
 	top: 55vh;
-	left: 50vh;	
-	width: 20vh;	
-	font-size: 3vh;
-	
-	border : 0.3vh solid;
+	left: 50vh;
+	width: 20vh;
+	border: 0.3vh solid;
 	padding: 0.7vh;
-	border-radius:1vh;
-	
-	background: rgb(255,71,48);
+	border-radius: 1vh;
+	background: rgb(255, 71, 48);
 }
-.doJoin_exit{
+
+.doJoin_exit {
 	top: 65vh;
 	left: 50vh;
 	width: 20vh;
-	font-size: 3vh;
-	
-	border : 0.3vh solid;
-	padding: 0.7vh;	
-	border-radius:1vh;
-		
-	background: rgb(255,71,48);
+	border: 0.3vh solid;
+	padding: 0.7vh;
+	border-radius: 1vh;
+	background: rgb(255, 71, 48);
 }
 
 /* 내 정보 화면 */
-
-.myPage_label{
+.myPage_label {
+	height: 6vh;
 	width: 20vh;
 	display: inline-block;
-	font-size: 3vh;
-}
-.myPage_body{
-	width: 45vh;
-	display: inline-block;
-	font-size: 3vh;
 }
 
-.myPage_bg{
+.myPage_body {
+	height: 6vh;
+	width: 45vh;
+	display: inline-block;
+}
+
+.myPage_bg {
 	top: 15vh;
 	left: 10vh;
 	width: 80vh;
 	height: 80vh;
 }
 
-.myPage_title{
+.myPage_title {
 	top: 8.5vh;
 	left: 5vh;
 	width: 70vh;
-	
-	font-size : 8vh;
+	font-size: 8vh;
 	-webkit-text-stroke: 0.1vh white;
 }
 
-.myPage_1{
+.myPage_1 {
 	top: 33vh;
 	left: 8vh;
 	-webkit-text-stroke: 0.05vh white;
-	
 }
 
-.myPage_2{
+.myPage_2 {
 	top: 39vh;
 	left: 8vh;
 	-webkit-text-stroke: 0.05vh white;
-	
 }
 
-.myPage_3{
+.myPage_3 {
 	top: 45vh;
 	left: 8vh;
 	-webkit-text-stroke: 0.05vh white;
-	
 }
 
-.myPage_4{
+.myPage_4 {
 	top: 51vh;
 	left: 8vh;
 	-webkit-text-stroke: 0.05vh white;
-	
 }
 
-.myPage_5{
+.myPage_5 {
 	top: 57vh;
 	left: 8vh;
 	-webkit-text-stroke: 0.05vh white;
-	
 }
 
-.myPage_bt{
+.myPage_bt {
 	top: 68vh;
-	left: 12vh;	
-	width: 20vh;	
-	font-size: 3vh;
-	
-	border : 0.3vh solid;
+	left: 12vh;
+	width: 20vh;
+	border: 0.3vh solid;
 	padding: 0.7vh;
-	border-radius:1vh;
-	
-	background: rgb(255,71,48);
+	border-radius: 1vh;
+	background: rgb(255, 71, 48);
 }
-.myPage_exit{
+
+.myPage_exit {
 	top: 68vh;
 	left: 45vh;
 	width: 20vh;
-	font-size: 3vh;
-	
-	border : 0.3vh solid;
-	padding: 0.7vh;	
-	border-radius:1vh;
-		
-	background: rgb(255,71,48);
+	border: 0.3vh solid;
+	padding: 0.7vh;
+	border-radius: 1vh;
+	background: rgb(255, 71, 48);
 }
 
 /* 인게임 */
+.ingame_logo {
+	left: -18vh;
+	top: 1vh;
+	width: 16vh;
+	height: 16vh;
+	border: 1vh solid white;
+	background: black;
+}
+
+.bar {
+	width: 20vh;
+	height: 100vh;
+	top: 0;
+	left: -20vh;
+}
+
+.charac {
+	left: 45vh;
+	top: 80vh;
+	width: 10vh;
+	height: 10vh;
+}
+
+.door_top {
+	left: 45vh;
+	top: 0vh;
+	width: 10vh;
+	height: 10vh;
+}
+
+.door_bottom {
+	left: 45vh;
+	top: 90vh;
+	width: 10vh;
+	height: 10vh;
+	transform: rotate(180deg);
+}
+
+.door_left {
+	left: 0vh;
+	top: 45vh;
+	width: 10vh;
+	height: 10vh;
+	transform: rotate(270deg);
+}
+
+.door_right {
+	left: 90vh;
+	top: 45vh;
+	width: 10vh;
+	height: 10vh;
+	transform: rotate(90deg);
+}
+
+.floor_room {
+	left: 0;
+	top: 21vh;
+	width: 20vh;
+	height: 10vh;
+	-webkit-text-stroke: 0.05vh white;
+}
+
+.hp {
+	left: 0;
+	top: 30.5vh;
+	width: 20vh;
+	height: 10vh;
+	-webkit-text-stroke: 0.05vh white;
+}
+
+.weapon {
+	left: 0;
+	top: 78vh;
+	width: 20vh;
+	height: 10vh;
+	-webkit-text-stroke: 0.05vh white;
+}
+
+.weapon_img {
+	left: 5vh;
+	top: 6vh;
+	width: 10vh;
+	height: 10vh;
+}
