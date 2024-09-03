@@ -34,11 +34,11 @@
 				src="https://github.com/user-attachments/assets/b817da40-3f88-4bac-a73c-b14853be1a36"
 				alt="" />
 
-			<c:if test="${charac.floor <= 0}">
+			<c:if test="${floor == 1 && room == 0}">
 				<div class="floor_room absolute text-center">튜토리얼</div>
 			</c:if>
-			<c:if test="${charac.floor > 0}">
-				<div class="floor_room absolute text-center">${charac.floor}층_${charac.room}번방</div>
+			<c:if test="${floor != 1 || room != 0}">
+				<div class="floor_room absolute text-center">${floor}층_${room}번방</div>
 			</c:if>
 			<div class="hp absolute text-center">
 				생명 :

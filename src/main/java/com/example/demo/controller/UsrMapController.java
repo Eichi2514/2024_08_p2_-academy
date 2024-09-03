@@ -5,12 +5,12 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.service.CharacService;
 import com.example.demo.service.MapService;
+import com.example.demo.service.MobService;
 import com.example.demo.vo.Charac;
 import com.example.demo.vo.Rq;
 
@@ -25,12 +25,17 @@ public class UsrMapController {
 	@Autowired
 	private MapService mapService;
 
+	@Autowired
+	private MobService mobService;
+
 	@RequestMapping("/usr/map/front")
 	public String showFront(HttpServletRequest req, Model model, int stage) {
-		int floor = stage/5;
-		int room =  stage%5;
+		int floor = stage / 5;
+		int room = stage % 5;
+		// xcode = 23
+		Map<String, Integer> codes = mapService.mapCreation(42, 42, 18, 1, floor, room); // 높이와 넓이를 전달해서 맵 생성
 
-		int[][] map = mapService.mapCreation(52, 52, 46, 22, floor, room); // 높이와 넓이를 전달해서 맵 생성
+		String mob = mobService.mobData(floor, room);
 
 		Rq rq = (Rq) req.getAttribute("rq"); // HttpServletRequest에 저장돼 있는 정보 가져오기
 
@@ -48,6 +53,11 @@ public class UsrMapController {
 
 			model.addAttribute("charac", charac); // 바로 보내주기
 		}
+
+		model.addAttribute("mob", mob); // 몬스터 정보
+		model.addAttribute("codes", codes); // 몬스터 위치정보
+		model.addAttribute("floor", floor); // 현재 층 정보
+		model.addAttribute("room", room); // 현재 방 정보
 
 		return "/usr/map/front";
 	}

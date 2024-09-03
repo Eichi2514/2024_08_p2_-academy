@@ -383,7 +383,7 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	left: 54vh;
 }
 
-/* 인게임 */
+/* 인게임 헤드 */
 .ingame_logo {
 	left: -18vh;
 	top: 1vh;
@@ -462,7 +462,7 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	height: 10vh;
 }
 
-/* 튜토리얼 */
+/* 인게임 맵 */
 .guide1 {
 	top: 30vh;
 	left: 15vh;
@@ -478,8 +478,8 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 }
 
 .front_charac {
-	left: 42.55vh;
-	top: 80vh;
+	left: 10vh;
+	top: 44vh; /* 44.1 */ 
 	width: 10vh;
 	height: 10vh;
 }
@@ -494,6 +494,14 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	top: 4vh;
 	width: 2vh;
 	height: 2vh;
-/*	transform: normal; */
-/*	transition: all 1s; */
+}
+
+.front_mob{
+	width: 10vh;
+	height: 10vw;
+}
+
+.front_bossMob{
+	width: 20vh;
+	height: 20vw;	
 }

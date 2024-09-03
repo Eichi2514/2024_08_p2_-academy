@@ -1,5 +1,5 @@
-let LR = 42.55;
-let UD = 80;
+let LR = 10;
+let UD = 44; // 44.1
 
 $(window).keydown(function(e) {
 	if (e.keyCode === 37) {
@@ -39,7 +39,7 @@ function Up(something) {
 		dataType: 'text',
 		success: function(data) {
 			if (data == 'success') {
-				UD -= 1.55;
+				UD -= 2;
 				$(".charac").css("top", UD + "vh");
 				stageUp();
 				console.log('LR : ' + LR + ', UD : ' + UD);
@@ -60,7 +60,7 @@ function Down(something) {
 		dataType: 'text',
 		success: function(data) {
 			if (data == 'success') {
-				UD += 1.55;
+				UD += 2;
 				$(".charac").css("top", UD + "vh");
 				stageUp();
 				console.log('LR : ' + LR + ', UD : ' + UD);
@@ -81,7 +81,7 @@ function Left(something) {
 		dataType: 'text',
 		success: function(data) {
 			if (data == 'success') {
-				LR -= 1.55;
+				LR -= 2;
 				$(".charac").css("left", LR + "vh");
 				stageUp();
 				console.log('LR : ' + LR + ', UD : ' + UD);
@@ -103,7 +103,7 @@ function Right(something) {
 		dataType: 'text',
 		success: function(data) {
 			if (data == 'success') {
-				LR += 1.55;
+				LR += 2;
 				$(".charac").css("left", LR + "vh");
 				stageUp();
 				console.log('LR : ' + LR + ', UD : ' + UD);
@@ -115,44 +115,38 @@ function Right(something) {
 	});
 }
 
-function stageUp() {
-	if (LR > 79 && 38 < UD && UD < 52){
-		location.href='../map/front?stage='+'${stage }';
-	};
-}
-
 function attackA() {
-	$(".attack").removeClass('hidden');
-	$(".attack").css("left", "-6vh");
+	$(".Aattack").removeClass('hidden');
+	$(".Aattack").css("left", "-6vh");
 	setTimeout(function() {
-		$(".attack").addClass('hidden');
-		$(".attack").css("left", "4vh");
+		$(".Aattack").addClass('hidden');
+		$(".Aattack").css("left", "4vh");
 	}, 100)
 }
 
 function attackW() {
-	$(".attack").removeClass('hidden');
-	$(".attack").css("top", "-6vh");
+	$(".Wattack").removeClass('hidden');
+	$(".Wattack").css("top", "-6vh");
 	setTimeout(function() {
-		$(".attack").addClass('hidden');
-		$(".attack").css("top", "4vh");
+		$(".Wattack").addClass('hidden');
+		$(".Wattack").css("top", "4vh");
 	}, 100)
 }
 
 function attackD() {
-	$(".attack").removeClass('hidden');
-	$(".attack").css("left", "14vh");
+	$(".Dattack").removeClass('hidden');
+	$(".Dattack").css("left", "14vh");
 	setTimeout(function() {
-		$(".attack").addClass('hidden');
-		$(".attack").css("left", "4vh");
+		$(".Dattack").addClass('hidden');
+		$(".Dattack").css("left", "4vh");
 	}, 100)
 }
 
 function attackS() {
-	$(".attack").removeClass('hidden');
-	$(".attack").css("top", "14vh");
+	$(".Sattack").removeClass('hidden');
+	$(".Sattack").css("top", "14vh");
 	setTimeout(function() {
-		$(".attack").addClass('hidden');
-		$(".attack").css("top", "4vh");
+		$(".Sattack").addClass('hidden');
+		$(".Sattack").css("top", "4vh");
 	}, 100)
 }	
