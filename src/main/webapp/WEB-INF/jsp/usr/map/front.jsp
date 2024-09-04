@@ -66,13 +66,22 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 </style>
 
 <script type="text/javascript">
+    // 스테이지 이동
 	function stageUp() {
 		var stage = "${param.stage+1}";
-		if (LR > 79 && 38 < UD && UD < 52) {
+		var doorChack = $(".door").hasClass("hidden");
+		if (LR > 79 && 38 < UD && UD < 52 && !doorChack) {
+			$(".door").fadeOut(1000).addClass('hidden');
+			$(".mob2").fadeIn(1000).removeClass('hidden');
+			$(".mob3").fadeIn(1000).removeClass('hidden');
+			$(".mob4").fadeIn(1000).removeClass('hidden');
+			$(".mob5").fadeIn(1000).removeClass('hidden');
+			$(".mob6").fadeIn(1000).removeClass('hidden');
 			location.href = '../map/front?stage=' + stage;
 		}
 	}
 	
+    // 몬스터 좌표 셋팅
 	var UD2 = ${codes.get('mob2XCode') * 2 + (10 - 2)};
     var LR2 = ${codes.get('mob2YCode') * 2 + (10 - 2)};
     
@@ -87,15 +96,32 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
     
     var UD6 = ${codes.get('mob6XCode') * 2 + (10 - 2)};
     var LR6 = ${codes.get('mob6YCode') * 2 + (10 - 2)};
+
+    // 몬스터 hp 셋팅
+    var mob2_hp = 0;
+    var mob3_hp = 0;
+    var mob4_hp = 0;
+    var mob5_hp = 0;
+    var mob6_hp = 0;
+    
+	// 일정 시간마다 move 함수를 호출
+	if(${room > 0 && room < 5}){mob2_hp = ${floor};}
+	if(${room > 1 && room < 5}){mob3_hp = ${floor};}
+	if(${room > 2 && room < 5}){mob4_hp = ${floor};}
+	if(${room > 3 && room < 5}){mob5_hp = ${floor};}
+	if(${floor > 1 && room == 0}){mob6_hp = ${floor*10};}
 	
+	// 랜덤 숫자 생성
     function getRandom(min, max) {
     	return Math.floor(Math.random() * (max - min + 1)) + min;
 		}
 
 	// 1초마다 랜덤 숫자를 출력하는 함수
 	function move2() {
+		var random;
 		// 1에서 5까지의 랜덤 숫자 생성
-		const random = getRandom(1, 5);
+		if (${floor < 4}){random = getRandom(1, 4);}
+		else {random = getRandom(1, 5);}
 
 		if (random == 1) {
 			Left2(2);
@@ -112,8 +138,10 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 
 	// 1초마다 랜덤 숫자를 출력하는 함수
 	function move3() {
+		var random;
 		// 1에서 5까지의 랜덤 숫자 생성
-		const random = getRandom(1, 5);
+		if (${floor < 4}){random = getRandom(1, 4);}
+		else {random = getRandom(1, 5);}
 
 		if (random == 1) {
 			Left2(3);
@@ -130,8 +158,10 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 
 	// 1초마다 랜덤 숫자를 출력하는 함수
 	function move4() {
+		var random;
 		// 1에서 5까지의 랜덤 숫자 생성
-		const random = getRandom(1, 5);
+		if (${floor < 4}){random = getRandom(1, 4);}
+		else {random = getRandom(1, 5);}
 
 		if (random == 1) {
 			Left2(4);
@@ -148,8 +178,10 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 
 	// 1초마다 랜덤 숫자를 출력하는 함수
 	function move5() {
+		var random;
 		// 1에서 5까지의 랜덤 숫자 생성
-		const random = getRandom(1, 5);
+		if (${floor < 4}){random = getRandom(1, 4);}
+		else {random = getRandom(1, 5);}
 
 		if (random == 1) {
 			Left2(5);
@@ -166,8 +198,10 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 
 	// 1초마다 랜덤 숫자를 출력하는 함수
 	function move6() {
+		var random;
 		// 1에서 5까지의 랜덤 숫자 생성
-		const random = getRandom(1, 5);
+		if (${floor < 4}){random = getRandom(1, 4);}
+		else {random = getRandom(1, 5);}
 
 		if (random == 1) {
 			Left2(6);
@@ -181,14 +215,8 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 
 		}
 	}
-
-		// 일정 시간마다 move 함수를 호출
-		if(${room > 0 && room < 5}){setInterval(move2, 1000);}
-		if(${room > 1 && room < 5}){setInterval(move3, 800);}
-		if(${room > 2 && room < 5}){setInterval(move4, 600);}
-		if(${room > 3 && room < 5}){setInterval(move5, 400);}
-		if(${floor > 1 && room == 0}){setInterval(move6, 200);}
-
+        
+		// 이동 메소드 실행
 		function Up2(something) {
 			$.ajax({
 				url : '/usr/map/keyUp',
@@ -223,6 +251,7 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 				}
 			});
 		}
+		
 		function Down2(something) {
 			$.ajax({
 				url : '/usr/map/keyDown',
@@ -256,6 +285,7 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 				}
 			});
 		}
+		
 		function Left2(something) {
 			$.ajax({
 				url : '/usr/map/keyLeft',
@@ -323,61 +353,377 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 				}
 			});
 		}
-</script>
+		
+// 문 개방
+function showDoor(){
+	if(mob2_hp+mob3_hp+mob4_hp+mob5_hp+mob6_hp == 0){
+		$(".door").fadeIn(1000).removeClass('hidden');
+	}
+}
 
+function doDelete(something) {
+	$.ajax({
+		url : '/usr/map/delete',
+		type : 'POST',
+		data : {
+			something : something
+		},
+		dataType : 'text',
+		success : function(data) {
+		},
+		error : function(jqXHR, textStatus, errorThrown) {
+			alert('오류 발생 : ' + textStatus);
+		}
+	});
+}	
+
+// 자동 실행 move 함수 담아놓을 변수 생성
+var stop2, stop3, stop4, stop5, stop6;
+
+//일정 시간마다 move 함수를 호출
+function show(){
+	if(${room > 0 && room < 5}){stop2 = setInterval(move2, 1000);}
+	if(${room > 1 && room < 5}){stop3 = setInterval(move3, 800);}
+	if(${room > 2 && room < 5}){stop4 = setInterval(move4, 500);}
+	if(${room > 3 && room < 5}){stop5 = setInterval(move5, 200);}			
+	if(${floor > 1 && room == 0}){stop6 = setInterval(move6, 100);}			
+   }
+
+// 캐릭터 공격
+       function attackA_motion() {
+		    $(".Aattack").removeClass('hidden');
+		 	setTimeout(function() {
+		 		$(".Aattack").addClass('hidden');
+		 	}, 100)
+		 }
+
+		function attackW_motion() {
+			$(".Wattack").removeClass('hidden');
+			setTimeout(function() {
+				$(".Wattack").addClass('hidden');
+			}, 100)
+		}
+
+		function attackD_motion() {
+			$(".Dattack").removeClass('hidden');
+			setTimeout(function() {
+				$(".Dattack").addClass('hidden');
+			}, 100)
+		}
+
+		function attackS_motion() {
+			$(".Sattack").removeClass('hidden');
+			setTimeout(function() {
+				$(".Sattack").addClass('hidden');
+			}, 100)
+		}	
+
+	       function attackA(something) {
+				$.ajax({
+					url : '/usr/map/Aattack',
+					type : 'POST',
+					data : {
+						something : something
+					},
+					dataType : 'text',
+					success : function(data) {
+						// console.log("몬스터"+data+"Attack");						 
+						if (data == 2) {
+							mob2_hp -= 1;
+							if(mob2_hp == 0){
+								$(".mob2").fadeOut(1000).addClass('hidden');
+							    clearInterval(stop2);
+							    doDelete(2);
+							}
+						} else if (data == 3) {
+							mob3_hp -= 1;
+							if(mob3_hp == 0){
+								$(".mob3").fadeOut(1000).addClass('hidden');
+								clearInterval(stop3);
+								doDelete(3);
+							}
+						} else if (data == 4) {
+							mob4_hp -= 1;
+							if(mob4_hp == 0){
+								$(".mob4").fadeOut(1000).addClass('hidden');
+								clearInterval(stop4);
+								doDelete(4);
+							}
+						} else if (data == 5) {
+							mob5_hp -= 1;
+							if(mob5_hp == 0){
+								$(".mob5").fadeOut(1000).addClass('hidden');
+								clearInterval(stop5);
+								doDelete(5);
+							}
+						} else if (data == 6) {
+							mob6_hp -= 1;
+							if(mob6_hp == 0){
+								$(".mob6").fadeOut(1000).addClass('hidden');
+								clearInterval(stop6);
+								doDelete(6);
+							}
+						} 
+						console.log("몬스터2 hp : " + mob2_hp);
+						console.log("몬스터3 hp : " + mob3_hp);
+						console.log("몬스터4 hp : " + mob4_hp);
+						console.log("몬스터5 hp : " + mob5_hp);
+						console.log("몬스터6 hp : " + mob6_hp);
+						showDoor();
+						attackA_motion();
+					},
+					error : function(jqXHR, textStatus, errorThrown) {
+						alert('오류 발생 : ' + textStatus);
+					}
+				});
+			}	
+
+	       function attackW(something) {
+				$.ajax({
+					url : '/usr/map/Wattack',
+					type : 'POST',
+					data : {
+						something : something
+					},
+					dataType : 'text',
+					success : function(data) {
+						// console.log("몬스터"+data+"Attack");						 
+						if (data == 2) {
+							mob2_hp -= 1;
+							if(mob2_hp == 0){
+								$(".mob2").fadeOut(1000).addClass('hidden');
+							    clearInterval(stop2);
+							    doDelete(2);
+							}
+						} else if (data == 3) {
+							mob3_hp -= 1;
+							if(mob3_hp == 0){
+								$(".mob3").fadeOut(1000).addClass('hidden');
+								clearInterval(stop3);
+								doDelete(3);
+							}
+						} else if (data == 4) {
+							mob4_hp -= 1;
+							if(mob4_hp == 0){
+								$(".mob4").fadeOut(1000).addClass('hidden');
+								clearInterval(stop4);
+								doDelete(4);
+							}
+						} else if (data == 5) {
+							mob5_hp -= 1;
+							if(mob5_hp == 0){
+								$(".mob5").fadeOut(1000).addClass('hidden');
+								clearInterval(stop5);
+								doDelete(5);
+							}
+						} else if (data == 6) {
+							mob6_hp -= 1;
+							if(mob6_hp == 0){
+								$(".mob6").fadeOut(1000).addClass('hidden');
+								clearInterval(stop6);
+								doDelete(6);
+							}
+						}   
+						console.log("몬스터2 hp : " + mob2_hp);
+						console.log("몬스터3 hp : " + mob3_hp);
+						console.log("몬스터4 hp : " + mob4_hp);
+						console.log("몬스터5 hp : " + mob5_hp);
+						console.log("몬스터6 hp : " + mob6_hp);
+						showDoor();
+						attackW_motion();
+					},
+					error : function(jqXHR, textStatus, errorThrown) {
+						alert('오류 발생 : ' + textStatus);
+					}
+				});
+			}	
+
+	       function attackD(something) {
+				$.ajax({
+					url : '/usr/map/Dattack',
+					type : 'POST',
+					data : {
+						something : something
+					},
+					dataType : 'text',
+					success : function(data) {
+						// console.log("몬스터"+data+"Attack");						 
+						if (data == 2) {
+							mob2_hp -= 1;
+							if(mob2_hp == 0){
+								$(".mob2").fadeOut(1000).addClass('hidden');
+							    clearInterval(stop2);
+							    doDelete(2);
+							}
+						} else if (data == 3) {
+							mob3_hp -= 1;
+							if(mob3_hp == 0){
+								$(".mob3").fadeOut(1000).addClass('hidden');
+								clearInterval(stop3);
+								doDelete(3);
+							}
+						} else if (data == 4) {
+							mob4_hp -= 1;
+							if(mob4_hp == 0){
+								$(".mob4").fadeOut(1000).addClass('hidden');
+								clearInterval(stop4);
+								doDelete(4);
+							}
+						} else if (data == 5) {
+							mob5_hp -= 1;
+							if(mob5_hp == 0){
+								$(".mob5").fadeOut(1000).addClass('hidden');
+								clearInterval(stop5);
+								doDelete(5);
+							}
+						} else if (data == 6) {
+							mob6_hp -= 1;
+							if(mob6_hp == 0){
+								$(".mob6").fadeOut(1000).addClass('hidden');
+								clearInterval(stop6);
+								doDelete(6);
+							}
+						}  
+						console.log("몬스터2 hp : " + mob2_hp);
+						console.log("몬스터3 hp : " + mob3_hp);
+						console.log("몬스터4 hp : " + mob4_hp);
+						console.log("몬스터5 hp : " + mob5_hp);
+						console.log("몬스터6 hp : " + mob6_hp);
+						showDoor();
+						attackD_motion();
+					},
+					error : function(jqXHR, textStatus, errorThrown) {
+						alert('오류 발생 : ' + textStatus);
+					}
+				});
+			}	
+
+	       function attackS(something) {
+				$.ajax({
+					url : '/usr/map/Sattack',
+					type : 'POST',
+					data : {
+						something : something
+					},
+					dataType : 'text',
+					success : function(data) {
+						// console.log("몬스터"+data+"Attack");						 
+						if (data == 2) {
+							mob2_hp -= 1;
+							if(mob2_hp == 0){
+								$(".mob2").fadeOut(1000).addClass('hidden');
+							    clearInterval(stop2);
+							    doDelete(2);
+							}
+						} else if (data == 3) {
+							mob3_hp -= 1;
+							if(mob3_hp == 0){
+								$(".mob3").fadeOut(1000).addClass('hidden');
+								clearInterval(stop3);
+								doDelete(3);
+							}
+						} else if (data == 4) {
+							mob4_hp -= 1;
+							if(mob4_hp == 0){
+								$(".mob4").fadeOut(1000).addClass('hidden');
+								clearInterval(stop4);
+								doDelete(4);
+							}
+						} else if (data == 5) {
+							mob5_hp -= 1;
+							if(mob5_hp == 0){
+								$(".mob5").fadeOut(1000).addClass('hidden');
+								clearInterval(stop5);
+								doDelete(5);
+							}
+						} else if (data == 6) {
+							mob6_hp -= 1;
+							if(mob6_hp == 0){
+								$(".mob6").fadeOut(1000).addClass('hidden');
+								clearInterval(stop6);
+								doDelete(6);
+							}
+						} 
+						console.log("몬스터2 hp : " + mob2_hp);
+						console.log("몬스터3 hp : " + mob3_hp);
+						console.log("몬스터4 hp : " + mob4_hp);
+						console.log("몬스터5 hp : " + mob5_hp);
+						console.log("몬스터6 hp : " + mob6_hp);
+						showDoor();
+						attackS_motion();
+					},
+					error : function(jqXHR, textStatus, errorThrown) {
+						alert('오류 발생 : ' + textStatus);
+					}
+				});
+			}
+	       
+	       show();
+		
+</script>
+<!-- p2 맵 배경 -->
 <img class="bg_img"
 	src="https://github.com/user-attachments/assets/04fa2504-f697-4a59-8626-89551e8611da"
 	alt="" />
 
-<img class="door_right absolute"
+<!-- p2 문 -->
+<img class="door_right door hidden absolute"
 	src="https://github.com/user-attachments/assets/5234ea4f-b28d-4528-87d7-44ead643cc33"
 	alt="" />
 
+<!-- 튜토리얼 알림창 -->
 <c:if test="${param.stage == 5}">
 	<div class="guide1 bg-white text-center absolute">A W D S : 공격</div>
 	<div class="guide2 bg-white text-center absolute">← ↑ → ↓ : 이동</div>
 </c:if>
 
+<!-- 첫번째 몬스터 -->
 <c:if test="${room > 0 && room < 5}">
 	<div class="front_mob mob2 absolute">
 		<img class="front_mob_img" src="${mob}" alt="" />
 	</div>
 </c:if>
-
+<!-- 두번째 몬스터 -->
 <c:if test="${room > 1 && room < 5}">
 	<div class="front_mob mob3 absolute">
 		<img class="front_mob_img" src="${mob}" alt="" />
 	</div>
 </c:if>
-
+<!-- 세번째 몬스터 -->
 <c:if test="${room > 2 && room < 5}">
 	<div class="front_mob mob4 absolute">
 		<img class="front_mob_img" src="${mob}" alt="" />
 	</div>
 </c:if>
-
+<!-- 네번째 몬스터 -->
 <c:if test="${room > 3 && room < 5}">
 	<div class="front_mob mob5 absolute">
 		<img class="front_mob_img" src="${mob}" alt="" />
 	</div>
 </c:if>
-
+<!-- 보스 몬스터 -->
 <c:if test="${floor > 1 && room == 0}">
 	<div class="front_bossMob mob6 absolute">
-		<img class="front_mob_img" src="${mob}" alt="" />
+		<img class="front_bossMob_img" src="${mob}" alt="" />
 	</div>
 </c:if>
 
 
+<!-- 캐릭터 -->
 <div class="front_charac charac absolute">
+	<!-- 왼쪽 공격 -->
 	<img class="front_attack Aattack hidden rounded-full absolute"
 		src="${charac.extra__weapon}" alt="" />
+	<!-- 위쪽 공격 -->
 	<img class="front_attack Wattack hidden rounded-full absolute"
 		src="${charac.extra__weapon}" alt="" />
+	<!-- 오른쪽 공격 -->
 	<img class="front_attack Dattack hidden rounded-full absolute"
 		src="${charac.extra__weapon}" alt="" />
+	<!-- 아래쪽 공격 -->
 	<img class="front_attack Sattack hidden rounded-full absolute"
 		src="${charac.extra__weapon}" alt="" />
+	<!-- 캐릭터 이미지 -->
 	<img class="front_charac_img rounded-full"
 		src="https://github.com/user-attachments/assets/aaa05c2c-d55a-4111-b367-9231727e7050"
 		alt="" />

@@ -146,9 +146,11 @@ public class MapService {
 			}
 			System.err.println();
 		}
-
+        
+		// 몹의 좌표들 저장할 맵 생성
 		Map<String, Integer> codes = new HashMap<String, Integer>();
 
+		// 몹의 좌표들 넘겨주기
 		codes.put("mob2XCode", mob2XCode);
 		codes.put("mob2YCode", mob2YCode);
 		codes.put("mob3XCode", mob3XCode);
@@ -164,10 +166,13 @@ public class MapService {
 	}
 
 	public String keyUp(int something) {
+		// 어떤 캐릭터가 실행하든 옮겨쓸 변수 생성
 		int Xcode = 0;
 		int Ycode = 0;
 		int height = 0;
 		int width = 0;
+		
+		// 어떤 캐릭터가 실행했는지 확인 후 변수에 옮겨담기
 		if (something == charac) {
 			Xcode = characXCode;
 			Ycode = characYCode;
@@ -200,50 +205,55 @@ public class MapService {
 			width = mob6Width;
 		}
 
-		if (map[Xcode - 1][Ycode] <= 1 && map[Xcode - 1][Ycode + 1] <= 1 && map[Xcode - 1][Ycode + 2] <= 1
-				&& map[Xcode - 1][Ycode + 3] <= 1 && map[Xcode - 1][Ycode + 4] <= 1) {
-
-			for (int x = Xcode; x < Xcode + height; x++) {
-				for (int y = Ycode; y < Ycode + width; y++) {
-					map[x][y] = road;
-				}
-			}
-
-			Xcode--;
-
-			for (int x = Xcode; x < Xcode + height; x++) {
-				for (int y = Ycode; y < Ycode + width; y++) {
-					map[x][y] = something;
-				}
-			}
-
-			if (something == charac) {
-				characXCode--;
-			} else if (something == mob2) {
-				mob2XCode--;
-			} else if (something == mob3) {
-				mob3XCode--;
-			} else if (something == mob4) {
-				mob4XCode--;
-			} else if (something == mob5) {
-				mob5XCode--;
-			} else if (something == mob6) {
-				mob6XCode--;
-			}
-
-		} else {
-			// 맵 상황 확인
-			if (something == mob2 || something == mob6) {
-				for (int X = 0; X < mapHeight; X++) {
-					for (int Y = 0; Y < mapWidth; Y++) {
-						System.err.print(map[X][Y]);
+		// something 주위 빈공간인지 확인
+		for (int y = Ycode; y < Ycode + width; y++) {
+			if (map[Xcode - 1][y] != road) {
+				// 맵 상황 확인
+				System.out.println("==========================================");
+				if (something == mob2 || something == mob6) {
+					for (int X = 0; X < mapHeight; X++) {
+						for (int Y = 0; Y < mapWidth; Y++) {
+							System.err.print(map[X][Y]);
+						}
+						System.err.println();
 					}
-					System.err.println();
 				}
+				return "Lost";
 			}
-			return "Lost";
 		}
+
+		// something이 있던 위치 빈공간으로 대체
+		for (int x = Xcode; x < Xcode + height; x++) {
+			for (int y = Ycode; y < Ycode + width; y++) {
+				map[x][y] = road;
+			}
+		}
+
+		// 
+		Xcode--;
+
+		for (int x = Xcode; x < Xcode + height; x++) {
+			for (int y = Ycode; y < Ycode + width; y++) {
+				map[x][y] = something;
+			}
+		}
+
+		if (something == charac) {
+			characXCode--;
+		} else if (something == mob2) {
+			mob2XCode--;
+		} else if (something == mob3) {
+			mob3XCode--;
+		} else if (something == mob4) {
+			mob4XCode--;
+		} else if (something == mob5) {
+			mob5XCode--;
+		} else if (something == mob6) {
+			mob6XCode--;
+		}
+
 		// 맵 상황 확인
+		System.out.println("==========================================");
 		if (something == charac || something == mob2 || something == mob6) {
 			for (int X = 0; X < mapHeight; X++) {
 				for (int Y = 0; Y < mapWidth; Y++) {
@@ -292,49 +302,52 @@ public class MapService {
 			width = mob6Width;
 		}
 
-		if (map[Xcode + 5][Ycode] <= 1 && map[Xcode + 5][Ycode + 1] <= 1 && map[Xcode + 5][Ycode + 2] <= 1
-				&& map[Xcode + 5][Ycode + 3] <= 1 && map[Xcode + 5][Ycode + 4] <= 1) {
-
-			for (int x = Xcode; x < Xcode + height; x++) {
-				for (int y = Ycode; y < Ycode + width; y++) {
-					map[x][y] = road;
-				}
-			}
-
-			Xcode++;
-
-			for (int x = Xcode; x < Xcode + height; x++) {
-				for (int y = Ycode; y < Ycode + width; y++) {
-					map[x][y] = something;
-				}
-			}
-
-			if (something == charac) {
-				characXCode++;
-			} else if (something == mob2) {
-				mob2XCode++;
-			} else if (something == mob3) {
-				mob3XCode++;
-			} else if (something == mob4) {
-				mob4XCode++;
-			} else if (something == mob5) {
-				mob5XCode++;
-			} else if (something == mob6) {
-				mob6XCode++;
-			}
-		} else {
-			// 맵 상황 확인
-			if (something == mob2 || something == mob6) {
-				for (int X = 0; X < mapHeight; X++) {
-					for (int Y = 0; Y < mapWidth; Y++) {
-						System.err.print(map[X][Y]);
+		for (int y = Ycode; y < Ycode + width; y++) {
+			if (map[Xcode + height][y] != road) {
+				// 맵 상황 확인
+				System.out.println("==========================================");
+				if (something == mob2 || something == mob6) {
+					for (int X = 0; X < mapHeight; X++) {
+						for (int Y = 0; Y < mapWidth; Y++) {
+							System.err.print(map[X][Y]);
+						}
+						System.err.println();
 					}
-					System.err.println();
 				}
+				return "Lost";
 			}
-			return "Lost";
 		}
+
+		for (int x = Xcode; x < Xcode + height; x++) {
+			for (int y = Ycode; y < Ycode + width; y++) {
+				map[x][y] = road;
+			}
+		}
+
+		Xcode++;
+
+		for (int x = Xcode; x < Xcode + height; x++) {
+			for (int y = Ycode; y < Ycode + width; y++) {
+				map[x][y] = something;
+			}
+		}
+
+		if (something == charac) {
+			characXCode++;
+		} else if (something == mob2) {
+			mob2XCode++;
+		} else if (something == mob3) {
+			mob3XCode++;
+		} else if (something == mob4) {
+			mob4XCode++;
+		} else if (something == mob5) {
+			mob5XCode++;
+		} else if (something == mob6) {
+			mob6XCode++;
+		}
+
 		// 맵 상황 확인
+		System.out.println("==========================================");
 		if (something == charac || something == mob2 || something == mob6) {
 			for (int X = 0; X < mapHeight; X++) {
 				for (int Y = 0; Y < mapWidth; Y++) {
@@ -383,49 +396,52 @@ public class MapService {
 			width = mob6Width;
 		}
 
-		if (map[Xcode][Ycode - 1] <= 1 && map[Xcode + 1][Ycode - 1] <= 1 && map[Xcode + 2][Ycode - 1] <= 1
-				&& map[Xcode + 3][Ycode - 1] <= 1 && map[Xcode + 4][Ycode - 1] <= 1) {
-
-			for (int x = Xcode; x < Xcode + height; x++) {
-				for (int y = Ycode; y < Ycode + width; y++) {
-					map[x][y] = road;
-				}
-			}
-
-			Ycode--;
-
-			for (int x = Xcode; x < Xcode + height; x++) {
-				for (int y = Ycode; y < Ycode + width; y++) {
-					map[x][y] = something;
-				}
-			}
-
-			if (something == charac) {
-				characYCode--;
-			} else if (something == mob2) {
-				mob2YCode--;
-			} else if (something == mob3) {
-				mob3YCode--;
-			} else if (something == mob4) {
-				mob4YCode--;
-			} else if (something == mob5) {
-				mob5YCode--;
-			} else if (something == mob6) {
-				mob6YCode--;
-			}
-		} else {
-			// 맵 상황 확인
-			if (something == mob2 || something == mob6) {
-				for (int X = 0; X < mapHeight; X++) {
-					for (int Y = 0; Y < mapWidth; Y++) {
-						System.err.print(map[X][Y]);
+		for (int x = Xcode; x < Xcode + height; x++) {
+			if (map[x][Ycode - 1] != road) {
+				// 맵 상황 확인
+				System.out.println("==========================================");
+				if (something == mob2 || something == mob6) {
+					for (int X = 0; X < mapHeight; X++) {
+						for (int Y = 0; Y < mapWidth; Y++) {
+							System.err.print(map[X][Y]);
+						}
+						System.err.println();
 					}
-					System.err.println();
 				}
+				return "Lost";
 			}
-			return "Lost";
 		}
+
+		for (int x = Xcode; x < Xcode + height; x++) {
+			for (int y = Ycode; y < Ycode + width; y++) {
+				map[x][y] = road;
+			}
+		}
+
+		Ycode--;
+
+		for (int x = Xcode; x < Xcode + height; x++) {
+			for (int y = Ycode; y < Ycode + width; y++) {
+				map[x][y] = something;
+			}
+		}
+
+		if (something == charac) {
+			characYCode--;
+		} else if (something == mob2) {
+			mob2YCode--;
+		} else if (something == mob3) {
+			mob3YCode--;
+		} else if (something == mob4) {
+			mob4YCode--;
+		} else if (something == mob5) {
+			mob5YCode--;
+		} else if (something == mob6) {
+			mob6YCode--;
+		}
+
 		// 맵 상황 확인
+		System.out.println("==========================================");
 		if (something == charac || something == mob2 || something == mob6) {
 			for (int X = 0; X < mapHeight; X++) {
 				for (int Y = 0; Y < mapWidth; Y++) {
@@ -474,49 +490,52 @@ public class MapService {
 			width = mob6Width;
 		}
 
-		if (map[Xcode][Ycode + 5] <= 1 && map[Xcode + 1][Ycode + 5] <= 1 && map[Xcode + 2][Ycode + 5] <= 1
-				&& map[Xcode + 3][Ycode + 5] <= 1 && map[Xcode + 4][Ycode + 5] <= 1) {
-
-			for (int x = Xcode; x < Xcode + height; x++) {
-				for (int y = Ycode; y < Ycode + width; y++) {
-					map[x][y] = road;
-				}
-			}
-
-			Ycode++;
-
-			for (int x = Xcode; x < Xcode + height; x++) {
-				for (int y = Ycode; y < Ycode + width; y++) {
-					map[x][y] = something;
-				}
-			}
-
-			if (something == charac) {
-				characYCode++;
-			} else if (something == mob2) {
-				mob2YCode++;
-			} else if (something == mob3) {
-				mob3YCode++;
-			} else if (something == mob4) {
-				mob4YCode++;
-			} else if (something == mob5) {
-				mob5YCode++;
-			} else if (something == mob6) {
-				mob6YCode++;
-			}
-		} else {
-			// 맵 상황 확인
-			if (something == mob2 || something == mob6) {
-				for (int X = 0; X < mapHeight; X++) {
-					for (int Y = 0; Y < mapWidth; Y++) {
-						System.err.print(map[X][Y]);
+		for (int x = Xcode; x < Xcode + height; x++) {
+			if (map[x][Ycode + width] != road) {
+				// 맵 상황 확인
+				System.out.println("==========================================");
+				if (something == mob2 || something == mob6) {
+					for (int X = 0; X < mapHeight; X++) {
+						for (int Y = 0; Y < mapWidth; Y++) {
+							System.err.print(map[X][Y]);
+						}
+						System.err.println();
 					}
-					System.err.println();
 				}
+				return "Lost";
 			}
-			return "Lost";
 		}
+
+		for (int x = Xcode; x < Xcode + height; x++) {
+			for (int y = Ycode; y < Ycode + width; y++) {
+				map[x][y] = road;
+			}
+		}
+
+		Ycode++;
+
+		for (int x = Xcode; x < Xcode + height; x++) {
+			for (int y = Ycode; y < Ycode + width; y++) {
+				map[x][y] = something;
+			}
+		}
+
+		if (something == charac) {
+			characYCode++;
+		} else if (something == mob2) {
+			mob2YCode++;
+		} else if (something == mob3) {
+			mob3YCode++;
+		} else if (something == mob4) {
+			mob4YCode++;
+		} else if (something == mob5) {
+			mob5YCode++;
+		} else if (something == mob6) {
+			mob6YCode++;
+		}
+
 		// 맵 상황 확인
+		System.out.println("==========================================");
 		if (something == charac || something == mob2 || something == mob6) {
 			for (int X = 0; X < mapHeight; X++) {
 				for (int Y = 0; Y < mapWidth; Y++) {
@@ -526,6 +545,223 @@ public class MapService {
 			}
 		}
 		return "success";
+	}
+
+	public int Aattack(int something) {
+		int Xcode = 0;
+		int Ycode = 0;
+		int height = 0;
+		int width = 0;
+		if (something == charac) {
+			Xcode = characXCode;
+			Ycode = characYCode;
+			height = characHeight;
+			width = characWidth;
+		} else if (something == mob2) {
+			Xcode = mob2XCode;
+			Ycode = mob2YCode;
+			height = mob2Height;
+			width = mob2Width;
+		} else if (something == mob3) {
+			Xcode = mob3XCode;
+			Ycode = mob3YCode;
+			height = mob3Height;
+			width = mob3Width;
+		} else if (something == mob4) {
+			Xcode = mob4XCode;
+			Ycode = mob4YCode;
+			height = mob4Height;
+			width = mob4Width;
+		} else if (something == mob5) {
+			Xcode = mob5XCode;
+			Ycode = mob5YCode;
+			height = mob5Height;
+			width = mob5Width;
+		} else if (something == mob6) {
+			Xcode = mob6XCode;
+			Ycode = mob6YCode;
+			height = mob6Height;
+			width = mob6Width;
+		}
+		int x = Xcode + ((height-1)/2);
+		int y = -1;
+		if(Ycode - 3 >= 0) y = Ycode - 3;
+		if(y == -1) return -1;
+		return map[x][y];
+	}
+
+	public int Wattack(int something) {
+		int Xcode = 0;
+		int Ycode = 0;
+		int height = 0;
+		int width = 0;
+		if (something == charac) {
+			Xcode = characXCode;
+			Ycode = characYCode;
+			height = characHeight;
+			width = characWidth;
+		} else if (something == mob2) {
+			Xcode = mob2XCode;
+			Ycode = mob2YCode;
+			height = mob2Height;
+			width = mob2Width;
+		} else if (something == mob3) {
+			Xcode = mob3XCode;
+			Ycode = mob3YCode;
+			height = mob3Height;
+			width = mob3Width;
+		} else if (something == mob4) {
+			Xcode = mob4XCode;
+			Ycode = mob4YCode;
+			height = mob4Height;
+			width = mob4Width;
+		} else if (something == mob5) {
+			Xcode = mob5XCode;
+			Ycode = mob5YCode;
+			height = mob5Height;
+			width = mob5Width;
+		} else if (something == mob6) {
+			Xcode = mob6XCode;
+			Ycode = mob6YCode;
+			height = mob6Height;
+			width = mob6Width;
+		}
+		int x = -1;
+		int y = Ycode + ((width-1)/2);
+		if(Xcode - 3 >= 0) x = Xcode - 3;
+		if(x == -1) return -1;
+		return map[x][y];
+	}
+
+	public int Dattack(int something) {
+		int Xcode = 0;
+		int Ycode = 0;
+		int height = 0;
+		int width = 0;
+		if (something == charac) {
+			Xcode = characXCode;
+			Ycode = characYCode;
+			height = characHeight;
+			width = characWidth;
+		} else if (something == mob2) {
+			Xcode = mob2XCode;
+			Ycode = mob2YCode;
+			height = mob2Height;
+			width = mob2Width;
+		} else if (something == mob3) {
+			Xcode = mob3XCode;
+			Ycode = mob3YCode;
+			height = mob3Height;
+			width = mob3Width;
+		} else if (something == mob4) {
+			Xcode = mob4XCode;
+			Ycode = mob4YCode;
+			height = mob4Height;
+			width = mob4Width;
+		} else if (something == mob5) {
+			Xcode = mob5XCode;
+			Ycode = mob5YCode;
+			height = mob5Height;
+			width = mob5Width;
+		} else if (something == mob6) {
+			Xcode = mob6XCode;
+			Ycode = mob6YCode;
+			height = mob6Height;
+			width = mob6Width;
+		}
+		int x = Xcode + ((height-1)/2);
+		int y = -1; 
+		if(Ycode + width + 3 <= mapWidth) y = Ycode + width + 3;
+		if(y == -1) return -1;
+		return map[x][y];
+	}
+
+	public int Sattack(int something) {
+		int Xcode = 0;
+		int Ycode = 0;
+		int height = 0;
+		int width = 0;
+		if (something == charac) {
+			Xcode = characXCode;
+			Ycode = characYCode;
+			height = characHeight;
+			width = characWidth;
+		} else if (something == mob2) {
+			Xcode = mob2XCode;
+			Ycode = mob2YCode;
+			height = mob2Height;
+			width = mob2Width;
+		} else if (something == mob3) {
+			Xcode = mob3XCode;
+			Ycode = mob3YCode;
+			height = mob3Height;
+			width = mob3Width;
+		} else if (something == mob4) {
+			Xcode = mob4XCode;
+			Ycode = mob4YCode;
+			height = mob4Height;
+			width = mob4Width;
+		} else if (something == mob5) {
+			Xcode = mob5XCode;
+			Ycode = mob5YCode;
+			height = mob5Height;
+			width = mob5Width;
+		} else if (something == mob6) {
+			Xcode = mob6XCode;
+			Ycode = mob6YCode;
+			height = mob6Height;
+			width = mob6Width;
+		}
+		int x = -1;
+		int y = Ycode + ((width-1)/2);
+		if(Xcode + ((height-1)/2) >= 0) x = Xcode + height + 3;
+		if(x == -1) return -1;
+		return map[x][y];
+	}
+
+	public void doDelete(int something) {
+        int Xcode = 0;
+		int Ycode = 0;
+		int height = 0;
+		int width = 0;
+		if (something == charac) {
+			Xcode = characXCode;
+			Ycode = characYCode;
+			height = characHeight;
+			width = characWidth;
+		} else if (something == mob2) {
+			Xcode = mob2XCode;
+			Ycode = mob2YCode;
+			height = mob2Height;
+			width = mob2Width;
+		} else if (something == mob3) {
+			Xcode = mob3XCode;
+			Ycode = mob3YCode;
+			height = mob3Height;
+			width = mob3Width;
+		} else if (something == mob4) {
+			Xcode = mob4XCode;
+			Ycode = mob4YCode;
+			height = mob4Height;
+			width = mob4Width;
+		} else if (something == mob5) {
+			Xcode = mob5XCode;
+			Ycode = mob5YCode;
+			height = mob5Height;
+			width = mob5Width;
+		} else if (something == mob6) {
+			Xcode = mob6XCode;
+			Ycode = mob6YCode;
+			height = mob6Height;
+			width = mob6Width;
+		}
+		
+		for (int x = Xcode; x < Xcode + height; x++) {
+			for (int y = Ycode; y < Ycode + width; y++) {
+				map[x][y] = road;
+			}
+		}
+		
 	}
 
 }

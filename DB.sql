@@ -104,6 +104,9 @@ FROM charac;
 SELECT *
 FROM weapon;
 
+SELECT *
+FROM mob;
+
 INSERT INTO weapon SET id = 1, img = "https://github.com/user-attachments/assets/c4959d84-7072-44dc-9d2b-77399066448c";
 INSERT INTO weapon SET id = 2, img = "https://github.com/user-attachments/assets/69c14b43-19b2-4d02-82b4-539353cfd1dc";
 INSERT INTO weapon SET id = 3, img = "";
@@ -115,8 +118,11 @@ INSERT INTO weapon SET id = 8, img = "https://github.com/user-attachments/assets
 INSERT INTO weapon SET id = 9, img = "https://github.com/user-attachments/assets/2225ee6a-f091-4866-a4f2-a21e3b4e3743";
 
 INSERT INTO mob SET id = 1, img = "https://github.com/user-attachments/assets/71e26463-fd7c-46d7-9364-273a363ac839";
-INSERT INTO mob SET id = 2, img = "https://github.com/user-attachments/assets/d31f5283-2225-4937-b476-e2792dc01bf0";
-INSERT INTO mob SET id = 3, img = "https://github.com/user-attachments/assets/9040384a-b3b3-406b-a11b-2498dad1d7ce";
+INSERT INTO mob SET id = 2, img = "https://github.com/user-attachments/assets/76d8bc9f-d814-4f60-b99f-e6688a60acd5";
+INSERT INTO mob SET id = 3, img = "https://github.com/user-attachments/assets/b7a6c561-9176-4f1e-98c5-0d6723bcca2b";
+INSERT INTO mob SET id = 4, img = "https://github.com/user-attachments/assets/cfbe7f09-078b-4056-82f9-2f70983d0f52";
+INSERT INTO mob SET id = 5, img = "https://github.com/user-attachments/assets/0bc0f092-e535-4c6d-8631-07c87e80014f";
+INSERT INTO mob SET id = 6, img = "https://github.com/user-attachments/assets/397fa4af-9a52-48d1-8bd0-629f575198c2";
 
 SELECT C.*, W.img extra__weapon
 FROM charac C

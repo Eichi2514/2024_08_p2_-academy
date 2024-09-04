@@ -85,4 +85,34 @@ public class UsrMapController {
 	public String keyRight(int something) {
 		return mapService.keyRight(something);
 	}
+	
+	@RequestMapping("/usr/map/Aattack")
+	@ResponseBody
+	public int Aattack(int something) {
+		return mapService.Aattack(something);
+	}
+	
+	@RequestMapping("/usr/map/Wattack")
+	@ResponseBody
+	public int Wattack(int something) {
+		return mapService.Wattack(something);
+	}
+	
+	@RequestMapping("/usr/map/Dattack")
+	@ResponseBody
+	public int Dattack(int something) {
+		return mapService.Dattack(something);
+	}
+	
+	@RequestMapping("/usr/map/Sattack")
+	@ResponseBody
+	public int Sattack(int something) {
+		return mapService.Sattack(something);
+	}
+	
+	@RequestMapping("/usr/map/delete")
+	@ResponseBody
+	public void doDelete(int something) {
+		mapService.doDelete(something);
+	}
 }

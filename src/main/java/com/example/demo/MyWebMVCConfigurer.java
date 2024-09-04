@@ -21,6 +21,11 @@ public class MyWebMVCConfigurer implements WebMvcConfigurer {
 
 	@Autowired
 	NeedLogoutInterceptor needLogoutInterceptor;
+	
+	/*
+	 * @Autowired
+	 * StageInterceptor stageInterceptor;
+	 */
 
 
 		public void addInterceptors(InterceptorRegistry registry) {
@@ -46,6 +51,11 @@ public class MyWebMVCConfigurer implements WebMvcConfigurer {
 			ir.addPathPatterns("/usr/member/doLogin");
 			ir.addPathPatterns("/usr/member/join");
 			ir.addPathPatterns("/usr/member/doJoin");
+			
+			/*
+			 * ir = registry.addInterceptor(stageInterceptor);
+			 * ir.addPathPatterns("/usr/map/front");
+			 */
 
 	}
 

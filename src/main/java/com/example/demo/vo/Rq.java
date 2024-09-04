@@ -80,7 +80,7 @@ public class Rq {
 	}
 
 	public void initBeforeActionInterceotor() {
-		System.err.println("Rq 실행");
+//		System.err.println("Rq 실행");
 		
 	}
 
