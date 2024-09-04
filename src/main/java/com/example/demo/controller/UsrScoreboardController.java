@@ -7,15 +7,24 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.example.demo.service.CharacService;
 import com.example.demo.service.ScoreboardService;
+import com.example.demo.vo.Charac;
+import com.example.demo.vo.Rq;
 import com.example.demo.vo.Scoreboard;
+
+import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
 public class UsrScoreboardController {
 	
 	@Autowired
 	ScoreboardService scoreboardService;
+	
+	@Autowired
+	private CharacService characService;
 
 	@RequestMapping("/usr/scoreboard/list")
 	public String showList(Model model, @RequestParam(defaultValue = "1") int page) {
@@ -45,5 +54,15 @@ public class UsrScoreboardController {
 		model.addAttribute("page", page);
 		
 		return "/usr/scoreboard/list";
+	}
+	
+	@RequestMapping("/usr/scoreboard/log")
+	@ResponseBody
+	public void log(HttpServletRequest req) {
+		Rq rq = (Rq) req.getAttribute("rq"); // HttpServletRequest에 저장돼 있는 정보 가져오기
+		
+		Charac charac = characService.characChack(rq.getLoginedMemberId()); // 캐릭터 가져오기
+				
+		scoreboardService.log(rq.getLoginedMemberId(), charac.getFloor(), charac.getRoom());
 	}
 }

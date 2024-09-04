@@ -6,8 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.example.demo.service.CharacService;
 import com.example.demo.service.MemberService;
 import com.example.demo.util.Ut;
+import com.example.demo.vo.Charac;
 import com.example.demo.vo.Member;
 import com.example.demo.vo.ResultData;
 import com.example.demo.vo.Rq;
@@ -23,6 +25,9 @@ public class UsrMemberController {
 
 	@Autowired
 	private MemberService memberService;
+	
+	@Autowired
+	private CharacService characService;
 	
 	@RequestMapping("/usr/member/doLogout")
 	@ResponseBody
@@ -64,6 +69,15 @@ public class UsrMemberController {
 		}
 
 		rq.login(member);
+		
+		// System.out.println("memberId : "+ member.getId());
+		
+		Charac charac = characService.characChack(member.getId()); // 캐릭터가 존재하는지 확인하기 위해 가져와보고
+		
+		if (charac == null) { // 캐릭터가 없다면
+
+			characService.characCreation(member.getId()); // 생성
+		}
 
 		return Ut.jsReplace("S-1", Ut.f("%s님 환영합니다", member.getNickname()), "/");
 	}

@@ -30,6 +30,9 @@ public class UsrMapController {
 
 	@RequestMapping("/usr/map/front")
 	public String showFront(HttpServletRequest req, Model model, int stage) {
+		
+		System.out.println(stage);
+
 		int floor = stage / 5;
 		int room = stage % 5;
 		// xcode = 23
@@ -39,25 +42,19 @@ public class UsrMapController {
 
 		Rq rq = (Rq) req.getAttribute("rq"); // HttpServletRequest에 저장돼 있는 정보 가져오기
 
-		Charac charac = characService.characChack(rq.getLoginedMemberId()); // 캐릭터가 존재하는지 확인하기 위해 가져와보고
+		Charac charac = characService.characChack(rq.getLoginedMemberId()); // 캐릭터 가져오기
 
-		if (charac == null) { // 캐릭터가 없다면
-
-			characService.characCreation(rq.getLoginedMemberId()); // 생성 후
-
-			charac = characService.characChack(rq.getLoginedMemberId()); // 가져와서
-
-			model.addAttribute("charac", charac); // 모델로 보내주고
-
-		} else { // 있다면
-
-			model.addAttribute("charac", charac); // 바로 보내주기
-		}
-
+		model.addAttribute("charac", charac); // 캐릭터 정보
 		model.addAttribute("mob", mob); // 몬스터 정보
 		model.addAttribute("codes", codes); // 몬스터 위치정보
 		model.addAttribute("floor", floor); // 현재 층 정보
 		model.addAttribute("room", room); // 현재 방 정보
+		
+		int originallyStage = (charac.getFloor() * 5) + charac.getRoom();
+		
+		if ((originallyStage < stage || originallyStage > stage) && stage != 5) {
+			return "/usr/home/main";
+		}
 
 		return "/usr/map/front";
 	}
@@ -85,31 +82,31 @@ public class UsrMapController {
 	public String keyRight(int something) {
 		return mapService.keyRight(something);
 	}
-	
+
 	@RequestMapping("/usr/map/Aattack")
 	@ResponseBody
 	public int Aattack(int something) {
 		return mapService.Aattack(something);
 	}
-	
+
 	@RequestMapping("/usr/map/Wattack")
 	@ResponseBody
 	public int Wattack(int something) {
 		return mapService.Wattack(something);
 	}
-	
+
 	@RequestMapping("/usr/map/Dattack")
 	@ResponseBody
 	public int Dattack(int something) {
 		return mapService.Dattack(something);
 	}
-	
+
 	@RequestMapping("/usr/map/Sattack")
 	@ResponseBody
 	public int Sattack(int something) {
 		return mapService.Sattack(something);
 	}
-	
+
 	@RequestMapping("/usr/map/delete")
 	@ResponseBody
 	public void doDelete(int something) {

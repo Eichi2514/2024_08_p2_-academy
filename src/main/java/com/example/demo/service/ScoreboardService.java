@@ -31,4 +31,8 @@ public class ScoreboardService {
 		return scoreboardRepository.totalCnt();
 	}
 
+	public void log(int memberId, int floor, int room) {
+		scoreboardRepository.log(memberId, floor, room);
+	}
+
 }

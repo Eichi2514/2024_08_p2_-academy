@@ -42,7 +42,7 @@
 			</c:if>
 			<div class="hp absolute text-center">
 				생명 :
-				<section class="inline-block">${charac.hp}</section>
+				<section class="hp_bar inline-block">${charac.hp}</section>
 			</div>
 			<div class="weapon absolute text-center">
 			착용무기

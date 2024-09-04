@@ -146,7 +146,7 @@ public class MapService {
 			}
 			System.err.println();
 		}
-        
+
 		// 몹의 좌표들 저장할 맵 생성
 		Map<String, Integer> codes = new HashMap<String, Integer>();
 
@@ -171,7 +171,7 @@ public class MapService {
 		int Ycode = 0;
 		int height = 0;
 		int width = 0;
-		
+
 		// 어떤 캐릭터가 실행했는지 확인 후 변수에 옮겨담기
 		if (something == charac) {
 			Xcode = characXCode;
@@ -207,7 +207,9 @@ public class MapService {
 
 		// something 주위 빈공간인지 확인
 		for (int y = Ycode; y < Ycode + width; y++) {
-			if (map[Xcode - 1][y] != road) {
+			if (map[Xcode - 1][y] == charac) {
+				return "charac";
+			} else if (map[Xcode - 1][y] != road) {
 				// 맵 상황 확인
 				System.out.println("==========================================");
 				if (something == mob2 || something == mob6) {
@@ -229,7 +231,7 @@ public class MapService {
 			}
 		}
 
-		// 
+		//
 		Xcode--;
 
 		for (int x = Xcode; x < Xcode + height; x++) {
@@ -303,7 +305,9 @@ public class MapService {
 		}
 
 		for (int y = Ycode; y < Ycode + width; y++) {
-			if (map[Xcode + height][y] != road) {
+			if (map[Xcode + height][y] == charac) {
+				return "charac";
+			} else if (map[Xcode + height][y] != road) {
 				// 맵 상황 확인
 				System.out.println("==========================================");
 				if (something == mob2 || something == mob6) {
@@ -397,7 +401,9 @@ public class MapService {
 		}
 
 		for (int x = Xcode; x < Xcode + height; x++) {
-			if (map[x][Ycode - 1] != road) {
+			if (map[x][Ycode - 1] == charac) {
+				return "charac";
+			} else if (map[x][Ycode - 1] != road) {
 				// 맵 상황 확인
 				System.out.println("==========================================");
 				if (something == mob2 || something == mob6) {
@@ -491,7 +497,9 @@ public class MapService {
 		}
 
 		for (int x = Xcode; x < Xcode + height; x++) {
-			if (map[x][Ycode + width] != road) {
+			if (map[x][Ycode + width] == charac) {
+				return "charac";
+			} else if (map[x][Ycode + width] != road) {
 				// 맵 상황 확인
 				System.out.println("==========================================");
 				if (something == mob2 || something == mob6) {
@@ -583,10 +591,12 @@ public class MapService {
 			height = mob6Height;
 			width = mob6Width;
 		}
-		int x = Xcode + ((height-1)/2);
+		int x = Xcode + ((height - 1) / 2);
 		int y = -1;
-		if(Ycode - 3 >= 0) y = Ycode - 3;
-		if(y == -1) return -1;
+		if (Ycode - 3 >= 0)
+			y = Ycode - 3;
+		if (y == -1)
+			return -1;
 		return map[x][y];
 	}
 
@@ -627,9 +637,11 @@ public class MapService {
 			width = mob6Width;
 		}
 		int x = -1;
-		int y = Ycode + ((width-1)/2);
-		if(Xcode - 3 >= 0) x = Xcode - 3;
-		if(x == -1) return -1;
+		int y = Ycode + ((width - 1) / 2);
+		if (Xcode - 3 >= 0)
+			x = Xcode - 3;
+		if (x == -1)
+			return -1;
 		return map[x][y];
 	}
 
@@ -669,10 +681,12 @@ public class MapService {
 			height = mob6Height;
 			width = mob6Width;
 		}
-		int x = Xcode + ((height-1)/2);
-		int y = -1; 
-		if(Ycode + width + 3 <= mapWidth) y = Ycode + width + 3;
-		if(y == -1) return -1;
+		int x = Xcode + ((height - 1) / 2);
+		int y = -1;
+		if (Ycode + width + 3 <= mapWidth)
+			y = Ycode + width + 3;
+		if (y == -1)
+			return -1;
 		return map[x][y];
 	}
 
@@ -713,14 +727,16 @@ public class MapService {
 			width = mob6Width;
 		}
 		int x = -1;
-		int y = Ycode + ((width-1)/2);
-		if(Xcode + ((height-1)/2) >= 0) x = Xcode + height + 3;
-		if(x == -1) return -1;
+		int y = Ycode + ((width - 1) / 2);
+		if (Xcode + ((height - 1) / 2) >= 0)
+			x = Xcode + height + 3;
+		if (x == -1)
+			return -1;
 		return map[x][y];
 	}
 
 	public void doDelete(int something) {
-        int Xcode = 0;
+		int Xcode = 0;
 		int Ycode = 0;
 		int height = 0;
 		int width = 0;
@@ -755,13 +771,13 @@ public class MapService {
 			height = mob6Height;
 			width = mob6Width;
 		}
-		
+
 		for (int x = Xcode; x < Xcode + height; x++) {
 			for (int y = Ycode; y < Ycode + width; y++) {
 				map[x][y] = road;
 			}
 		}
-		
+
 	}
 
 }

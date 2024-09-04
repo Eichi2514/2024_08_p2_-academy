@@ -20,22 +20,24 @@ public class UsrHomeController {
 
 	@Autowired
 	CharacService characService;
-	
+
 	@Autowired
 	ScoreboardService scoreboardService;
 
 	@RequestMapping("/usr/home/main")
 	public String showMain(Model model, HttpServletRequest req) {
-		
+
 		List<Scoreboard> scoreboards = scoreboardService.scoreboardTop3();
-		
+
 		Rq rq = (Rq) req.getAttribute("rq");
-		
-		Charac charac = characService.characChack(rq.getLoginedMemberId());
-		
+
+		if (rq.getLoginedMemberId() != 0) {
+			Charac charac = characService.characChack(rq.getLoginedMemberId());
+			model.addAttribute("charac", charac);
+		}
+
 		model.addAttribute("scoreboards", scoreboards);
-		model.addAttribute("charac", charac);		
-		
+
 		return "/usr/home/main";
 	}
 

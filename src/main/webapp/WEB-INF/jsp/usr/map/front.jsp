@@ -270,8 +270,9 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 						}else if(something == 6){
 							UD6 -= 2;
 							$(".mob6").css("top", UD6 + "vh");
-						}
-						
+						}						
+					} else if (data == 'charac') {
+						hpDown();
 					}
 				},
 				error : function(jqXHR, textStatus, errorThrown) {
@@ -306,6 +307,8 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 							UD6 += 2;
 							$(".mob6").css("top", UD6 + "vh");
 						}
+					} else if (data == 'charac') {
+						hpDown();
 					}
 				},
 				error : function(jqXHR, textStatus, errorThrown) {
@@ -324,6 +327,7 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 				dataType : 'text',
 				success : function(data) {
 					if (data == 'success') {
+						console.log('HP : ' + front_hp);
 						if(something == 2){
 							LR2 -= 2;
 							$(".mob2").css("left", LR2 + "vh");
@@ -340,6 +344,8 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 							LR6 -= 2;
 							$(".mob6").css("left", LR6 + "vh");
 						}
+					} else if (data == 'charac') {
+						hpDown();						
 					}
 				},
 				error : function(jqXHR, textStatus, errorThrown) {
@@ -374,6 +380,8 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 							LR6 += 2;
 							$(".mob6").css("left", LR6 + "vh");
 						}
+					} else if (data == 'charac') {
+						hpDown();
 					}
 				},
 				error : function(jqXHR, textStatus, errorThrown) {
@@ -381,6 +389,26 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 				}
 			});
 		}
+		
+// hp 감소
+function hpDown(){
+	front_hp -= 1;
+	$('.hp_bar').text(front_hp);
+	gameLost();
+}
+
+// 죽었을 시 기록 남기기
+function gameLost() {
+    $.ajax({
+        url : '/usr/scoreboard/log',
+        type : 'POST',
+        dataType : 'text',
+        error : function(jqXHR, textStatus, errorThrown) {
+            alert('오류 발생 : ' + textStatus);
+        }
+    });
+}
+
 		
 // 문 개방
 function showDoor(){
@@ -493,11 +521,11 @@ function show(){
 								doDelete(6);
 							}
 						} 
-						console.log("몬스터2 hp : " + mob2_hp);
-						console.log("몬스터3 hp : " + mob3_hp);
-						console.log("몬스터4 hp : " + mob4_hp);
-						console.log("몬스터5 hp : " + mob5_hp);
-						console.log("몬스터6 hp : " + mob6_hp);
+						// console.log("몬스터2 hp : " + mob2_hp);
+						// console.log("몬스터3 hp : " + mob3_hp);
+						// console.log("몬스터4 hp : " + mob4_hp);
+						// console.log("몬스터5 hp : " + mob5_hp);
+						// console.log("몬스터6 hp : " + mob6_hp);
 						showDoor();
 						attackA_motion();
 					},
@@ -553,11 +581,11 @@ function show(){
 								doDelete(6);
 							}
 						}   
-						console.log("몬스터2 hp : " + mob2_hp);
-						console.log("몬스터3 hp : " + mob3_hp);
-						console.log("몬스터4 hp : " + mob4_hp);
-						console.log("몬스터5 hp : " + mob5_hp);
-						console.log("몬스터6 hp : " + mob6_hp);
+						// console.log("몬스터2 hp : " + mob2_hp);
+						// console.log("몬스터3 hp : " + mob3_hp);
+						// console.log("몬스터4 hp : " + mob4_hp);
+						// console.log("몬스터5 hp : " + mob5_hp);
+						// console.log("몬스터6 hp : " + mob6_hp);
 						showDoor();
 						attackW_motion();
 					},
@@ -613,11 +641,11 @@ function show(){
 								doDelete(6);
 							}
 						}  
-						console.log("몬스터2 hp : " + mob2_hp);
-						console.log("몬스터3 hp : " + mob3_hp);
-						console.log("몬스터4 hp : " + mob4_hp);
-						console.log("몬스터5 hp : " + mob5_hp);
-						console.log("몬스터6 hp : " + mob6_hp);
+						// console.log("몬스터2 hp : " + mob2_hp);
+						// console.log("몬스터3 hp : " + mob3_hp);
+						// console.log("몬스터4 hp : " + mob4_hp);
+						// console.log("몬스터5 hp : " + mob5_hp);
+						// console.log("몬스터6 hp : " + mob6_hp);
 						showDoor();
 						attackD_motion();
 					},
@@ -673,11 +701,11 @@ function show(){
 								doDelete(6);
 							}
 						} 
-						console.log("몬스터2 hp : " + mob2_hp);
-						console.log("몬스터3 hp : " + mob3_hp);
-						console.log("몬스터4 hp : " + mob4_hp);
-						console.log("몬스터5 hp : " + mob5_hp);
-						console.log("몬스터6 hp : " + mob6_hp);
+						// console.log("몬스터2 hp : " + mob2_hp);
+						// console.log("몬스터3 hp : " + mob3_hp);
+						// console.log("몬스터4 hp : " + mob4_hp);
+						// console.log("몬스터5 hp : " + mob5_hp);
+						// console.log("몬스터6 hp : " + mob6_hp);
 						showDoor();
 						attackS_motion();
 					},
