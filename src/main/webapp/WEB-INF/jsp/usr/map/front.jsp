@@ -66,9 +66,14 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 </style>
 
 <script type="text/javascript">
+    // 캐릭터 정보
+    var front_hp = "${charac.hp}";
+    var stage;
+    var front_weaponId = "${charac.weaponId}";
+
     // 스테이지 이동
 	function stageUp() {
-		var stage = "${param.stage+1}";
+		stage = "${param.stage+1}";
 		var doorChack = $(".door").hasClass("hidden");
 		if (LR > 79 && 38 < UD && UD < 52 && !doorChack) {
 			$(".door").fadeOut(1000).addClass('hidden');
@@ -78,7 +83,30 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 			$(".mob5").fadeIn(1000).removeClass('hidden');
 			$(".mob6").fadeIn(1000).removeClass('hidden');
 			location.href = '../map/front?stage=' + stage;
+			console.log("HP:", front_hp);
+			console.log("Stage:", stage);
+			console.log("Weapon ID:", front_weaponId);
+			update(front_hp, stage, front_weaponId);
 		}
+	}  
+    
+    // 캐릭터 정보 업데이트
+	function update(hp, stage, weaponId) {
+		$.ajax({
+			url : '/usr/charac/update',
+			type : 'POST',
+			data : {
+				hp : hp,
+				stage : stage,
+				weaponId : weaponId
+			},
+			dataType : 'text',
+			success : function(data) {
+			},
+			error : function(jqXHR, textStatus, errorThrown) {
+				alert('오류 발생 : ' + textStatus);
+			}
+		});
 	}
 	
     // 몬스터 좌표 셋팅
@@ -361,6 +389,7 @@ function showDoor(){
 	}
 }
 
+// 몬스터 처치 시 자바 맵에서도 삭제
 function doDelete(something) {
 	$.ajax({
 		url : '/usr/map/delete',
@@ -431,35 +460,35 @@ function show(){
 						if (data == 2) {
 							mob2_hp -= 1;
 							if(mob2_hp == 0){
-								$(".mob2").fadeOut(1000).addClass('hidden');
+								$(".mob2").fadeOut(10000).addClass('hidden');
 							    clearInterval(stop2);
 							    doDelete(2);
 							}
 						} else if (data == 3) {
 							mob3_hp -= 1;
 							if(mob3_hp == 0){
-								$(".mob3").fadeOut(1000).addClass('hidden');
+								$(".mob3").fadeOut(10000).addClass('hidden');
 								clearInterval(stop3);
 								doDelete(3);
 							}
 						} else if (data == 4) {
 							mob4_hp -= 1;
 							if(mob4_hp == 0){
-								$(".mob4").fadeOut(1000).addClass('hidden');
+								$(".mob4").fadeOut(10000).addClass('hidden');
 								clearInterval(stop4);
 								doDelete(4);
 							}
 						} else if (data == 5) {
 							mob5_hp -= 1;
 							if(mob5_hp == 0){
-								$(".mob5").fadeOut(1000).addClass('hidden');
+								$(".mob5").fadeOut(10000).addClass('hidden');
 								clearInterval(stop5);
 								doDelete(5);
 							}
 						} else if (data == 6) {
 							mob6_hp -= 1;
 							if(mob6_hp == 0){
-								$(".mob6").fadeOut(1000).addClass('hidden');
+								$(".mob6").fadeOut(10000).addClass('hidden');
 								clearInterval(stop6);
 								doDelete(6);
 							}
@@ -491,35 +520,35 @@ function show(){
 						if (data == 2) {
 							mob2_hp -= 1;
 							if(mob2_hp == 0){
-								$(".mob2").fadeOut(1000).addClass('hidden');
+								$(".mob2").fadeOut(10000).addClass('hidden');
 							    clearInterval(stop2);
 							    doDelete(2);
 							}
 						} else if (data == 3) {
 							mob3_hp -= 1;
 							if(mob3_hp == 0){
-								$(".mob3").fadeOut(1000).addClass('hidden');
+								$(".mob3").fadeOut(10000).addClass('hidden');
 								clearInterval(stop3);
 								doDelete(3);
 							}
 						} else if (data == 4) {
 							mob4_hp -= 1;
 							if(mob4_hp == 0){
-								$(".mob4").fadeOut(1000).addClass('hidden');
+								$(".mob4").fadeOut(10000).addClass('hidden');
 								clearInterval(stop4);
 								doDelete(4);
 							}
 						} else if (data == 5) {
 							mob5_hp -= 1;
 							if(mob5_hp == 0){
-								$(".mob5").fadeOut(1000).addClass('hidden');
+								$(".mob5").fadeOut(10000).addClass('hidden');
 								clearInterval(stop5);
 								doDelete(5);
 							}
 						} else if (data == 6) {
 							mob6_hp -= 1;
 							if(mob6_hp == 0){
-								$(".mob6").fadeOut(1000).addClass('hidden');
+								$(".mob6").fadeOut(10000).addClass('hidden');
 								clearInterval(stop6);
 								doDelete(6);
 							}
@@ -551,35 +580,35 @@ function show(){
 						if (data == 2) {
 							mob2_hp -= 1;
 							if(mob2_hp == 0){
-								$(".mob2").fadeOut(1000).addClass('hidden');
+								$(".mob2").fadeOut(10000).addClass('hidden');
 							    clearInterval(stop2);
 							    doDelete(2);
 							}
 						} else if (data == 3) {
 							mob3_hp -= 1;
 							if(mob3_hp == 0){
-								$(".mob3").fadeOut(1000).addClass('hidden');
+								$(".mob3").fadeOut(10000).addClass('hidden');
 								clearInterval(stop3);
 								doDelete(3);
 							}
 						} else if (data == 4) {
 							mob4_hp -= 1;
 							if(mob4_hp == 0){
-								$(".mob4").fadeOut(1000).addClass('hidden');
+								$(".mob4").fadeOut(10000).addClass('hidden');
 								clearInterval(stop4);
 								doDelete(4);
 							}
 						} else if (data == 5) {
 							mob5_hp -= 1;
 							if(mob5_hp == 0){
-								$(".mob5").fadeOut(1000).addClass('hidden');
+								$(".mob5").fadeOut(10000).addClass('hidden');
 								clearInterval(stop5);
 								doDelete(5);
 							}
 						} else if (data == 6) {
 							mob6_hp -= 1;
 							if(mob6_hp == 0){
-								$(".mob6").fadeOut(1000).addClass('hidden');
+								$(".mob6").fadeOut(10000).addClass('hidden');
 								clearInterval(stop6);
 								doDelete(6);
 							}
@@ -611,35 +640,35 @@ function show(){
 						if (data == 2) {
 							mob2_hp -= 1;
 							if(mob2_hp == 0){
-								$(".mob2").fadeOut(1000).addClass('hidden');
+								$(".mob2").fadeOut(10000).addClass('hidden');
 							    clearInterval(stop2);
 							    doDelete(2);
 							}
 						} else if (data == 3) {
 							mob3_hp -= 1;
 							if(mob3_hp == 0){
-								$(".mob3").fadeOut(1000).addClass('hidden');
+								$(".mob3").fadeOut(10000).addClass('hidden');
 								clearInterval(stop3);
 								doDelete(3);
 							}
 						} else if (data == 4) {
 							mob4_hp -= 1;
 							if(mob4_hp == 0){
-								$(".mob4").fadeOut(1000).addClass('hidden');
+								$(".mob4").fadeOut(10000).addClass('hidden');
 								clearInterval(stop4);
 								doDelete(4);
 							}
 						} else if (data == 5) {
 							mob5_hp -= 1;
 							if(mob5_hp == 0){
-								$(".mob5").fadeOut(1000).addClass('hidden');
+								$(".mob5").fadeOut(10000).addClass('hidden');
 								clearInterval(stop5);
 								doDelete(5);
 							}
 						} else if (data == 6) {
 							mob6_hp -= 1;
 							if(mob6_hp == 0){
-								$(".mob6").fadeOut(1000).addClass('hidden');
+								$(".mob6").fadeOut(10000).addClass('hidden');
 								clearInterval(stop6);
 								doDelete(6);
 							}
