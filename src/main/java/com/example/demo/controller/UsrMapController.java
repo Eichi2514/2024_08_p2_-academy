@@ -30,7 +30,7 @@ public class UsrMapController {
 
 	@RequestMapping("/usr/map/front")
 	public String showFront(HttpServletRequest req, Model model, int stage) {
-		
+
 		System.out.println(stage);
 
 		int floor = stage / 5;
@@ -49,9 +49,9 @@ public class UsrMapController {
 		model.addAttribute("codes", codes); // 몬스터 위치정보
 		model.addAttribute("floor", floor); // 현재 층 정보
 		model.addAttribute("room", room); // 현재 방 정보
-		
+
 		int originallyStage = (charac.getFloor() * 5) + charac.getRoom();
-		
+
 		if ((originallyStage < stage || originallyStage > stage) && stage != 5) {
 			return "/usr/home/main";
 		}
@@ -112,23 +112,24 @@ public class UsrMapController {
 	public void doDelete(int something) {
 		mapService.doDelete(something);
 	}
-	
+
 	@RequestMapping("/usr/map/over")
 	public String showOver(HttpServletRequest req, Model model) {
 		Rq rq = (Rq) req.getAttribute("rq"); // HttpServletRequest에 저장돼 있는 정보 가져오기
 
 		Charac charac = characService.characChack(rq.getLoginedMemberId()); // 캐릭터 가져오기
-		
+
 		int floor = charac.getFloor();
 		int room = charac.getRoom();
-		
+
 		model.addAttribute("charac", charac); // 캐릭터 정보
 		model.addAttribute("floor", floor); // 현재 층 정보
 		model.addAttribute("room", room); // 현재 방 정보
-		
-		characService.delete(rq.getLoginedMemberId()); // 캐릭터 삭제
-		rq.logout();
-		
+
+		characService.delete(rq.getLoginedMemberId()); // 캐릭터 삭제 후
+
+		characService.characCreation(rq.getLoginedMemberId()); // 새로 생성		
+
 		return "/usr/map/over";
 	}
 }

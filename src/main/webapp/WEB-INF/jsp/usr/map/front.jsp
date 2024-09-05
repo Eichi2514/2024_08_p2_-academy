@@ -718,7 +718,7 @@ function show(){
 				});
 			}
 	       
-	       show();
+	       window.onload = show();
 		
 </script>
 <!-- p2 맵 배경 -->

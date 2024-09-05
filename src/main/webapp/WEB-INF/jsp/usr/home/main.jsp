@@ -22,14 +22,13 @@
 				<tr>
 					<td style="text-align: center; padding: 0;">${scoreboard.extra__user}</td>
 					<td
-						style="text-align: center; padding-left: 1vh; padding-right: 1vh; padding-top: 0; padding-bottom: 1vh;">
-						:</td>
+						style="text-align: center; padding-left: 1vh; padding-right: 1vh; padding-top: 0; padding-bottom: 1vh;">:</td>
 					<td
-						style="text-align: center; padding-left: 0; padding-right: 0.5vh; padding-top: 0; padding-bottom: 0;">${scoreboard.floor}층</td>
-					<td style="text-align: center; padding: 0;">
-					<c:if test="${scoreboard.room == 0}">보스방</c:if>
-					<c:if test="${scoreboard.room != 0}">${scoreboard.room}번방</c:if>
-					</td>
+						style="text-align: center; padding-left: 0; padding-right: 0.5vh; padding-top: 0; padding-bottom: 0;">
+						${scoreboard.room == 0 ? scoreboard.floor-1 : scoreboard.floor}층</td>
+
+					<td style="text-align: center; padding: 0;">${scoreboard.room == 0 ? '보스' : scoreboard.room}${scoreboard.room == 0 ? '방' : '번방'}</td>
+
 				</tr>
 			</c:forEach>
 		</tbody>

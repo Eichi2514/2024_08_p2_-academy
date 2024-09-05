@@ -57,43 +57,43 @@ nickname = '관리자',
 gender = 1;
 
 INSERT INTO `member`
-SET regDate = NOW(),
-updateDate = NOW(),
-loginId = 'qwe',
-loginPw = 'qwe',
-`name` = '회원',
-nickname = '회원',
-gender = 0;
+SET regDate = '2024-09-05 13:59:06',
+updateDate = '2024-09-05 13:59:06',
+loginId = 'asdf',
+loginPw = 'asdf',
+`name` = 'asdf',
+nickname = 'asdf',
+gender = 1;
 
 INSERT INTO scoreboard
-SET regDate = NOW(),
-memberId = 1,
-`floor` = 1,
-room = 2;
-
-INSERT INTO scoreboard
-SET regDate = NOW(),
+SET regDate = '2024-09-05 13:59:52',
 memberId = 2,
-`floor` = 3,
-room = 2;
+`floor` = 1,
+room = 4;
 
 INSERT INTO scoreboard
-SET regDate = NOW(),
+SET regDate = '2024-09-05 14:35:58',
 memberId = 1,
-`floor` = 1,
+`floor` = 7,
 room = 1;
 
-INSERT INTO scoreboard
-SET regDate = NOW(),
-memberId = 2,
-`floor` = 3,
-room = 2;
+## INSERT INTO scoreboard
+## SET regDate = NOW(),
+## memberId = 1,
+## `floor` = 1,
+## room = 1;
 
-INSERT INTO scoreboard
-SET regDate = NOW(),
-memberId = 1,
-`floor` = 99,
-room = 5;
+## INSERT INTO scoreboard
+## SET regDate = NOW(),
+## memberId = 2,
+## `floor` = 3,
+## room = 2;
+
+## INSERT INTO scoreboard
+## SET regDate = NOW(),
+## memberId = 1,
+## `floor` = 99,
+## room = 5;
 
 SELECT *
 FROM `member`;
@@ -103,6 +103,9 @@ FROM charac;
 
 SELECT *
 FROM weapon;
+
+SELECT *
+FROM scoreboard;
 
 SELECT *
 FROM mob;
