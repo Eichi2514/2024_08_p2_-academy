@@ -8,28 +8,34 @@
 <img class="bg_img"
 	src="https://github.com/user-attachments/assets/57d5f274-24c1-486b-9679-7aa7b6fa9017"
 	alt="" />
-	
-<!-- p2 두루마리 -->	
+
+<!-- p2 두루마리 -->
 <div class="TOP3 absolute">
-<img class="TOP3_img absolute"
-	src="https://github.com/user-attachments/assets/2ad87f22-47df-4929-9e1d-10b172cb3aa7"
-	alt="" />
+	<img class="TOP3_img absolute"
+		src="https://github.com/user-attachments/assets/2ad87f22-47df-4929-9e1d-10b172cb3aa7"
+		alt="" />
 
-<table class="TOP3_table absolute">
-	<caption style="padding-bottom: 1vh;">TOP 3</caption>
-	<tbody>
-		<c:forEach var="scoreboard" items="${scoreboards}">
-			<tr>
-				<td style="text-align: center; padding: 0;">${scoreboard.extra__user}</td>
-				<td style="text-align: center; padding-left: 1vh; padding-right: 1vh; padding-top: 0; padding-bottom: 1vh;"> : </td>
-				<td style="text-align: center; padding-left: 0; padding-right: 0.5vh; padding-top: 0; padding-bottom: 0;">${scoreboard.floor}층</td>
-				<td style="text-align: center; padding: 0;">${scoreboard.room}번방</td>
-			</tr>
-		</c:forEach>
-	</tbody>	
-</table>
+	<table class="TOP3_table absolute">
+		<caption style="padding-bottom: 1vh;">TOP 3</caption>
+		<tbody>
+			<c:forEach var="scoreboard" items="${scoreboards}">
+				<tr>
+					<td style="text-align: center; padding: 0;">${scoreboard.extra__user}</td>
+					<td
+						style="text-align: center; padding-left: 1vh; padding-right: 1vh; padding-top: 0; padding-bottom: 1vh;">
+						:</td>
+					<td
+						style="text-align: center; padding-left: 0; padding-right: 0.5vh; padding-top: 0; padding-bottom: 0;">${scoreboard.floor}층</td>
+					<td style="text-align: center; padding: 0;">
+					<c:if test="${scoreboard.room == 0}">보스방</c:if>
+					<c:if test="${scoreboard.room != 0}">${scoreboard.room}번방</c:if>
+					</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
 
-<a class="TOP3_list_bt absolute" href="../scoreboard/list">리스트</a>
+	<a class="TOP3_list_bt absolute" href="../scoreboard/list">리스트</a>
 </div>
 
 <form method="POST" action="../member/doLogin">
@@ -58,7 +64,8 @@
 		<div class="member_name1 absolute text-center">${rq.loginedMember.nickname }님</div>
 		<div class="member_name2 absolute text-center">환영합니다</div>
 		<div class="start absolute cursor-pointer">
-			<a class="start-text absolute" href="../map/front?stage=${(charac.floor * 5) + charac.room}">게임시작</a>
+			<a class="start-text absolute"
+				href="../map/front?stage=${(charac.floor * 5) + charac.room}">게임시작</a>
 			<!-- p2 게임시작 호버 전 -->
 			<img class="start-1"
 				src="https://github.com/user-attachments/assets/dddce550-c44d-45df-adfb-479191d45307"

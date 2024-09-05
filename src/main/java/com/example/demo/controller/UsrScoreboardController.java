@@ -63,9 +63,11 @@ public class UsrScoreboardController {
 		Rq rq = (Rq) req.getAttribute("rq"); // HttpServletRequest에 저장돼 있는 정보 가져오기
 		
 		Charac charac = characService.characChack(rq.getLoginedMemberId()); // 캐릭터 가져오기
-		System.out.println(rq.getLoginedMemberId());
-		System.out.println(charac.getFloor());
-		System.out.println(charac.getRoom());
+		/*
+		 * System.out.println(rq.getLoginedMemberId());
+		 * System.out.println(charac.getFloor()); 
+		 * System.out.println(charac.getRoom());
+		 */
 		scoreboardService.log(rq.getLoginedMemberId(), charac.getFloor(), charac.getRoom());
 	}
 }
