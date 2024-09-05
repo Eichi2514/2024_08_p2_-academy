@@ -507,7 +507,7 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 
 .Dattack {
 	left: 14vh;
-	top: 4vh;	
+	top: 4vh;
 }
 
 .Sattack {
@@ -523,4 +523,17 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 .front_bossMob_img {
 	width: 20vh;
 	height: 20vh;
+}
+
+/* 게임오버화면 */
+.over {
+	top: 2vh;
+	left: 0;
+	height: 100vh;
+	width: 100vh;
+}
+.over_bt{
+	font-size : 15vh;
+	-webkit-text-stroke: 0.05vh white;
+	padding: 25vh;
 }

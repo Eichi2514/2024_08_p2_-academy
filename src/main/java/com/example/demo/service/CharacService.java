@@ -26,6 +26,10 @@ public class CharacService {
 
 	public void update(int hp, int floor, int room, int weaponId, int memberId) {
 		characRepository.update(hp, floor, room, weaponId, memberId);		
+	}
+
+	public void delete(int memberId) {
+		characRepository.delete(memberId);
 	}	
 
 }

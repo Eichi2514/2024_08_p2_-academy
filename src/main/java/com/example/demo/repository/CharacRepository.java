@@ -1,4 +1,5 @@
 package com.example.demo.repository;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -35,5 +36,12 @@ public interface CharacRepository {
 			weaponId = #{weaponId}
 			WHERE memberId = #{memberId}
 			""")
-	public void update(int hp, int floor, int room, int weaponId, int memberId);		
+	public void update(int hp, int floor, int room, int weaponId, int memberId);
+	
+	@Delete("""
+			DELETE 
+			FROM charac 
+			WHERE memberId = #{memberId}
+			""")
+	public void delete(int memberId);		
 }

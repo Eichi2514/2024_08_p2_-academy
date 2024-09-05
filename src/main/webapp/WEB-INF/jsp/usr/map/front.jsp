@@ -394,11 +394,14 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 function hpDown(){
 	front_hp -= 1;
 	$('.hp_bar').text(front_hp);
-	gameLost();
+	if(front_hp == 0){
+		scoreboardLog();
+		location.href = '../map/over';
+		}
 }
 
 // 죽었을 시 기록 남기기
-function gameLost() {
+function scoreboardLog() {
     $.ajax({
         url : '/usr/scoreboard/log',
         type : 'POST',

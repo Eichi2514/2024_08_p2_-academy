@@ -49,8 +49,8 @@ public interface ScoreboardRepository {
 	@Insert("""
 			INSERT INTO scoreboard
 			SET regDate = NOW(),
-			memberId = #{loginedMemberId},
-			'floor' = #{floor},
+			memberId = #{memberId},
+			`floor` = #{floor},
 			room = #{room}
 			""")
 	public void log(int memberId, int floor, int room);

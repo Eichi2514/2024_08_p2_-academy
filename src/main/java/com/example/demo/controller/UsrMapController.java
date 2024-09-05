@@ -112,4 +112,23 @@ public class UsrMapController {
 	public void doDelete(int something) {
 		mapService.doDelete(something);
 	}
+	
+	@RequestMapping("/usr/map/over")
+	public String showOver(HttpServletRequest req, Model model) {
+		Rq rq = (Rq) req.getAttribute("rq"); // HttpServletRequest에 저장돼 있는 정보 가져오기
+
+		Charac charac = characService.characChack(rq.getLoginedMemberId()); // 캐릭터 가져오기
+		
+		int floor = charac.getFloor();
+		int room = charac.getRoom();
+		
+		model.addAttribute("charac", charac); // 캐릭터 정보
+		model.addAttribute("floor", floor); // 현재 층 정보
+		model.addAttribute("room", room); // 현재 방 정보
+		
+		characService.delete(rq.getLoginedMemberId()); // 캐릭터 삭제
+		rq.logout();
+		
+		return "/usr/map/over";
+	}
 }

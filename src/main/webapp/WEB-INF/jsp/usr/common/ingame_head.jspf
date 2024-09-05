@@ -38,16 +38,21 @@
 				<div class="floor_room absolute text-center">튜토리얼</div>
 			</c:if>
 			<c:if test="${floor != 1 || room != 0}">
-				<div class="floor_room absolute text-center">${floor}층_${room}번방</div>
+				<c:if test="${floor != 1 && room == 0}">
+					<div class="floor_room absolute text-center">${floor-1}층_보스방</div>
+				</c:if>
+				<c:if test="${room != 0}">
+					<div class="floor_room absolute text-center">${floor}층_${room}번방</div>
+				</c:if>
 			</c:if>
 			<div class="hp absolute text-center">
 				생명 :
 				<section class="hp_bar inline-block">${charac.hp}</section>
 			</div>
 			<div class="weapon absolute text-center">
-			착용무기
-			<img class="weapon_img absolute" src="${charac.extra__weapon}"
-				alt="" />
+				착용무기
+				<img class="weapon_img absolute" src="${charac.extra__weapon}"
+					alt="" />
 			</div>
 		</div>
 		<a class="ingame_logo rounded-full absolute cursor-pointer" href="/"></a>
