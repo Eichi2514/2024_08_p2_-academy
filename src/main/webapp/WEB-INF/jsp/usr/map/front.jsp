@@ -76,6 +76,7 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 		stage = "${param.stage+1}";
 		var doorChack = $(".door").hasClass("hidden");
 		if (LR > 79 && 38 < UD && UD < 52 && !doorChack) {
+			update(front_hp, stage, front_weaponId);
 			$(".door").fadeOut(1000).addClass('hidden');
 			$(".mob2").fadeIn(1000).removeClass('hidden');
 			$(".mob3").fadeIn(1000).removeClass('hidden');
@@ -83,10 +84,9 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 			$(".mob5").fadeIn(1000).removeClass('hidden');
 			$(".mob6").fadeIn(1000).removeClass('hidden');
 			location.href = '../map/front?stage=' + stage;
-			console.log("HP:", front_hp);
+			/* console.log("HP:", front_hp);
 			console.log("Stage:", stage);
-			console.log("Weapon ID:", front_weaponId);
-			update(front_hp, stage, front_weaponId);
+			console.log("Weapon ID:", front_weaponId); */			
 		}
 	}  
     
