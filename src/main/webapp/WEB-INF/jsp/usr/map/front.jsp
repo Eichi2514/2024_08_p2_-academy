@@ -78,11 +78,11 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 		if (LR > 79 && 38 < UD && UD < 52 && !doorChack) {
 			update(front_hp, stage, front_weaponId);
 			$(".door").fadeOut(1000).addClass('hidden');
-			$(".mob2").fadeIn(1000).removeClass('hidden');
-			$(".mob3").fadeIn(1000).removeClass('hidden');
-			$(".mob4").fadeIn(1000).removeClass('hidden');
-			$(".mob5").fadeIn(1000).removeClass('hidden');
-			$(".mob6").fadeIn(1000).removeClass('hidden');
+			mobShow(2);
+			mobShow(3);
+			mobShow(4);
+			mobShow(5);
+			mobShow(6);
 			location.href = '../map/front?stage=' + stage;
 			/* console.log("HP:", front_hp);
 			console.log("Stage:", stage);
@@ -451,37 +451,28 @@ function show(){
    
 // 아이템 공개
       function showItem(){
-    	  $(".item").fadeIn.removeClass('hidden');
+    	  $(".item").fadeIn(1000).removeClass('hidden');
     	  }
 
 // 캐릭터 공격
-       function attackA_motion() {
-		    $(".Aattack").removeClass('hidden');
-		 	setTimeout(function() {
-		 		$(".Aattack").addClass('hidden');
-		 	}, 100)
-		 }
-
-		function attackW_motion() {
-			$(".Wattack").removeClass('hidden');
+		function attack_motion(motion) {
+			$("."+motion+"attack").removeClass('hidden');
 			setTimeout(function() {
-				$(".Wattack").addClass('hidden');
+				$("."+motion+"attack").addClass('hidden');
 			}, 100)
 		}
-
-		function attackD_motion() {
-			$(".Dattack").removeClass('hidden');
-			setTimeout(function() {
-				$(".Dattack").addClass('hidden');
-			}, 100)
+		
+		// 몬스터 사라지게하는 함수
+		function mobHidden(num) {
+			$(".mob"+num).fadeOut(3000, function() {
+			    $(this).addClass('hidden');
+			});
+		}		
+		
+		// 몬스터 나타나게 하는 함수
+		function mobShow(num) {
+			$(".mob"+num).fadeIn(1000).removeClass('hidden');
 		}
-
-		function attackS_motion() {
-			$(".Sattack").removeClass('hidden');
-			setTimeout(function() {
-				$(".Sattack").addClass('hidden');
-			}, 100)
-		}	
 
 	       function attackA(something) {
 				$.ajax({
@@ -496,35 +487,35 @@ function show(){
 						if (data == 2) {
 							mob2_hp -= 1;
 							if(mob2_hp == 0){
-								$(".mob2").fadeOut(10000).addClass('hidden');
+								mobHidden(2);
 							    clearInterval(stop2);
 							    doDelete(2);
 							}
 						} else if (data == 3) {
 							mob3_hp -= 1;
 							if(mob3_hp == 0){
-								$(".mob3").fadeOut(10000).addClass('hidden');
+								mobHidden(3);
 								clearInterval(stop3);
 								doDelete(3);
 							}
 						} else if (data == 4) {
 							mob4_hp -= 1;
 							if(mob4_hp == 0){
-								$(".mob4").fadeOut(10000).addClass('hidden');
+								mobHidden(4);
 								clearInterval(stop4);
 								doDelete(4);
 							}
 						} else if (data == 5) {
 							mob5_hp -= 1;
 							if(mob5_hp == 0){
-								$(".mob5").fadeOut(10000).addClass('hidden');
+								mobHidden(5);
 								clearInterval(stop5);
 								doDelete(5);
 							}
 						} else if (data == 6) {
 							mob6_hp -= 1;
 							if(mob6_hp == 0){
-								$(".mob6").fadeOut(10000).addClass('hidden');
+								mobHidden(6);
 								clearInterval(stop6);
 								doDelete(6);
 								showItem();
@@ -536,7 +527,7 @@ function show(){
 						// console.log("몬스터5 hp : " + mob5_hp);
 						// console.log("몬스터6 hp : " + mob6_hp);
 						showDoor();
-						attackA_motion();
+						attack_motion("A");
 					},
 					error : function(jqXHR, textStatus, errorThrown) {
 						alert('오류 발생 : ' + textStatus);
@@ -557,47 +548,47 @@ function show(){
 						if (data == 2) {
 							mob2_hp -= 1;
 							if(mob2_hp == 0){
-								$(".mob2").fadeOut(10000).addClass('hidden');
+								mobHidden(2);
 							    clearInterval(stop2);
 							    doDelete(2);
 							}
 						} else if (data == 3) {
 							mob3_hp -= 1;
 							if(mob3_hp == 0){
-								$(".mob3").fadeOut(10000).addClass('hidden');
+								mobHidden(3);
 								clearInterval(stop3);
 								doDelete(3);
 							}
 						} else if (data == 4) {
 							mob4_hp -= 1;
 							if(mob4_hp == 0){
-								$(".mob4").fadeOut(10000).addClass('hidden');
+								mobHidden(4);
 								clearInterval(stop4);
 								doDelete(4);
 							}
 						} else if (data == 5) {
 							mob5_hp -= 1;
 							if(mob5_hp == 0){
-								$(".mob5").fadeOut(10000).addClass('hidden');
+								mobHidden(5);
 								clearInterval(stop5);
 								doDelete(5);
 							}
 						} else if (data == 6) {
 							mob6_hp -= 1;
 							if(mob6_hp == 0){
-								$(".mob6").fadeOut(10000).addClass('hidden');
+								mobHidden(6);
 								clearInterval(stop6);
 								doDelete(6);
 								showItem();
 							}
-						}   
+						} 
 						// console.log("몬스터2 hp : " + mob2_hp);
 						// console.log("몬스터3 hp : " + mob3_hp);
 						// console.log("몬스터4 hp : " + mob4_hp);
 						// console.log("몬스터5 hp : " + mob5_hp);
 						// console.log("몬스터6 hp : " + mob6_hp);
 						showDoor();
-						attackW_motion();
+						attack_motion("W");
 					},
 					error : function(jqXHR, textStatus, errorThrown) {
 						alert('오류 발생 : ' + textStatus);
@@ -618,47 +609,47 @@ function show(){
 						if (data == 2) {
 							mob2_hp -= 1;
 							if(mob2_hp == 0){
-								$(".mob2").fadeOut(10000).addClass('hidden');
+								mobHidden(2);
 							    clearInterval(stop2);
 							    doDelete(2);
 							}
 						} else if (data == 3) {
 							mob3_hp -= 1;
 							if(mob3_hp == 0){
-								$(".mob3").fadeOut(10000).addClass('hidden');
+								mobHidden(3);
 								clearInterval(stop3);
 								doDelete(3);
 							}
 						} else if (data == 4) {
 							mob4_hp -= 1;
 							if(mob4_hp == 0){
-								$(".mob4").fadeOut(10000).addClass('hidden');
+								mobHidden(4);
 								clearInterval(stop4);
 								doDelete(4);
 							}
 						} else if (data == 5) {
 							mob5_hp -= 1;
 							if(mob5_hp == 0){
-								$(".mob5").fadeOut(10000).addClass('hidden');
+								mobHidden(5);
 								clearInterval(stop5);
 								doDelete(5);
 							}
 						} else if (data == 6) {
 							mob6_hp -= 1;
 							if(mob6_hp == 0){
-								$(".mob6").fadeOut(10000).addClass('hidden');
+								mobHidden(6);
 								clearInterval(stop6);
 								doDelete(6);
 								showItem();
 							}
-						}  
+						} 
 						// console.log("몬스터2 hp : " + mob2_hp);
 						// console.log("몬스터3 hp : " + mob3_hp);
 						// console.log("몬스터4 hp : " + mob4_hp);
 						// console.log("몬스터5 hp : " + mob5_hp);
 						// console.log("몬스터6 hp : " + mob6_hp);
 						showDoor();
-						attackD_motion();
+						attack_motion("D");
 					},
 					error : function(jqXHR, textStatus, errorThrown) {
 						alert('오류 발생 : ' + textStatus);
@@ -679,35 +670,35 @@ function show(){
 						if (data == 2) {
 							mob2_hp -= 1;
 							if(mob2_hp == 0){
-								$(".mob2").fadeOut(10000).addClass('hidden');
+								mobHidden(2);
 							    clearInterval(stop2);
 							    doDelete(2);
 							}
 						} else if (data == 3) {
 							mob3_hp -= 1;
 							if(mob3_hp == 0){
-								$(".mob3").fadeOut(10000).addClass('hidden');
+								mobHidden(3);
 								clearInterval(stop3);
 								doDelete(3);
 							}
 						} else if (data == 4) {
 							mob4_hp -= 1;
 							if(mob4_hp == 0){
-								$(".mob4").fadeOut(10000).addClass('hidden');
+								mobHidden(4);
 								clearInterval(stop4);
 								doDelete(4);
 							}
 						} else if (data == 5) {
 							mob5_hp -= 1;
 							if(mob5_hp == 0){
-								$(".mob5").fadeOut(10000).addClass('hidden');
+								mobHidden(5);
 								clearInterval(stop5);
 								doDelete(5);
 							}
 						} else if (data == 6) {
 							mob6_hp -= 1;
 							if(mob6_hp == 0){
-								$(".mob6").fadeOut(10000).addClass('hidden');
+								mobHidden(6);
 								clearInterval(stop6);
 								doDelete(6);
 								showItem();
@@ -719,7 +710,7 @@ function show(){
 						// console.log("몬스터5 hp : " + mob5_hp);
 						// console.log("몬스터6 hp : " + mob6_hp);
 						showDoor();
-						attackS_motion();
+						attack_motion("S");
 					},
 					error : function(jqXHR, textStatus, errorThrown) {
 						alert('오류 발생 : ' + textStatus);
