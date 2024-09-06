@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.example.demo.service.CharacService;
 import com.example.demo.service.MapService;
 import com.example.demo.service.MobService;
+import com.example.demo.service.WeaponService;
 import com.example.demo.vo.Charac;
 import com.example.demo.vo.Rq;
 
@@ -28,6 +29,9 @@ public class UsrMapController {
 	@Autowired
 	private MobService mobService;
 
+	@Autowired
+	private WeaponService weaponService;
+
 	@RequestMapping("/usr/map/front")
 	public String showFront(HttpServletRequest req, Model model, int stage) {
 
@@ -43,6 +47,11 @@ public class UsrMapController {
 		Rq rq = (Rq) req.getAttribute("rq"); // HttpServletRequest에 저장돼 있는 정보 가져오기
 
 		Charac charac = characService.characChack(rq.getLoginedMemberId()); // 캐릭터 가져오기
+		
+		if (floor > 1 && room == 0) {
+			String weapon = weaponService.randomWeapon();
+			model.addAttribute("weapon", weapon); // 랜덤 무기 정보
+		}
 
 		model.addAttribute("charac", charac); // 캐릭터 정보
 		model.addAttribute("mob", mob); // 몬스터 정보

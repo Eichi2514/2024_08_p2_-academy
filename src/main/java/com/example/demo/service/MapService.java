@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class MapService {
 
 	// 맵 생성
-	// int[][] map;
+    // int[][] map;
 	int mapHeight; // 맵 높이
 	int mapWidth; // 맵 넓이
 
@@ -126,7 +126,7 @@ public class MapService {
 		return codes;
 	}
 
-	public String keyUp(int something) {
+	public String keyUp(int something) {		
 		int Xcode = somethingXcode(something);
 		int Ycode = somethingYcode(something);
 		int height = somethingHeight(something);
@@ -144,14 +144,6 @@ public class MapService {
 			}
 		}
 		
-		Xcode--;
-
-		for (int x = Xcode; x < Xcode + height; x++) {
-			for (int y = Ycode; y < Ycode + width; y++) {
-				map[x][y] = something;
-			}
-		}
-
 		if (something == charac) {
 			characXCode--;
 		} else if (something == mob2) {
@@ -167,6 +159,15 @@ public class MapService {
 		}
 
 		// 맵 상황 확인
+		
+		Xcode--;
+
+		for (int x = Xcode; x < Xcode + height; x++) {
+			for (int y = Ycode; y < Ycode + width; y++) {
+				map[x][y] = something;
+			}
+		}
+
 		System.out.println("==========================================");
 		if (something == charac || something == mob2 || something == mob6) {
 			for (int X = 0; X < mapHeight; X++) {
@@ -327,14 +328,6 @@ public class MapService {
 			}
 		}
 		
-		Xcode++;
-
-		for (int x = Xcode; x < Xcode + height; x++) {
-			for (int y = Ycode; y < Ycode + width; y++) {
-				map[x][y] = something;
-			}
-		}
-
 		if (something == charac) {
 			characXCode++;
 		} else if (something == mob2) {
@@ -350,6 +343,16 @@ public class MapService {
 		}
 
 		// 맵 상황 확인
+		
+		Xcode++;
+
+		for (int x = Xcode; x < Xcode + height; x++) {
+			for (int y = Ycode; y < Ycode + width; y++) {
+				map[x][y] = something;
+			}
+		}
+
+
 		System.out.println("==========================================");
 		if (something == charac || something == mob2 || something == mob6) {
 			for (int X = 0; X < mapHeight; X++) {
@@ -378,15 +381,7 @@ public class MapService {
 			} else if (map[x][Ycode - 1] != road) {
 				return "Lost";
 			}
-		}
-
-		Ycode--;
-
-		for (int x = Xcode; x < Xcode + height; x++) {
-			for (int y = Ycode; y < Ycode + width; y++) {
-				map[x][y] = something;
-			}
-		}
+		}		
 
 		if (something == charac) {
 			characYCode--;
@@ -404,6 +399,15 @@ public class MapService {
 
 		// 맵 상황 확인
 		System.out.println("==========================================");
+		
+		Ycode--;
+
+		for (int x = Xcode; x < Xcode + height; x++) {
+			for (int y = Ycode; y < Ycode + width; y++) {
+				map[x][y] = something;
+			}
+		}
+		
 		if (something == charac || something == mob2 || something == mob6) {
 			for (int X = 0; X < mapHeight; X++) {
 				for (int Y = 0; Y < mapWidth; Y++) {
@@ -442,15 +446,7 @@ public class MapService {
 				return "Lost";
 			}
 		}
-
-		Ycode++;
-
-		for (int x = Xcode; x < Xcode + height; x++) {
-			for (int y = Ycode; y < Ycode + width; y++) {
-				map[x][y] = something;
-			}
-		}
-
+		
 		if (something == charac) {
 			characYCode++;
 		} else if (something == mob2) {
@@ -466,6 +462,15 @@ public class MapService {
 		}
 
 		// 맵 상황 확인
+		
+		Ycode++;
+
+		for (int x = Xcode; x < Xcode + height; x++) {
+			for (int y = Ycode; y < Ycode + width; y++) {
+				map[x][y] = something;
+			}
+		}
+
 		System.out.println("==========================================");
 		if (something == charac || something == mob2 || something == mob6) {
 			for (int X = 0; X < mapHeight; X++) {

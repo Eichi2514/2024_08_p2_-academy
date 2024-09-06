@@ -2,18 +2,19 @@
 
 let LR = 10;
 let UD = 44; // 44.1
-
-$(window).keydown(function(e) {
-	if (e.keyCode === 37) {
-		Left(1);
-	} else if (e.keyCode === 38) {
-		Up(1);
-	} else if (e.keyCode === 39) {
-		Right(1);
-	} else if (e.keyCode === 40) {
-		Down(1);
-	}
-});
+window.onload = function() {
+	$(window).keydown(function(e) {
+		if (e.keyCode === 37) {
+			Left(1);
+		} else if (e.keyCode === 38) {
+			Up(1);
+		} else if (e.keyCode === 39) {
+			Right(1);
+		} else if (e.keyCode === 40) {
+			Down(1);
+		}
+	});
+}
 
 $(window).keyup(function(e) {
 	if (e.keyCode === 65) {

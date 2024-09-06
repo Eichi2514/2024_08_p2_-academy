@@ -448,6 +448,11 @@ function show(){
 	if(${room > 3 && room < 5}){stop5 = setInterval(move5, 200);}			
 	if(${floor > 1 && room == 0}){stop6 = setInterval(move6, 100);}			
    }
+   
+// 아이템 공개
+      function showItem(){
+    	  $(".item").fadeIn.removeClass('hidden');
+    	  }
 
 // 캐릭터 공격
        function attackA_motion() {
@@ -522,6 +527,7 @@ function show(){
 								$(".mob6").fadeOut(10000).addClass('hidden');
 								clearInterval(stop6);
 								doDelete(6);
+								showItem();
 							}
 						} 
 						// console.log("몬스터2 hp : " + mob2_hp);
@@ -582,6 +588,7 @@ function show(){
 								$(".mob6").fadeOut(10000).addClass('hidden');
 								clearInterval(stop6);
 								doDelete(6);
+								showItem();
 							}
 						}   
 						// console.log("몬스터2 hp : " + mob2_hp);
@@ -642,6 +649,7 @@ function show(){
 								$(".mob6").fadeOut(10000).addClass('hidden');
 								clearInterval(stop6);
 								doDelete(6);
+								showItem();
 							}
 						}  
 						// console.log("몬스터2 hp : " + mob2_hp);
@@ -702,6 +710,7 @@ function show(){
 								$(".mob6").fadeOut(10000).addClass('hidden');
 								clearInterval(stop6);
 								doDelete(6);
+								showItem();
 							}
 						} 
 						// console.log("몬스터2 hp : " + mob2_hp);
@@ -766,22 +775,24 @@ function show(){
 	<div class="front_bossMob mob6 absolute">
 		<img class="front_bossMob_img" src="${mob}" alt="" />
 	</div>
+
+	<img class="item hidden absolute" src="${weapon}" alt="" />
 </c:if>
 
 
 <!-- 캐릭터 -->
 <div class="front_charac charac absolute">
 	<!-- 왼쪽 공격 -->
-	<img class="front_attack Aattack hidden rounded-full absolute"
+	<img class="front_attack Aattack hidden absolute"
 		src="${charac.extra__weapon}" alt="" />
 	<!-- 위쪽 공격 -->
-	<img class="front_attack Wattack hidden rounded-full absolute"
+	<img class="front_attack Wattack hidden absolute"
 		src="${charac.extra__weapon}" alt="" />
 	<!-- 오른쪽 공격 -->
-	<img class="front_attack Dattack hidden rounded-full absolute"
+	<img class="front_attack Dattack hidden absolute"
 		src="${charac.extra__weapon}" alt="" />
 	<!-- 아래쪽 공격 -->
-	<img class="front_attack Sattack hidden rounded-full absolute"
+	<img class="front_attack Sattack hidden absolute"
 		src="${charac.extra__weapon}" alt="" />
 	<!-- 캐릭터 이미지 -->
 	<img class="front_charac_img rounded-full"
