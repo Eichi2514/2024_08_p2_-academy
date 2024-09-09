@@ -71,7 +71,8 @@ INSERT INTO charac
 SET regDate = NOW(),
 updateDate = NOW(),
 hp = 1, 
-memberId = 1;
+memberId = 1,
+weaponId = 70;
 
 ## 테스트 기록 생성
 INSERT INTO scoreboard
@@ -186,7 +187,7 @@ INSERT INTO weapon SET id = 59, img = "https://github.com/user-attachments/asset
 INSERT INTO weapon SET id = 60, img = "https://github.com/user-attachments/assets/383a1c05-7a15-4974-8842-a4f0d3f3b747";
 
 INSERT INTO weapon SET id = 61, img = "https://github.com/user-attachments/assets/98a45b38-4cb3-4ee4-b8f7-28205ff39cb6";
-INSERT INTO weapon SET id = 62, img = "https://github.com/user-attachments/assets/98872b7b-c8bf-4f2e-a671-3ba299c19e33";
+INSERT INTO weapon SET id = 62, img = "https://github.com/user-attachments/assets/ca527de8-3ca6-44bb-9845-625e9f30ab89";
 INSERT INTO weapon SET id = 63, img = "https://github.com/user-attachments/assets/91200c6c-bd4d-44eb-98df-96a7af967552";
 INSERT INTO weapon SET id = 64, img = "https://github.com/user-attachments/assets/7403b724-19d1-49bf-9781-f97ac6936d68";
 INSERT INTO weapon SET id = 65, img = "https://github.com/user-attachments/assets/eafa86a5-ff3c-4a3d-86e9-8f485c4905e1";
