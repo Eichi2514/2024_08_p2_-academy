@@ -433,18 +433,32 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 
 .floor_room {
 	left: 0;
-	top: 21vh;
+	top: 18.5vh;
 	width: 20vh;
-	height: 10vh;
-	-webkit-text-stroke: 0.05vh white;
+	height: 9vh;
+	
+	display:flex;
+	justify-content: center;
+    align-items:center;
+
+	border: 0.3vh solid;
+	border-radius: 1vh;
+	background: rgb(255, 71, 48);
 }
 
 .hp {
 	left: 0;
-	top: 30.5vh;
+	top: 28vh;
 	width: 20vh;
-	height: 10vh;
-	-webkit-text-stroke: 0.05vh white;
+	height: 9vh;
+	
+	display:flex;
+	justify-content: center;
+    align-items:center;
+
+	border: 0.3vh solid;
+	border-radius: 1vh;
+	background: rgb(255, 71, 48);
 }
 
 .weapon {
@@ -490,29 +504,243 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	height: 10vh;
 }
 
-.front_attack {
-	width: 2vh;
-	height: 2vh;
-}
-
-.Aattack {
+/* [class^='Aattack'] {
 	left: -6vh;
 	top: 4vh;
+	transform: scaleX(-1);
+} */
+.Aattack1_1, .Aattack2, .Aattack3, .Aattack4, .Aattack5 {
+	width: 2vh;
+	height: 2vh;
+	left: -6vh;
+	top: 4vh;
+	transform: scaleX(-1);
 }
 
-.Wattack {
+.Aattack6{
+	width: 2vh;
+	height: 2vh;
+	left: -6vh;
+	top: 9vh;
+	transform: scaleX(-1);	
+}
+
+.Aattack1_2 {
+	width: 2vh;
+	height: 2vh;
+	left: -10vh;
+	top: 4vh;
+	transform: scaleX(-1);
+}
+
+.Aattack1_3{
+	width: 2vh;
+	height: 2vh;
+	left: -14vh;
+	top: 4vh;
+	transform: scaleX(-1);
+}
+
+.Aattack1_4{
+	width: 4vh;
+	height: 4vh;
+	left: -18vh;
+	top: 3vh;
+	transform: scaleX(-1);
+}
+
+.Aattack1_5{
+	width: 4vh;
+	height: 4vh;
+	left: -22vh;
+	top: 3vh;
+	transform: scaleX(-1);
+}
+
+.Aattack1_6{
+	width: 4vh;
+	height: 4vh;
+	left: -26vh;
+	top: 3vh;
+	transform: scaleX(-1);
+}
+
+/* [class^="Wattack"] {
 	left: 4vh;
 	top: -6vh;
+	transform: rotate(270deg);
+} */
+
+.Wattack1_1, .Wattack2, .Wattack3, .Wattack4, .Wattack5 {
+	width: 2vh;
+	height: 2vh;
+	left: 4vh;
+	top: -6vh;
+	transform: rotate(270deg);
 }
 
-.Dattack {
+.Wattack6{
+	width: 2vh;
+	height: 2vh;
+	left: 9vh;
+	top: -6vh;	
+	transform: rotate(270deg);
+}
+
+.Wattack1_2{
+	width: 2vh;
+	height: 2vh;
+	left: 4vh;
+	top: -10vh;
+	transform: rotate(270deg);	
+}
+
+.Wattack1_3{
+	width: 2vh;
+	height: 2vh;
+	left: 4vh;
+	top: -14vh;
+	transform: rotate(270deg);	
+}
+
+.Wattack1_4{
+	width: 4vh;
+	height: 4vh;
+	left: 3vh;
+	top: -18vh;
+	transform: rotate(270deg);	
+}
+
+.Wattack1_5{
+	width: 4vh;
+	height: 4vh;
+	left: 3vh;
+	top: -22vh;
+	transform: rotate(270deg);	
+}
+
+.Wattack1_6{
+	width: 4vh;
+	height: 4vh;
+	left: 3vh;
+	top: -26vh;
+	transform: rotate(270deg);	
+}
+
+/* [class^="Dattack"] {
+	left: 14vh;
+	top: 4vh;
+} */
+
+.Dattack1_1, .Dattack2, .Dattack3, .Dattack4, .Dattack5 {
+	width: 2vh;
+	height: 2vh;
 	left: 14vh;
 	top: 4vh;
 }
 
-.Sattack {
+.Dattack6{
+	width: 2vh;
+	height: 2vh;
+	left: 24vh;
+	top: 9vh;	
+}
+
+.Dattack1_2{
+	width: 2vh;
+	height: 2vh;
+	left: 18vh;
+	top: 4vh;	
+}
+
+.Dattack1_3{
+	width: 2vh;
+	height: 2vh;
+	left: 22vh;
+	top: 4vh;	
+}
+
+.Dattack1_4{
+	width: 4vh;
+	height: 4vh;
+	left: 26vh;
+	top: 3vh;	
+}
+
+.Dattack1_5{
+	width: 4vh;
+	height: 4vh;
+	left: 30vh;
+	top: 3vh;	
+}
+
+.Dattack1_6{
+	width: 4vh;
+	height: 4vh;
+	left: 34vh;
+	top: 3vh;	
+}
+
+/* [class^="Sattack"] {
 	left: 4vh;
 	top: 14vh;
+	transform: rotate(90deg);
+} */
+
+.Sattack1_1, .Sattack2, .Sattack3, .Sattack4, .Sattack5 {
+	width: 2vh;
+	height: 2vh;
+	left: 4vh;
+	top: 14vh;
+	transform: rotate(90deg);
+}
+
+.Sattack6{
+	width: 2vh;
+	height: 2vh;
+	left: 9vh;
+	top: 24vh;	
+	transform: rotate(90deg);
+}
+
+.Sattack1_2{
+	width: 2vh;
+	height: 2vh;
+	left: 4vh;
+	top: 18vh;
+	transform: rotate(90deg);	
+}
+
+.Sattack1_3{
+	width: 2vh;
+	height: 2vh;
+	left: 4vh;
+	top: 22vh;	
+	transform: rotate(90deg);
+}
+
+.Sattack1_4{
+	width: 4vh;
+	height: 4vh;
+	left: 3vh;
+	top: 26vh;	
+	transform: rotate(90deg);
+}
+
+.Sattack1_5{
+	width: 4vh;
+	height: 4vh;
+	left: 3vh;
+	top: 30vh;	
+	transform: rotate(90deg);
+}
+
+.Sattack1_6{
+	width: 4vh;
+	height: 4vh;
+	left: 3vh;
+	top: 34vh;	
+	transform: rotate(90deg);
 }
 
 .front_mob_img {
@@ -543,4 +771,60 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	font-size : 15vh;
 	-webkit-text-stroke: 0.05vh white;
 	padding: 25vh;
+}
+
+.item_text{
+	top: 40vh;
+	left: 25vh;
+	height: 20vh;
+	width: 50vh;
+	-webkit-text-stroke: 0.05vh white;	
+}
+
+.item_img{
+	height: 20vh;
+	width: 50vh;
+	transform: scaleY(-1);
+}
+
+.item_text > div, .item_text > button{
+	z-index: 20;
+}
+
+.item_title{
+	top: 5vh;
+	left: 3vh;
+}
+
+.item_change{
+	top: 14vh;
+	left: 6vh;
+}
+
+.item_mix{
+	top: 14vh;
+	left: 21vh;
+}
+
+.item_exit{
+	top: 14vh;
+	left: 37vh;
+}
+
+.bossHP{
+	top: 0.5vh;
+	left: 15vh;
+	
+}
+
+.bossHP_title{
+	font-size : 5vh;
+	display: inline-block;
+	-webkit-text-stroke: 0.05vh white;
+}
+.bossHP_bar{
+	height: 5vh;
+	width: 50vh;
+	background: red;
+	display: inline-block;
 }

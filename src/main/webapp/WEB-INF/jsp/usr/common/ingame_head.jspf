@@ -35,19 +35,19 @@
 				alt="" />
 
 			<c:if test="${floor == 1 && room == 0}">
-				<div class="floor_room absolute text-center">튜토리얼</div>
+				<div class="floor_room absolute">튜토리얼</div>
 			</c:if>
 			<c:if test="${floor != 1 || room != 0}">
 				<c:if test="${floor != 1 && room == 0}">
-					<div class="floor_room absolute text-center">${floor-1}층_보스방</div>
+					<div class="floor_room absolute">${floor-1}층_보스방</div>
 				</c:if>
 				<c:if test="${room != 0}">
-					<div class="floor_room absolute text-center">${floor}층_${room}번방</div>
+					<div class="floor_room absolute">${floor}층_${room}번방</div>
 				</c:if>
 			</c:if>
-			<div class="hp absolute text-center">
+			<div class="hp absolute">
 				생명 :
-				<section class="hp_bar inline-block">${charac.hp}</section>
+				<section class="hp_count inline-block" style="padding-left: 1vh;">${charac.hp}</section>
 			</div>
 			<div class="weapon absolute text-center">
 				착용무기

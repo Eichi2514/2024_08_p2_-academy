@@ -24,7 +24,7 @@ public class UsrCharacController {
 
 	@RequestMapping("/usr/charac/update")
 	@ResponseBody
-	public void update(HttpServletRequest req, int hp, int stage, int weaponId) {
+	public void update(HttpServletRequest req, int hp, int stage) {
 		
 		int floor = stage / 5;		
 		int room = stage % 5;
@@ -32,7 +32,19 @@ public class UsrCharacController {
 		Rq rq = (Rq) req.getAttribute("rq");
 		
 		int memberId = rq.getLoginedMemberId();
+		hp++;
+		characService.update(hp, floor, room, memberId);		
+	}
+
+	@RequestMapping("/usr/charac/weaponChange")
+	@ResponseBody
+	public void weaponChange(HttpServletRequest req) {
+		System.out.println("무기 체인지 실행");
+				
+		Rq rq = (Rq) req.getAttribute("rq");
 		
-		characService.update(hp, floor, room, weaponId, memberId);		
+		int memberId = rq.getLoginedMemberId();
+		
+		characService.weaponChange(memberId);		
 	}
 }

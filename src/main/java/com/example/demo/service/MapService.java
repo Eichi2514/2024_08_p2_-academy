@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class MapService {
 
 	// 맵 생성
-    // int[][] map;
+	// int[][] map;
 	int mapHeight; // 맵 높이
 	int mapWidth; // 맵 넓이
 
@@ -126,12 +126,12 @@ public class MapService {
 		return codes;
 	}
 
-	public String keyUp(int something) {		
+	public String keyUp(int something) {
 		int Xcode = somethingXcode(something);
 		int Ycode = somethingYcode(something);
 		int height = somethingHeight(something);
 		int width = somethingWidth(something);
-		
+
 		// 맵 생성
 		int[][] map = mapChack(something);
 
@@ -143,7 +143,7 @@ public class MapService {
 				return "Lost";
 			}
 		}
-		
+
 		if (something == charac) {
 			characXCode--;
 		} else if (something == mob2) {
@@ -159,7 +159,7 @@ public class MapService {
 		}
 
 		// 맵 상황 확인
-		
+
 		Xcode--;
 
 		for (int x = Xcode; x < Xcode + height; x++) {
@@ -315,7 +315,7 @@ public class MapService {
 		int Ycode = somethingYcode(something);
 		int height = somethingHeight(something);
 		int width = somethingWidth(something);
-		
+
 		// 맵 생성
 		int[][] map = mapChack(something);
 
@@ -327,7 +327,7 @@ public class MapService {
 				return "Lost";
 			}
 		}
-		
+
 		if (something == charac) {
 			characXCode++;
 		} else if (something == mob2) {
@@ -343,7 +343,7 @@ public class MapService {
 		}
 
 		// 맵 상황 확인
-		
+
 		Xcode++;
 
 		for (int x = Xcode; x < Xcode + height; x++) {
@@ -351,7 +351,6 @@ public class MapService {
 				map[x][y] = something;
 			}
 		}
-
 
 		System.out.println("==========================================");
 		if (something == charac || something == mob2 || something == mob6) {
@@ -370,7 +369,7 @@ public class MapService {
 		int Ycode = somethingYcode(something);
 		int height = somethingHeight(something);
 		int width = somethingWidth(something);
-		
+
 		// 맵 생성
 		int[][] map = mapChack(something);
 
@@ -381,7 +380,7 @@ public class MapService {
 			} else if (map[x][Ycode - 1] != road) {
 				return "Lost";
 			}
-		}		
+		}
 
 		if (something == charac) {
 			characYCode--;
@@ -399,7 +398,7 @@ public class MapService {
 
 		// 맵 상황 확인
 		System.out.println("==========================================");
-		
+
 		Ycode--;
 
 		for (int x = Xcode; x < Xcode + height; x++) {
@@ -407,7 +406,7 @@ public class MapService {
 				map[x][y] = something;
 			}
 		}
-		
+
 		if (something == charac || something == mob2 || something == mob6) {
 			for (int X = 0; X < mapHeight; X++) {
 				for (int Y = 0; Y < mapWidth; Y++) {
@@ -424,7 +423,7 @@ public class MapService {
 		int Ycode = somethingYcode(something);
 		int height = somethingHeight(something);
 		int width = somethingWidth(something);
-		
+
 		// 맵 생성
 		int[][] map = mapChack(something);
 
@@ -446,7 +445,7 @@ public class MapService {
 				return "Lost";
 			}
 		}
-		
+
 		if (something == charac) {
 			characYCode++;
 		} else if (something == mob2) {
@@ -462,7 +461,7 @@ public class MapService {
 		}
 
 		// 맵 상황 확인
-		
+
 		Ycode++;
 
 		for (int x = Xcode; x < Xcode + height; x++) {
@@ -483,76 +482,114 @@ public class MapService {
 		return "success";
 	}
 
-	public int Aattack(int something) {
+	public int Aattack(int something, int weaponId) {
 		int Xcode = somethingXcode(something);
 		int Ycode = somethingYcode(something);
 		int height = somethingHeight(something);
 		int width = somethingWidth(something);
 		
+		int distance = 3;
+		if (something == charac) {
+			distance = somethingdistance(weaponId);
+		}
+
 		// 맵 생성
 		int[][] map = mapChack(something);
-		
+
 		int x = Xcode + ((height - 1) / 2);
 		int y = -1;
-		if (Ycode - 3 >= 0)
-			y = Ycode - 3;
+		if (Ycode - distance >= 0)
+			y = Ycode - distance;
 		if (y == -1)
 			return -1;
 		return map[x][y];
 	}
 
-	public int Wattack(int something) {
+	public int Wattack(int something, int weaponId) {
 		int Xcode = somethingXcode(something);
 		int Ycode = somethingYcode(something);
 		int height = somethingHeight(something);
 		int width = somethingWidth(something);
 		
+		int distance = 3;
+		if (something == charac) {
+			distance = somethingdistance(weaponId);
+		}
+
 		// 맵 생성
 		int[][] map = mapChack(something);
-		
+
 		int x = -1;
 		int y = Ycode + ((width - 1) / 2);
-		if (Xcode - 3 >= 0)
-			x = Xcode - 3;
+		if (Xcode - distance >= 0)
+			x = Xcode - distance;
 		if (x == -1)
 			return -1;
 		return map[x][y];
 	}
 
-	public int Dattack(int something) {
+	public int Dattack(int something, int weaponId) {
 		int Xcode = somethingXcode(something);
 		int Ycode = somethingYcode(something);
 		int height = somethingHeight(something);
 		int width = somethingWidth(something);
 		
+		int distance = 3;
+		if (something == charac) {
+			distance = somethingdistance(weaponId);
+		}
+
 		// 맵 생성
 		int[][] map = mapChack(something);
-		
+
 		int x = Xcode + ((height - 1) / 2);
 		int y = -1;
-		if (Ycode + width + 3 <= mapWidth)
-			y = Ycode + width + 3;
+		if (Ycode + width + distance < mapWidth)
+			y = Ycode + width + distance;
 		if (y == -1)
 			return -1;
 		return map[x][y];
 	}
 
-	public int Sattack(int something) {
+	public int Sattack(int something, int weaponId) {
 		int Xcode = somethingXcode(something);
 		int Ycode = somethingYcode(something);
 		int height = somethingHeight(something);
 		int width = somethingWidth(something);
 		
+		int distance = 3;
+		if (something == charac) {
+			distance = somethingdistance(weaponId);
+		}
+
 		// 맵 생성
 		int[][] map = mapChack(something);
-		
+
 		int x = -1;
 		int y = Ycode + ((width - 1) / 2);
-		if (Xcode + ((height - 1) / 2) >= 0)
-			x = Xcode + height + 3;
+		if (Xcode + height + distance < mapHeight) {
+			x = Xcode + height + distance;
+		}
 		if (x == -1)
 			return -1;
 		return map[x][y];
+	}
+
+	private int somethingdistance(int weaponId) {
+		if (weaponId == 1) {
+			return 3;
+		} else if (weaponId == 2) {
+			return 5;
+		} else if (weaponId == 3) {
+			return 7;
+		} else if (weaponId == 4) {
+			return 9;
+		} else if (weaponId == 5) {
+			return 11;
+		} else if (weaponId == 6) {
+			return 13;
+		}
+		return 0;
 	}
 
 	public void doDelete(int something) {

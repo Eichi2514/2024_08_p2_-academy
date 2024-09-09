@@ -3,7 +3,7 @@
 <%@ page import="java.util.Map"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<script src="/resource/common_front.js" defer="defer"></script>
+<script src="/resource/common.js" defer="defer"></script>
 
 <c:set var="pageTitle" value="스테이지 : ${param.stage}"></c:set>
 
@@ -69,14 +69,14 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
     // 캐릭터 정보
     var front_hp = "${charac.hp}";
     var stage;
-    var front_weaponId = "${charac.weaponId}";
 
     // 스테이지 이동
 	function stageUp() {
 		stage = "${param.stage+1}";
 		var doorChack = $(".door").hasClass("hidden");
 		if (LR > 79 && 38 < UD && UD < 52 && !doorChack) {
-			update(front_hp, stage, front_weaponId);
+			windowChack = false;
+			update(front_hp, stage);
 			$(".door").fadeOut(1000).addClass('hidden');
 			mobShow(2);
 			mobShow(3);
@@ -91,14 +91,13 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 	}  
     
     // 캐릭터 정보 업데이트
-	function update(hp, stage, weaponId) {
+	function update(hp, stage) {
 		$.ajax({
 			url : '/usr/charac/update',
 			type : 'POST',
 			data : {
 				hp : hp,
-				stage : stage,
-				weaponId : weaponId
+				stage : stage
 			},
 			dataType : 'text',
 			success : function(data) {
@@ -160,14 +159,14 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 		} else if (random == 4) {
 			Down2(2);
 		} else if (random == 5) {
-
+			mobAttack(2);
 		}
 	}
 
 	// 1초마다 랜덤 숫자를 출력하는 함수
 	function move3() {
 		var random;
-		// 1에서 5까지의 랜덤 숫자 생성
+		// 랜덤 숫자 생성
 		if (${floor < 4}){random = getRandom(1, 4);}
 		else {random = getRandom(1, 5);}
 
@@ -180,14 +179,14 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 		} else if (random == 4) {
 			Down2(3);
 		} else if (random == 5) {
-
+			mobAttack(3);
 		}
 	}
 
 	// 1초마다 랜덤 숫자를 출력하는 함수
 	function move4() {
 		var random;
-		// 1에서 5까지의 랜덤 숫자 생성
+		// 랜덤 숫자 생성
 		if (${floor < 4}){random = getRandom(1, 4);}
 		else {random = getRandom(1, 5);}
 
@@ -200,14 +199,14 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 		} else if (random == 4) {
 			Down2(4);
 		} else if (random == 5) {
-
+			mobAttack(4);
 		}
 	}
 
 	// 1초마다 랜덤 숫자를 출력하는 함수
 	function move5() {
 		var random;
-		// 1에서 5까지의 랜덤 숫자 생성
+		// 랜덤 숫자 생성
 		if (${floor < 4}){random = getRandom(1, 4);}
 		else {random = getRandom(1, 5);}
 
@@ -220,15 +219,15 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 		} else if (random == 4) {
 			Down2(5);
 		} else if (random == 5) {
-
+			mobAttack(5);
 		}
 	}
 
 	// 1초마다 랜덤 숫자를 출력하는 함수
 	function move6() {
 		var random;
-		// 1에서 5까지의 랜덤 숫자 생성
-		if (${floor < 4}){random = getRandom(1, 4);}
+		// 랜덤 숫자 생성
+		if (${floor < 4} || ${floor == 4 && room == 0}){random = getRandom(1, 4);}
 		else {random = getRandom(1, 5);}
 
 		if (random == 1) {
@@ -240,7 +239,21 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 		} else if (random == 4) {
 			Down2(6);
 		} else if (random == 5) {
-
+			mobAttack(6);
+		}
+	}
+	
+	// 몬스터의 공격
+	function mobAttack(something){
+		var randomAttack = getRandom(1, 4);
+		if (randomAttack == 1){
+			attackA(something);
+		} else if (randomAttack == 2){
+			attackW(something);
+		} else if (randomAttack == 3){
+			attackD(something);
+		} else if (randomAttack == 4){
+			attackS(something);
 		}
 	}
         
@@ -327,7 +340,7 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 				dataType : 'text',
 				success : function(data) {
 					if (data == 'success') {
-						console.log('HP : ' + front_hp);
+						/* console.log('HP : ' + front_hp); */
 						if(something == 2){
 							LR2 -= 2;
 							$(".mob2").css("left", LR2 + "vh");
@@ -393,7 +406,7 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 // hp 감소
 function hpDown(){
 	front_hp -= 1;
-	$('.hp_bar').text(front_hp);
+	$('.hp_count').text(front_hp);
 	if(front_hp == 0){
 		scoreboardLog();
 		location.href = '../map/over';
@@ -437,6 +450,18 @@ function doDelete(something) {
 	});
 }	
 
+//몬스터 사라지게하는 함수
+function mobHidden(num) {
+	$(".mob"+num).fadeOut(2000, function() {
+	    $(this).addClass('hidden');
+	});
+}		
+
+// 몬스터 나타나게 하는 함수
+function mobShow(num) {
+	$(".mob"+num).fadeIn(1000).removeClass('hidden');
+}
+
 // 자동 실행 move 함수 담아놓을 변수 생성
 var stop2, stop3, stop4, stop5, stop6;
 
@@ -449,31 +474,58 @@ function show(){
 	if(${floor > 1 && room == 0}){stop6 = setInterval(move6, 100);}			
    }
    
+// 아이템 안내창 공개
+function showItem_text(){	
+	var itemChack = $(".item").hasClass('hidden');
+	console.log(itemChack);
+	if(LR > 64 && LR < 76 && UD < 56 && UD > 34 && !itemChack && ${floor > 1 && room == 0}){
+		$(".item_text").fadeIn(1000).removeClass('hidden');
+		}
+	}
+
+//아이템 안내창 교체
+function Item_change(){
+    $.ajax({
+        url : '/usr/charac/weaponChange',
+        type : 'POST',
+        dataType : 'text',
+        success: function(data) {
+        	var changeImg = "${weapon}";
+            $('.weapon_img').attr('src', changeImg);
+            $('.CharacAttack').attr('src', changeImg);
+            $(".item").fadeOut(1000).addClass('hidden');
+            $(".item_text").fadeOut(1000).addClass('hidden');
+        },
+        error : function(jqXHR, textStatus, errorThrown) {
+            alert('오류 발생 : ' + textStatus);
+        }
+    });
+}
+
+//아이템 안내창 취소
+function Item_exit(){
+		$(".item_text").fadeOut(1000).addClass('hidden');
+	}
+    	  
 // 아이템 공개
-      function showItem(){
-    	  $(".item").fadeIn(1000).removeClass('hidden');
-    	  }
+function showItem(){
+	  $(".item").fadeIn(1000).removeClass('hidden');
+}
 
-// 캐릭터 공격
-		function attack_motion(motion) {
-			$("."+motion+"attack").removeClass('hidden');
+// 보스 HP 감소 함수
+function BossHpDown(){
+	let new_width_value = ( ${50/ (floor*10) }*mob6_hp);
+	$(".bossHP_bar").css('width', new_width_value+'vh');
+}
+
+// 공격 함수
+		function attack_motion(something, motion) {
+			$("."+motion+"attack"+something).removeClass('hidden');
 			setTimeout(function() {
-				$("."+motion+"attack").addClass('hidden');
-			}, 100)
+				$("."+motion+"attack"+something).addClass('hidden');
+			}, 300)
 		}
 		
-		// 몬스터 사라지게하는 함수
-		function mobHidden(num) {
-			$(".mob"+num).fadeOut(3000, function() {
-			    $(this).addClass('hidden');
-			});
-		}		
-		
-		// 몬스터 나타나게 하는 함수
-		function mobShow(num) {
-			$(".mob"+num).fadeIn(1000).removeClass('hidden');
-		}
-
 	       function attackA(something) {
 				$.ajax({
 					url : '/usr/map/Aattack',
@@ -483,36 +535,38 @@ function show(){
 					},
 					dataType : 'text',
 					success : function(data) {
-						// console.log("몬스터"+data+"Attack");						 
-						if (data == 2) {
+						// console.log("몬스터"+data+"Attack");		
+						if (something != 1 && data == 1) {
+							hpDown();
+						} else if (something == 1 && data == 2) {
 							mob2_hp -= 1;
 							if(mob2_hp == 0){
 								mobHidden(2);
 							    clearInterval(stop2);
 							    doDelete(2);
 							}
-						} else if (data == 3) {
+						} else if (something == 1 && data == 3) {
 							mob3_hp -= 1;
 							if(mob3_hp == 0){
 								mobHidden(3);
 								clearInterval(stop3);
 								doDelete(3);
 							}
-						} else if (data == 4) {
+						} else if (something == 1 && data == 4) {
 							mob4_hp -= 1;
 							if(mob4_hp == 0){
 								mobHidden(4);
 								clearInterval(stop4);
 								doDelete(4);
 							}
-						} else if (data == 5) {
+						} else if (something == 1 && data == 5) {
 							mob5_hp -= 1;
 							if(mob5_hp == 0){
 								mobHidden(5);
 								clearInterval(stop5);
 								doDelete(5);
 							}
-						} else if (data == 6) {
+						} else if (something == 1 && data == 6) {
 							mob6_hp -= 1;
 							if(mob6_hp == 0){
 								mobHidden(6);
@@ -520,6 +574,7 @@ function show(){
 								doDelete(6);
 								showItem();
 							}
+							BossHpDown();
 						} 
 						// console.log("몬스터2 hp : " + mob2_hp);
 						// console.log("몬스터3 hp : " + mob3_hp);
@@ -527,7 +582,7 @@ function show(){
 						// console.log("몬스터5 hp : " + mob5_hp);
 						// console.log("몬스터6 hp : " + mob6_hp);
 						showDoor();
-						attack_motion("A");
+						attack_motion(something, "A");
 					},
 					error : function(jqXHR, textStatus, errorThrown) {
 						alert('오류 발생 : ' + textStatus);
@@ -545,35 +600,37 @@ function show(){
 					dataType : 'text',
 					success : function(data) {
 						// console.log("몬스터"+data+"Attack");						 
-						if (data == 2) {
+						if (something != 1 && data == 1) {
+							hpDown();
+						} else if (something == 1 && data == 2) {
 							mob2_hp -= 1;
 							if(mob2_hp == 0){
 								mobHidden(2);
 							    clearInterval(stop2);
 							    doDelete(2);
 							}
-						} else if (data == 3) {
+						} else if (something == 1 && data == 3) {
 							mob3_hp -= 1;
 							if(mob3_hp == 0){
 								mobHidden(3);
 								clearInterval(stop3);
 								doDelete(3);
 							}
-						} else if (data == 4) {
+						} else if (something == 1 && data == 4) {
 							mob4_hp -= 1;
 							if(mob4_hp == 0){
 								mobHidden(4);
 								clearInterval(stop4);
 								doDelete(4);
 							}
-						} else if (data == 5) {
+						} else if (something == 1 && data == 5) {
 							mob5_hp -= 1;
 							if(mob5_hp == 0){
 								mobHidden(5);
 								clearInterval(stop5);
 								doDelete(5);
 							}
-						} else if (data == 6) {
+						} else if (something == 1 && data == 6) {
 							mob6_hp -= 1;
 							if(mob6_hp == 0){
 								mobHidden(6);
@@ -581,6 +638,7 @@ function show(){
 								doDelete(6);
 								showItem();
 							}
+							BossHpDown();
 						} 
 						// console.log("몬스터2 hp : " + mob2_hp);
 						// console.log("몬스터3 hp : " + mob3_hp);
@@ -588,7 +646,7 @@ function show(){
 						// console.log("몬스터5 hp : " + mob5_hp);
 						// console.log("몬스터6 hp : " + mob6_hp);
 						showDoor();
-						attack_motion("W");
+						attack_motion(something, "W");
 					},
 					error : function(jqXHR, textStatus, errorThrown) {
 						alert('오류 발생 : ' + textStatus);
@@ -606,35 +664,37 @@ function show(){
 					dataType : 'text',
 					success : function(data) {
 						// console.log("몬스터"+data+"Attack");						 
-						if (data == 2) {
+						if (something != 1 && data == 1) {
+							hpDown();
+						} else if (something == 1 && data == 2) {
 							mob2_hp -= 1;
 							if(mob2_hp == 0){
 								mobHidden(2);
 							    clearInterval(stop2);
 							    doDelete(2);
 							}
-						} else if (data == 3) {
+						} else if (something == 1 && data == 3) {
 							mob3_hp -= 1;
 							if(mob3_hp == 0){
 								mobHidden(3);
 								clearInterval(stop3);
 								doDelete(3);
 							}
-						} else if (data == 4) {
+						} else if (something == 1 && data == 4) {
 							mob4_hp -= 1;
 							if(mob4_hp == 0){
 								mobHidden(4);
 								clearInterval(stop4);
 								doDelete(4);
 							}
-						} else if (data == 5) {
+						} else if (something == 1 && data == 5) {
 							mob5_hp -= 1;
 							if(mob5_hp == 0){
 								mobHidden(5);
 								clearInterval(stop5);
 								doDelete(5);
 							}
-						} else if (data == 6) {
+						} else if (something == 1 && data == 6) {
 							mob6_hp -= 1;
 							if(mob6_hp == 0){
 								mobHidden(6);
@@ -642,6 +702,7 @@ function show(){
 								doDelete(6);
 								showItem();
 							}
+							BossHpDown();
 						} 
 						// console.log("몬스터2 hp : " + mob2_hp);
 						// console.log("몬스터3 hp : " + mob3_hp);
@@ -649,7 +710,7 @@ function show(){
 						// console.log("몬스터5 hp : " + mob5_hp);
 						// console.log("몬스터6 hp : " + mob6_hp);
 						showDoor();
-						attack_motion("D");
+						attack_motion(something, "D");
 					},
 					error : function(jqXHR, textStatus, errorThrown) {
 						alert('오류 발생 : ' + textStatus);
@@ -667,35 +728,37 @@ function show(){
 					dataType : 'text',
 					success : function(data) {
 						// console.log("몬스터"+data+"Attack");						 
-						if (data == 2) {
+						if (something != 1 && data == 1) {
+							hpDown();
+						} else if (something == 1 && data == 2) {
 							mob2_hp -= 1;
 							if(mob2_hp == 0){
 								mobHidden(2);
 							    clearInterval(stop2);
 							    doDelete(2);
 							}
-						} else if (data == 3) {
+						} else if (something == 1 && data == 3) {
 							mob3_hp -= 1;
 							if(mob3_hp == 0){
 								mobHidden(3);
 								clearInterval(stop3);
 								doDelete(3);
 							}
-						} else if (data == 4) {
+						} else if (something == 1 && data == 4) {
 							mob4_hp -= 1;
 							if(mob4_hp == 0){
 								mobHidden(4);
 								clearInterval(stop4);
 								doDelete(4);
 							}
-						} else if (data == 5) {
+						} else if (something == 1 && data == 5) {
 							mob5_hp -= 1;
 							if(mob5_hp == 0){
 								mobHidden(5);
 								clearInterval(stop5);
 								doDelete(5);
 							}
-						} else if (data == 6) {
+						} else if (something == 1 && data == 6) {
 							mob6_hp -= 1;
 							if(mob6_hp == 0){
 								mobHidden(6);
@@ -703,6 +766,7 @@ function show(){
 								doDelete(6);
 								showItem();
 							}
+							BossHpDown();
 						} 
 						// console.log("몬스터2 hp : " + mob2_hp);
 						// console.log("몬스터3 hp : " + mob3_hp);
@@ -710,7 +774,7 @@ function show(){
 						// console.log("몬스터5 hp : " + mob5_hp);
 						// console.log("몬스터6 hp : " + mob6_hp);
 						showDoor();
-						attack_motion("S");
+						attack_motion(something, "S");
 					},
 					error : function(jqXHR, textStatus, errorThrown) {
 						alert('오류 발생 : ' + textStatus);
@@ -740,30 +804,96 @@ function show(){
 <!-- 첫번째 몬스터 -->
 <c:if test="${room > 0 && room < 5}">
 	<div class="front_mob mob2 absolute">
+	    <!-- 왼쪽 공격 -->
+		<img class="mobAttack Aattack2 hidden absolute"
+			src="${charac.extra__weapon}" alt="" />
+		<!-- 위쪽 공격 -->
+		<img class="mobAttack Wattack2 hidden absolute"
+			src="${charac.extra__weapon}" alt="" />
+		<!-- 오른쪽 공격 -->
+		<img class="mobAttack Dattack2 hidden absolute"
+			src="${charac.extra__weapon}" alt="" />
+		<!-- 아래쪽 공격 -->
+		<img class="mobAttack Sattack2 hidden absolute"
+			src="${charac.extra__weapon}" alt="" />
 		<img class="front_mob_img" src="${mob}" alt="" />
 	</div>
 </c:if>
 <!-- 두번째 몬스터 -->
 <c:if test="${room > 1 && room < 5}">
 	<div class="front_mob mob3 absolute">
+	    <!-- 왼쪽 공격 -->
+		<img class="mobAttack Aattack3 hidden absolute"
+			src="${charac.extra__weapon}" alt="" />
+		<!-- 위쪽 공격 -->
+		<img class="mobAttack Wattack3 hidden absolute"
+			src="${charac.extra__weapon}" alt="" />
+		<!-- 오른쪽 공격 -->
+		<img class="mobAttack Dattack3 hidden absolute"
+			src="${charac.extra__weapon}" alt="" />
+		<!-- 아래쪽 공격 -->
+		<img class="mobAttack Sattack3 hidden absolute"
+			src="${charac.extra__weapon}" alt="" />
 		<img class="front_mob_img" src="${mob}" alt="" />
 	</div>
 </c:if>
 <!-- 세번째 몬스터 -->
 <c:if test="${room > 2 && room < 5}">
 	<div class="front_mob mob4 absolute">
-		<img class="front_mob_img" src="${mob}" alt="" />
+		<!-- 왼쪽 공격 -->
+		<img class="mobAttack Aattack4 hidden absolute"
+			src="${charac.extra__weapon}" alt="" />
+		<!-- 위쪽 공격 -->
+		<img class="mobAttack Wattack4 hidden absolute"
+			src="${charac.extra__weapon}" alt="" />
+		<!-- 오른쪽 공격 -->
+		<img class="mobAttack Dattack4 hidden absolute"
+			src="${charac.extra__weapon}" alt="" />
+		<!-- 아래쪽 공격 -->
+		<img class="mobAttack Sattack4 hidden absolute"
+			src="${charac.extra__weapon}" alt="" />
+		<img class="front_mob_img"
+			src="${mob}" alt="" />
 	</div>
 </c:if>
 <!-- 네번째 몬스터 -->
 <c:if test="${room > 3 && room < 5}">
 	<div class="front_mob mob5 absolute">
+		<!-- 왼쪽 공격 -->
+		<img class="mobAttack Aattack5 hidden absolute"
+			src="${charac.extra__weapon}" alt="" />
+		<!-- 위쪽 공격 -->
+		<img class="mobAttack Wattack5 hidden absolute"
+			src="${charac.extra__weapon}" alt="" />
+		<!-- 오른쪽 공격 -->
+		<img class="mobAttack Dattack5 hidden absolute"
+			src="${charac.extra__weapon}" alt="" />
+		<!-- 아래쪽 공격 -->
+		<img class="mobAttack Sattack5 hidden absolute"
+			src="${charac.extra__weapon}" alt="" />
 		<img class="front_mob_img" src="${mob}" alt="" />
 	</div>
 </c:if>
 <!-- 보스 몬스터 -->
 <c:if test="${floor > 1 && room == 0}">
+<div class="bossHP absolute">
+<div class="bossHP_title">BOSS : </div>
+<div class="bossHP_bar"></div>
+</div>
+
 	<div class="front_bossMob mob6 absolute">
+		<!-- 왼쪽 공격 -->
+		<img class="mobAttack Aattack6 hidden absolute"
+			src="${charac.extra__weapon}" alt="" />
+		<!-- 위쪽 공격 -->
+		<img class="mobAttack Wattack6 hidden absolute"
+			src="${charac.extra__weapon}" alt="" />
+		<!-- 오른쪽 공격 -->
+		<img class="mobAttack Dattack6 hidden absolute"
+			src="${charac.extra__weapon}" alt="" />
+		<!-- 아래쪽 공격 -->
+		<img class="mobAttack Sattack6 hidden absolute"
+			src="${charac.extra__weapon}" alt="" />	
 		<img class="front_bossMob_img" src="${mob}" alt="" />
 	</div>
 
@@ -771,19 +901,32 @@ function show(){
 </c:if>
 
 
+<div class="item_text absolute z-20 hidden">
+	<!-- p2 나무판 -->
+	<img class="item_img absolute z-20"
+		src="https://github.com/user-attachments/assets/b3351b33-5547-48b5-9108-78ef3c69c204"
+		alt="" />
+
+	<div class="item_title absolute">새로운 무기를 발견하였습니다.</div>
+	<button class="item_change absolute" onclick="Item_change()">교체</button>
+	<button class="item_mix absolute">합성</button>
+	<button class="item_exit absolute" onclick="Item_exit()">취소</button>
+</div>
+
+
 <!-- 캐릭터 -->
 <div class="front_charac charac absolute">
 	<!-- 왼쪽 공격 -->
-	<img class="front_attack Aattack hidden absolute"
+	<img class="Aattack1_${charac.weaponId} Aattack1 CharacAttack hidden absolute"
 		src="${charac.extra__weapon}" alt="" />
 	<!-- 위쪽 공격 -->
-	<img class="front_attack Wattack hidden absolute"
+	<img class="Wattack1_${charac.weaponId} Wattack1 CharacAttack hidden absolute"
 		src="${charac.extra__weapon}" alt="" />
 	<!-- 오른쪽 공격 -->
-	<img class="front_attack Dattack hidden absolute"
+	<img class="Dattack1_${charac.weaponId} Dattack1 CharacAttack hidden absolute"
 		src="${charac.extra__weapon}" alt="" />
 	<!-- 아래쪽 공격 -->
-	<img class="front_attack Sattack hidden absolute"
+	<img class="Sattack1_${charac.weaponId} Sattack1 CharacAttack hidden absolute"
 		src="${charac.extra__weapon}" alt="" />
 	<!-- 캐릭터 이미지 -->
 	<img class="front_charac_img rounded-full"

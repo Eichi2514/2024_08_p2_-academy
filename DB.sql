@@ -1,3 +1,4 @@
+
 DROP DATABASE IF EXISTS `24_08_p2`;
 CREATE DATABASE `24_08_p2`;
 USE `24_08_p2`;
@@ -23,7 +24,7 @@ CREATE TABLE charac(
       memberId INT(10) NOT NULL,
       `floor` INT(10) NOT NULL DEFAULT 1 COMMENT '캐릭터 도달 층 수',
       room INT(10) NOT NULL DEFAULT 0 COMMENT '캐릭터 도달 방 번호',
-      hp INT(10) NOT NULL DEFAULT 3 COMMENT '생명력',      
+      hp INT(10) NOT NULL DEFAULT 1 COMMENT '생명력',      
       weaponId INT(10) NOT NULL DEFAULT 1 COMMENT '무기번호'
 );
 
@@ -69,7 +70,7 @@ gender = 1;
 INSERT INTO charac 
 SET regDate = NOW(),
 updateDate = NOW(),
-hp = 1000000000, 
+hp = 1, 
 memberId = 1;
 
 ## 테스트 기록 생성
