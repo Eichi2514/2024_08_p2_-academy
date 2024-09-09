@@ -35,7 +35,7 @@ public class UsrMapController {
 	@RequestMapping("/usr/map/front")
 	public String showFront(HttpServletRequest req, Model model, int stage) {
 
-		System.out.println(stage);
+		System.out.println("스테이지 : "+stage);
 
 		int floor = stage / 5;
 		int room = stage % 5;
@@ -49,7 +49,7 @@ public class UsrMapController {
 		Charac charac = characService.characChack(rq.getLoginedMemberId()); // 캐릭터 가져오기
 		
 		if (floor > 1 && room == 0) {
-			String weapon = weaponService.randomWeapon();
+			String weapon = weaponService.randomWeapon(charac.getFloor());
 			model.addAttribute("weapon", weapon); // 랜덤 무기 정보
 		}
 
@@ -61,7 +61,7 @@ public class UsrMapController {
 
 		int originallyStage = (charac.getFloor() * 5) + charac.getRoom();
 		
-		System.out.println(rq.getLoginedMember().getAuthLevel());
+		System.out.println("로그인계정 권한 레벨 : "+rq.getLoginedMember().getAuthLevel());
 
 		if (((originallyStage < stage || originallyStage > stage) && stage != 5) && rq.getLoginedMember().getAuthLevel() != 7){
 			return "/usr/home/main";

@@ -576,18 +576,26 @@ public class MapService {
 	}
 
 	private int somethingdistance(int weaponId) {
-		if (weaponId == 1) {
+		if (weaponId%10 == 1) {
 			return 3;
-		} else if (weaponId == 2) {
+		} else if (weaponId%10 == 2) {
+			return 4;
+		} else if (weaponId%10 == 3) {
 			return 5;
-		} else if (weaponId == 3) {
+		} else if (weaponId%10 == 4) {
+			return 6;
+		} else if (weaponId%10 == 5) {
 			return 7;
-		} else if (weaponId == 4) {
+		} else if (weaponId%10 == 6) {
+			return 8;
+		} else if (weaponId%10 == 7) {
 			return 9;
-		} else if (weaponId == 5) {
+		} else if (weaponId%10 == 8) {
+			return 10;
+		} else if (weaponId%10 == 9) {
 			return 11;
-		} else if (weaponId == 6) {
-			return 13;
+		} else if (weaponId%10 == 0) {
+			return 12;
 		}
 		return 0;
 	}

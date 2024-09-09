@@ -104,7 +104,7 @@ function Up(something) {
 					$(".charac").css("top", UD + "vh");
 					stageUp();
 					showItem_text();
-					console.log('LR : ' + LR + ', UD : ' + UD);
+		//			console.log('LR : ' + LR + ', UD : ' + UD);
 				}
 			},
 			error: function(jqXHR, textStatus, errorThrown) {
@@ -128,7 +128,7 @@ function Down(something) {
 					$(".charac").css("top", UD + "vh");
 					stageUp();
 					showItem_text();
-					console.log('LR : ' + LR + ', UD : ' + UD);
+	//				console.log('LR : ' + LR + ', UD : ' + UD);
 				}
 			},
 			error: function(jqXHR, textStatus, errorThrown) {
@@ -152,7 +152,7 @@ function Left(something) {
 					$(".charac").css("left", LR + "vh");
 					stageUp();
 					showItem_text();
-					console.log('LR : ' + LR + ', UD : ' + UD);
+//					console.log('LR : ' + LR + ', UD : ' + UD);
 				}
 			},
 			error: function(jqXHR, textStatus, errorThrown) {
@@ -176,7 +176,7 @@ function Right(something) {
 					$(".charac").css("left", LR + "vh");
 					stageUp();
 					showItem_text();
-					console.log('LR : ' + LR + ', UD : ' + UD);
+//					console.log('LR : ' + LR + ', UD : ' + UD);
 				}
 			},
 			error: function(jqXHR, textStatus, errorThrown) {

@@ -69,6 +69,10 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
     // 캐릭터 정보
     var front_hp = "${charac.hp}";
     var stage;
+    var damage = ${charac.weaponId} / 10;
+    if (${charac.weaponId} % 10 != 0){
+    	damage++;
+    }    
 
     // 스테이지 이동
 	function stageUp() {
@@ -136,7 +140,7 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 	if(${room > 1 && room < 5}){mob3_hp = ${floor};}
 	if(${room > 2 && room < 5}){mob4_hp = ${floor};}
 	if(${room > 3 && room < 5}){mob5_hp = ${floor};}
-	if(${floor > 1 && room == 0}){mob6_hp = ${floor*10};}
+	if(${floor > 1 && room == 0}){mob6_hp = ${(floor-1)*10};}
 	
 	// 랜덤 숫자 생성
     function getRandom(min, max) {
@@ -407,7 +411,7 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 function hpDown(){
 	front_hp -= 1;
 	$('.hp_count').text(front_hp);
-	if(front_hp == 0){
+	if(front_hp <= 0){
 		scoreboardLog();
 		location.href = '../map/over';
 		}
@@ -428,7 +432,7 @@ function scoreboardLog() {
 		
 // 문 개방
 function showDoor(){
-	if(mob2_hp+mob3_hp+mob4_hp+mob5_hp+mob6_hp == 0){
+	if(mob2_hp+mob3_hp+mob4_hp+mob5_hp+mob6_hp <= 0){
 		$(".door").fadeIn(1000).removeClass('hidden');
 	}
 }
@@ -477,7 +481,7 @@ function show(){
 // 아이템 안내창 공개
 function showItem_text(){	
 	var itemChack = $(".item").hasClass('hidden');
-	console.log(itemChack);
+	// console.log("아이템 공개 여부"+itemChack);
 	if(LR > 64 && LR < 76 && UD < 56 && UD > 34 && !itemChack && ${floor > 1 && room == 0}){
 		$(".item_text").fadeIn(1000).removeClass('hidden');
 		}
@@ -536,39 +540,41 @@ function BossHpDown(){
 					dataType : 'text',
 					success : function(data) {
 						// console.log("몬스터"+data+"Attack");		
+						console.log("데미지 : " + damage);
+						console.log("보스 HP : " + mob6_hp);
 						if (something != 1 && data == 1) {
 							hpDown();
 						} else if (something == 1 && data == 2) {
-							mob2_hp -= 1;
-							if(mob2_hp == 0){
+							mob2_hp -= damage;
+							if(mob2_hp <= 0){
 								mobHidden(2);
 							    clearInterval(stop2);
 							    doDelete(2);
 							}
 						} else if (something == 1 && data == 3) {
-							mob3_hp -= 1;
-							if(mob3_hp == 0){
+							mob3_hp -= damage;
+							if(mob3_hp <= 0){
 								mobHidden(3);
 								clearInterval(stop3);
 								doDelete(3);
 							}
 						} else if (something == 1 && data == 4) {
-							mob4_hp -= 1;
-							if(mob4_hp == 0){
+							mob4_hp -= damage;
+							if(mob4_hp <= 0){
 								mobHidden(4);
 								clearInterval(stop4);
 								doDelete(4);
 							}
 						} else if (something == 1 && data == 5) {
-							mob5_hp -= 1;
-							if(mob5_hp == 0){
+							mob5_hp -= damage;
+							if(mob5_hp <= 0){
 								mobHidden(5);
 								clearInterval(stop5);
 								doDelete(5);
 							}
 						} else if (something == 1 && data == 6) {
-							mob6_hp -= 1;
-							if(mob6_hp == 0){
+							mob6_hp -= damage;
+							if(mob6_hp <= 0){
 								mobHidden(6);
 								clearInterval(stop6);
 								doDelete(6);
@@ -603,36 +609,36 @@ function BossHpDown(){
 						if (something != 1 && data == 1) {
 							hpDown();
 						} else if (something == 1 && data == 2) {
-							mob2_hp -= 1;
-							if(mob2_hp == 0){
+							mob2_hp -= damage;
+							if(mob2_hp <= 0){
 								mobHidden(2);
 							    clearInterval(stop2);
 							    doDelete(2);
 							}
 						} else if (something == 1 && data == 3) {
-							mob3_hp -= 1;
-							if(mob3_hp == 0){
+							mob3_hp -= damage;
+							if(mob3_hp <= 0){
 								mobHidden(3);
 								clearInterval(stop3);
 								doDelete(3);
 							}
 						} else if (something == 1 && data == 4) {
-							mob4_hp -= 1;
-							if(mob4_hp == 0){
+							mob4_hp -= damage;
+							if(mob4_hp <= 0){
 								mobHidden(4);
 								clearInterval(stop4);
 								doDelete(4);
 							}
 						} else if (something == 1 && data == 5) {
-							mob5_hp -= 1;
-							if(mob5_hp == 0){
+							mob5_hp -= damage;
+							if(mob5_hp <= 0){
 								mobHidden(5);
 								clearInterval(stop5);
 								doDelete(5);
 							}
 						} else if (something == 1 && data == 6) {
-							mob6_hp -= 1;
-							if(mob6_hp == 0){
+							mob6_hp -= damage;
+							if(mob6_hp <= 0){
 								mobHidden(6);
 								clearInterval(stop6);
 								doDelete(6);
@@ -667,36 +673,36 @@ function BossHpDown(){
 						if (something != 1 && data == 1) {
 							hpDown();
 						} else if (something == 1 && data == 2) {
-							mob2_hp -= 1;
-							if(mob2_hp == 0){
+							mob2_hp -= damage;
+							if(mob2_hp <= 0){
 								mobHidden(2);
 							    clearInterval(stop2);
 							    doDelete(2);
 							}
 						} else if (something == 1 && data == 3) {
-							mob3_hp -= 1;
-							if(mob3_hp == 0){
+							mob3_hp -= damage;
+							if(mob3_hp <= 0){
 								mobHidden(3);
 								clearInterval(stop3);
 								doDelete(3);
 							}
 						} else if (something == 1 && data == 4) {
-							mob4_hp -= 1;
-							if(mob4_hp == 0){
+							mob4_hp -= damage;
+							if(mob4_hp <= 0){
 								mobHidden(4);
 								clearInterval(stop4);
 								doDelete(4);
 							}
 						} else if (something == 1 && data == 5) {
-							mob5_hp -= 1;
-							if(mob5_hp == 0){
+							mob5_hp -= damage;
+							if(mob5_hp <= 0){
 								mobHidden(5);
 								clearInterval(stop5);
 								doDelete(5);
 							}
 						} else if (something == 1 && data == 6) {
-							mob6_hp -= 1;
-							if(mob6_hp == 0){
+							mob6_hp -= damage;
+							if(mob6_hp <= 0){
 								mobHidden(6);
 								clearInterval(stop6);
 								doDelete(6);
@@ -731,36 +737,36 @@ function BossHpDown(){
 						if (something != 1 && data == 1) {
 							hpDown();
 						} else if (something == 1 && data == 2) {
-							mob2_hp -= 1;
-							if(mob2_hp == 0){
+							mob2_hp -= damage;
+							if(mob2_hp <= 0){
 								mobHidden(2);
 							    clearInterval(stop2);
 							    doDelete(2);
 							}
 						} else if (something == 1 && data == 3) {
-							mob3_hp -= 1;
-							if(mob3_hp == 0){
+							mob3_hp -= damage;
+							if(mob3_hp <= 0){
 								mobHidden(3);
 								clearInterval(stop3);
 								doDelete(3);
 							}
 						} else if (something == 1 && data == 4) {
-							mob4_hp -= 1;
-							if(mob4_hp == 0){
+							mob4_hp -= damage;
+							if(mob4_hp <= 0){
 								mobHidden(4);
 								clearInterval(stop4);
 								doDelete(4);
 							}
 						} else if (something == 1 && data == 5) {
-							mob5_hp -= 1;
-							if(mob5_hp == 0){
+							mob5_hp -= damage;
+							if(mob5_hp <= 0){
 								mobHidden(5);
 								clearInterval(stop5);
 								doDelete(5);
 							}
 						} else if (something == 1 && data == 6) {
-							mob6_hp -= 1;
-							if(mob6_hp == 0){
+							mob6_hp -= damage;
+							if(mob6_hp <= 0){
 								mobHidden(6);
 								clearInterval(stop6);
 								doDelete(6);
@@ -805,16 +811,16 @@ function BossHpDown(){
 <c:if test="${room > 0 && room < 5}">
 	<div class="front_mob mob2 absolute">
 	    <!-- 왼쪽 공격 -->
-		<img class="mobAttack Aattack2 hidden absolute"
+		<img class="mobAttack Aattack2 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 위쪽 공격 -->
-		<img class="mobAttack Wattack2 hidden absolute"
+		<img class="mobAttack Wattack2 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 오른쪽 공격 -->
-		<img class="mobAttack Dattack2 hidden absolute"
+		<img class="mobAttack Dattack2 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 아래쪽 공격 -->
-		<img class="mobAttack Sattack2 hidden absolute"
+		<img class="mobAttack Sattack2 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<img class="front_mob_img" src="${mob}" alt="" />
 	</div>
@@ -823,16 +829,16 @@ function BossHpDown(){
 <c:if test="${room > 1 && room < 5}">
 	<div class="front_mob mob3 absolute">
 	    <!-- 왼쪽 공격 -->
-		<img class="mobAttack Aattack3 hidden absolute"
+		<img class="mobAttack Aattack3 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 위쪽 공격 -->
-		<img class="mobAttack Wattack3 hidden absolute"
+		<img class="mobAttack Wattack3 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 오른쪽 공격 -->
-		<img class="mobAttack Dattack3 hidden absolute"
+		<img class="mobAttack Dattack3 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 아래쪽 공격 -->
-		<img class="mobAttack Sattack3 hidden absolute"
+		<img class="mobAttack Sattack3 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<img class="front_mob_img" src="${mob}" alt="" />
 	</div>
@@ -841,16 +847,16 @@ function BossHpDown(){
 <c:if test="${room > 2 && room < 5}">
 	<div class="front_mob mob4 absolute">
 		<!-- 왼쪽 공격 -->
-		<img class="mobAttack Aattack4 hidden absolute"
+		<img class="mobAttack Aattack4 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 위쪽 공격 -->
-		<img class="mobAttack Wattack4 hidden absolute"
+		<img class="mobAttack Wattack4 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 오른쪽 공격 -->
-		<img class="mobAttack Dattack4 hidden absolute"
+		<img class="mobAttack Dattack4 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 아래쪽 공격 -->
-		<img class="mobAttack Sattack4 hidden absolute"
+		<img class="mobAttack Sattack4 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<img class="front_mob_img"
 			src="${mob}" alt="" />
@@ -860,16 +866,16 @@ function BossHpDown(){
 <c:if test="${room > 3 && room < 5}">
 	<div class="front_mob mob5 absolute">
 		<!-- 왼쪽 공격 -->
-		<img class="mobAttack Aattack5 hidden absolute"
+		<img class="mobAttack Aattack5 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 위쪽 공격 -->
-		<img class="mobAttack Wattack5 hidden absolute"
+		<img class="mobAttack Wattack5 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 오른쪽 공격 -->
-		<img class="mobAttack Dattack5 hidden absolute"
+		<img class="mobAttack Dattack5 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 아래쪽 공격 -->
-		<img class="mobAttack Sattack5 hidden absolute"
+		<img class="mobAttack Sattack5 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<img class="front_mob_img" src="${mob}" alt="" />
 	</div>
@@ -883,16 +889,16 @@ function BossHpDown(){
 
 	<div class="front_bossMob mob6 absolute">
 		<!-- 왼쪽 공격 -->
-		<img class="mobAttack Aattack6 hidden absolute"
+		<img class="mobAttack Aattack6 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 위쪽 공격 -->
-		<img class="mobAttack Wattack6 hidden absolute"
+		<img class="mobAttack Wattack6 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 오른쪽 공격 -->
-		<img class="mobAttack Dattack6 hidden absolute"
+		<img class="mobAttack Dattack6 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 아래쪽 공격 -->
-		<img class="mobAttack Sattack6 hidden absolute"
+		<img class="mobAttack Sattack6 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />	
 		<img class="front_bossMob_img" src="${mob}" alt="" />
 	</div>
@@ -917,16 +923,16 @@ function BossHpDown(){
 <!-- 캐릭터 -->
 <div class="front_charac charac absolute">
 	<!-- 왼쪽 공격 -->
-	<img class="Aattack1_${charac.weaponId} Aattack1 CharacAttack hidden absolute"
+	<img class="Aattack1_${charac.weaponId} attackSize Aattack1 CharacAttack hidden absolute"
 		src="${charac.extra__weapon}" alt="" />
 	<!-- 위쪽 공격 -->
-	<img class="Wattack1_${charac.weaponId} Wattack1 CharacAttack hidden absolute"
+	<img class="Wattack1_${charac.weaponId} attackSize Wattack1 CharacAttack hidden absolute"
 		src="${charac.extra__weapon}" alt="" />
 	<!-- 오른쪽 공격 -->
-	<img class="Dattack1_${charac.weaponId} Dattack1 CharacAttack hidden absolute"
+	<img class="Dattack1_${charac.weaponId} attackSize Dattack1 CharacAttack hidden absolute"
 		src="${charac.extra__weapon}" alt="" />
 	<!-- 아래쪽 공격 -->
-	<img class="Sattack1_${charac.weaponId} Sattack1 CharacAttack hidden absolute"
+	<img class="Sattack1_${charac.weaponId} attackSize Sattack1 CharacAttack hidden absolute"
 		src="${charac.extra__weapon}" alt="" />
 	<!-- 캐릭터 이미지 -->
 	<img class="front_charac_img rounded-full"
