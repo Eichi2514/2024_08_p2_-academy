@@ -69,7 +69,7 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
     // 캐릭터 정보
     var front_hp = "${charac.hp}";
     var stage;
-    var damage = ${charac.weaponId} / 10;
+    var damage = Math.floor(${charac.weaponId} / 10); // 소수점 아래 버림
     if (${charac.weaponId} % 10 != 0){
     	damage++;
     }    
@@ -432,7 +432,7 @@ function scoreboardLog() {
 		
 // 문 개방
 function showDoor(){
-	if(mob2_hp+mob3_hp+mob4_hp+mob5_hp+mob6_hp <= 0){
+	if(mob2_hp <= 0 && mob3_hp <= 0 && mob4_hp <= 0 && mob5_hp <= 0 && mob6_hp <= 0){
 		$(".door").fadeIn(1000).removeClass('hidden');
 	}
 }
