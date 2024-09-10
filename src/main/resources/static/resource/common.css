@@ -676,7 +676,7 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 .Dattack1_1, .Dattack1_11, .Dattack1_21, .Dattack1_31, .Dattack1_41,
 	.Dattack1_51, .Dattack1_61, .Dattack2, .Dattack3, .Dattack4, .Dattack5
 	{
-	left: 14vh;
+	left: 16vh;
 	top: 4vh;
 }
 
@@ -687,56 +687,56 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 
 .Dattack1_2, .Dattack1_12, .Dattack1_22, .Dattack1_32, .Dattack1_42,
 	.Dattack1_52, .Dattack1_62 {
-	left: 16vh;
+	left: 18vh;
 	top: 4vh;
 }
 
 .Dattack1_3, .Dattack1_13, .Dattack1_23, .Dattack1_33, .Dattack1_43,
 	.Dattack1_53, .Dattack1_63 {
-	left: 18vh;
+	left: 20vh;
 	top: 4vh;
 }
 
 .Dattack1_4, .Dattack1_14, .Dattack1_24, .Dattack1_34, .Dattack1_44,
 	.Dattack1_54, .Dattack1_64 {
-	left: 20vh;
-	top: 3vh;
+	left: 22vh;
+	top: 4h;
 }
 
 .Dattack1_5, .Dattack1_15, .Dattack1_25, .Dattack1_35, .Dattack1_45,
 	.Dattack1_55, .Dattack1_65 {
-	left: 22vh;
-	top: 3vh;
+	left: 24vh;
+	top: 4vh;
 }
 
 .Dattack1_6, .Dattack1_16, .Dattack1_26, .Dattack1_36, .Dattack1_46,
 	.Dattack1_56, .Dattack1_66 {
-	left: 24vh;
-	top: 3vh;
+	left: 26vh;
+	top: 4vh;
 }
 
 .Dattack1_7, .Dattack1_17, .Dattack1_27, .Dattack1_37, .Dattack1_47,
 	.Dattack1_57, .Dattack1_67 {
-	left: 26vh;
-	top: 3vh;
+	left: 28vh;
+	top: 4vh;
 }
 
 .Dattack1_8, .Dattack1_18, .Dattack1_28, .Dattack1_38, .Dattack1_48,
 	.Dattack1_58, .Dattack1_68 {
-	left: 28vh;
-	top: 3vh;
+	left: 30vh;
+	top: 4vh;
 }
 
 .Dattack1_9, .Dattack1_19, .Dattack1_29, .Dattack1_39, .Dattack1_49,
 	.Dattack1_59, .Dattack1_69 {
-	left: 30vh;
-	top: 3vh;
+	left: 32vh;
+	top: 4vh;
 }
 
 .Dattack1_10, .Dattack1_20, .Dattack1_30, .Dattack1_40, .Dattack1_50,
 	.Dattack1_60, .Dattack1_70 {
-	left: 32vh;
-	top: 3vh;
+	left: 34vh;
+	top: 4vh;
 }
 
 /* [class^="Sattack"] {
@@ -748,76 +748,76 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	.Sattack1_51, .Sattack1_61, .Sattack2, .Sattack3, .Sattack4, .Sattack5
 	{
 	left: 4vh;
-	top: 14vh;
+	top: 16vh;
 	transform: rotate(90deg);
 }
 
 .Sattack6 {
 	left: 9vh;
-	top: 24vh;
+	top: 26vh;
 	transform: rotate(90deg);
 }
 
 .Sattack1_2, .Sattack1_12, .Sattack1_22, .Sattack1_32, .Sattack1_42,
 	.Sattack1_52, .Sattack1_62 {
 	left: 4vh;
-	top: 16vh;
+	top: 18vh;
 	transform: rotate(90deg);
 }
 
 .Sattack1_3, .Sattack1_13, .Sattack1_23, .Sattack1_33, .Sattack1_43,
 	.Sattack1_53, .Sattack1_63 {
 	left: 4vh;
-	top: 18vh;
+	top: 20vh;
 	transform: rotate(90deg);
 }
 
 .Sattack1_4, .Sattack1_14, .Sattack1_24, .Sattack1_34, .Sattack1_44,
 	.Sattack1_54, .Sattack1_64 {
 	left: 4vh;
-	top: 20vh;
+	top: 22vh;
 	transform: rotate(90deg);
 }
 
 .Sattack1_5, .Sattack1_15, .Sattack1_25, .Sattack1_35, .Sattack1_45,
 	.Sattack1_55, .Sattack1_65 {
 	left: 4vh;
-	top: 22vh;
+	top: 24vh;
 	transform: rotate(90deg);
 }
 
 .Sattack1_6, .Sattack1_16, .Sattack1_26, .Sattack1_36, .Sattack1_46,
 	.Sattack1_56, .Sattack1_66 {
 	left: 4vh;
-	top: 24vh;
+	top: 26vh;
 	transform: rotate(90deg);
 }
 
 .Sattack1_7, .Sattack1_17, .Sattack1_27, .Sattack1_37, .Sattack1_47,
 	.Sattack1_57, .Sattack1_67 {
 	left: 4vh;
-	top: 26vh;
+	top: 28vh;
 	transform: rotate(90deg);
 }
 
 .Sattack1_8, .Sattack1_18, .Sattack1_28, .Sattack1_38, .Sattack1_48,
 	.Sattack1_58, .Sattack1_68 {
 	left: 4vh;
-	top: 28vh;
+	top: 30vh;
 	transform: rotate(90deg);
 }
 
 .Sattack1_9, .Sattack1_19, .Sattack1_29, .Sattack1_39, .Sattack1_49,
 	.Sattack1_59, .Sattack1_69 {
 	left: 4vh;
-	top: 30vh;
+	top: 32vh;
 	transform: rotate(90deg);
 }
 
 .Sattack1_10, .Sattack1_20, .Sattack1_30, .Sattack1_40, .Sattack1_50,
 	.Sattack1_60, .Sattack1_70 {
 	left: 4vh;
-	top: 32vh;
+	top: 34vh;
 	transform: rotate(90deg);
 }
 

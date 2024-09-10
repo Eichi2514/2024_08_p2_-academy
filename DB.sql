@@ -120,6 +120,7 @@ FROM scoreboard;
 SELECT *
 FROM mob;
 
+## 무기 이미지 URL
 INSERT INTO weapon SET id = 1, img = "https://github.com/user-attachments/assets/d3b5fb90-b21e-42a3-8964-a866132ace38";
 INSERT INTO weapon SET id = 2, img = "https://github.com/user-attachments/assets/a75eb20d-7588-42c0-b517-c5cfa38293a1";
 INSERT INTO weapon SET id = 3, img = "https://github.com/user-attachments/assets/bab07e9b-6bcc-4cc6-9782-d2e5491ed42e";
@@ -197,12 +198,65 @@ INSERT INTO weapon SET id = 68, img = "https://github.com/user-attachments/asset
 INSERT INTO weapon SET id = 69, img = "https://github.com/user-attachments/assets/f531f906-2147-45b5-8af9-e0877201552c";
 INSERT INTO weapon SET id = 70, img = "https://github.com/user-attachments/assets/dcc3fdaa-fa09-42a9-a929-3e7904925b41";
 
-INSERT INTO mob SET id = 1, img = "https://github.com/user-attachments/assets/71e26463-fd7c-46d7-9364-273a363ac839";
+## 몬스터 이미지 URL
+INSERT INTO mob SET id = 1, img = "https://github.com/user-attachments/assets/2ab0ec46-1847-4c87-9b6c-b485ffd5bcc0";
 INSERT INTO mob SET id = 2, img = "https://github.com/user-attachments/assets/76d8bc9f-d814-4f60-b99f-e6688a60acd5";
 INSERT INTO mob SET id = 3, img = "https://github.com/user-attachments/assets/b7a6c561-9176-4f1e-98c5-0d6723bcca2b";
-INSERT INTO mob SET id = 4, img = "https://github.com/user-attachments/assets/cfbe7f09-078b-4056-82f9-2f70983d0f52";
-INSERT INTO mob SET id = 5, img = "https://github.com/user-attachments/assets/0bc0f092-e535-4c6d-8631-07c87e80014f";
-INSERT INTO mob SET id = 6, img = "https://github.com/user-attachments/assets/397fa4af-9a52-48d1-8bd0-629f575198c2";
+INSERT INTO mob SET id = 4, img = "https://github.com/user-attachments/assets/49a90ef1-1246-4a74-933e-b78e180e2f30";
+INSERT INTO mob SET id = 5, img = "https://github.com/user-attachments/assets/34ce9a88-ab95-45a8-956b-a6c8ee129674";
+INSERT INTO mob SET id = 6, img = "https://github.com/user-attachments/assets/1314824d-d8a6-44f2-9672-ba5a0e7f3d6c";
+INSERT INTO mob SET id = 7, img = "https://github.com/user-attachments/assets/c5004b20-a313-41cd-b012-33c91f271664";
+INSERT INTO mob SET id = 8, img = "https://github.com/user-attachments/assets/d7afdd47-5dfe-4824-b456-841439908a6b";
+INSERT INTO mob SET id = 9, img = "https://github.com/user-attachments/assets/b39165ea-6d79-434c-a885-dc7aca00ac7a";
+INSERT INTO mob SET id = 10, img = "https://github.com/user-attachments/assets/11b950e4-9387-4547-8439-cc68568ee4d4";
+
+INSERT INTO mob SET id = 11, img = "https://github.com/user-attachments/assets/0814b836-a0a2-4a26-8f1e-caafee604a3b";
+INSERT INTO mob SET id = 12, img = "https://github.com/user-attachments/assets/30d1131c-5db0-4abb-97a1-b5bb9127f19d";
+INSERT INTO mob SET id = 13, img = "https://github.com/user-attachments/assets/b43717db-90e0-49cb-a80f-5d9144e8555d";
+INSERT INTO mob SET id = 14, img = "https://github.com/user-attachments/assets/6a623aaa-ebf6-4b76-b55b-cc4a80576060";
+INSERT INTO mob SET id = 15, img = "https://github.com/user-attachments/assets/7765f401-da7e-4d07-9ce2-a565e92a6651";
+INSERT INTO mob SET id = 16, img = "https://github.com/user-attachments/assets/80eb8427-67d6-41bb-831e-9fc95e0dc718";
+INSERT INTO mob SET id = 17, img = "https://github.com/user-attachments/assets/9c5464fa-5de4-475a-a601-8313e9d4070c";
+INSERT INTO mob SET id = 18, img = "https://github.com/user-attachments/assets/b86834e5-65d3-4e7a-91b0-96cf616dc0c1";
+INSERT INTO mob SET id = 19, img = "https://github.com/user-attachments/assets/24af62fa-4b25-4db8-83ca-edcd8b2a1cdd";
+INSERT INTO mob SET id = 20, img = "https://github.com/user-attachments/assets/1af80f91-f449-45f0-8553-0914dfa0e9a3";
+
+INSERT INTO mob SET id = 21, img = "https://github.com/user-attachments/assets/efc773bc-aa2d-4586-baa1-3cc313d2a059";
+INSERT INTO mob SET id = 22, img = "https://github.com/user-attachments/assets/05ca3139-c237-4110-86fa-ec1797db2d96";
+INSERT INTO mob SET id = 23, img = "https://github.com/user-attachments/assets/d120300e-a485-45b4-b4f0-e833092fe7a5";
+INSERT INTO mob SET id = 24, img = "https://github.com/user-attachments/assets/1c76742c-b8c8-4985-ac61-1ed71152ba6d";
+INSERT INTO mob SET id = 25, img = "https://github.com/user-attachments/assets/76d03e1c-9456-4edc-97be-2dbe41ef2ab0";
+INSERT INTO mob SET id = 26, img = "https://github.com/user-attachments/assets/5ee073e4-e111-4712-aea9-d07c4e00cf13";
+INSERT INTO mob SET id = 27, img = "https://github.com/user-attachments/assets/3760b544-5e2b-4c11-ac17-417c81dfe4f2";
+INSERT INTO mob SET id = 28, img = "https://github.com/user-attachments/assets/c711a2ae-ba08-431d-9695-bd198f19f0e0";
+INSERT INTO mob SET id = 29, img = "https://github.com/user-attachments/assets/064a8937-beb2-4dee-8ae5-ae4dd5fe6c24";
+INSERT INTO mob SET id = 30, img = "https://github.com/user-attachments/assets/136cda85-bf27-4d0d-8e79-5fbe36b7ac1f";
+
+INSERT INTO mob SET id = 31, img = "https://github.com/user-attachments/assets/cfbe7f09-078b-4056-82f9-2f70983d0f52";
+INSERT INTO mob SET id = 32, img = "https://github.com/user-attachments/assets/0bc0f092-e535-4c6d-8631-07c87e80014f";
+INSERT INTO mob SET id = 33, img = "https://github.com/user-attachments/assets/397fa4af-9a52-48d1-8bd0-629f575198c2";
+INSERT INTO mob SET id = 34, img = "https://github.com/user-attachments/assets/e426c503-1da8-4ad1-865a-a4fb6b9db70c";
+INSERT INTO mob SET id = 35, img = "https://github.com/user-attachments/assets/e815cb6a-6778-4110-9934-9a64f3174b98";
+INSERT INTO mob SET id = 36, img = "https://github.com/user-attachments/assets/75270bfd-b910-4e23-9e3a-b71af9cb0761";
+INSERT INTO mob SET id = 37, img = "https://github.com/user-attachments/assets/0df7b7a3-6625-4485-b3bc-646992ff0641";
+INSERT INTO mob SET id = 38, img = "https://github.com/user-attachments/assets/13d39b53-ee46-461d-a57d-06d54b5bb6f2";
+INSERT INTO mob SET id = 39, img = "https://github.com/user-attachments/assets/f6be058b-d91c-46a7-9eac-cf168701c133";
+INSERT INTO mob SET id = 40, img = "https://github.com/user-attachments/assets/fed7ffa9-3a4e-4aef-b6dd-40b715089f21";
+
+INSERT INTO mob SET id = 41, img = "https://github.com/user-attachments/assets/2672c70c-8d37-46de-acba-e9b1c2f4fbfc";
+INSERT INTO mob SET id = 42, img = "https://github.com/user-attachments/assets/1a25b242-de00-4b05-8bb8-47901f9e15b8";
+INSERT INTO mob SET id = 43, img = "https://github.com/user-attachments/assets/923bf658-6ded-439f-80a9-173689429f47";
+INSERT INTO mob SET id = 44, img = "https://github.com/user-attachments/assets/f7ac2d6e-1ae5-4b0e-988c-b1b7471f312a";
+INSERT INTO mob SET id = 45, img = "https://github.com/user-attachments/assets/50a96d00-65d3-422c-8ad0-01aef2c29ae7";
+INSERT INTO mob SET id = 46, img = "https://github.com/user-attachments/assets/648819e7-cbdb-43a3-a1dc-3bac31332dfc";
+INSERT INTO mob SET id = 47, img = "https://github.com/user-attachments/assets/e3d332b0-4a6c-473f-b6ac-0ade6db763aa";
+INSERT INTO mob SET id = 48, img = "https://github.com/user-attachments/assets/3aa893dd-fe2e-440c-a114-70d1290119f3";
+INSERT INTO mob SET id = 49, img = "https://github.com/user-attachments/assets/0c363b9c-6048-4e07-b304-d1a0283fb35b";
+INSERT INTO mob SET id = 50, img = "https://github.com/user-attachments/assets/66b9b527-566c-4a76-8a1b-3c7be2c695ef";
+
+INSERT INTO mob SET id = 51, img = "https://github.com/user-attachments/assets/b9dac1d9-afc9-4ce8-a6df-1c945dbc68db";
+INSERT INTO mob SET id = 52, img = "https://github.com/user-attachments/assets/53fd6e00-c519-41e2-adc1-3d848d34f3a7";
+INSERT INTO mob SET id = 53, img = "https://github.com/user-attachments/assets/1f52c6f6-40e8-48b6-907e-4e64b8907a27";
 
 SELECT C.*, W.img extra__weapon
 FROM charac C
