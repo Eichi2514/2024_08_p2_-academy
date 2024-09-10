@@ -8,12 +8,11 @@ import org.apache.ibatis.annotations.Update;
 import com.example.demo.vo.Member;
 
 @Mapper
-public interface WeaponRepository {
-
+public interface WeaponRepository {	
 	@Select("""
 			SELECT img
 			FROM weapon
-            WHERE id = #{num} 		
+            WHERE id = #{weaponId} 		
 			""")
-	public String randomWeapon(int num);
+	public String weaponImg(int weaponId);
 }

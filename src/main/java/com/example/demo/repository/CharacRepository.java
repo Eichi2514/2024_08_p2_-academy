@@ -50,5 +50,5 @@ public interface CharacRepository {
 			weaponId = #{weaponId}
 			WHERE memberId = #{memberId}
 			""")
-	public void weaponChange(int memberId, int weaponId);		
+	public void weaponChange(int memberId, int weaponId);			
 }

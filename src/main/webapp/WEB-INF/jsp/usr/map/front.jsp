@@ -489,21 +489,41 @@ function showItem_text(){
 
 //아이템 안내창 교체
 function Item_change(){
-    $.ajax({
-        url : '/usr/charac/weaponChange',
-        type : 'POST',
-        dataType : 'text',
-        success: function(data) {
-        	var changeImg = "${weapon}";
-            $('.weapon_img').attr('src', changeImg);
-            $('.CharacAttack').attr('src', changeImg);
-            $(".item").fadeOut(1000).addClass('hidden');
-            $(".item_text").fadeOut(1000).addClass('hidden');
-        },
-        error : function(jqXHR, textStatus, errorThrown) {
-            alert('오류 발생 : ' + textStatus);
-        }
-    });
+  $.ajax({
+      url : '/usr/charac/weaponChange',
+      type : 'POST',
+      dataType : 'text',
+      success: function(data) {
+      	var changeImg = "${weapon}";
+          $('.weapon_img').attr('src', changeImg);
+          $('.CharacAttack').attr('src', changeImg);
+          $(".item").fadeOut(1000).addClass('hidden');
+          $(".item_text").fadeOut(1000).addClass('hidden');
+      },
+      error : function(jqXHR, textStatus, errorThrown) {
+          alert('오류 발생 : ' + textStatus);
+      }
+  });
+}
+
+//아이템 안내창 조합
+function Item_mix(){
+  $.ajax({
+      url : '/usr/charac/weaponMix',
+      type : 'POST',
+      dataType : 'text',
+      success: function(data) {
+    	  console.log("무기정보 : " + data);
+      	var changeImg = data;
+          $('.weapon_img').attr('src', changeImg);
+          $('.CharacAttack').attr('src', changeImg);
+          $(".item").fadeOut(1000).addClass('hidden');
+          $(".item_text").fadeOut(1000).addClass('hidden');
+      },
+      error : function(jqXHR, textStatus, errorThrown) {
+          alert('오류 발생 : ' + textStatus);
+      }
+  });
 }
 
 //아이템 안내창 취소
@@ -915,7 +935,7 @@ function BossHpDown(){
 
 	<div class="item_title absolute">새로운 무기를 발견하였습니다.</div>
 	<button class="item_change absolute" onclick="Item_change()">교체</button>
-	<button class="item_mix absolute">합성</button>
+	<button class="item_mix absolute" onclick="Item_mix()">합성</button>
 	<button class="item_exit absolute" onclick="Item_exit()">취소</button>
 </div>
 

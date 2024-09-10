@@ -11,9 +11,6 @@ public class CharacService {
 
 	@Autowired
 	private CharacRepository characRepository;
-	
-	@Autowired
-    private WeaponService weaponService;
 
 	public CharacService(CharacRepository characRepository) {
 		this.characRepository = characRepository;
@@ -35,10 +32,9 @@ public class CharacService {
 		characRepository.delete(memberId);
 	}
 
-	public void weaponChange(int memberId) {
-		System.out.println("무기 체인지 실행2");
-		int weaponId = weaponService.getRandomWeaponId();
-		System.out.println(weaponId);
+	public void weaponChange(int memberId, int weaponId) {	
+		System.out.println("무기 체인지 서비스 실행");
+		/* System.out.println(weaponId); */
 		characRepository.weaponChange(memberId, weaponId);
-	}	
+	}
 }

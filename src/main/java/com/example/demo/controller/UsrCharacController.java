@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.service.CharacService;
 import com.example.demo.service.ScoreboardService;
+import com.example.demo.service.WeaponService;
 import com.example.demo.vo.Charac;
 import com.example.demo.vo.Rq;
 import com.example.demo.vo.Scoreboard;
@@ -21,6 +22,9 @@ public class UsrCharacController {
 
 	@Autowired
 	CharacService characService;
+	
+	@Autowired
+    private WeaponService weaponService;
 
 	@RequestMapping("/usr/charac/update")
 	@ResponseBody
@@ -39,12 +43,38 @@ public class UsrCharacController {
 	@RequestMapping("/usr/charac/weaponChange")
 	@ResponseBody
 	public void weaponChange(HttpServletRequest req) {
-		System.out.println("무기 체인지 실행");
+		/* System.out.println("무기 체인지 실행"); */
 				
 		Rq rq = (Rq) req.getAttribute("rq");
 		
 		int memberId = rq.getLoginedMemberId();
 		
-		characService.weaponChange(memberId);		
+		int weaponId = weaponService.getRandomWeaponId();
+		
+		characService.weaponChange(memberId, weaponId);		
+	}
+
+	@RequestMapping("/usr/charac/weaponMix")
+	@ResponseBody
+	public String weaponMix(HttpServletRequest req) {
+		/* System.out.println("무기 체인지 실행"); */
+				
+		Rq rq = (Rq) req.getAttribute("rq"); // 공유정보 불러오기
+		
+		int memberId = rq.getLoginedMemberId(); // 저장돼있는 로그인 계정의 번호 불러오기
+		
+		Charac charac = characService.characChack(rq.getLoginedMemberId()); // 캐릭터 정보 가져오기
+		int weaponId = charac.getWeaponId(); // 무기 번호 저장
+		
+		int weaponId2 = weaponService.getRandomWeaponId();		
+		weaponId += weaponId2; // 원래 가지고 있던 무기랑 새로운 무기 더하기
+        
+		weaponId = weaponService.weaponMaxChack(weaponId);
+		
+		characService.weaponChange(memberId, weaponId); // 무기 조합
+		
+		String extra__weapon = weaponService.weaponImg(weaponId);
+						
+		return extra__weapon;
 	}
 }
