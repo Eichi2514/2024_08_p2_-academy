@@ -14,7 +14,8 @@ CREATE TABLE `member`(
       nickname CHAR(20) NOT NULL,
       gender TINYINT(1) UNSIGNED NOT NULL COMMENT '성별 (0=여자, 1=남자)',
       delStatus TINYINT(1) UNSIGNED NOT NULL DEFAULT 0 COMMENT '탈퇴 여부 (0=탈퇴 전, 1=탈퇴 후)',
-      delDate DATETIME COMMENT '탈퇴 날짜'
+      delDate DATETIME COMMENT '탈퇴 날짜',
+      `floor` INT(10) NOT NULL DEFAULT 0 COMMENT '캐릭터 도달 층 수'
 );
 
 CREATE TABLE charac(
@@ -31,6 +32,12 @@ CREATE TABLE charac(
 CREATE TABLE weapon(
       id INT(10) UNSIGNED NOT NULL PRIMARY KEY,
       img TEXT NOT NULL
+);
+
+CREATE TABLE weaponClear(
+      id INT(10) UNSIGNED NOT NULL PRIMARY KEY,
+      memberId INT(10) NOT NULL,
+      weaponId INT(10) NOT NULL DEFAULT 0 COMMENT '무기번호'
 );
 
 CREATE TABLE scoreboard(
@@ -72,7 +79,7 @@ SET regDate = NOW(),
 updateDate = NOW(),
 hp = 1, 
 memberId = 1,
-weaponId = 70;
+weaponId = 68;
 
 ## 테스트 기록 생성
 INSERT INTO scoreboard
