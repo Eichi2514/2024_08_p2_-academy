@@ -830,7 +830,7 @@ function BossHpDown(){
 <!-- 첫번째 몬스터 -->
 <c:if test="${room > 0 && room < 5}">
 	<div class="front_mob mob2 absolute">
-	    <!-- 왼쪽 공격 -->
+		<!-- 왼쪽 공격 -->
 		<img class="mobAttack Aattack2 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 위쪽 공격 -->
@@ -848,7 +848,7 @@ function BossHpDown(){
 <!-- 두번째 몬스터 -->
 <c:if test="${room > 1 && room < 5}">
 	<div class="front_mob mob3 absolute">
-	    <!-- 왼쪽 공격 -->
+		<!-- 왼쪽 공격 -->
 		<img class="mobAttack Aattack3 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 위쪽 공격 -->
@@ -878,8 +878,7 @@ function BossHpDown(){
 		<!-- 아래쪽 공격 -->
 		<img class="mobAttack Sattack4 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
-		<img class="front_mob_img"
-			src="${mob}" alt="" />
+		<img class="front_mob_img" src="${mob}" alt="" />
 	</div>
 </c:if>
 <!-- 네번째 몬스터 -->
@@ -902,10 +901,10 @@ function BossHpDown(){
 </c:if>
 <!-- 보스 몬스터 -->
 <c:if test="${floor > 1 && room == 0}">
-<div class="bossHP absolute">
-<div class="bossHP_title">BOSS : </div>
-<div class="bossHP_bar"></div>
-</div>
+	<div class="bossHP absolute">
+		<div class="bossHP_title">BOSS :</div>
+		<div class="bossHP_bar"></div>
+	</div>
 
 	<div class="front_bossMob mob6 absolute">
 		<!-- 왼쪽 공격 -->
@@ -919,7 +918,7 @@ function BossHpDown(){
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 아래쪽 공격 -->
 		<img class="mobAttack Sattack6 attackSize hidden absolute"
-			src="${charac.extra__weapon}" alt="" />	
+			src="${charac.extra__weapon}" alt="" />
 		<img class="front_bossMob_img" src="${mob}" alt="" />
 	</div>
 
@@ -943,22 +942,71 @@ function BossHpDown(){
 <!-- 캐릭터 -->
 <div class="front_charac charac absolute">
 	<!-- 왼쪽 공격 -->
-	<img class="Aattack1_${charac.weaponId} attackSize Aattack1 CharacAttack hidden absolute"
+	<img
+		class="Aattack1_${charac.weaponId} attackSize Aattack1 CharacAttack hidden absolute"
 		src="${charac.extra__weapon}" alt="" />
 	<!-- 위쪽 공격 -->
-	<img class="Wattack1_${charac.weaponId} attackSize Wattack1 CharacAttack hidden absolute"
+	<img
+		class="Wattack1_${charac.weaponId} attackSize Wattack1 CharacAttack hidden absolute"
 		src="${charac.extra__weapon}" alt="" />
 	<!-- 오른쪽 공격 -->
-	<img class="Dattack1_${charac.weaponId} attackSize Dattack1 CharacAttack hidden absolute"
+	<img
+		class="Dattack1_${charac.weaponId} attackSize Dattack1 CharacAttack hidden absolute"
 		src="${charac.extra__weapon}" alt="" />
 	<!-- 아래쪽 공격 -->
-	<img class="Sattack1_${charac.weaponId} attackSize Sattack1 CharacAttack hidden absolute"
+	<img
+		class="Sattack1_${charac.weaponId} attackSize Sattack1 CharacAttack hidden absolute"
 		src="${charac.extra__weapon}" alt="" />
 	<!-- 캐릭터 이미지 -->
 	<img class="front_charac_img rounded-full"
 		src="https://github.com/user-attachments/assets/aaa05c2c-d55a-4111-b367-9231727e7050"
 		alt="" />
 </div>
+
+<!--  배경음악 관련 -->
+<c:if test="${floor <= 25}">
+<audio id="audioPlayer" class="audioPlayer hidden absolute" controls autoplay loop preload="auto">
+    <source src="${pageContext.request.contextPath}/audio/bg1.mp3" type="audio/mpeg">
+</audio>
+</c:if>
+<c:if test="${floor <= 50 && floor > 25}">
+<audio id="audioPlayer" class="audioPlayer hidden absolute" controls autoplay loop preload="auto">
+    <source src="${pageContext.request.contextPath}/audio/bg2.mp3" type="audio/mpeg">
+</audio>
+</c:if>
+<c:if test="${floor <= 75 && floor > 50}">
+<audio id="audioPlayer" class="audioPlayer hidden absolute" controls autoplay loop preload="auto">
+    <source src="${pageContext.request.contextPath}/audio/bg3.mp3" type="audio/mpeg">
+</audio>
+</c:if>
+<c:if test="${floor > 75}">
+<audio id="audioPlayer" class="audioPlayer hidden absolute" controls autoplay loop preload="auto">
+    <source src="${pageContext.request.contextPath}/audio/bg4.mp3" type="audio/mpeg">
+</audio>
+</c:if>
+
+<script>
+window.addEventListener('beforeunload', function() {
+    var audio = document.getElementById('audioPlayer');
+    var storageKey = 'audioPlaybackPosition';
+    console.log('Saving position:', audio.currentTime);
+    localStorage.setItem(storageKey, audio.currentTime);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    var audio = document.getElementById('audioPlayer');
+    var storageKey = 'audioPlaybackPosition';
+
+    audio.addEventListener('loadedmetadata', function() {
+        var savedPosition = localStorage.getItem(storageKey);
+        console.log('Loaded saved position:', savedPosition);
+        if (savedPosition) {
+            audio.currentTime = parseFloat(savedPosition);
+        }
+    });
+});
+</script>
+
 
 
 

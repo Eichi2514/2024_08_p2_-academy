@@ -59,6 +59,12 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	border: 0.1vh solid;
 }
 
+/* 배경음악 */
+.audioPlayer{
+	left: 0;
+	top: 0;
+}
+
 /* 메인화면 */
 .logo {
 	left: 1vh;

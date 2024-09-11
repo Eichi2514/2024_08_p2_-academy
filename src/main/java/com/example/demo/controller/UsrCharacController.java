@@ -36,7 +36,7 @@ public class UsrCharacController {
 		Rq rq = (Rq) req.getAttribute("rq");
 
 		int memberId = rq.getLoginedMemberId();
-		if (floor != 1 && room == 0) { // 보스방 통과시에만 체력 증가
+		if (floor != 1 && room == 1) { // 보스방 통과시에만 체력 증가
 			hp++;
 		}
 		characService.update(hp, floor, room, memberId);
