@@ -538,7 +538,7 @@ function showItem(){
 
 // 보스 HP 감소 함수
 function BossHpDown(){
-	let new_width_value = ( ${50/ (floor*10) }*mob6_hp);
+	let new_width_value = ( ${50/ ((floor-1)*10) }*mob6_hp);
 	$(".bossHP_bar").css('width', new_width_value+'vh');
 }
 
@@ -560,8 +560,8 @@ function BossHpDown(){
 					dataType : 'text',
 					success : function(data) {
 						// console.log("몬스터"+data+"Attack");		
-						console.log("데미지 : " + damage);
-						console.log("보스 HP : " + mob6_hp);
+						// console.log("데미지 : " + damage);
+						// console.log("보스 HP : " + mob6_hp);
 						if (something != 1 && data == 1) {
 							hpDown();
 						} else if (something == 1 && data == 2) {
@@ -689,7 +689,9 @@ function BossHpDown(){
 					},
 					dataType : 'text',
 					success : function(data) {
-						// console.log("몬스터"+data+"Attack");						 
+						// console.log("몬스터"+data+"Attack");
+						// console.log("데미지 : " + damage);
+						// console.log("보스 HP : " + mob6_hp);
 						if (something != 1 && data == 1) {
 							hpDown();
 						} else if (something == 1 && data == 2) {
@@ -744,9 +746,9 @@ function BossHpDown(){
 				});
 			}	
 
-	       function attackS(something) {
+	       function attackX(something) {
 				$.ajax({
-					url : '/usr/map/Sattack',
+					url : '/usr/map/Xattack',
 					type : 'POST',
 					data : {
 						something : something
@@ -800,7 +802,7 @@ function BossHpDown(){
 						// console.log("몬스터5 hp : " + mob5_hp);
 						// console.log("몬스터6 hp : " + mob6_hp);
 						showDoor();
-						attack_motion(something, "S");
+						attack_motion(something, "X");
 					},
 					error : function(jqXHR, textStatus, errorThrown) {
 						alert('오류 발생 : ' + textStatus);
@@ -823,7 +825,7 @@ function BossHpDown(){
 
 <!-- 튜토리얼 알림창 -->
 <c:if test="${param.stage == 5}">
-	<div class="guide1 bg-white text-center absolute">A W D S : 공격</div>
+	<div class="guide1 bg-white text-center absolute">A W D X : 공격</div>
 	<div class="guide2 bg-white text-center absolute">← ↑ → ↓ : 이동</div>
 </c:if>
 
@@ -840,7 +842,7 @@ function BossHpDown(){
 		<img class="mobAttack Dattack2 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 아래쪽 공격 -->
-		<img class="mobAttack Sattack2 attackSize hidden absolute"
+		<img class="mobAttack Xattack2 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<img class="front_mob_img" src="${mob}" alt="" />
 	</div>
@@ -858,7 +860,7 @@ function BossHpDown(){
 		<img class="mobAttack Dattack3 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 아래쪽 공격 -->
-		<img class="mobAttack Sattack3 attackSize hidden absolute"
+		<img class="mobAttack Xattack3 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<img class="front_mob_img" src="${mob}" alt="" />
 	</div>
@@ -876,7 +878,7 @@ function BossHpDown(){
 		<img class="mobAttack Dattack4 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 아래쪽 공격 -->
-		<img class="mobAttack Sattack4 attackSize hidden absolute"
+		<img class="mobAttack Xattack4 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<img class="front_mob_img" src="${mob}" alt="" />
 	</div>
@@ -894,7 +896,7 @@ function BossHpDown(){
 		<img class="mobAttack Dattack5 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 아래쪽 공격 -->
-		<img class="mobAttack Sattack5 attackSize hidden absolute"
+		<img class="mobAttack Xattack5 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<img class="front_mob_img" src="${mob}" alt="" />
 	</div>
@@ -917,7 +919,7 @@ function BossHpDown(){
 		<img class="mobAttack Dattack6 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 아래쪽 공격 -->
-		<img class="mobAttack Sattack6 attackSize hidden absolute"
+		<img class="mobAttack Xattack6 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<img class="front_bossMob_img" src="${mob}" alt="" />
 	</div>
@@ -955,7 +957,7 @@ function BossHpDown(){
 		src="${charac.extra__weapon}" alt="" />
 	<!-- 아래쪽 공격 -->
 	<img
-		class="Sattack1_${charac.weaponId} attackSize Sattack1 CharacAttack hidden absolute"
+		class="Xattack1_${charac.weaponId} attackSize Xattack1 CharacAttack hidden absolute"
 		src="${charac.extra__weapon}" alt="" />
 	<!-- 캐릭터 이미지 -->
 	<img class="front_charac_img rounded-full"
@@ -986,25 +988,34 @@ function BossHpDown(){
 </c:if>
 
 <script>
+//페이지를 떠나기 전, 현재 오디오의 재생 위치를 저장
 window.addEventListener('beforeunload', function() {
+    // 아이디로 오디오 요소를 가져오기
     var audio = document.getElementById('audioPlayer');
+    // 저장할 위치의 키를 저장
     var storageKey = 'audioPlaybackPosition';
-    console.log('Saving position:', audio.currentTime);
+    // 현재 오디오 재생 위치를 localStorage에 저장
     localStorage.setItem(storageKey, audio.currentTime);
 });
 
+// 문서가 완전히 로드된 후 실행
 document.addEventListener('DOMContentLoaded', function() {
+	// 아이디로 오디오 요소를 가져오기
     var audio = document.getElementById('audioPlayer');
+    // 저장할 위치의 키를 저장
     var storageKey = 'audioPlaybackPosition';
 
+    // 오디오 메타데이터가 로드되었을 때 호출되는 이벤트
     audio.addEventListener('loadedmetadata', function() {
+        // localStorage에서 저장된 재생 위치를 가져온다
         var savedPosition = localStorage.getItem(storageKey);
-        console.log('Loaded saved position:', savedPosition);
+        // 저장된 위치가 있으면 해당 위치로 이동
         if (savedPosition) {
             audio.currentTime = parseFloat(savedPosition);
         }
     });
 });
+
 </script>
 
 

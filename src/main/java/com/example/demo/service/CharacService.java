@@ -33,7 +33,7 @@ public class CharacService {
 	}
 
 	public void weaponChange(int memberId, int weaponId) {	
-		System.out.println("무기 체인지 서비스 실행");
+		/* System.out.println("무기 체인지 서비스 실행"); */
 		/* System.out.println(weaponId); */
 		characRepository.weaponChange(memberId, weaponId);
 	}

@@ -83,9 +83,9 @@ $(window).keyup(function(e) {
 	} else if (e.keyCode === 68) {
 		// console.log('D키 눌림')
 		attackD(1);
-	} else if (e.keyCode === 83) {
-		// console.log('S키 눌림')
-		attackS(1);
+	} else if (e.keyCode === 88) {
+		// console.log('X키 눌림')
+		attackX(1);
 	}
 });
 

@@ -745,83 +745,83 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	top: 4vh;
 }
 
-/* [class^="Sattack"] {
+/* [class^="Xattack"] {
 	left: 4vh;
 	top: 14vh;
 	transform: rotate(90deg);
 } */
-.Sattack1_1, .Sattack1_11, .Sattack1_21, .Sattack1_31, .Sattack1_41,
-	.Sattack1_51, .Sattack1_61, .Sattack2, .Sattack3, .Sattack4, .Sattack5
+.Xattack1_1, .Xattack1_11, .Xattack1_21, .Xattack1_31, .Xattack1_41,
+	.Xattack1_51, .Xattack1_61, .Xattack2, .Xattack3, .Xattack4, .Xattack5
 	{
 	left: 4vh;
 	top: 16vh;
 	transform: rotate(90deg);
 }
 
-.Sattack6 {
+.Xattack6 {
 	left: 9vh;
 	top: 26vh;
 	transform: rotate(90deg);
 }
 
-.Sattack1_2, .Sattack1_12, .Sattack1_22, .Sattack1_32, .Sattack1_42,
-	.Sattack1_52, .Sattack1_62 {
+.Xattack1_2, .Xattack1_12, .Xattack1_22, .Xattack1_32, .Xattack1_42,
+	.Xattack1_52, .Xattack1_62 {
 	left: 4vh;
 	top: 18vh;
 	transform: rotate(90deg);
 }
 
-.Sattack1_3, .Sattack1_13, .Sattack1_23, .Sattack1_33, .Sattack1_43,
-	.Sattack1_53, .Sattack1_63 {
+.Xattack1_3, .Xattack1_13, .Xattack1_23, .Xattack1_33, .Xattack1_43,
+	.Xattack1_53, .Xattack1_63 {
 	left: 4vh;
 	top: 20vh;
 	transform: rotate(90deg);
 }
 
-.Sattack1_4, .Sattack1_14, .Sattack1_24, .Sattack1_34, .Sattack1_44,
-	.Sattack1_54, .Sattack1_64 {
+.Xattack1_4, .Xattack1_14, .Xattack1_24, .Xattack1_34, .Xattack1_44,
+	.Xattack1_54, .Xattack1_64 {
 	left: 4vh;
 	top: 22vh;
 	transform: rotate(90deg);
 }
 
-.Sattack1_5, .Sattack1_15, .Sattack1_25, .Sattack1_35, .Sattack1_45,
-	.Sattack1_55, .Sattack1_65 {
+.Xattack1_5, .Xattack1_15, .Xattack1_25, .Xattack1_35, .Xattack1_45,
+	.Xattack1_55, .Xattack1_65 {
 	left: 4vh;
 	top: 24vh;
 	transform: rotate(90deg);
 }
 
-.Sattack1_6, .Sattack1_16, .Sattack1_26, .Sattack1_36, .Sattack1_46,
-	.Sattack1_56, .Sattack1_66 {
+.Xattack1_6, .Xattack1_16, .Xattack1_26, .Xattack1_36, .Xattack1_46,
+	.Xattack1_56, .Xattack1_66 {
 	left: 4vh;
 	top: 26vh;
 	transform: rotate(90deg);
 }
 
-.Sattack1_7, .Sattack1_17, .Sattack1_27, .Sattack1_37, .Sattack1_47,
-	.Sattack1_57, .Sattack1_67 {
+.Xattack1_7, .Xattack1_17, .Xattack1_27, .Xattack1_37, .Xattack1_47,
+	.Xattack1_57, .Xattack1_67 {
 	left: 4vh;
 	top: 28vh;
 	transform: rotate(90deg);
 }
 
-.Sattack1_8, .Sattack1_18, .Sattack1_28, .Sattack1_38, .Sattack1_48,
-	.Sattack1_58, .Sattack1_68 {
+.Xattack1_8, .Xattack1_18, .Xattack1_28, .Xattack1_38, .Xattack1_48,
+	.Xattack1_58, .Xattack1_68 {
 	left: 4vh;
 	top: 30vh;
 	transform: rotate(90deg);
 }
 
-.Sattack1_9, .Sattack1_19, .Sattack1_29, .Sattack1_39, .Sattack1_49,
-	.Sattack1_59, .Sattack1_69 {
+.Xattack1_9, .Xattack1_19, .Xattack1_29, .Xattack1_39, .Xattack1_49,
+	.Xattack1_59, .Xattack1_69 {
 	left: 4vh;
 	top: 32vh;
 	transform: rotate(90deg);
 }
 
-.Sattack1_10, .Sattack1_20, .Sattack1_30, .Sattack1_40, .Sattack1_50,
-	.Sattack1_60, .Sattack1_70 {
+.Xattack1_10, .Xattack1_20, .Xattack1_30, .Xattack1_40, .Xattack1_50,
+	.Xattack1_60, .Xattack1_70 {
 	left: 4vh;
 	top: 34vh;
 	transform: rotate(90deg);

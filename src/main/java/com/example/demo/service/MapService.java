@@ -168,15 +168,16 @@ public class MapService {
 			}
 		}
 
-		System.out.println("==========================================");
-		if (something == charac || something == mob2 || something == mob6) {
-			for (int X = 0; X < mapHeight; X++) {
-				for (int Y = 0; Y < mapWidth; Y++) {
-					System.err.print(map[X][Y]);
-				}
-				System.err.println();
-			}
-		}
+		/*
+		 * if (something == charac) {
+		 * System.out.println("=========================================="); 
+		 * for (int X *= 0; X < mapHeight; X++) {
+		 *     for (int Y = 0; Y < mapWidth; Y++) {
+		 *         System.err.print(map[X][Y]); 
+		 *         } System.err.println(); 
+		 *     } 
+		 * }
+		 */
 		return "success";
 	}
 
@@ -352,15 +353,16 @@ public class MapService {
 			}
 		}
 
-		System.out.println("==========================================");
-		if (something == charac || something == mob2 || something == mob6) {
-			for (int X = 0; X < mapHeight; X++) {
-				for (int Y = 0; Y < mapWidth; Y++) {
-					System.err.print(map[X][Y]);
-				}
-				System.err.println();
-			}
-		}
+		/*
+		 * if (something == charac) {
+		 * System.out.println("=========================================="); 
+		 * for (int X *= 0; X < mapHeight; X++) {
+		 *     for (int Y = 0; Y < mapWidth; Y++) {
+		 *         System.err.print(map[X][Y]); 
+		 *         } System.err.println(); 
+		 *     } 
+		 * }
+		 */
 		return "success";
 	}
 
@@ -397,7 +399,6 @@ public class MapService {
 		}
 
 		// 맵 상황 확인
-		System.out.println("==========================================");
 
 		Ycode--;
 
@@ -407,14 +408,16 @@ public class MapService {
 			}
 		}
 
-		if (something == charac || something == mob2 || something == mob6) {
-			for (int X = 0; X < mapHeight; X++) {
-				for (int Y = 0; Y < mapWidth; Y++) {
-					System.err.print(map[X][Y]);
-				}
-				System.err.println();
-			}
-		}
+		/*
+		 * if (something == charac) {
+		 * System.out.println("=========================================="); 
+		 * for (int X *= 0; X < mapHeight; X++) {
+		 *     for (int Y = 0; Y < mapWidth; Y++) {
+		 *         System.err.print(map[X][Y]); 
+		 *         } System.err.println(); 
+		 *     } 
+		 * }
+		 */
 		return "success";
 	}
 
@@ -432,16 +435,16 @@ public class MapService {
 			if (map[x][Ycode + width] == charac) {
 				return "charac";
 			} else if (map[x][Ycode + width] != road) {
-				// 맵 상황 확인
-				System.out.println("==========================================");
-				if (something == mob2 || something == mob6) {
-					for (int X = 0; X < mapHeight; X++) {
-						for (int Y = 0; Y < mapWidth; Y++) {
-							System.err.print(map[X][Y]);
-						}
-						System.err.println();
-					}
-				}
+				/*
+				 * if (something == charac) {
+				 * System.out.println("=========================================="); 
+				 * for (int X *= 0; X < mapHeight; X++) {
+				 *     for (int Y = 0; Y < mapWidth; Y++) {
+				 *         System.err.print(map[X][Y]); 
+				 *         } System.err.println(); 
+				 *     } 
+				 * }
+				 */
 				return "Lost";
 			}
 		}
@@ -470,15 +473,16 @@ public class MapService {
 			}
 		}
 
-		System.out.println("==========================================");
-		if (something == charac || something == mob2 || something == mob6) {
-			for (int X = 0; X < mapHeight; X++) {
-				for (int Y = 0; Y < mapWidth; Y++) {
-					System.err.print(map[X][Y]);
-				}
-				System.err.println();
-			}
-		}
+		/*
+		 * if (something == charac) {
+		 * System.out.println("=========================================="); 
+		 * for (int X *= 0; X < mapHeight; X++) {
+		 *     for (int Y = 0; Y < mapWidth; Y++) {
+		 *         System.err.print(map[X][Y]); 
+		 *         } System.err.println(); 
+		 *     } 
+		 * }
+		 */
 		return "success";
 	}
 
@@ -551,7 +555,7 @@ public class MapService {
 		return map[x][y];
 	}
 
-	public int Sattack(int something, int weaponId) {
+	public int Xattack(int something, int weaponId) {
 		int Xcode = somethingXcode(something);
 		int Ycode = somethingYcode(something);
 		int height = somethingHeight(something);
