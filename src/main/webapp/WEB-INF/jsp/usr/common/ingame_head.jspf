@@ -49,7 +49,7 @@
 				생명 :
 				<section class="hp_count inline-block" style="padding-left: 1vh;">${charac.hp}</section>
 			</div>
-			<button class="mob__dictionary_bt absolute"
+			<button class="mob__dictionary_bt absolute play"
 				onclick="showMob__dictionary()">몬스터 도감</button>
 			<div class="mob__dictionary hidden absolute">
 				<div class="mob__dictionary_inner">
@@ -429,8 +429,8 @@
 			<button class="mob__prev_bt absolute hidden" onclick="mob__prev()">◀</button>
 			<a class="mob__list_bt absolute hidden" href="../dictionary/mob">전체보기</a>
 			<button class="mob__next_bt absolute hidden" onclick="mob__next()">▶</button>
-			<button class="weapon__dictionary_bt absolute"
-				onclick="showWeapon__dictionary()">무기 도감</button>
+			<button class="weapon__dictionary_bt absolute play"
+				onclick="showWeapon__dictionary()">&nbsp;무&nbsp;기&nbsp; 도감</button>
 			<div class="weapon absolute text-center">
 				착용무기
 				<img class="weapon_img absolute" src="${charac.extra__weapon}"

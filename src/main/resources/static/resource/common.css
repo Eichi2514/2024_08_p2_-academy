@@ -66,14 +66,16 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	top: 0;
 }
 
-.audio_bt.play::after {
+.play::after {
+	display: block;
 	padding: 1vh;
-	content: ": 꺼짐";
+	content: "켜기";
 }
 
-.audio_bt.pause::after {
+.pause::after {
+	display: block;
 	padding: 1vh;
-	content: ": 켜짐";
+	content: "끄기";
 }
 
 .audio_bt {

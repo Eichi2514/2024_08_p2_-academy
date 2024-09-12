@@ -105,7 +105,7 @@ function Up(something) {
 					$(".charac").css("top", UD + "vh");
 					stageUp();
 					showItem_text();
-		//			console.log('LR : ' + LR + ', UD : ' + UD);
+					//			console.log('LR : ' + LR + ', UD : ' + UD);
 				}
 			},
 			error: function(jqXHR, textStatus, errorThrown) {
@@ -129,7 +129,7 @@ function Down(something) {
 					$(".charac").css("top", UD + "vh");
 					stageUp();
 					showItem_text();
-	//				console.log('LR : ' + LR + ', UD : ' + UD);
+					//				console.log('LR : ' + LR + ', UD : ' + UD);
 				}
 			},
 			error: function(jqXHR, textStatus, errorThrown) {
@@ -153,7 +153,7 @@ function Left(something) {
 					$(".charac").css("left", LR + "vh");
 					stageUp();
 					showItem_text();
-//					console.log('LR : ' + LR + ', UD : ' + UD);
+					//					console.log('LR : ' + LR + ', UD : ' + UD);
 				}
 			},
 			error: function(jqXHR, textStatus, errorThrown) {
@@ -177,7 +177,7 @@ function Right(something) {
 					$(".charac").css("left", LR + "vh");
 					stageUp();
 					showItem_text();
-//					console.log('LR : ' + LR + ', UD : ' + UD);
+					//					console.log('LR : ' + LR + ', UD : ' + UD);
 				}
 			},
 			error: function(jqXHR, textStatus, errorThrown) {
@@ -195,36 +195,38 @@ var dictionaryWidth = $('.mob__dictionary').width(); // 한 번에 보여줄 전
 var cardWidth = $('.mob__dictionary_card').outerWidth(true); // 카드의 너비(마진 포함)
 
 function updateSlide() {
-    // 이동할 위치 계산 (현재 인덱스에 맞게 이동)
-    var translateX = -currentIndex * cardWidth;
-    $('.mob__dictionary_inner').css('transform', 'translateX(' + translateX + 'px)');
+	// 이동할 위치 계산 (현재 인덱스에 맞게 이동)
+	var translateX = -currentIndex * cardWidth;
+	$('.mob__dictionary_inner').css('transform', 'translateX(' + translateX + 'px)');
 }
 
 function mob__next() {
-    if (currentIndex + itemsPerPage < totalItems) {
-        currentIndex++;
-    } else {
-        currentIndex = 0; // 마지막 카드에 도달하면 처음으로 돌아가기
-    }
-    updateSlide();
+	if (currentIndex + itemsPerPage < totalItems) {
+		currentIndex++;
+	} else {
+		currentIndex = 0; // 마지막 카드에 도달하면 처음으로 돌아가기
+	}
+	updateSlide();
 }
 
 function mob__prev() {
-    if (currentIndex > 0) {
-        currentIndex--;
-    } else {
-        currentIndex = totalItems - itemsPerPage; // 처음으로 돌아가면 마지막 페이지로 이동
-    }
-    updateSlide();
+	if (currentIndex > 0) {
+		currentIndex--;
+	} else {
+		currentIndex = totalItems - itemsPerPage; // 처음으로 돌아가면 마지막 페이지로 이동
+	}
+	updateSlide();
 }
 
-$(document).ready(function () {
-    updateSlide(); // 페이지 로딩 시 첫 페이지를 보여줌
+$(document).ready(function() {
+	updateSlide(); // 페이지 로딩 시 첫 페이지를 보여줌
 });
 
-function showMob__dictionary(){
+function showMob__dictionary() {
 	$('.mob__dictionary').toggleClass('hidden');
 	$('.mob__prev_bt').toggleClass('hidden');
 	$('.mob__list_bt').toggleClass('hidden');
-	$('.mob__next_bt').toggleClass('hidden');	
+	$('.mob__next_bt').toggleClass('hidden');
+	$('.mob__dictionary_bt').toggleClass('play');
+	$('.mob__dictionary_bt').toggleClass('pause');
 }
