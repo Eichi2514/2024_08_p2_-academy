@@ -51,4 +51,8 @@ public class MemberService {
 
 	}
 
+	public void floorUpdate(int loginedMemberId, int floor) {
+		memberRepository.floorUpdate(loginedMemberId, floor);		
+	}
+
 }

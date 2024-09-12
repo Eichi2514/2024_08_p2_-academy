@@ -61,17 +61,19 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 }
 
 /* 배경음악 */
-.audioPlayer{
+.audioPlayer {
 	left: 0;
 	top: 0;
 }
 
 .audio_bt.play::after {
-    content: " : 꺼짐";
+	padding: 1vh;
+	content: ": 꺼짐";
 }
 
 .audio_bt.pause::after {
-    content: " : 켜짐";
+	padding: 1vh;
+	content: ": 켜짐";
 }
 
 .audio_bt {
@@ -80,7 +82,7 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	width: 20vh;
 	height: 9vh;
 	border-radius: 1vh;
-	background: rgb(255, 71, 48);	
+	background: rgb(255, 71, 48);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -484,7 +486,7 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	background: rgb(255, 71, 48);
 }
 
-.mob__dictionary_bt{
+.mob__dictionary_bt {
 	left: 0;
 	top: 37.5vh;
 	width: 20vh;
@@ -494,28 +496,39 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	align-items: center;
 	border: 0.3vh solid;
 	border-radius: 1vh;
-	background: rgb(255, 71, 48);	
+	background: rgb(255, 71, 48);
 }
-.mob__dictionary{
+
+.mob__dictionary {
 	top: 15vh;
 	left: 25vh;
 	width: 90vh;
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
-	gap: 3.5vh;
+	overflow: hidden;
 	z-index: 20;
 }
-.mob__dictionary_card{
-	width: 20vh;	
+
+.mob__dictionary_inner {
+	display: flex;
+	gap: 3.5vh;
+	transition: transform 0.5s ease;
+}
+
+.mob__dictionary_card {
+	width: 20vh;
 	background: white;
 	border: 0.1vh solid;
+	flex-shrink: 0;
 }
-.mob__dictionary_title{
+
+.mob__dictionary_title {
 	height: 20vh;
 	width: 20vh;
 }
-.mob__dictionary_body{
+
+.mob__dictionary_body {
 	padding-top: 3vh;
 	width: 20vh;
 	display: flex;
@@ -523,30 +536,40 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	align-items: center;
 }
 
-.mob__prev_bt{
+.mob__prev_bt {
 	width: 10vh;
 	height: 10vh;
-	font-size:5vh;
+	font-size: 5vh;
 	top: 3vh;
 	left: 30vh;
-	z-index:21;
+	z-index: 21;
 	border-radius: 100vh;
-	background: white;	
+	background: white;
 }
 
+.mob__list_bt {
+	width: 25vh;
+	top: 3vh;
+	left: 57vh;
+	font-size: 5vh;
+	padding: 1vh;
+	border-radius: 1vh;
+	background: white;
+	text-align: center;
+}
 
-.mob__next_bt{
+.mob__next_bt {
 	width: 10vh;
 	height: 10vh;
-	font-size:5vh;
+	font-size: 5vh;
 	top: 3vh;
 	left: 100vh;
-	z-index:21;
+	z-index: 21;
 	border-radius: 100vh;
-	background: white;	
+	background: white;
 }
 
-.weapon__dictionary_bt{
+.weapon__dictionary_bt {
 	left: 0;
 	top: 47vh;
 	width: 20vh;
@@ -799,7 +822,8 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	top: 4vh;
 }
 
-.Dattack1_4, .Dattack1_14, .Dattack1_24, .Dattack1_34, .Dattack1_44, .Dattack1_54, .Dattack1_64 {
+.Dattack1_4, .Dattack1_14, .Dattack1_24, .Dattack1_34, .Dattack1_44,
+	.Dattack1_54, .Dattack1_64 {
 	left: 22vh;
 	top: 4vh;
 }
@@ -1007,4 +1031,49 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	width: 50vh;
 	background: red;
 	display: inline-block;
+}
+
+/* 몬스터 도감 */
+.mob__dictionary_title {
+	top: 0;
+	left: 20vh;
+	width: 60vh;
+	font-size:6vh;
+	text-align: center;
+	-webkit-text-stroke: 0.2vh white;
+}
+
+.mob__dictionary2 {
+	top: 10vh;
+	left: 10vh;
+	height: 80vh;
+	width: 80vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between
+}
+
+.mob__dictionary_inner2 {
+	display: flex;
+	justify-content: space-between
+}
+
+.mob__dictionary_card2 {
+	height: 10vh;
+	width: 7vh;
+	background: white;
+	border: 0.1vh solid;
+	flex-shrink: 0;
+}
+
+.mob__dictionary_title2 {
+	padding: 0.5vh;
+}
+
+.mob__dictionary_body2 {
+	padding-top: 1vh;
+	display: flex;
+	font-size: 1vh;
+	justify-content: center;
+	align-items: center;
 }

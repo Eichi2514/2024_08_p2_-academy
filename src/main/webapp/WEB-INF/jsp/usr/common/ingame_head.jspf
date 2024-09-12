@@ -51,380 +51,383 @@
 			</div>
 			<button class="mob__dictionary_bt absolute"
 				onclick="showMob__dictionary()">몬스터 도감</button>
-			<div class="mob__dictionary absolute hidden">
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 0? mobImgs.get(0):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">1층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 1? mobImgs.get(1):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">2층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 2? mobImgs.get(2):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">3층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 3? mobImgs.get(3):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">4층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 4? mobImgs.get(4):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">5층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 5? mobImgs.get(5):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">6층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 6? mobImgs.get(6):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">7층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 7? mobImgs.get(7):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">8층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 8? mobImgs.get(8):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">9층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 9? mobImgs.get(9):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">10층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 10? mobImgs.get(10):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">11층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 11? mobImgs.get(11):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">12층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 12? mobImgs.get(12):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">13층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 13? mobImgs.get(13):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">14층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 14? mobImgs.get(14):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">15층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 15? mobImgs.get(15):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">16층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 16? mobImgs.get(16):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">17층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 17? mobImgs.get(17):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">18층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 18? mobImgs.get(18):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">19층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 19? mobImgs.get(19):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">20층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 20? mobImgs.get(20):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">21층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 21? mobImgs.get(21):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">22층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 22? mobImgs.get(22):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">23층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 23? mobImgs.get(23):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">24층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 24? mobImgs.get(24):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">25층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 25? mobImgs.get(25):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">26층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 26? mobImgs.get(26):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">27층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 27? mobImgs.get(27):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">28층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 28? mobImgs.get(28):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">29층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 29? mobImgs.get(29):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">30층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 30? mobImgs.get(30):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">31층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 31? mobImgs.get(31):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">32층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 32? mobImgs.get(32):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">33층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 33? mobImgs.get(33):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">34층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 34? mobImgs.get(34):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">35층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 35? mobImgs.get(35):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">36층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 36? mobImgs.get(36):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">37층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 37? mobImgs.get(37):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">38층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 38? mobImgs.get(38):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">39층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 39? mobImgs.get(39):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">40층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 40? mobImgs.get(40):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">41층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 41? mobImgs.get(41):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">42층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 42? mobImgs.get(42):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">43층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 43? mobImgs.get(43):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">44층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 44? mobImgs.get(44):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">45층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 45? mobImgs.get(45):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">46층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 46? mobImgs.get(46):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">47층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 47? mobImgs.get(47):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">48층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 48? mobImgs.get(48):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">49층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 49? mobImgs.get(49):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">50층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 50? mobImgs.get(50):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">51층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 51? mobImgs.get(51):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">52층 몬스터</div>
-				</div>
-				<div class="mob__dictionary_card inline-block">
-					<img src="${mobImgs.size() > 52? mobImgs.get(52):''}"
-						alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
-						class="mob__dictionary_title"
-						onerror="this.onerror=null; this.src=this.alt;">
-					<div class="mob__dictionary_body">53층 몬스터</div>
+			<div class="mob__dictionary hidden absolute">
+				<div class="mob__dictionary_inner">
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 0? mobImgs.get(0):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">1층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 1? mobImgs.get(1):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">2층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 2? mobImgs.get(2):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">3층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 3? mobImgs.get(3):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">4층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 4? mobImgs.get(4):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">5층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 5? mobImgs.get(5):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">6층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 6? mobImgs.get(6):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">7층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 7? mobImgs.get(7):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">8층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 8? mobImgs.get(8):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">9층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 9? mobImgs.get(9):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">10층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 10? mobImgs.get(10):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">11층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 11? mobImgs.get(11):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">12층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 12? mobImgs.get(12):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">13층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 13? mobImgs.get(13):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">14층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 14? mobImgs.get(14):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">15층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 15? mobImgs.get(15):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">16층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 16? mobImgs.get(16):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">17층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 17? mobImgs.get(17):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">18층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 18? mobImgs.get(18):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">19층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 19? mobImgs.get(19):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">20층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 20? mobImgs.get(20):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">21층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 21? mobImgs.get(21):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">22층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 22? mobImgs.get(22):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">23층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 23? mobImgs.get(23):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">24층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 24? mobImgs.get(24):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">25층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 25? mobImgs.get(25):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">26층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 26? mobImgs.get(26):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">27층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 27? mobImgs.get(27):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">28층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 28? mobImgs.get(28):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">29층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 29? mobImgs.get(29):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">30층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 30? mobImgs.get(30):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">31층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 31? mobImgs.get(31):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">32층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 32? mobImgs.get(32):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">33층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 33? mobImgs.get(33):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">34층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 34? mobImgs.get(34):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">35층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 35? mobImgs.get(35):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">36층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 36? mobImgs.get(36):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">37층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 37? mobImgs.get(37):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">38층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 38? mobImgs.get(38):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">39층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 39? mobImgs.get(39):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">40층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 40? mobImgs.get(40):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">41층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 41? mobImgs.get(41):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">42층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 42? mobImgs.get(42):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">43층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 43? mobImgs.get(43):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">44층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 44? mobImgs.get(44):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">45층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 45? mobImgs.get(45):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">46층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 46? mobImgs.get(46):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">47층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 47? mobImgs.get(47):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">48층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 48? mobImgs.get(48):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">49층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 49? mobImgs.get(49):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">50층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 50? mobImgs.get(50):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">51층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 51? mobImgs.get(51):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">52층 몬스터</div>
+					</div>
+					<div class="mob__dictionary_card inline-block">
+						<img src="${mobImgs.size() > 52? mobImgs.get(52):''}"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="mob__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="mob__dictionary_body">53층 몬스터</div>
+					</div>
 				</div>
 			</div>
 			<button class="mob__prev_bt absolute hidden" onclick="mob__prev()">◀</button>
+			<a class="mob__list_bt absolute hidden" href="../dictionary/mob">전체보기</a>
 			<button class="mob__next_bt absolute hidden" onclick="mob__next()">▶</button>
 			<button class="weapon__dictionary_bt absolute"
 				onclick="showWeapon__dictionary()">무기 도감</button>

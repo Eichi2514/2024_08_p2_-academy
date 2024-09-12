@@ -87,7 +87,7 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 			mobShow(4);
 			mobShow(5);
 			mobShow(6);
-			location.href = '../map/front?stage=' + stage;
+			setTimeout(function(){location.href = '../map/front?stage=' + stage;}, 100);			
 			/* console.log("HP:", front_hp);
 			console.log("Stage:", stage);
 			console.log("Weapon ID:", front_weaponId); */			
@@ -851,8 +851,8 @@ function BossHpDown(){
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 아래쪽 공격 -->
 		<img class="mobAttack Sattack2 attackSize hidden absolute"
-			src="${charac.extra__weapon}" alt="" /> <img class="front_mob_img"
-			src="${mob}" alt="" />
+			src="${charac.extra__weapon}" alt="" />
+		<img class="front_mob_img" src="${mob}" alt="" />
 	</div>
 </c:if>
 <!-- 두번째 몬스터 -->
@@ -869,8 +869,8 @@ function BossHpDown(){
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 아래쪽 공격 -->
 		<img class="mobAttack Sattack3 attackSize hidden absolute"
-			src="${charac.extra__weapon}" alt="" /> <img class="front_mob_img"
-			src="${mob}" alt="" />
+			src="${charac.extra__weapon}" alt="" />
+		<img class="front_mob_img" src="${mob}" alt="" />
 	</div>
 </c:if>
 <!-- 세번째 몬스터 -->
@@ -887,8 +887,8 @@ function BossHpDown(){
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 아래쪽 공격 -->
 		<img class="mobAttack Sattack4 attackSize hidden absolute"
-			src="${charac.extra__weapon}" alt="" /> <img class="front_mob_img"
-			src="${mob}" alt="" />
+			src="${charac.extra__weapon}" alt="" />
+		<img class="front_mob_img" src="${mob}" alt="" />
 	</div>
 </c:if>
 <!-- 네번째 몬스터 -->
@@ -905,8 +905,8 @@ function BossHpDown(){
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 아래쪽 공격 -->
 		<img class="mobAttack Sattack5 attackSize hidden absolute"
-			src="${charac.extra__weapon}" alt="" /> <img class="front_mob_img"
-			src="${mob}" alt="" />
+			src="${charac.extra__weapon}" alt="" />
+		<img class="front_mob_img" src="${mob}" alt="" />
 	</div>
 </c:if>
 <!-- 보스 몬스터 -->
@@ -928,8 +928,8 @@ function BossHpDown(){
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 아래쪽 공격 -->
 		<img class="mobAttack Sattack6 attackSize hidden absolute"
-			src="${charac.extra__weapon}" alt="" /> <img
-			class="front_bossMob_img" src="${mob}" alt="" />
+			src="${charac.extra__weapon}" alt="" />
+		<img class="front_bossMob_img" src="${mob}" alt="" />
 	</div>
 
 	<img class="item hidden absolute" src="${weapon}" alt="" />
@@ -1007,8 +1007,7 @@ function BossHpDown(){
 	</audio>
 </c:if>
 
-<button id="toggleAutoplayButton" class="audio_bt absolute">소리
-</button>
+<button id="toggleAutoplayButton" class="audio_bt absolute">소리</button>
 
 
 <script>
@@ -1028,6 +1027,8 @@ window.addEventListener('beforeunload', function() {
 document.addEventListener('DOMContentLoaded', function() {
     // 오디오 요소를 가져옴
     var audio = document.getElementById('audioPlayer');
+    // 투글 버튼 요소를 가져옴
+    var toggleButton = document.getElementById('toggleAutoplayButton');
     // 저장된 재생 위치를 가져올 키 설정
     var storageKey = 'audioPlaybackPosition';
     // 저장된 재생 위치를 가져옴
@@ -1041,13 +1042,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // 저장된 재생 상태를 localStorage에서 가져옴
     var audioPlayingState = localStorage.getItem('audioPlayingState');
 
-    // 재생 상태가 true였으면 오디오를 재생하고 버튼을 멈춤 모양으로 설정
+    // 재생 상태가 true였으면 오디오를 재생하고 버튼 문구를 소리 : 꺼짐으로 변경
     if (audioPlayingState === 'true') {
         audio.play();
         toggleButton.classList.remove('play');
         toggleButton.classList.add('pause');
     } else {
-        // 멈춤 상태였으면 오디오를 멈추고 버튼을 재생 모양으로 설정
+        // 멈춤 상태였으면 오디오를 멈추고 버튼 문구를 소리 : 켜짐으로 변경
         audio.pause();
         toggleButton.classList.remove('pause');
         toggleButton.classList.add('play');

@@ -188,48 +188,43 @@ function Right(something) {
 }
 
 // 인게임 헤드 js
-var itemsPerPage = 4;  // 페이지당 몬스터 카드 개수
+var itemsPerPage = 4; // 한번에 보여줄 카드 개수
+var currentIndex = 0; // 현재 첫 번째로 보여지는 카드의 인덱스
 var totalItems = $('.mob__dictionary_card').length;
-var currentPage = 1;
+var dictionaryWidth = $('.mob__dictionary').width(); // 한 번에 보여줄 전체 너비
+var cardWidth = $('.mob__dictionary_card').outerWidth(true); // 카드의 너비(마진 포함)
 
-function updatePage() {
-    var startIndex = (currentPage - 1);
-    var endIndex = startIndex + itemsPerPage;
-    
-    $('.mob__dictionary_card').hide();  // 모든 카드 숨김
-    $('.mob__dictionary_card').slice(startIndex, endIndex).show();  // 현재 페이지 범위의 카드만 보여줌
+function updateSlide() {
+    // 이동할 위치 계산 (현재 인덱스에 맞게 이동)
+    var translateX = -currentIndex * cardWidth;
+    $('.mob__dictionary_inner').css('transform', 'translateX(' + translateX + 'px)');
 }
 
 function mob__next() {
-    var visibleCards = $('.mob__dictionary_card:visible');
-    
-    if (visibleCards.length) {
-        var lastVisibleIndex = visibleCards.last().index();
-        if (lastVisibleIndex + 1 < totalItems) {
-            currentPage++;
-            updatePage();
-        }
+    if (currentIndex + itemsPerPage < totalItems) {
+        currentIndex++;
+    } else {
+        currentIndex = 0; // 마지막 카드에 도달하면 처음으로 돌아가기
     }
+    updateSlide();
 }
 
 function mob__prev() {
-    var visibleCards = $('.mob__dictionary_card:visible');
-    
-    if (visibleCards.length) {
-        var firstVisibleIndex = visibleCards.first().index();
-        if (firstVisibleIndex > 0) {
-            currentPage--;
-            updatePage();
-        }
+    if (currentIndex > 0) {
+        currentIndex--;
+    } else {
+        currentIndex = totalItems - itemsPerPage; // 처음으로 돌아가면 마지막 페이지로 이동
     }
+    updateSlide();
 }
 
-$(document).ready(function() {
-    updatePage();  // 페이지 로딩 시 첫 페이지를 보여줌
+$(document).ready(function () {
+    updateSlide(); // 페이지 로딩 시 첫 페이지를 보여줌
 });
 
 function showMob__dictionary(){
 	$('.mob__dictionary').toggleClass('hidden');
 	$('.mob__prev_bt').toggleClass('hidden');
-	$('.mob__next_bt').toggleClass('hidden');
+	$('.mob__list_bt').toggleClass('hidden');
+	$('.mob__next_bt').toggleClass('hidden');	
 }

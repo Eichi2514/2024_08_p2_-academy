@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.service.CharacService;
 import com.example.demo.service.MapService;
+import com.example.demo.service.MemberService;
 import com.example.demo.service.MobService;
 import com.example.demo.service.WeaponService;
 import com.example.demo.vo.Charac;
@@ -29,6 +30,9 @@ public class UsrMapController {
 
 	@Autowired
 	private MobService mobService;
+
+	@Autowired
+	private MemberService memberService;
 
 	@Autowired
 	private WeaponService weaponService;
@@ -55,6 +59,11 @@ public class UsrMapController {
 		// 로그인한 아이디의 고유번호로 캐릭터 있는지 확인해서 가져오기
 		Charac charac = characService.characChack(rq.getLoginedMemberId());
 
+		// 현재 로그인한 유저의 floor 정보가 현재 floor보다 낮다면 floor 업데이트
+		if (rq.getLoginedMember().getFloor() < floor) {
+			memberService.floorUpdate(rq.getLoginedMemberId(), floor);
+		}
+
 		// 층과 방의 정보로 보스방이면 랜덤무기 이미지 가져와서 넘기기
 		if (floor > 1 && room == 0) {
 			String weapon = weaponService.randomWeapon(charac.getFloor());
@@ -64,12 +73,12 @@ public class UsrMapController {
 		// 로그인 유저의 floor 기록 만큼 몬스터들 이미지 가져오기
 		int memberFloor = rq.getLoginedMember().getFloor();
 		ArrayList<String> mobImgs = mobService.mobImgs(memberFloor);
-		
+
 		/*
 		 * for(int i = 0; i < mobImgs.size(); i++) {
 		 * System.out.println(i+"번방 : "+mobImgs.get(i)); }
 		 */
-		
+
 		// 캐릭터 정보 넘기기
 		model.addAttribute("charac", charac);
 		// 몬스터도감 정보 넘기기

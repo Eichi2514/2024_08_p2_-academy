@@ -45,5 +45,15 @@ public interface MemberRepository {
 			</script>
 			""")
 	public void modifyMember(int loginedMemberId, String loginPw, String name, String nickname);
+	
+	@Update("""
+			<script>
+			UPDATE `member` 
+			SET	updateDate = NOW(),			
+			`floor` = #{floor} 
+			WHERE id = #{loginedMemberId}
+			</script>
+			""")
+	public void floorUpdate(int loginedMemberId, int floor);
 
 }
