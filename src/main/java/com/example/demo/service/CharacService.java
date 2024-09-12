@@ -28,13 +28,14 @@ public class CharacService {
 		characRepository.update(hp, floor, room, memberId);		
 	}
 
-	public void delete(int memberId) {
-		characRepository.delete(memberId);
-	}
-
 	public void weaponChange(int memberId, int weaponId) {	
 		/* System.out.println("무기 체인지 서비스 실행"); */
 		/* System.out.println(weaponId); */
 		characRepository.weaponChange(memberId, weaponId);
+	}
+
+	public void reset(int memberId) {
+		characRepository.reset(memberId);
+		
 	}
 }

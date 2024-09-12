@@ -471,11 +471,19 @@ var stop2, stop3, stop4, stop5, stop6;
 
 //일정 시간마다 move 함수를 호출
 function show(){
-	if(${room > 0 && room < 5}){stop2 = setInterval(move2, 1000);}
-	if(${room > 1 && room < 5}){stop3 = setInterval(move3, 800);}
-	if(${room > 2 && room < 5}){stop4 = setInterval(move4, 500);}
-	if(${room > 3 && room < 5}){stop5 = setInterval(move5, 200);}			
-	if(${floor > 1 && room == 0}){stop6 = setInterval(move6, 100);}			
+	if(${param.stage <= 270}){
+	  if(${room > 0 && room < 5}){stop2 = setInterval(move2, 1000);}
+	  if(${room > 1 && room < 5}){stop3 = setInterval(move3, 800);}
+	  if(${room > 2 && room < 5}){stop4 = setInterval(move4, 500);}
+	  if(${room > 3 && room < 5}){stop5 = setInterval(move5, 200);}			
+	  if(${floor > 1 && room == 0}){stop6 = setInterval(move6, 100);}
+     } else {
+	  if(${room > 0 && room < 5}){stop2 = setInterval(move2, 300);}
+	  if(${room > 1 && room < 5}){stop3 = setInterval(move3, 200);}
+	  if(${room > 2 && room < 5}){stop4 = setInterval(move4, 120);}
+	  if(${room > 3 && room < 5}){stop5 = setInterval(move5, 70);}			
+	  if(${floor > 1 && room == 0}){stop6 = setInterval(move6, 30);}
+     }
    }
    
 // 아이템 안내창 공개
@@ -746,9 +754,9 @@ function BossHpDown(){
 				});
 			}	
 
-	       function attackX(something) {
+	       function attackS(something) {
 				$.ajax({
-					url : '/usr/map/Xattack',
+					url : '/usr/map/Sattack',
 					type : 'POST',
 					data : {
 						something : something
@@ -802,7 +810,7 @@ function BossHpDown(){
 						// console.log("몬스터5 hp : " + mob5_hp);
 						// console.log("몬스터6 hp : " + mob6_hp);
 						showDoor();
-						attack_motion(something, "X");
+						attack_motion(something, "S");
 					},
 					error : function(jqXHR, textStatus, errorThrown) {
 						alert('오류 발생 : ' + textStatus);
@@ -842,9 +850,9 @@ function BossHpDown(){
 		<img class="mobAttack Dattack2 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 아래쪽 공격 -->
-		<img class="mobAttack Xattack2 attackSize hidden absolute"
-			src="${charac.extra__weapon}" alt="" />
-		<img class="front_mob_img" src="${mob}" alt="" />
+		<img class="mobAttack Sattack2 attackSize hidden absolute"
+			src="${charac.extra__weapon}" alt="" /> <img class="front_mob_img"
+			src="${mob}" alt="" />
 	</div>
 </c:if>
 <!-- 두번째 몬스터 -->
@@ -860,9 +868,9 @@ function BossHpDown(){
 		<img class="mobAttack Dattack3 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 아래쪽 공격 -->
-		<img class="mobAttack Xattack3 attackSize hidden absolute"
-			src="${charac.extra__weapon}" alt="" />
-		<img class="front_mob_img" src="${mob}" alt="" />
+		<img class="mobAttack Sattack3 attackSize hidden absolute"
+			src="${charac.extra__weapon}" alt="" /> <img class="front_mob_img"
+			src="${mob}" alt="" />
 	</div>
 </c:if>
 <!-- 세번째 몬스터 -->
@@ -878,9 +886,9 @@ function BossHpDown(){
 		<img class="mobAttack Dattack4 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 아래쪽 공격 -->
-		<img class="mobAttack Xattack4 attackSize hidden absolute"
-			src="${charac.extra__weapon}" alt="" />
-		<img class="front_mob_img" src="${mob}" alt="" />
+		<img class="mobAttack Sattack4 attackSize hidden absolute"
+			src="${charac.extra__weapon}" alt="" /> <img class="front_mob_img"
+			src="${mob}" alt="" />
 	</div>
 </c:if>
 <!-- 네번째 몬스터 -->
@@ -896,9 +904,9 @@ function BossHpDown(){
 		<img class="mobAttack Dattack5 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 아래쪽 공격 -->
-		<img class="mobAttack Xattack5 attackSize hidden absolute"
-			src="${charac.extra__weapon}" alt="" />
-		<img class="front_mob_img" src="${mob}" alt="" />
+		<img class="mobAttack Sattack5 attackSize hidden absolute"
+			src="${charac.extra__weapon}" alt="" /> <img class="front_mob_img"
+			src="${mob}" alt="" />
 	</div>
 </c:if>
 <!-- 보스 몬스터 -->
@@ -919,9 +927,9 @@ function BossHpDown(){
 		<img class="mobAttack Dattack6 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 아래쪽 공격 -->
-		<img class="mobAttack Xattack6 attackSize hidden absolute"
-			src="${charac.extra__weapon}" alt="" />
-		<img class="front_bossMob_img" src="${mob}" alt="" />
+		<img class="mobAttack Sattack6 attackSize hidden absolute"
+			src="${charac.extra__weapon}" alt="" /> <img
+			class="front_bossMob_img" src="${mob}" alt="" />
 	</div>
 
 	<img class="item hidden absolute" src="${weapon}" alt="" />
@@ -957,7 +965,7 @@ function BossHpDown(){
 		src="${charac.extra__weapon}" alt="" />
 	<!-- 아래쪽 공격 -->
 	<img
-		class="Xattack1_${charac.weaponId} attackSize Xattack1 CharacAttack hidden absolute"
+		class="Sattack1_${charac.weaponId} attackSize Sattack1 CharacAttack hidden absolute"
 		src="${charac.extra__weapon}" alt="" />
 	<!-- 캐릭터 이미지 -->
 	<img class="front_charac_img rounded-full"
@@ -966,64 +974,107 @@ function BossHpDown(){
 </div>
 
 <!--  배경음악 관련 -->
-<c:if test="${floor <= 25}">
-<audio id="audioPlayer" class="audioPlayer hidden absolute" controls autoplay loop preload="auto">
-    <source src="${pageContext.request.contextPath}/audio/bg1.mp3" type="audio/mpeg">
-</audio>
+<c:if
+	test="${floor % 40 >= 1 && floor % 40 <= 10 && room != 0 || (floor-1) % 40 >= 0 && (floor-1) % 40 <= 10 && room == 0}">
+	<audio id="audioPlayer" class="audioPlayer hidden absolute" controls
+		autoplay loop preload="auto">
+		<source src="${pageContext.request.contextPath}/audio/bg1.mp3"
+			type="audio/mpeg">
+	</audio>
 </c:if>
-<c:if test="${floor <= 50 && floor > 25}">
-<audio id="audioPlayer" class="audioPlayer hidden absolute" controls autoplay loop preload="auto">
-    <source src="${pageContext.request.contextPath}/audio/bg2.mp3" type="audio/mpeg">
-</audio>
+<c:if
+	test="${floor % 40 >= 11 && floor % 40 <= 20 && room != 0 || (floor-1) % 40 >= 11 && (floor-1) % 40 <= 20 && room == 0}">
+	<audio id="audioPlayer" class="audioPlayer hidden absolute" controls
+		autoplay loop preload="auto">
+		<source src="${pageContext.request.contextPath}/audio/bg2.mp3"
+			type="audio/mpeg">
+	</audio>
 </c:if>
-<c:if test="${floor <= 75 && floor > 50}">
-<audio id="audioPlayer" class="audioPlayer hidden absolute" controls autoplay loop preload="auto">
-    <source src="${pageContext.request.contextPath}/audio/bg3.mp3" type="audio/mpeg">
-</audio>
+<c:if
+	test="${floor % 40 >= 21 && floor % 40 <= 30 && room != 0 || (floor-1) % 40 >= 21 && (floor-1) % 40 <= 30 && room == 0}">
+	<audio id="audioPlayer" class="audioPlayer hidden absolute" controls
+		autoplay loop preload="auto">
+		<source src="${pageContext.request.contextPath}/audio/bg3.mp3"
+			type="audio/mpeg">
+	</audio>
 </c:if>
-<c:if test="${floor > 75}">
-<audio id="audioPlayer" class="audioPlayer hidden absolute" controls autoplay loop preload="auto">
-    <source src="${pageContext.request.contextPath}/audio/bg4.mp3" type="audio/mpeg">
-</audio>
+<c:if
+	test="${floor % 40 >= 31 && floor % 40 <= 40 && room != 0 || (floor-1) % 40 >= 31 && (floor-1) % 40 <= 40 && room == 0}">
+	<audio id="audioPlayer" class="audioPlayer hidden absolute" controls
+		autoplay loop preload="auto">
+		<source src="${pageContext.request.contextPath}/audio/bg4.mp3"
+			type="audio/mpeg">
+	</audio>
 </c:if>
+
+<button id="toggleAutoplayButton" class="audio_bt absolute">소리
+</button>
+
 
 <script>
-//페이지를 떠나기 전, 현재 오디오의 재생 위치를 저장
+// 페이지를 떠나기 전, 현재 오디오의 재생 위치와 상태를 저장
 window.addEventListener('beforeunload', function() {
-    // 아이디로 오디오 요소를 가져오기
+    // 오디오 요소를 가져옴
     var audio = document.getElementById('audioPlayer');
-    // 저장할 위치의 키를 저장
+    // 재생 위치를 저장할 키 설정
     var storageKey = 'audioPlaybackPosition';
-    // 현재 오디오 재생 위치를 localStorage에 저장
+    // 현재 재생 위치를 localStorage에 저장
     localStorage.setItem(storageKey, audio.currentTime);
+    // 오디오 재생 상태도 저장 (재생 중이면 true, 멈춤이면 false)
+    localStorage.setItem('audioPlayingState', !audio.paused);
 });
 
-// 문서가 완전히 로드된 후 실행
+// 문서가 로드된 후 실행
 document.addEventListener('DOMContentLoaded', function() {
-	// 아이디로 오디오 요소를 가져오기
+    // 오디오 요소를 가져옴
     var audio = document.getElementById('audioPlayer');
-    // 저장할 위치의 키를 저장
+    // 저장된 재생 위치를 가져올 키 설정
     var storageKey = 'audioPlaybackPosition';
+    // 저장된 재생 위치를 가져옴
+    var savedPosition = localStorage.getItem(storageKey);
 
-    // 오디오 메타데이터가 로드되었을 때 호출되는 이벤트
-    audio.addEventListener('loadedmetadata', function() {
-        // localStorage에서 저장된 재생 위치를 가져온다
-        var savedPosition = localStorage.getItem(storageKey);
-        // 저장된 위치가 있으면 해당 위치로 이동
-        if (savedPosition) {
-            audio.currentTime = parseFloat(savedPosition);
-        }
-    });
+    // 저장된 재생 위치가 있으면 해당 위치로 이동
+    if (savedPosition) {
+        audio.currentTime = parseFloat(savedPosition);
+    }
+
+    // 저장된 재생 상태를 localStorage에서 가져옴
+    var audioPlayingState = localStorage.getItem('audioPlayingState');
+
+    // 재생 상태가 true였으면 오디오를 재생하고 버튼을 멈춤 모양으로 설정
+    if (audioPlayingState === 'true') {
+        audio.play();
+        toggleButton.classList.remove('play');
+        toggleButton.classList.add('pause');
+    } else {
+        // 멈춤 상태였으면 오디오를 멈추고 버튼을 재생 모양으로 설정
+        audio.pause();
+        toggleButton.classList.remove('pause');
+        toggleButton.classList.add('play');
+    }
 });
 
+// 오디오 재생/멈춤을 토글하는 버튼 클릭 이벤트
+document.getElementById('toggleAutoplayButton').addEventListener('click', function() {
+    // 오디오 요소를 가져옴
+    var audio = document.getElementById('audioPlayer');
+
+    // 오디오가 재생 중이면 멈추고, 버튼 상태 변경
+    if (!audio.paused) {
+        audio.pause();
+        // 재생 상태를 멈춤으로 저장
+        localStorage.setItem('audioPlayingState', false);
+        this.classList.remove('pause');
+        this.classList.add('play');
+    } else {
+        // 오디오가 멈췄으면 재생하고, 버튼 상태 변경
+        audio.play();
+        // 재생 상태를 재생 중으로 저장
+        localStorage.setItem('audioPlayingState', true);
+        this.classList.remove('play');
+        this.classList.add('pause');
+    }
+});
 </script>
-
-
-
-
-
-
-
-
 
 <%@ include file="../common/foot.jspf"%>

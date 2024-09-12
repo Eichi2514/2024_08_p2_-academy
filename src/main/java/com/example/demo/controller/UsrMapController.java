@@ -153,16 +153,16 @@ public class UsrMapController {
 	}
 
 	// 누구의 아래쪽 공격 이벤트인지 서비스에 전달
-	@RequestMapping("/usr/map/Xattack")
+	@RequestMapping("/usr/map/Sattack")
 	@ResponseBody
-	public int Xattack(HttpServletRequest req, int something) {
+	public int Sattack(HttpServletRequest req, int something) {
 		// Rq에 저장돼 있는 정보 가져오기
 		Rq rq = (Rq) req.getAttribute("rq");
 
 		// 로그인 유저의 캐릭터 정보 가져오기
 		Charac charac = characService.characChack(rq.getLoginedMemberId());
 		
-		return mapService.Xattack(something, charac.getWeaponId());
+		return mapService.Sattack(something, charac.getWeaponId());
 	}
 
 	// 누가 죽었는지 서비스에 전달
@@ -195,10 +195,7 @@ public class UsrMapController {
 		model.addAttribute("room", room);
 
 		// 캐릭터 삭제
-		characService.delete(rq.getLoginedMemberId());
-
-		// 캐릭터 생성
-		characService.characCreation(rq.getLoginedMemberId());
+		characService.reset(rq.getLoginedMemberId());
 
 		return "/usr/map/over";
 	}

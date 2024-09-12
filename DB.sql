@@ -34,10 +34,10 @@ CREATE TABLE weapon(
       img TEXT NOT NULL
 );
 
-CREATE TABLE weaponClear(
-      id INT(10) UNSIGNED NOT NULL PRIMARY KEY,
+CREATE TABLE find(
+      updateDate DATETIME NOT NULL,
       memberId INT(10) NOT NULL,
-      weaponId INT(10) NOT NULL DEFAULT 0 COMMENT '무기번호'
+      weaponId INT(10) NOT NULL COMMENT '무기번호'
 );
 
 CREATE TABLE scoreboard(
@@ -120,6 +120,9 @@ FROM charac;
 
 SELECT *
 FROM weapon;
+
+SELECT *
+FROM find;
 
 SELECT *
 FROM scoreboard;
@@ -277,6 +280,12 @@ LEFT JOIN `member` M
 ON m.id = S.memberId
 ORDER BY `floor` DESC, room DESC, regDate ASC
 LIMIT 0, 3;
+
+SELECT W.*, F.updateDate
+FROM weapon W
+LEFT JOIN find F
+ON W.id = F.weaponId
+WHERE memberId = 1;
 
 ## 스코어 테스트 데이터 랜덤 생성
 ## INSERT INTO scoreboard

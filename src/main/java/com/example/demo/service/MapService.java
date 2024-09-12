@@ -555,7 +555,7 @@ public class MapService {
 		return map[x][y];
 	}
 
-	public int Xattack(int something, int weaponId) {
+	public int Sattack(int something, int weaponId) {
 		int Xcode = somethingXcode(something);
 		int Ycode = somethingYcode(something);
 		int height = somethingHeight(something);

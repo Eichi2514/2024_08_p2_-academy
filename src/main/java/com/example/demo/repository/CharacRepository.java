@@ -35,14 +35,7 @@ public interface CharacRepository {
 			room = #{room}
 			WHERE memberId = #{memberId}
 			""")
-	public void update(int hp, int floor, int room, int memberId);
-	
-	@Delete("""
-			DELETE 
-			FROM charac 
-			WHERE memberId = #{memberId}
-			""")
-	public void delete(int memberId);
+	public void update(int hp, int floor, int room, int memberId);	
 	
 	@Update("""
 			UPDATE charac
@@ -50,5 +43,17 @@ public interface CharacRepository {
 			weaponId = #{weaponId}
 			WHERE memberId = #{memberId}
 			""")
-	public void weaponChange(int memberId, int weaponId);			
+	public void weaponChange(int memberId, int weaponId);
+	
+	
+	@Update("""
+			UPDATE charac
+			SET updateDate = NOW(),
+			`floor` = 1,
+			room = 0,
+			hp = 1,
+			weaponId = 1
+			WHERE memberId = #{memberId}
+			""")	
+	public void reset(int memberId);			
 }
