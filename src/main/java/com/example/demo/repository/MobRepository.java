@@ -1,5 +1,8 @@
 package com.example.demo.repository;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -16,4 +19,11 @@ public interface MobRepository {
             WHERE id = #{floor} 		
 			""")
 	public String mobData(int floor);
+
+	@Select("""
+			SELECT img
+			FROM mob
+            WHERE id <= #{floor} 		
+			""")
+	public ArrayList<String> mobImgs(int floor);
 }

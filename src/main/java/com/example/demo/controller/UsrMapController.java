@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,8 +61,19 @@ public class UsrMapController {
 			model.addAttribute("weapon", weapon);
 		}
 
+		// 로그인 유저의 floor 기록 만큼 몬스터들 이미지 가져오기
+		int memberFloor = rq.getLoginedMember().getFloor();
+		ArrayList<String> mobImgs = mobService.mobImgs(memberFloor);
+		
+		/*
+		 * for(int i = 0; i < mobImgs.size(); i++) {
+		 * System.out.println(i+"번방 : "+mobImgs.get(i)); }
+		 */
+		
 		// 캐릭터 정보 넘기기
 		model.addAttribute("charac", charac);
+		// 몬스터도감 정보 넘기기
+		model.addAttribute("mobImgs", mobImgs);
 		// 몬스터 정보 넘기기
 		model.addAttribute("mob", mob);
 		// 몬스터 위치정보 넘기기
@@ -161,7 +173,7 @@ public class UsrMapController {
 
 		// 로그인 유저의 캐릭터 정보 가져오기
 		Charac charac = characService.characChack(rq.getLoginedMemberId());
-		
+
 		return mapService.Sattack(something, charac.getWeaponId());
 	}
 
@@ -183,7 +195,7 @@ public class UsrMapController {
 
 		// 캐릭터의 현재 층 정보 변수에 저장
 		int floor = charac.getFloor();
-		
+
 		// 캐릭터의 현재 방 정보 변수에 저장
 		int room = charac.getRoom();
 

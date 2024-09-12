@@ -18,4 +18,5 @@ public class Member {
 	private String nickname;
 	private int gender;
     private int authLevel;
+    private int floor;
 }

@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+/* 공용 */
 html>body, button, input, select {
 	font-family: Galmuri11;
 	font-weight: 800;
@@ -473,6 +474,81 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 .hp {
 	left: 0;
 	top: 28vh;
+	width: 20vh;
+	height: 9vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 0.3vh solid;
+	border-radius: 1vh;
+	background: rgb(255, 71, 48);
+}
+
+.mob__dictionary_bt{
+	left: 0;
+	top: 37.5vh;
+	width: 20vh;
+	height: 9vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 0.3vh solid;
+	border-radius: 1vh;
+	background: rgb(255, 71, 48);	
+}
+.mob__dictionary{
+	top: 15vh;
+	left: 25vh;
+	width: 90vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 3.5vh;
+	z-index: 20;
+}
+.mob__dictionary_card{
+	width: 20vh;	
+	background: white;
+	border: 0.1vh solid;
+}
+.mob__dictionary_title{
+	height: 20vh;
+	width: 20vh;
+}
+.mob__dictionary_body{
+	padding-top: 3vh;
+	width: 20vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.mob__prev_bt{
+	width: 10vh;
+	height: 10vh;
+	font-size:5vh;
+	top: 3vh;
+	left: 30vh;
+	z-index:21;
+	border-radius: 100vh;
+	background: white;	
+}
+
+
+.mob__next_bt{
+	width: 10vh;
+	height: 10vh;
+	font-size:5vh;
+	top: 3vh;
+	left: 100vh;
+	z-index:21;
+	border-radius: 100vh;
+	background: white;	
+}
+
+.weapon__dictionary_bt{
+	left: 0;
+	top: 47vh;
 	width: 20vh;
 	height: 9vh;
 	display: flex;
