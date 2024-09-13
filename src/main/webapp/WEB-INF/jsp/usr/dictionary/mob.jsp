@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<c:set var="pageTitle" value="점수 리스트"></c:set>
+<c:set var="pageTitle" value="몬스터 도감"></c:set>
 <%@ include file="../common/ingame_head.jspf"%>
 
 

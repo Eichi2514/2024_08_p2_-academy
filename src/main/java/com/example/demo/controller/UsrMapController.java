@@ -10,11 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.service.CharacService;
+import com.example.demo.service.FindService;
 import com.example.demo.service.MapService;
 import com.example.demo.service.MemberService;
 import com.example.demo.service.MobService;
 import com.example.demo.service.WeaponService;
 import com.example.demo.vo.Charac;
+import com.example.demo.vo.Find;
 import com.example.demo.vo.Rq;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -36,6 +38,9 @@ public class UsrMapController {
 
 	@Autowired
 	private WeaponService weaponService;
+
+	@Autowired
+	private FindService findService;
 
 	// 게임 화면
 	@RequestMapping("/usr/map/front")
@@ -73,16 +78,31 @@ public class UsrMapController {
 		// 로그인 유저의 floor 기록 만큼 몬스터들 이미지 가져오기
 		int memberFloor = rq.getLoginedMember().getFloor();
 		ArrayList<String> mobImgs = mobService.mobImgs(memberFloor);
-
+		
 		/*
-		 * for(int i = 0; i < mobImgs.size(); i++) {
-		 * System.out.println(i+"번방 : "+mobImgs.get(i)); }
+		 for(int i = 0; i < mobImgs.size(); i++) {
+		 System.out.println(i+"번방 : "+mobImgs.get(i)); }
 		 */
+		
+		// 로그인 유저의 무기를 발견한 기록 만큼 무기들 이미지 가져오기
+		Map<Integer, String> weaponImgs = findService.weaponImgs(rq.getLoginedMemberId());
+		
+		
+		System.err.println(weaponImgs);
+		/* System.err.println("시작");
+		 for(int i = 0; i < 5; i++) {
+			System.out.println(i+" : "+weaponImgs.get(i));
+			String j = weaponImgs.get(i) != null ? weaponImgs.get(i) : "";
+			System.out.println("j2 : "+j);
+		} */
+		
 
 		// 캐릭터 정보 넘기기
 		model.addAttribute("charac", charac);
 		// 몬스터도감 정보 넘기기
 		model.addAttribute("mobImgs", mobImgs);
+		// 무기도감 정보 넘기기
+		model.addAttribute("weaponImgs", weaponImgs);
 		// 몬스터 정보 넘기기
 		model.addAttribute("mob", mob);
 		// 몬스터 위치정보 넘기기
@@ -207,6 +227,13 @@ public class UsrMapController {
 
 		// 캐릭터의 현재 방 정보 변수에 저장
 		int room = charac.getRoom();
+		
+		// 로그인 유저의 floor 기록 만큼 몬스터들 이미지 가져오기
+		int memberFloor = rq.getLoginedMember().getFloor();
+		ArrayList<String> mobImgs = mobService.mobImgs(memberFloor);
+
+		// 로그인 유저의 무기를 발견한 기록 만큼 무기들 이미지 가져오기
+        Map<Integer, String> weaponImgs = findService.weaponImgs(rq.getLoginedMemberId());
 
 		// 캐릭터 정보 넘기기
 		model.addAttribute("charac", charac);
@@ -214,6 +241,10 @@ public class UsrMapController {
 		model.addAttribute("floor", floor);
 		// 현재 방 정보 넘기기
 		model.addAttribute("room", room);
+		// 몬스터도감 정보 넘기기
+		model.addAttribute("mobImgs", mobImgs);
+		// 무기도감 정보 넘기기
+		model.addAttribute("weaponImgs", weaponImgs);
 
 		// 캐릭터 삭제
 		characService.reset(rq.getLoginedMemberId());

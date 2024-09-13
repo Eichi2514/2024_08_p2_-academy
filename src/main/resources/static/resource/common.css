@@ -68,13 +68,15 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 
 .play::after {
 	display: block;
-	padding: 1vh;
+	padding-left: 1vh;
+	padding-right: 1vh;
 	content: "켜기";
 }
 
 .pause::after {
 	display: block;
-	padding: 1vh;
+	padding-left: 1vh;
+	padding-right: 1vh;
 	content: "끄기";
 }
 
@@ -584,6 +586,76 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	background: rgb(255, 71, 48);
 }
 
+.weapon__dictionary {
+	top: 65vh;
+	left: 25vh;
+	width: 90vh;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	overflow: hidden;
+	z-index: 20;
+}
+
+.weapon__dictionary_inner {
+	display: flex;
+	gap: 3.5vh;
+	transition: transform 0.5s ease;
+}
+
+.weapon__dictionary_card {
+	width: 20vh;
+	background: white;
+	border: 0.1vh solid;
+	flex-shrink: 0;
+}
+
+.weapon__dictionary_title {
+	height: 20vh;
+	width: 20vh;
+}
+
+.weapon__dictionary_body {
+	padding-top: 3vh;
+	width: 20vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.weapon__prev_bt {
+	width: 10vh;
+	height: 10vh;
+	font-size: 5vh;
+	top: 53vh;
+	left: 30vh;
+	z-index: 21;
+	border-radius: 100vh;
+	background: white;
+}
+
+.weapon__list_bt {
+	width: 25vh;
+	top: 53vh;
+	left: 57vh;
+	font-size: 5vh;
+	padding: 1vh;
+	border-radius: 1vh;
+	background: white;
+	text-align: center;
+}
+
+.weapon__next_bt {
+	width: 10vh;
+	height: 10vh;
+	font-size: 5vh;
+	top: 53vh;
+	left: 100vh;
+	z-index: 21;
+	border-radius: 100vh;
+	background: white;
+}
+
 .weapon {
 	left: 0;
 	top: 78vh;
@@ -1040,7 +1112,7 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	top: 0;
 	left: 20vh;
 	width: 60vh;
-	font-size:6vh;
+	font-size: 6vh;
 	text-align: center;
 	-webkit-text-stroke: 0.2vh white;
 }
@@ -1073,6 +1145,53 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 }
 
 .mob__dictionary_body2 {
+	padding-top: 1vh;
+	display: flex;
+	font-size: 1vh;
+	justify-content: center;
+	align-items: center;
+}
+
+/* 무기 도감 */
+.weapon__dictionary_title {
+	top: 0;
+	left: 20vh;
+	width: 60vh;
+	font-size: 6vh;
+	text-align: center;
+	-webkit-text-stroke: 0.2vh white;
+}
+
+.weapon__dictionary2 {
+	top: 10vh;
+	left: 10vh;
+	height: 80vh;
+	width: 80vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between
+}
+
+.weapon__dictionary_inner2 {
+	display: flex;
+	justify-content: space-between
+}
+
+.weapon__dictionary_card2 {
+	height: 10vh;
+	width: 7vh;
+	background: white;
+	border: 0.1vh solid;
+	flex-shrink: 0;
+}
+
+.weapon__dictionary_title2 {
+	height: 6vh;
+	width: 6vh;
+	padding: 0.5vh;
+}
+
+.weapon__dictionary_body2 {
 	padding-top: 1vh;
 	display: flex;
 	font-size: 1vh;

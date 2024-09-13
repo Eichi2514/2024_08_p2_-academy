@@ -553,8 +553,12 @@ function BossHpDown(){
 // 공격 함수
 		function attack_motion(something, motion) {
 			$("."+motion+"attack"+something).removeClass('hidden');
+			if(motion == 'A'){}
+			else if (motion == 'W') {}
+			else if (motion == 'D') {}
+			else if (motion == 'S') {}
 			setTimeout(function() {
-				$("."+motion+"attack"+something).addClass('hidden');
+			$("."+motion+"attack"+something).addClass('hidden');
 			}, 300)
 		}
 		

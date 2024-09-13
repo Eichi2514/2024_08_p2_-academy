@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="java.util.Map"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+Map<Integer, String> weaponImgs = (Map<Integer, String>) request.getAttribute("weaponImgs");
+%>
 
 <!DOCTYPE html>
 <html>
@@ -427,10 +431,511 @@
 				</div>
 			</div>
 			<button class="mob__prev_bt absolute hidden" onclick="mob__prev()">◀</button>
-			<a class="mob__list_bt absolute hidden" href="../dictionary/mob">전체보기</a>
+			<a class="mob__list_bt absolute hidden z-20" href="../dictionary/mob">전체보기</a>
 			<button class="mob__next_bt absolute hidden" onclick="mob__next()">▶</button>
 			<button class="weapon__dictionary_bt absolute play"
 				onclick="showWeapon__dictionary()">&nbsp;무&nbsp;기&nbsp; 도감</button>
+			<div class="weapon__dictionary hidden absolute">
+				<div class="weapon__dictionary_inner">
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(1)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">1번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(2)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">2번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(3)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">3번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(4)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">4번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(5)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">5번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(6)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">6번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(7)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">7번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(8)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">8번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(9)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">9번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(10)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">10번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(11)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">11번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(12)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">12번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(13)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">13번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(14)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">14번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(15)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">15번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(16)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">16번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(17)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">17번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(18)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">18번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(19)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">19번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(20)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">20번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(21)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">21번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(22)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">22번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(23)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">23번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(24)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">24번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(25)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">25번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(26)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">26번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(27)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">27번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(28)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">28번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(29)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">29번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(30)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">30번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(31)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">31번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(32)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">32번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(33)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">33번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(34)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">34번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(35)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">35번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(36)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">36번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(37)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">37번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(38)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">38번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(39)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">39번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(40)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">40번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(41)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">41번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(42)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">42번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(43)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">43번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(44)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">44번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(45)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">45번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(46)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">46번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(47)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">47번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(48)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">48번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(49)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">49번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(50)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">50번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(51)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">51번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(52)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">52번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(53)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">53번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(54)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">54번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(55)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">55번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(56)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">56번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(57)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">57번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(58)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">58번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(59)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">59번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(60)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">60번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(61)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">61번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(62)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">62번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(63)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">63번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(64)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">64번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(65)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">65번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(66)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">66번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(67)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">67번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(68)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">68번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(69)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">69번 무기</div>
+					</div>
+					<div class="weapon__dictionary_card inline-block">
+						<img src="<%=weaponImgs.get(70)%>"
+							alt="https://github.com/user-attachments/assets/34628dee-0e58-4d89-a510-13ebb9a2dcae"
+							class="weapon__dictionary_title"
+							onerror="this.onerror=null; this.src=this.alt;">
+						<div class="weapon__dictionary_body">70번 무기</div>
+					</div>
+				</div>
+			</div>
+			<button class="weapon__prev_bt absolute hidden"
+				onclick="weapon__prev()">◀</button>
+			<a class="weapon__list_bt absolute hidden z-20"
+				href="../dictionary/weapon">전체보기</a>
+			<button class="weapon__next_bt absolute hidden"
+				onclick="weapon__next()">▶</button>
+
 			<div class="weapon absolute text-center">
 				착용무기
 				<img class="weapon_img absolute" src="${charac.extra__weapon}"

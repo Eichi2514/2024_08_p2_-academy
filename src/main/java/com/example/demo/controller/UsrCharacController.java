@@ -1,19 +1,15 @@
 package com.example.demo.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.service.CharacService;
-import com.example.demo.service.ScoreboardService;
+import com.example.demo.service.FindService;
 import com.example.demo.service.WeaponService;
 import com.example.demo.vo.Charac;
 import com.example.demo.vo.Rq;
-import com.example.demo.vo.Scoreboard;
 
 import jakarta.servlet.http.HttpServletRequest;
 
@@ -21,10 +17,13 @@ import jakarta.servlet.http.HttpServletRequest;
 public class UsrCharacController {
 
 	@Autowired
-	CharacService characService;
+	private CharacService characService;
 
 	@Autowired
 	private WeaponService weaponService;
+
+	@Autowired
+	private FindService findService;
 
 	// 캐릭터 정보 업데이트
 	@RequestMapping("/usr/charac/update")
@@ -40,7 +39,7 @@ public class UsrCharacController {
 
 		// 로그인한 아이디의 고유번호 변수에 저장
 		int memberId = rq.getLoginedMemberId();
-		
+
 		// 보스방 통과시에만 체력 증가
 		if (floor != 1 && room == 1) {
 			hp++;
@@ -65,6 +64,14 @@ public class UsrCharacController {
 		
 		// 가져온 랜덤무기의 고유번호로 무기 정보 업데이트
 		characService.weaponChange(memberId, weaponId);
+		
+		// 가져온 랜덤무기를 로그인한 유저가 발견한적 있는지 확인하기 위해 가져오기	
+		int weaponChack = findService.weaponFind(memberId, weaponId);
+		
+		// 가져온 랜덤무기를 발견한적 없으면 추가
+		if(weaponChack == 0) {
+		weaponService.weaponFindUpdata(memberId, weaponId);
+		}
 	}
 
 	// 캐릭터 무기 조합
@@ -78,19 +85,19 @@ public class UsrCharacController {
 
 		// 로그인한 아이디의 고유번호 변수에 저장
 		int memberId = rq.getLoginedMemberId();
-		
+
 		// 로그인 유저의 캐릭터 정보 가져오기
 		Charac charac = characService.characChack(rq.getLoginedMemberId());
-		 // 현재 무기 번호 변수에 저장
+		// 현재 무기 번호 변수에 저장
 		int weaponId = charac.getWeaponId();
 
 		// 웨폰서비스에 저장돼 있는 랜덤 무기 고유번호 변수에 저장
 		int weaponId2 = weaponService.getRandomWeaponId();
 		// System.out.println("나누기 전 : " + weaponId2);
-		
+
 		// 밸런스 조정을 위해 나누기
 		weaponId2 %= 10;
-		
+
 		// 10의 배수를 10으로 나누면 0이 되기 때문에 0이면 10으로 대체
 		if (weaponId2 == 0) {
 			weaponId2 = 10;
@@ -105,6 +112,14 @@ public class UsrCharacController {
 
 		// 조합된 무기로 무기 정보 업데이트
 		characService.weaponChange(memberId, weaponId); // 무기 조합
+		
+		// 조합된 무기를 로그인한 유저가 발견한적 있는지 확인하기 위해 가져오기		
+        int weaponChack = findService.weaponFind(memberId, weaponId);
+				
+		// 조합된 무기를 발견한적 없으면 추가
+		if(weaponChack == 0) {
+		weaponService.weaponFindUpdata(memberId, weaponId);
+		}
 
 		// 조합된 무기의 고유번호로 이미지 불러오기
 		String extra__weapon = weaponService.weaponImg(weaponId);

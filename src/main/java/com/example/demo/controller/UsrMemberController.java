@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.service.CharacService;
 import com.example.demo.service.MemberService;
+import com.example.demo.service.WeaponService;
 import com.example.demo.util.Ut;
 import com.example.demo.vo.Charac;
 import com.example.demo.vo.Member;
@@ -28,6 +29,9 @@ public class UsrMemberController {
 
 	@Autowired
 	private CharacService characService;
+
+	@Autowired
+	private WeaponService weaponService;
 
 	// 로그아웃
 	@RequestMapping("/usr/member/doLogout")
@@ -88,6 +92,7 @@ public class UsrMemberController {
 		// 캐릭터가 없다면 캐릭터 생성
 		if (charac == null) {
 			characService.characCreation(member.getId());
+			weaponService.weaponFindUpdata(member.getId(), 1);
 		}
 
 		return Ut.jsReplace("S-1", Ut.f("%s님 환영합니다", member.getNickname()), "/");
