@@ -1182,12 +1182,14 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	width: 7vh;
 	background: white;
 	border: 0.1vh solid;
-	flex-shrink: 0;
+	flex-shrink: 0;	
+	position: relative;
+	cursor: pointer;
 }
 
 .weapon__dictionary_title2 {
-	height: 6vh;
-	width: 6vh;
+	height: 7vh;
+	width: 7vh;
 	padding: 0.5vh;
 }
 
@@ -1197,4 +1199,19 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	font-size: 1vh;
 	justify-content: center;
 	align-items: center;
+}
+.weapon__dictionary_body_text{
+	display:none;
+	top: 3vh;
+	left: 3vh;
+	padding: 1vh;
+	width: 13vh;
+	background: white;
+	font-size: 2vh;
+	z-index: 20;
+	text-align: center;
+	border: 0.1vh solid;
+}
+.weapon__dictionary_card2:hover>.weapon__dictionary_body_text {
+	display: block;	
 }
