@@ -28,7 +28,7 @@ public class CharacService {
 
 
 		// 보스방 통과시에만 체력 증가
-		if (floor != 1 && room == 1 && hp < 10) {
+		if (floor != 1 && room == 1 && hp < 100) {
 			hp++;
 		}
 		

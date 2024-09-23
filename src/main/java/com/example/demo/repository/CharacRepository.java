@@ -51,7 +51,7 @@ public interface CharacRepository {
 			SET updateDate = NOW(),
 			`floor` = 1,
 			room = 0,
-			hp = 1,
+			hp = 100,
 			`power` = 0,
 			speed = 50,
 			weaponId = 1
