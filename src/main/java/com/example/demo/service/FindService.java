@@ -31,4 +31,8 @@ public class FindService {
 
 		return weaponImgs;
 	}
+
+	public void weaponFindUpdata(int memberId, int weaponId) {
+		findRepository.weaponFindUpdata(memberId, weaponId);		
+	}
 }

@@ -26,4 +26,12 @@ public interface FindRepository {
             WHERE F.memberId = #{loginedMemberId};
 			""")
 	public ArrayList<Find> weaponImgs(int loginedMemberId);
+
+	@Update("""
+			INSERT INTO find
+            SET regDate = NOW(),
+            memberId = #{memberId},
+            weaponId = #{weaponId};
+			""")
+	public void weaponFindUpdata(int memberId, int weaponId);
 }

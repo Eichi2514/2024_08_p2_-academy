@@ -30,6 +30,7 @@ public class UsrHomeController {
 
 		// 점수기록판 TOP3 불러와서 리스트에 저장
 		List<Scoreboard> scoreboards = scoreboardService.scoreboardTop3();
+		
 
 		// Rq에 저장돼 있는 정보 가져오기
 		Rq rq = (Rq) req.getAttribute("rq");

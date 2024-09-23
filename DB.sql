@@ -1,4 +1,3 @@
-
 DROP DATABASE IF EXISTS `24_08_p2`;
 CREATE DATABASE `24_08_p2`;
 USE `24_08_p2`;
@@ -15,7 +14,7 @@ CREATE TABLE `member`(
       gender TINYINT(1) UNSIGNED NOT NULL COMMENT '성별 (0=여자, 1=남자)',
       delStatus TINYINT(1) UNSIGNED NOT NULL DEFAULT 0 COMMENT '탈퇴 여부 (0=탈퇴 전, 1=탈퇴 후)',
       delDate DATETIME COMMENT '탈퇴 날짜',
-      `floor` INT(10) NOT NULL DEFAULT 0 COMMENT '캐릭터 도달 층 수'
+      `floor` INT(10) NOT NULL DEFAULT 0 COMMENT '회원이 도달한 층 수'
 );
 
 CREATE TABLE charac(
@@ -26,6 +25,8 @@ CREATE TABLE charac(
       `floor` INT(10) NOT NULL DEFAULT 1 COMMENT '캐릭터 도달 층 수',
       room INT(10) NOT NULL DEFAULT 0 COMMENT '캐릭터 도달 방 번호',
       hp INT(10) NOT NULL DEFAULT 1 COMMENT '생명력',      
+      `power` INT(10) NOT NULL DEFAULT 0 COMMENT '공격력',
+      speed INT(10) NOT NULL DEFAULT 50 COMMENT '속도',
       weaponId INT(10) NOT NULL DEFAULT 1 COMMENT '무기번호'
 );
 
@@ -35,9 +36,10 @@ CREATE TABLE weapon(
 );
 
 CREATE TABLE find(
-      updateDate DATETIME NOT NULL,
+      id INT(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+      regDate DATETIME NOT NULL,
       memberId INT(10) NOT NULL,
-      weaponId INT(10) NOT NULL COMMENT '무기번호'
+      weaponId INT(10) NOT NULL
 );
 
 CREATE TABLE scoreboard(
@@ -53,6 +55,13 @@ CREATE TABLE mob(
       img TEXT NOT NULL
 );
 
+CREATE TABLE chat(
+      id INT(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+      regDate DATETIME NOT NULL,
+      memberId INT(10) NOT NULL,
+      `body` TEXT NOT NULL
+);
+
 ## 테스트 회원 생성
 INSERT INTO `member`
 SET regDate = NOW(),
@@ -63,6 +72,15 @@ authLevel = 7,
 `name` = '관리자',
 nickname = '관리자',
 gender = 1;
+
+INSERT INTO `member`
+SET regDate = NOW(),
+updateDate = NOW(),
+loginId = 'qwe',
+loginPw = 'qwe',
+`name` = '회원2',
+nickname = '회원2',
+gender = 2;
 
 INSERT INTO `member`
 SET regDate = '2024-09-05 13:59:06',
@@ -78,13 +96,17 @@ INSERT INTO charac
 SET regDate = NOW(),
 updateDate = NOW(),
 hp = 1, 
-memberId = 1,
-weaponId = 68;
+memberId = 1;
+
+INSERT INTO find 
+SET regDate = NOW(),
+weaponId = 1, 
+memberId = 1;
 
 ## 테스트 기록 생성
 INSERT INTO scoreboard
 SET regDate = '2024-09-05 13:59:52',
-memberId = 2,
+memberId = 3,
 `floor` = 1,
 room = 4;
 
@@ -94,23 +116,76 @@ memberId = 1,
 `floor` = 7,
 room = 1;
 
-## INSERT INTO scoreboard
-## SET regDate = NOW(),
-## memberId = 1,
-## `floor` = 1,
-## room = 1;
+## 테스트 채팅 생성
+INSERT INTO chat
+SET regDate = NOW(),
+memberId = 1,
+`body` = "슬라임 가득한 탑을 올라 하늘 높이 꿈을 그려 때론 힘들어도 멈추지 않아요 신비의 세상이 날 기다려";
 
-## INSERT INTO scoreboard
-## SET regDate = NOW(),
-## memberId = 2,
-## `floor` = 3,
-## room = 2;
+INSERT INTO chat
+SET regDate = NOW(),
+memberId = 2,
+`body` = "한 걸음씩 다가가는 그 길 빛나는 신발에 용기 담아 용사처럼 슬라임을 넘고 조금씩 다가가리라 꿈꾸며";
 
-## INSERT INTO scoreboard
-## SET regDate = NOW(),
-## memberId = 1,
-## `floor` = 99,
-## room = 5;
+INSERT INTO chat
+SET regDate = NOW(),
+memberId = 1,
+`body` = "슬라임의 탑 올라가 모험의 시작이야 우리가 함께 이뤄요 저 높은 곳으로 가자";
+
+INSERT INTO chat
+SET regDate = NOW(),
+memberId = 2,
+`body` = "새로운 친구들 만나 함께 싸우고 웃으며 현명함과 용기를 쌓아 끝없는 여정 이어가리";
+
+INSERT INTO chat
+SET regDate = NOW(),
+memberId = 1,
+`body` = "새로운 친구들 만나 함께 싸우고 웃으며 현명함과 용기를 쌓아 끝없는 여정 이어가리";
+
+INSERT INTO chat
+SET regDate = NOW(),
+memberId = 2,
+`body` = "슬라임 물결 밀려와도 우린 뒤돌지 않아요 끝없는 도전 속에서 우리의 길을 찾으리라";
+
+INSERT INTO chat
+SET regDate = NOW(),
+memberId = 1,
+`body` = "새로운 친구들 만나";
+
+INSERT INTO chat
+SET regDate = NOW(),
+memberId = 2,
+`body` = "함께 싸우고 웃으며";
+
+INSERT INTO chat
+SET regDate = NOW(),
+memberId = 1,
+`body` = "현명함과 용기를 쌓아";
+
+INSERT INTO chat
+SET regDate = NOW(),
+memberId = 2,
+`body` = "끝없는 여정 이어가리";
+
+INSERT INTO chat
+SET regDate = NOW(),
+memberId = 1,
+`body` = "새로운 친구들 만나";
+
+INSERT INTO chat
+SET regDate = NOW(),
+memberId = 2,
+`body` = "함께 싸우고 웃으며";
+
+INSERT INTO chat
+SET regDate = NOW(),
+memberId = 1,
+`body` = "현명함과 용기를 쌓아";
+
+INSERT INTO chat
+SET regDate = NOW(),
+memberId = 2,
+`body` = "끝없는 여정 이어가리";
 
 SELECT *
 FROM `member`;
@@ -129,6 +204,9 @@ FROM scoreboard;
 
 SELECT *
 FROM mob;
+
+SELECT *
+FROM chat;
 
 ## 무기 이미지 URL
 INSERT INTO weapon SET id = 1, img = "https://github.com/user-attachments/assets/d3b5fb90-b21e-42a3-8964-a866132ace38";
@@ -281,13 +359,18 @@ ON m.id = S.memberId
 ORDER BY `floor` DESC, room DESC, regDate ASC
 LIMIT 0, 3;
 
-SELECT W.*, F.updateDate
+SELECT W.*, F.regDate
 FROM weapon W
 LEFT JOIN find F
 ON W.id = F.weaponId
 WHERE memberId = 1;
 
-## 스코어 테스트 데이터 랜덤 생성
+SELECT C.*, M.nickname extra__writer
+FROM chat C
+INNER JOIN `member` M
+ON C.memberId = M.id;
+
+##스코어 테스트 데이터 랜덤 생성
 ## INSERT INTO scoreboard
 ## SET regDate = NOW(),
 ## memberId = FLOOR ((RAND()*2)+1),

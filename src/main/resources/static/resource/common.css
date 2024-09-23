@@ -81,15 +81,18 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 }
 
 .audio_bt {
-	top: 0;
-	left: 100vh;
+	top: 1vh;
+	left: 101vh;
 	width: 20vh;
 	height: 9vh;
-	border-radius: 1vh;
-	background: rgb(255, 71, 48);
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	border: 0.3vh solid rgb(174, 0, 27);
+	border-radius: 1vh;
+	/* background: rgb(255, 71, 48); */
+	color: rgb(156, 163, 175);
+	-webkit-text-stroke: 0.1vh black;
 }
 
 /* 메인화면 */
@@ -98,8 +101,6 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	top: 1vh;
 	width: 10vh;
 	height: 10vh;
-	border: 1vh solid white;
-	background: black;
 }
 
 .TOP3 {
@@ -417,20 +418,37 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 }
 
 /* 인게임 헤드 */
+.loding_img {
+  width: 100vh;
+  height: 100vh;
+}
+.loding_text {
+  top: 36vh;
+  left: 27vh;
+  font-size: 15vh;
+  -webkit-text-stroke: 0.1vh white;
+}
+.loding_bar {
+  height: 5vh;
+  left: 10vh;
+  bottom: 10vh;
+  background: red;
+  border-radius: 0.3vh;
+  transition: transform 1000s;
+}
+
 .ingame_logo {
 	left: -18vh;
 	top: 1vh;
 	width: 16vh;
 	height: 16vh;
-	border: 1vh solid white;
-	background: black;
 }
 
 .bar {
 	width: 20vh;
 	height: 100vh;
 	top: 0;
-	left: -20vh;
+	left: -20.5vh;
 }
 
 .door_top {
@@ -466,15 +484,17 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 
 .floor_room {
 	left: 0;
-	top: 18.5vh;
+	top: 18vh;
 	width: 20vh;
 	height: 9vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: 0.3vh solid;
+	border: 0.3vh solid rgb(174, 0, 27);
 	border-radius: 1vh;
-	background: rgb(255, 71, 48);
+	/* background: rgb(255, 71, 48); */
+	color: rgb(156, 163, 175);
+	-webkit-text-stroke: 0.1vh black;
 }
 
 .hp {
@@ -485,22 +505,56 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: 0.3vh solid;
+	border: 0.3vh solid rgb(174, 0, 27);
 	border-radius: 1vh;
-	background: rgb(255, 71, 48);
+	/* background: rgb(255, 71, 48); */
+	color: rgb(156, 163, 175);
+	-webkit-text-stroke: 0.1vh black;
 }
 
-.mob__dictionary_bt {
+.power {
 	left: 0;
-	top: 37.5vh;
+	top: 38vh;
 	width: 20vh;
 	height: 9vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: 0.3vh solid;
+	border: 0.3vh solid rgb(174, 0, 27);
 	border-radius: 1vh;
-	background: rgb(255, 71, 48);
+	/* background: rgb(255, 71, 48); */
+	color: rgb(156, 163, 175);
+	-webkit-text-stroke: 0.1vh black;
+}
+
+.speed {
+	left: 0;
+	top: 48vh;
+	width: 20vh;
+	height: 9vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 0.3vh solid rgb(174, 0, 27);
+	border-radius: 1vh;
+	/* background: rgb(255, 71, 48); */
+	color: rgb(156, 163, 175);
+	-webkit-text-stroke: 0.1vh black;
+}
+
+.mob__dictionary_bt {
+	left: 0;
+	top: 58vh;
+	width: 20vh;
+	height: 9vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 0.3vh solid rgb(174, 0, 27);
+	border-radius: 1vh;
+	/* background: rgb(255, 71, 48); */
+	color: rgb(156, 163, 175);
+	-webkit-text-stroke: 0.1vh black;
 }
 
 .mob__dictionary {
@@ -575,15 +629,17 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 
 .weapon__dictionary_bt {
 	left: 0;
-	top: 47vh;
+	top: 68vh;
 	width: 20vh;
 	height: 9vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: 0.3vh solid;
+	border: 0.3vh solid rgb(174, 0, 27);
 	border-radius: 1vh;
-	background: rgb(255, 71, 48);
+	/* background: rgb(255, 71, 48); */
+	color: rgb(156, 163, 175);
+	-webkit-text-stroke: 0.1vh black;
 }
 
 .weapon__dictionary {
@@ -660,15 +716,74 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	left: 0;
 	top: 78vh;
 	width: 20vh;
-	height: 10vh;
-	-webkit-text-stroke: 0.05vh white;
+	height: 20vh;
+	border: 0.3vh solid rgb(174, 0, 27);
+	border-radius: 1vh;
+	/* background: rgb(255, 71, 48); */
+	color: rgb(156, 163, 175);
+	-webkit-text-stroke: 0.1vh black;
 }
 
 .weapon_img {
 	left: 5vh;
-	top: 6vh;
+	top: 7vh;
 	width: 10vh;
 	height: 10vh;
+}
+/* 풋(채팅) */
+.chat {
+	top: 11vh;
+	left: 101vh;
+	width: 41vh;
+	height: 82.5vh;
+	color: white;	
+	border: 0.3vh solid rgb(174, 0, 27);
+	border-top-left-radius: 1vh;
+	border-bottom-left-radius: 1vh;
+	overflow: auto;
+}
+.who_chat{
+	padding-left: 1vh;
+	width: 30vh;	
+	text-align: left;
+	margin-right:auto;
+}
+
+.my_chat{
+	padding-right: 1vh;
+	width: 30vh;
+	text-align: right;
+	margin-left:auto;	
+}
+
+.chat_writer{
+	font-size: 1vh;
+}
+
+.chat_body{
+	font-size: 2vh;
+	word-break: keep-all;
+}
+
+.chat_var{
+	width: 32vh;
+	left: 101vh;
+	bottom: 1vh;
+	color: white;	
+	border: 0.3vh solid rgb(174, 0, 27);
+	border-radius: 1vh;
+	background: inherit;
+}
+
+.chat_bt{
+	width: 8vh;
+	left: 134vh;
+	bottom: 1vh;
+	border: 0.3vh solid rgb(174, 0, 27);
+	border-radius: 1vh;
+	/* background: rgb(255, 71, 48); */
+	color: rgb(156, 163, 175);
+	-webkit-text-stroke: 0.1vh black;
 }
 
 /* 인게임 맵 */
@@ -677,6 +792,8 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	left: 15vh;
 	width: 30vh;
 	padding: 1vh;
+	border:0.3vh solid rgba(156, 163, 175);
+	border-radius: 1vh;
 }
 
 .guide2 {
@@ -685,6 +802,8 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	width: 30vh;
 	padding: 1vh;
 	width: 30vh;
+	border:0.3vh solid rgba(156, 163, 175);
+	border-radius: 1vh;
 }
 
 .front_charac {
@@ -699,6 +818,31 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	height: 10vh;
 }
 
+.damage1{
+	top: -5vh;
+	left: 0;
+	width: 10vh;
+	text-align:center;
+	color: blue;
+	
+}
+
+.damage2, .damage3, .damage4, .damage5 {
+	top: -5vh;
+	left: 0;
+	width: 10vh;
+	text-align:center;
+	color: red;
+}
+
+.damage6{
+	top: -5vh;
+	left: 0;
+	width: 20vh;
+	text-align:center;
+	color: red;
+}
+
 /* [class^='Aattack'] {
 	left: -6vh;
 	top: 4vh;
@@ -709,81 +853,45 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	height: 2vh;
 }
 
-.Aattack1_1, .Aattack1_11, .Aattack1_21, .Aattack1_31, .Aattack1_41,
-	.Aattack1_51, .Aattack1_61, .Aattack2, .Aattack3, .Aattack4, .Aattack5
-	{
-	left: -6vh;
+.Aattack1 {
+	left: 4vh;
 	top: 4vh;
 	transform: scaleX(-1);
+	transition: left 0.5s ease;
+}
+
+.Wattack1 {
+	left: 4vh;
+	top: 4vh;
+	transform: rotate(270deg);
+	transition: top 0.5s ease;
+}
+
+.Dattack1 {
+	left: 4vh;
+	top: 4vh;
+	transition: left 0.5s ease;
+}
+
+.Sattack1 {
+	left: 4vh;
+	top: 4vh;
+	transform: rotate(90deg);
+	transition: top 0.5s ease;
+}
+
+.Aattack2, .Aattack3, .Aattack4, .Aattack5 {
+	left: 4vh;
+	top: 4vh;
+	transform: scaleX(-1);
+	transition: left 0.5s ease;
 }
 
 .Aattack6 {
-	left: -6vh;
+	left: 9vh;
 	top: 9vh;
 	transform: scaleX(-1);
-}
-
-.Aattack1_2, .Aattack1_12, .Aattack1_22, .Aattack1_32, .Aattack1_42,
-	.Aattack1_52, .Aattack1_62 {
-	left: -8vh;
-	top: 4vh;
-	transform: scaleX(-1);
-}
-
-.Aattack1_3, .Aattack1_13, .Aattack1_23, .Aattack1_33, .Aattack1_43,
-	.Aattack1_53, .Aattack1_63 {
-	left: -10vh;
-	top: 4vh;
-	transform: scaleX(-1);
-}
-
-.Aattack1_4, .Aattack1_14, .Aattack1_24, .Aattack1_34, .Aattack1_44,
-	.Aattack1_54, .Aattack1_64 {
-	left: -12vh;
-	top: 4vh;
-	transform: scaleX(-1);
-}
-
-.Aattack1_5, .Aattack1_15, .Aattack1_25, .Aattack1_35, .Aattack1_45,
-	.Aattack1_55, .Aattack1_65 {
-	left: -14vh;
-	top: 4vh;
-	transform: scaleX(-1);
-}
-
-.Aattack1_6, .Aattack1_16, .Aattack1_26, .Aattack1_36, .Aattack1_46,
-	.Aattack1_56, .Aattack1_66 {
-	left: -16vh;
-	top: 4vh;
-	transform: scaleX(-1);
-}
-
-.Aattack1_7, .Aattack1_17, .Aattack1_27, .Aattack1_37, .Aattack1_47,
-	.Aattack1_57, .Aattack1_67 {
-	left: -18vh;
-	top: 4vh;
-	transform: scaleX(-1);
-}
-
-.Aattack1_8, .Aattack1_18, .Aattack1_28, .Aattack1_38, .Aattack1_48,
-	.Aattack1_58, .Aattack1_68 {
-	left: -20vh;
-	top: 4vh;
-	transform: scaleX(-1);
-}
-
-.Aattack1_9, .Aattack1_19, .Aattack1_29, .Aattack1_39, .Aattack1_49,
-	.Aattack1_59, .Aattack1_69 {
-	left: -22vh;
-	top: 4vh;
-	transform: scaleX(-1);
-}
-
-.Aattack1_10, .Aattack1_20, .Aattack1_30, .Aattack1_40, .Aattack1_50,
-	.Aattack1_60, .Aattack1_70 {
-	left: -24vh;
-	top: 4vh;
-	transform: scaleX(-1);
+	transition: left 0.5s ease;
 }
 
 /* [class^="Wattack"] {
@@ -791,151 +899,34 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	top: -6vh;
 	transform: rotate(270deg);
 } */
-.Wattack1_1, .Wattack1_11, .Wattack1_21, .Wattack1_31, .Wattack1_41,
-	.Wattack1_51, .Wattack1_61, .Wattack2, .Wattack3, .Wattack4, .Wattack5
-	{
+.Wattack2, .Wattack3, .Wattack4, .Wattack5 {
 	left: 4vh;
-	top: -6vh;
+	top: 4vh;
 	transform: rotate(270deg);
+	transition: top 0.5s ease;
 }
 
 .Wattack6 {
-	left: 9vh;
-	top: -6vh;
-	transform: rotate(270deg);
-}
-
-.Wattack1_2, .Wattack1_12, .Wattack1_22, .Wattack1_32, .Wattack1_42,
-	.Wattack1_52, .Wattack1_62 {
 	left: 4vh;
-	top: -8vh;
+	top: 4vh;
 	transform: rotate(270deg);
-}
-
-.Wattack1_3, .Wattack1_13, .Wattack1_23, .Wattack1_33, .Wattack1_3,
-	.Wattack1_3, .Wattack1_63 {
-	left: 4vh;
-	top: -10vh;
-	transform: rotate(270deg);
-}
-
-.Wattack1_4, .Wattack1_14, .Wattack1_24, .Wattack1_34, .Wattack1_44,
-	.Wattack1_54, .Wattack1_64 {
-	left: 4vh;
-	top: -12vh;
-	transform: rotate(270deg);
-}
-
-.Wattack1_5, .Wattack1_15, .Wattack1_25, .Wattack1_35, .Wattack1_45,
-	.Wattack1_55, .Wattack1_65 {
-	left: 4vh;
-	top: -14vh;
-	transform: rotate(270deg);
-}
-
-.Wattack1_6, .Wattack1_16, .Wattack1_26, .Wattack1_36, .Wattack1_46,
-	.Wattack1_56, .Wattack1_66 {
-	left: 4vh;
-	top: -16vh;
-	transform: rotate(270deg);
-}
-
-.Wattack1_7, .Wattack1_17, .Wattack1_27, .Wattack1_37, .Wattack1_47,
-	.Wattack1_57, .Wattack1_67 {
-	left: 4vh;
-	top: -18vh;
-	transform: rotate(270deg);
-}
-
-.Wattack1_8, .Wattack1_18, .Wattack1_28, .Wattack1_38, .Wattack1_48,
-	.Wattack1_58, .Wattack1_68 {
-	left: 4vh;
-	top: -20vh;
-	transform: rotate(270deg);
-}
-
-.Wattack1_9, .Wattack1_19, .Wattack1_29, .Wattack1_39, .Wattack1_49,
-	.Wattack1_59, .Wattack1_69 {
-	left: 4vh;
-	top: -22vh;
-	transform: rotate(270deg);
-}
-
-.Wattack1_10, .Wattack1_20, .Wattack1_30, .Wattack1_40, .Wattack1_50,
-	.Wattack1_60, .Wattack1_70 {
-	left: 4vh;
-	top: -24vh;
-	transform: rotate(270deg);
+	transition: top 0.5s ease;
 }
 
 /* [class^="Dattack"] {
 	left: 14vh;
 	top: 4vh;
 } */
-.Dattack1_1, .Dattack1_11, .Dattack1_21, .Dattack1_31, .Dattack1_41,
-	.Dattack1_51, .Dattack1_61, .Dattack2, .Dattack3, .Dattack4, .Dattack5
-	{
-	left: 16vh;
+.Dattack2, .Dattack3, .Dattack4, .Dattack5 {
+	left: 4vh;
 	top: 4vh;
+	transition: left 0.5s ease;
 }
 
 .Dattack6 {
-	left: 24vh;
+	left: 9vh;
 	top: 9vh;
-}
-
-.Dattack1_2, .Dattack1_12, .Dattack1_22, .Dattack1_32, .Dattack1_42,
-	.Dattack1_52, .Dattack1_62 {
-	left: 18vh;
-	top: 4vh;
-}
-
-.Dattack1_3, .Dattack1_13, .Dattack1_23, .Dattack1_33, .Dattack1_43,
-	.Dattack1_53, .Dattack1_63 {
-	left: 20vh;
-	top: 4vh;
-}
-
-.Dattack1_4, .Dattack1_14, .Dattack1_24, .Dattack1_34, .Dattack1_44,
-	.Dattack1_54, .Dattack1_64 {
-	left: 22vh;
-	top: 4vh;
-}
-
-.Dattack1_5, .Dattack1_15, .Dattack1_25, .Dattack1_35, .Dattack1_45,
-	.Dattack1_55, .Dattack1_65 {
-	left: 24vh;
-	top: 4vh;
-}
-
-.Dattack1_6, .Dattack1_16, .Dattack1_26, .Dattack1_36, .Dattack1_46,
-	.Dattack1_56, .Dattack1_66 {
-	left: 26vh;
-	top: 4vh;
-}
-
-.Dattack1_7, .Dattack1_17, .Dattack1_27, .Dattack1_37, .Dattack1_47,
-	.Dattack1_57, .Dattack1_67 {
-	left: 28vh;
-	top: 4vh;
-}
-
-.Dattack1_8, .Dattack1_18, .Dattack1_28, .Dattack1_38, .Dattack1_48,
-	.Dattack1_58, .Dattack1_68 {
-	left: 30vh;
-	top: 4vh;
-}
-
-.Dattack1_9, .Dattack1_19, .Dattack1_29, .Dattack1_39, .Dattack1_49,
-	.Dattack1_59, .Dattack1_69 {
-	left: 32vh;
-	top: 4vh;
-}
-
-.Dattack1_10, .Dattack1_20, .Dattack1_30, .Dattack1_40, .Dattack1_50,
-	.Dattack1_60, .Dattack1_70 {
-	left: 34vh;
-	top: 4vh;
+	transition: left 0.5s ease;
 }
 
 /* [class^="Sattack"] {
@@ -943,81 +934,18 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	top: 14vh;
 	transform: rotate(90deg);
 } */
-.Sattack1_1, .Sattack1_11, .Sattack1_21, .Sattack1_31, .Sattack1_41,
-	.Sattack1_51, .Sattack1_61, .Sattack2, .Sattack3, .Sattack4, .Sattack5
-	{
+.Sattack2, .Sattack3, .Sattack4, .Sattack5 {
 	left: 4vh;
-	top: 16vh;
+	top: 4vh;
 	transform: rotate(90deg);
+	transition: top 0.5s ease;
 }
 
 .Sattack6 {
 	left: 9vh;
-	top: 26vh;
+	top: 9vh;
 	transform: rotate(90deg);
-}
-
-.Sattack1_2, .Sattack1_12, .Sattack1_22, .Sattack1_32, .Sattack1_42,
-	.Sattack1_52, .Sattack1_62 {
-	left: 4vh;
-	top: 18vh;
-	transform: rotate(90deg);
-}
-
-.Sattack1_3, .Sattack1_13, .Sattack1_23, .Sattack1_33, .Sattack1_43,
-	.Sattack1_53, .Sattack1_63 {
-	left: 4vh;
-	top: 20vh;
-	transform: rotate(90deg);
-}
-
-.Sattack1_4, .Sattack1_14, .Sattack1_24, .Sattack1_34, .Sattack1_44,
-	.Sattack1_54, .Sattack1_64 {
-	left: 4vh;
-	top: 22vh;
-	transform: rotate(90deg);
-}
-
-.Sattack1_5, .Sattack1_15, .Sattack1_25, .Sattack1_35, .Sattack1_45,
-	.Sattack1_55, .Sattack1_65 {
-	left: 4vh;
-	top: 24vh;
-	transform: rotate(90deg);
-}
-
-.Sattack1_6, .Sattack1_16, .Sattack1_26, .Sattack1_36, .Sattack1_46,
-	.Sattack1_56, .Sattack1_66 {
-	left: 4vh;
-	top: 26vh;
-	transform: rotate(90deg);
-}
-
-.Sattack1_7, .Sattack1_17, .Sattack1_27, .Sattack1_37, .Sattack1_47,
-	.Sattack1_57, .Sattack1_67 {
-	left: 4vh;
-	top: 28vh;
-	transform: rotate(90deg);
-}
-
-.Sattack1_8, .Sattack1_18, .Sattack1_28, .Sattack1_38, .Sattack1_48,
-	.Sattack1_58, .Sattack1_68 {
-	left: 4vh;
-	top: 30vh;
-	transform: rotate(90deg);
-}
-
-.Sattack1_9, .Sattack1_19, .Sattack1_29, .Sattack1_39, .Sattack1_49,
-	.Sattack1_59, .Sattack1_69 {
-	left: 4vh;
-	top: 32vh;
-	transform: rotate(90deg);
-}
-
-.Sattack1_10, .Sattack1_20, .Sattack1_30, .Sattack1_40, .Sattack1_50,
-	.Sattack1_60, .Sattack1_70 {
-	left: 4vh;
-	top: 34vh;
-	transform: rotate(90deg);
+	transition: top 0.5s ease;
 }
 
 .front_mob_img {
@@ -1037,9 +965,16 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	height: 10vh;
 }
 
+.random_item {
+	top: 75vh;
+	left: 45vh;
+	width: 10vh;
+	height: 10vh;
+}
+
 /* 게임오버화면 */
 .over {
-	top: 2vh;
+	top: 0;
 	left: 0;
 	height: 100vh;
 	width: 100vh;
@@ -1057,6 +992,23 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	height: 20vh;
 	width: 50vh;
 	-webkit-text-stroke: 0.05vh white;
+	border: 0.3vh solid rgb(174, 0, 27);
+	border-radius: 1vh;
+	background: rgb(0, 0, 30);
+	color: rgb(156, 163, 175);
+	-webkit-text-stroke: 0.1vh black;
+}
+
+.random_item_text {
+	top: 40vh;
+	left: 25vh;
+	height: 20vh;
+	width: 50vh;
+	border: 0.3vh solid rgb(174, 0, 27);
+	border-radius: 1vh;
+	background: rgb(0, 0, 30);
+	color: rgb(156, 163, 175);
+	-webkit-text-stroke: 0.1vh black;
 }
 
 .item_img {
@@ -1076,17 +1028,38 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 
 .item_change {
 	top: 14vh;
-	left: 6vh;
+	left: 4vh;
+	width: 10vh;
+	text-align:center;
+	border: 0.3vh solid rgb(174, 0, 27);
+	border-radius: 1vh;
+}
+
+.item_get {
+	top: 14vh;
+	left: 4vh;
+	width: 10vh;
+	text-align:center;
+	border: 0.3vh solid rgb(174, 0, 27);
+	border-radius: 1vh;
 }
 
 .item_mix {
 	top: 14vh;
-	left: 21vh;
+	left: 19vh;
+	width: 10vh;
+	text-align:center;
+	border: 0.3vh solid rgb(174, 0, 27);
+	border-radius: 1vh;
 }
 
 .item_exit {
 	top: 14vh;
-	left: 37vh;
+	left: 35vh;
+	width: 10vh;
+	text-align:center;
+	border: 0.3vh solid rgb(174, 0, 27);
+	border-radius: 1vh;
 }
 
 .bossHP {
@@ -1108,13 +1081,28 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 }
 
 /* 몬스터 도감 */
+.dictionary_exit_bt {
+	top: 1vh;
+	left: 122vh;
+	width: 20vh;
+	height: 9vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 0.3vh solid rgb(174, 0, 27);
+	border-radius: 1vh;
+	/* background: rgb(255, 71, 48); */
+	color: rgb(156, 163, 175);
+	-webkit-text-stroke: 0.1vh black;
+}
+
 .mob__dictionary_title {
 	top: 0;
 	left: 20vh;
 	width: 60vh;
 	font-size: 6vh;
 	text-align: center;
-	-webkit-text-stroke: 0.2vh white;
+	-webkit-text-stroke: 0.1vh white;
 }
 
 .mob__dictionary2 {
@@ -1159,7 +1147,7 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	width: 60vh;
 	font-size: 6vh;
 	text-align: center;
-	-webkit-text-stroke: 0.2vh white;
+	-webkit-text-stroke: 0.1vh white;
 }
 
 .weapon__dictionary2 {
@@ -1182,7 +1170,7 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	width: 7vh;
 	background: white;
 	border: 0.1vh solid;
-	flex-shrink: 0;	
+	flex-shrink: 0;
 	position: relative;
 	cursor: pointer;
 }
@@ -1200,18 +1188,20 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	justify-content: center;
 	align-items: center;
 }
-.weapon__dictionary_body_text{
-	display:none;
+
+.weapon__dictionary_body_text {
+	display: none;
 	top: 3vh;
 	left: 3vh;
 	padding: 1vh;
-	width: 13vh;
+	width: 14vh;
 	background: white;
 	font-size: 2vh;
 	z-index: 20;
 	text-align: center;
 	border: 0.1vh solid;
 }
+
 .weapon__dictionary_card2:hover>.weapon__dictionary_body_text {
-	display: block;	
+	display: block;
 }

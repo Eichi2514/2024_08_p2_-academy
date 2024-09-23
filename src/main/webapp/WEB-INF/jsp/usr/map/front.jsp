@@ -3,8 +3,6 @@
 <%@ page import="java.util.Map"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<script src="/resource/common.js" defer="defer"></script>
-
 <c:set var="pageTitle" value="스테이지 : ${param.stage}"></c:set>
 
 <%@ include file="../common/ingame_head.jspf"%>
@@ -69,9 +67,10 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
     // 캐릭터 정보
     var front_hp = "${charac.hp}";
     var stage;
-    var damage = Math.floor(${charac.weaponId} / 10); // 소수점 아래 버림
+    var moveSpeed = ${charac.speed}; // 이동 속도 조절 (ms)
+    var damage = ((Math.floor(${charac.weaponId} / 10))*10) + ${charac.power}; // 소수점 아래 버림
     if (${charac.weaponId} % 10 != 0){
-    	damage++;
+    	damage+=10;
     }    
 
     // 스테이지 이동
@@ -80,13 +79,7 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 		var doorChack = $(".door").hasClass("hidden");
 		if (LR > 79 && 38 < UD && UD < 52 && !doorChack) {
 			windowChack = false;
-			update(front_hp, stage);
-			$(".door").fadeOut(1000).addClass('hidden');
-			mobShow(2);
-			mobShow(3);
-			mobShow(4);
-			mobShow(5);
-			mobShow(6);
+			update(front_hp, stage);						
 			setTimeout(function(){location.href = '../map/front?stage=' + stage;}, 100);			
 			/* console.log("HP:", front_hp);
 			console.log("Stage:", stage);
@@ -135,59 +128,59 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
     var mob5_hp = 0;
     var mob6_hp = 0;
     
-	// 일정 시간마다 move 함수를 호출
-	if(${room > 0 && room < 5}){mob2_hp = ${floor};}
-	if(${room > 1 && room < 5}){mob3_hp = ${floor};}
-	if(${room > 2 && room < 5}){mob4_hp = ${floor};}
-	if(${room > 3 && room < 5}){mob5_hp = ${floor};}
-	if(${floor > 1 && room == 0}){mob6_hp = ${(floor-1)*10};}
+	// 몬스터의 체력 부여
+	if(${room > 0 && room < 5}){mob2_hp = ${floor*10};}
+	if(${room > 1 && room < 5}){mob3_hp = ${floor*10};}
+	if(${room > 2 && room < 5}){mob4_hp = ${floor*10};}
+	if(${room > 3 && room < 5}){mob5_hp = ${floor*10};}
+	if(${floor > 1 && room == 0}){mob6_hp = ${(floor-1)*100};}
 	
 	// 랜덤 숫자 생성
     function getRandom(min, max) {
     	return Math.floor(Math.random() * (max - min + 1)) + min;
 		}
 
-	// 1초마다 랜덤 숫자를 출력하는 함수
+	// 랜덤 행동을 사용하는 함수
 	function move2() {
 		var random;
 		// 1에서 5까지의 랜덤 숫자 생성
 		if (${floor < 4}){random = getRandom(1, 4);}
 		else {random = getRandom(1, 5);}
 
-		if (random == 1) {
+		if (random == 1 && windowChack) {
 			Left2(2);
-		} else if (random == 2) {
+		} else if (random == 2&& windowChack) {
 			Up2(2);
-		} else if (random == 3) {
+		} else if (random == 3&& windowChack) {
 			Right2(2);
-		} else if (random == 4) {
+		} else if (random == 4&& windowChack) {
 			Down2(2);
-		} else if (random == 5) {
+		} else if (random == 5&& windowChack) {
 			mobAttack(2);
 		}
 	}
 
-	// 1초마다 랜덤 숫자를 출력하는 함수
+	// 랜덤 행동을 사용하는 함수
 	function move3() {
 		var random;
 		// 랜덤 숫자 생성
 		if (${floor < 4}){random = getRandom(1, 4);}
 		else {random = getRandom(1, 5);}
 
-		if (random == 1) {
+		if (random == 1&& windowChack) {
 			Left2(3);
-		} else if (random == 2) {
+		} else if (random == 2&& windowChack) {
 			Up2(3);
-		} else if (random == 3) {
+		} else if (random == 3&& windowChack) {
 			Right2(3);
-		} else if (random == 4) {
+		} else if (random == 4&& windowChack) {
 			Down2(3);
-		} else if (random == 5) {
+		} else if (random == 5&& windowChack) {
 			mobAttack(3);
 		}
 	}
 
-	// 1초마다 랜덤 숫자를 출력하는 함수
+	// 랜덤 행동을 사용하는 함수
 	function move4() {
 		var random;
 		// 랜덤 숫자 생성
@@ -196,18 +189,18 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 
 		if (random == 1) {
 			Left2(4);
-		} else if (random == 2) {
+		} else if (random == 2&& windowChack) {
 			Up2(4);
-		} else if (random == 3) {
+		} else if (random == 3&& windowChack) {
 			Right2(4);
-		} else if (random == 4) {
+		} else if (random == 4&& windowChack) {
 			Down2(4);
-		} else if (random == 5) {
+		} else if (random == 5&& windowChack) {
 			mobAttack(4);
 		}
 	}
 
-	// 1초마다 랜덤 숫자를 출력하는 함수
+	// 랜덤 행동을 사용하는 함수
 	function move5() {
 		var random;
 		// 랜덤 숫자 생성
@@ -216,33 +209,33 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 
 		if (random == 1) {
 			Left2(5);
-		} else if (random == 2) {
+		} else if (random == 2&& windowChack) {
 			Up2(5);
-		} else if (random == 3) {
+		} else if (random == 3&& windowChack) {
 			Right2(5);
-		} else if (random == 4) {
+		} else if (random == 4&& windowChack) {
 			Down2(5);
-		} else if (random == 5) {
+		} else if (random == 5&& windowChack) {
 			mobAttack(5);
 		}
 	}
 
-	// 1초마다 랜덤 숫자를 출력하는 함수
+	// 랜덤 행동을 사용하는 함수
 	function move6() {
 		var random;
 		// 랜덤 숫자 생성
 		if (${floor < 4} || ${floor == 4 && room == 0}){random = getRandom(1, 4);}
 		else {random = getRandom(1, 5);}
 
-		if (random == 1) {
+		if (random == 1&& windowChack) {
 			Left2(6);
-		} else if (random == 2) {
+		} else if (random == 2&& windowChack) {
 			Up2(6);
-		} else if (random == 3) {
+		} else if (random == 3&& windowChack) {
 			Right2(6);
-		} else if (random == 4) {
+		} else if (random == 4&& windowChack) {
 			Down2(6);
-		} else if (random == 5) {
+		} else if (random == 5&& windowChack) {
 			mobAttack(6);
 		}
 	}
@@ -290,6 +283,7 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 						}						
 					} else if (data == 'charac') {
 						hpDown();
+						damage__motion('1', '1');
 					}
 				},
 				error : function(jqXHR, textStatus, errorThrown) {
@@ -326,6 +320,7 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 						}
 					} else if (data == 'charac') {
 						hpDown();
+						damage__motion('1', '1');
 					}
 				},
 				error : function(jqXHR, textStatus, errorThrown) {
@@ -362,7 +357,8 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 							$(".mob6").css("left", LR6 + "vh");
 						}
 					} else if (data == 'charac') {
-						hpDown();						
+						hpDown();		
+						damage__motion('1', '1');
 					}
 				},
 				error : function(jqXHR, textStatus, errorThrown) {
@@ -399,6 +395,7 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 						}
 					} else if (data == 'charac') {
 						hpDown();
+						damage__motion('1', '1');
 					}
 				},
 				error : function(jqXHR, textStatus, errorThrown) {
@@ -471,6 +468,7 @@ var stop2, stop3, stop4, stop5, stop6;
 
 //일정 시간마다 move 함수를 호출
 function show(){
+	console.log("페이지가 모두 로드된 후 실행됩니다.");
 	if(${param.stage <= 270}){
 	  if(${room > 0 && room < 5}){stop2 = setInterval(move2, 1000);}
 	  if(${room > 1 && room < 5}){stop3 = setInterval(move3, 800);}
@@ -495,7 +493,7 @@ function showItem_text(){
 		}
 	}
 
-//아이템 안내창 교체
+//아이템 안내창 교체 버튼 눌렀을 떄
 function Item_change(){
   $.ajax({
       url : '/usr/charac/weaponChange',
@@ -514,7 +512,7 @@ function Item_change(){
   });
 }
 
-//아이템 안내창 조합
+//아이템 안내창 조합 버튼 눌렀을 떄
 function Item_mix(){
   $.ajax({
       url : '/usr/charac/weaponMix',
@@ -534,9 +532,10 @@ function Item_mix(){
   });
 }
 
-//아이템 안내창 취소
+//아이템 안내창 취소 버튼 눌렀을 떄
 function Item_exit(){
 		$(".item_text").fadeOut(1000).addClass('hidden');
+		$(".random_item_text").fadeOut(1000).addClass('hidden');
 	}
     	  
 // 아이템 공개
@@ -544,23 +543,113 @@ function showItem(){
 	  $(".item").fadeIn(1000).removeClass('hidden');
 }
 
+
+// 랜덤아이템 안내창 공개
+function showRandomItem_text(){	
+	var randomItemChack = $(".random_item").hasClass('hidden');
+	// console.log("아이템 공개 여부"+itemChack);
+	if(UD > 64 && UD < 76 && LR < 56 && LR > 34 && !randomItemChack){
+		$(".random_item_text").fadeIn(1000).removeClass('hidden');
+		}
+	}
+	
+//랜덤아이템 안내창 먹는다 버튼 눌렀을 떄
+function Item_get(){
+  $.ajax({
+      url : '/usr/charac/itemGet',
+      type : 'GET',
+      success: function(data) {
+    	  // console.log(data);
+    	  $('.power_count').text(data[0]);
+    	  $('.speed_count').text(50 - data[1]);
+    	  alert(data[2]);
+    	  $(".random_item").fadeOut(1000).addClass('hidden');
+          $(".random_item_text").fadeOut(1000).addClass('hidden');
+          
+      },
+      error : function(jqXHR, textStatus, errorThrown) {
+          alert('오류 발생 : ' + textStatus);
+      }
+  });
+}
+	
+// 랜덤아이템 공개
+function showRandomItem(){
+	if(mob2_hp <= 0 && mob3_hp <= 0 && mob4_hp <= 0 && mob5_hp <= 0 && mob6_hp <= 0){
+	  $(".random_item").fadeIn(1000).removeClass('hidden');
+	}
+}
+
 // 보스 HP 감소 함수
 function BossHpDown(){
-	let new_width_value = ( ${50/ ((floor-1)*10) }*mob6_hp);
+	let new_width_value = ( ${50/ ((floor-1)*100) }*mob6_hp);
 	$(".bossHP_bar").css('width', new_width_value+'vh');
 }
 
 // 공격 함수
-		function attack_motion(something, motion) {
-			$("."+motion+"attack"+something).removeClass('hidden');
-			if(motion == 'A'){}
-			else if (motion == 'W') {}
-			else if (motion == 'D') {}
-			else if (motion == 'S') {}
-			setTimeout(function() {
-			$("."+motion+"attack"+something).addClass('hidden');
-			}, 300)
-		}
+function attack_motion(something, motion) {
+	var Distance = 0;
+	
+	if(something == 1){
+		Distance = ${charac.weaponId} % 10; // 소수점 아래 버림
+		    if (${charac.weaponId} % 10 == 0){
+		    	Distance = 10;
+		    }
+	} else {
+		Distance = ${charac.floor-3};
+			if (Distance > 10){
+	    		Distance = 10;
+	    	}
+	}
+	
+    const $attackElement = $("." + motion + "attack" + something);
+    
+    // hidden 클래스를 제거해서 모습을 드러냄
+    $attackElement.removeClass('hidden');
+    
+    // 약간의 딜레이 후에 css를 변경해 이동하는 모습을 표현
+    setTimeout(function() {
+        if (motion == 'A') {
+            $attackElement.css('left', (-4 - (Distance * 2)) + "vh");
+        } else if (motion == 'W') {
+            	$attackElement.css('top', (-4 - (Distance * 2)) + "vh");
+        } else if (motion == 'D') {
+        		if(something < 6) {
+    	        $attackElement.css('left', (12 + (Distance * 2)) + "vh");
+   	     		} else if(something == 6){
+                 	$attackElement.css('left', (22 + (Distance * 2)) + "vh");	
+                }
+            /* console.log((14 + (Distance * 2)));
+            console.log("weaponId : " + ${charac.weaponId});
+            console.log("Distance*2 : " + Distance*2);
+            console.log("사거리 : " + (12 + (Distance * 2))); */
+        } else if (motion == 'S') {
+        		if(something < 6) {
+    	        $attackElement.css('top', (12 + (Distance * 2)) + "vh");
+	        	} else if(something == 6){
+                 	$attackElement.css('top', (22 + (Distance * 2)) + "vh");	
+                }
+        }
+    }, 10);  // 10ms 정도의 짧은 딜레이를 줘서 CSS 변경을 애니메이션으로 적용
+
+    // 0.5초 뒤에 애니메이션이 끝나고, 모습을 없애고 원래 자리로
+    setTimeout(function() {
+        $attackElement.addClass('hidden'); // 다시 hidden 추가
+        if(something < 6){
+        	$attackElement.css({top: "4vh", left: "4vh"}); // 원래 위치로 복귀
+        } else if(something == 6){
+        	$attackElement.css({top: "9vh", left: "9vh"}); // 원래 위치로 복귀
+        }
+    }, 500);  // 애니메이션 시간 500ms 이후
+}
+
+// 데미지 화면에 보여주기
+function damage__motion(data, damage){
+	$(".damage"+data).text(damage);
+	setTimeout(function() {
+		$(".damage"+data).text('');	
+	}, 1000);
+}
 		
 	       function attackA(something) {
 				$.ajax({
@@ -576,8 +665,10 @@ function BossHpDown(){
 						// console.log("보스 HP : " + mob6_hp);
 						if (something != 1 && data == 1) {
 							hpDown();
+							damage__motion('1', '1');
 						} else if (something == 1 && data == 2) {
-							mob2_hp -= damage;
+							mob2_hp -= damage;			
+							damage__motion(data, damage);
 							if(mob2_hp <= 0){
 								mobHidden(2);
 							    clearInterval(stop2);
@@ -585,6 +676,7 @@ function BossHpDown(){
 							}
 						} else if (something == 1 && data == 3) {
 							mob3_hp -= damage;
+							damage__motion(data, damage);
 							if(mob3_hp <= 0){
 								mobHidden(3);
 								clearInterval(stop3);
@@ -592,6 +684,7 @@ function BossHpDown(){
 							}
 						} else if (something == 1 && data == 4) {
 							mob4_hp -= damage;
+							damage__motion(data, damage);
 							if(mob4_hp <= 0){
 								mobHidden(4);
 								clearInterval(stop4);
@@ -599,6 +692,7 @@ function BossHpDown(){
 							}
 						} else if (something == 1 && data == 5) {
 							mob5_hp -= damage;
+							damage__motion(data, damage);
 							if(mob5_hp <= 0){
 								mobHidden(5);
 								clearInterval(stop5);
@@ -606,11 +700,12 @@ function BossHpDown(){
 							}
 						} else if (something == 1 && data == 6) {
 							mob6_hp -= damage;
+							damage__motion(data, damage);
 							if(mob6_hp <= 0){
 								mobHidden(6);
 								clearInterval(stop6);
 								doDelete(6);
-								showItem();
+								showItem();								
 							}
 							BossHpDown();
 						} 
@@ -620,7 +715,8 @@ function BossHpDown(){
 						// console.log("몬스터5 hp : " + mob5_hp);
 						// console.log("몬스터6 hp : " + mob6_hp);
 						showDoor();
-						attack_motion(something, "A");
+						showRandomItem();
+						attack_motion(something, "A");						
 					},
 					error : function(jqXHR, textStatus, errorThrown) {
 						alert('오류 발생 : ' + textStatus);
@@ -640,8 +736,10 @@ function BossHpDown(){
 						// console.log("몬스터"+data+"Attack");						 
 						if (something != 1 && data == 1) {
 							hpDown();
+							damage__motion('1', '1');
 						} else if (something == 1 && data == 2) {
-							mob2_hp -= damage;
+							mob2_hp -= damage;			
+							damage__motion(data, damage);
 							if(mob2_hp <= 0){
 								mobHidden(2);
 							    clearInterval(stop2);
@@ -649,6 +747,7 @@ function BossHpDown(){
 							}
 						} else if (something == 1 && data == 3) {
 							mob3_hp -= damage;
+							damage__motion(data, damage);
 							if(mob3_hp <= 0){
 								mobHidden(3);
 								clearInterval(stop3);
@@ -656,6 +755,7 @@ function BossHpDown(){
 							}
 						} else if (something == 1 && data == 4) {
 							mob4_hp -= damage;
+							damage__motion(data, damage);
 							if(mob4_hp <= 0){
 								mobHidden(4);
 								clearInterval(stop4);
@@ -663,6 +763,7 @@ function BossHpDown(){
 							}
 						} else if (something == 1 && data == 5) {
 							mob5_hp -= damage;
+							damage__motion(data, damage);
 							if(mob5_hp <= 0){
 								mobHidden(5);
 								clearInterval(stop5);
@@ -670,11 +771,12 @@ function BossHpDown(){
 							}
 						} else if (something == 1 && data == 6) {
 							mob6_hp -= damage;
+							damage__motion(data, damage);
 							if(mob6_hp <= 0){
 								mobHidden(6);
 								clearInterval(stop6);
 								doDelete(6);
-								showItem();
+								showItem();								
 							}
 							BossHpDown();
 						} 
@@ -684,6 +786,7 @@ function BossHpDown(){
 						// console.log("몬스터5 hp : " + mob5_hp);
 						// console.log("몬스터6 hp : " + mob6_hp);
 						showDoor();
+						showRandomItem();
 						attack_motion(something, "W");
 					},
 					error : function(jqXHR, textStatus, errorThrown) {
@@ -706,8 +809,10 @@ function BossHpDown(){
 						// console.log("보스 HP : " + mob6_hp);
 						if (something != 1 && data == 1) {
 							hpDown();
+							damage__motion('1', '1');
 						} else if (something == 1 && data == 2) {
-							mob2_hp -= damage;
+							mob2_hp -= damage;			
+							damage__motion(data, damage);
 							if(mob2_hp <= 0){
 								mobHidden(2);
 							    clearInterval(stop2);
@@ -715,6 +820,7 @@ function BossHpDown(){
 							}
 						} else if (something == 1 && data == 3) {
 							mob3_hp -= damage;
+							damage__motion(data, damage);
 							if(mob3_hp <= 0){
 								mobHidden(3);
 								clearInterval(stop3);
@@ -722,6 +828,7 @@ function BossHpDown(){
 							}
 						} else if (something == 1 && data == 4) {
 							mob4_hp -= damage;
+							damage__motion(data, damage);
 							if(mob4_hp <= 0){
 								mobHidden(4);
 								clearInterval(stop4);
@@ -729,6 +836,7 @@ function BossHpDown(){
 							}
 						} else if (something == 1 && data == 5) {
 							mob5_hp -= damage;
+							damage__motion(data, damage);
 							if(mob5_hp <= 0){
 								mobHidden(5);
 								clearInterval(stop5);
@@ -736,11 +844,12 @@ function BossHpDown(){
 							}
 						} else if (something == 1 && data == 6) {
 							mob6_hp -= damage;
+							damage__motion(data, damage);
 							if(mob6_hp <= 0){
 								mobHidden(6);
 								clearInterval(stop6);
 								doDelete(6);
-								showItem();
+								showItem();								
 							}
 							BossHpDown();
 						} 
@@ -750,6 +859,7 @@ function BossHpDown(){
 						// console.log("몬스터5 hp : " + mob5_hp);
 						// console.log("몬스터6 hp : " + mob6_hp);
 						showDoor();
+						showRandomItem();
 						attack_motion(something, "D");
 					},
 					error : function(jqXHR, textStatus, errorThrown) {
@@ -770,8 +880,10 @@ function BossHpDown(){
 						// console.log("몬스터"+data+"Attack");						 
 						if (something != 1 && data == 1) {
 							hpDown();
+							damage__motion('1', '1');
 						} else if (something == 1 && data == 2) {
-							mob2_hp -= damage;
+							mob2_hp -= damage;			
+							damage__motion(data, damage);
 							if(mob2_hp <= 0){
 								mobHidden(2);
 							    clearInterval(stop2);
@@ -779,6 +891,7 @@ function BossHpDown(){
 							}
 						} else if (something == 1 && data == 3) {
 							mob3_hp -= damage;
+							damage__motion(data, damage);
 							if(mob3_hp <= 0){
 								mobHidden(3);
 								clearInterval(stop3);
@@ -786,6 +899,7 @@ function BossHpDown(){
 							}
 						} else if (something == 1 && data == 4) {
 							mob4_hp -= damage;
+							damage__motion(data, damage);
 							if(mob4_hp <= 0){
 								mobHidden(4);
 								clearInterval(stop4);
@@ -793,6 +907,7 @@ function BossHpDown(){
 							}
 						} else if (something == 1 && data == 5) {
 							mob5_hp -= damage;
+							damage__motion(data, damage);
 							if(mob5_hp <= 0){
 								mobHidden(5);
 								clearInterval(stop5);
@@ -800,11 +915,12 @@ function BossHpDown(){
 							}
 						} else if (something == 1 && data == 6) {
 							mob6_hp -= damage;
+							damage__motion(data, damage);
 							if(mob6_hp <= 0){
 								mobHidden(6);
 								clearInterval(stop6);
 								doDelete(6);
-								showItem();
+								showItem();								
 							}
 							BossHpDown();
 						} 
@@ -814,6 +930,7 @@ function BossHpDown(){
 						// console.log("몬스터5 hp : " + mob5_hp);
 						// console.log("몬스터6 hp : " + mob6_hp);
 						showDoor();
+						showRandomItem();
 						attack_motion(something, "S");
 					},
 					error : function(jqXHR, textStatus, errorThrown) {
@@ -821,13 +938,13 @@ function BossHpDown(){
 					}
 				});
 			}
-	       
-	       window.onload = show();
+
+	   	show();
 		
 </script>
 <!-- p2 맵 배경 -->
 <img class="bg_img"
-	src="https://github.com/user-attachments/assets/04fa2504-f697-4a59-8626-89551e8611da"
+	src="https://github.com/user-attachments/assets/e92471f8-4b53-4df2-9b42-e4fe0abe9d5e"
 	alt="" />
 
 <!-- p2 문 -->
@@ -837,8 +954,10 @@ function BossHpDown(){
 
 <!-- 튜토리얼 알림창 -->
 <c:if test="${param.stage == 5}">
-	<div class="guide1 bg-white text-center absolute">A W D X : 공격</div>
-	<div class="guide2 bg-white text-center absolute">← ↑ → ↓ : 이동</div>
+	<div class="guide1 bg-black text-gray-400 text-center absolute">A
+		W D S : 공격</div>
+	<div class="guide2 bg-black text-gray-400 text-center absolute">←
+		↑ → ↓ : 이동</div>
 </c:if>
 
 <!-- 첫번째 몬스터 -->
@@ -855,8 +974,10 @@ function BossHpDown(){
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 아래쪽 공격 -->
 		<img class="mobAttack Sattack2 attackSize hidden absolute"
-			src="${charac.extra__weapon}" alt="" />
-		<img class="front_mob_img" src="${mob}" alt="" />
+			src="${charac.extra__weapon}" alt="" /> <img class="front_mob_img"
+			src="${mob}" alt="" />
+		<!-- 몬스터 데미지 -->
+		<div class="damage2 absolute z-20"></div>
 	</div>
 </c:if>
 <!-- 두번째 몬스터 -->
@@ -873,8 +994,10 @@ function BossHpDown(){
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 아래쪽 공격 -->
 		<img class="mobAttack Sattack3 attackSize hidden absolute"
-			src="${charac.extra__weapon}" alt="" />
-		<img class="front_mob_img" src="${mob}" alt="" />
+			src="${charac.extra__weapon}" alt="" /> <img class="front_mob_img"
+			src="${mob}" alt="" />
+		<!-- 몬스터 데미지 -->
+		<div class="damage3 absolute z-20"></div>
 	</div>
 </c:if>
 <!-- 세번째 몬스터 -->
@@ -891,8 +1014,10 @@ function BossHpDown(){
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 아래쪽 공격 -->
 		<img class="mobAttack Sattack4 attackSize hidden absolute"
-			src="${charac.extra__weapon}" alt="" />
-		<img class="front_mob_img" src="${mob}" alt="" />
+			src="${charac.extra__weapon}" alt="" /> <img class="front_mob_img"
+			src="${mob}" alt="" />
+		<!-- 몬스터 데미지 -->
+		<div class="damage4 absolute z-20"></div>
 	</div>
 </c:if>
 <!-- 네번째 몬스터 -->
@@ -909,8 +1034,10 @@ function BossHpDown(){
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 아래쪽 공격 -->
 		<img class="mobAttack Sattack5 attackSize hidden absolute"
-			src="${charac.extra__weapon}" alt="" />
-		<img class="front_mob_img" src="${mob}" alt="" />
+			src="${charac.extra__weapon}" alt="" /> <img class="front_mob_img"
+			src="${mob}" alt="" />
+		<!-- 몬스터 데미지 -->
+		<div class="damage5 absolute z-20"></div>
 	</div>
 </c:if>
 <!-- 보스 몬스터 -->
@@ -932,8 +1059,10 @@ function BossHpDown(){
 			src="${charac.extra__weapon}" alt="" />
 		<!-- 아래쪽 공격 -->
 		<img class="mobAttack Sattack6 attackSize hidden absolute"
-			src="${charac.extra__weapon}" alt="" />
-		<img class="front_bossMob_img" src="${mob}" alt="" />
+			src="${charac.extra__weapon}" alt="" /> <img
+			class="front_bossMob_img" src="${mob}" alt="" />
+		<!-- 보스 데미지 -->
+		<div class="damage6 absolute z-20"></div>
 	</div>
 
 	<img class="item hidden absolute" src="${weapon}" alt="" />
@@ -942,9 +1071,11 @@ function BossHpDown(){
 
 <div class="item_text absolute z-20 hidden">
 	<!-- p2 나무판 -->
+	<!-- 
 	<img class="item_img absolute z-20"
 		src="https://github.com/user-attachments/assets/b3351b33-5547-48b5-9108-78ef3c69c204"
 		alt="" />
+	-->
 
 	<div class="item_title absolute">새로운 무기를 발견하였습니다.</div>
 	<button class="item_change absolute" onclick="Item_change()">교체</button>
@@ -952,134 +1083,47 @@ function BossHpDown(){
 	<button class="item_exit absolute" onclick="Item_exit()">취소</button>
 </div>
 
+<c:if test="${random_item_probability == 1 && param.stage > 5}">
+
+	<div class="random_item_text absolute z-20 hidden">
+		<!-- p2 나무판 -->
+		<!-- 
+	<img class="item_img absolute z-20"
+		src="https://github.com/user-attachments/assets/b3351b33-5547-48b5-9108-78ef3c69c204"
+		alt="" />
+	-->
+
+		<div class="item_title absolute z-20">수상한 알약을 발견하였습니다.</div>
+		<button class="item_get absolute z-20" onclick="Item_get()">먹는다</button>
+		<button class="item_exit absolute z-20" onclick="Item_exit()">취소</button>
+	</div>
+
+
+	<img class="random_item hidden absolute"
+		src="https://github.com/user-attachments/assets/64a8dc0c-b9bc-41a7-a500-8a9466c0dd04"
+		alt="" />
+</c:if>
 
 <!-- 캐릭터 -->
 <div class="front_charac charac absolute">
 	<!-- 왼쪽 공격 -->
-	<img
-		class="Aattack1_${charac.weaponId} attackSize Aattack1 CharacAttack hidden absolute"
+	<img class="attackSize Aattack1 CharacAttack hidden absolute"
 		src="${charac.extra__weapon}" alt="" />
 	<!-- 위쪽 공격 -->
-	<img
-		class="Wattack1_${charac.weaponId} attackSize Wattack1 CharacAttack hidden absolute"
+	<img class="attackSize Wattack1 CharacAttack hidden absolute"
 		src="${charac.extra__weapon}" alt="" />
 	<!-- 오른쪽 공격 -->
-	<img
-		class="Dattack1_${charac.weaponId} attackSize Dattack1 CharacAttack hidden absolute"
+	<img class="attackSize Dattack1 CharacAttack hidden absolute"
 		src="${charac.extra__weapon}" alt="" />
 	<!-- 아래쪽 공격 -->
-	<img
-		class="Sattack1_${charac.weaponId} attackSize Sattack1 CharacAttack hidden absolute"
+	<img class="attackSize Sattack1 CharacAttack hidden absolute"
 		src="${charac.extra__weapon}" alt="" />
 	<!-- 캐릭터 이미지 -->
 	<img class="front_charac_img rounded-full"
 		src="https://github.com/user-attachments/assets/aaa05c2c-d55a-4111-b367-9231727e7050"
 		alt="" />
+	<!-- 캐릭터 데미지 -->
+	<div class="damage1 absolute z-20"></div>
 </div>
-
-<!--  배경음악 관련 -->
-<c:if
-	test="${floor % 40 >= 1 && floor % 40 <= 10 && room != 0 || (floor-1) % 40 >= 0 && (floor-1) % 40 <= 10 && room == 0}">
-	<audio id="audioPlayer" class="audioPlayer hidden absolute" controls
-		autoplay loop preload="auto">
-		<source src="${pageContext.request.contextPath}/audio/bg1.mp3"
-			type="audio/mpeg">
-	</audio>
-</c:if>
-<c:if
-	test="${floor % 40 >= 11 && floor % 40 <= 20 && room != 0 || (floor-1) % 40 >= 11 && (floor-1) % 40 <= 20 && room == 0}">
-	<audio id="audioPlayer" class="audioPlayer hidden absolute" controls
-		autoplay loop preload="auto">
-		<source src="${pageContext.request.contextPath}/audio/bg2.mp3"
-			type="audio/mpeg">
-	</audio>
-</c:if>
-<c:if
-	test="${floor % 40 >= 21 && floor % 40 <= 30 && room != 0 || (floor-1) % 40 >= 21 && (floor-1) % 40 <= 30 && room == 0}">
-	<audio id="audioPlayer" class="audioPlayer hidden absolute" controls
-		autoplay loop preload="auto">
-		<source src="${pageContext.request.contextPath}/audio/bg3.mp3"
-			type="audio/mpeg">
-	</audio>
-</c:if>
-<c:if
-	test="${floor % 40 >= 31 && floor % 40 <= 40 && room != 0 || (floor-1) % 40 >= 31 && (floor-1) % 40 <= 40 && room == 0}">
-	<audio id="audioPlayer" class="audioPlayer hidden absolute" controls
-		autoplay loop preload="auto">
-		<source src="${pageContext.request.contextPath}/audio/bg4.mp3"
-			type="audio/mpeg">
-	</audio>
-</c:if>
-
-<button id="toggleAutoplayButton" class="audio_bt absolute">소리</button>
-
-
-<script>
-// 페이지를 떠나기 전, 현재 오디오의 재생 위치와 상태를 저장
-window.addEventListener('beforeunload', function() {
-    // 오디오 요소를 가져옴
-    var audio = document.getElementById('audioPlayer');
-    // 재생 위치를 저장할 키 설정
-    var storageKey = 'audioPlaybackPosition';
-    // 현재 재생 위치를 localStorage에 저장
-    localStorage.setItem(storageKey, audio.currentTime);
-    // 오디오 재생 상태도 저장 (재생 중이면 true, 멈춤이면 false)
-    localStorage.setItem('audioPlayingState', !audio.paused);
-});
-
-// 문서가 로드된 후 실행
-document.addEventListener('DOMContentLoaded', function() {
-    // 오디오 요소를 가져옴
-    var audio = document.getElementById('audioPlayer');
-    // 투글 버튼 요소를 가져옴
-    var toggleButton = document.getElementById('toggleAutoplayButton');
-    // 저장된 재생 위치를 가져올 키 설정
-    var storageKey = 'audioPlaybackPosition';
-    // 저장된 재생 위치를 가져옴
-    var savedPosition = localStorage.getItem(storageKey);
-
-    // 저장된 재생 위치가 있으면 해당 위치로 이동
-    if (savedPosition) {
-        audio.currentTime = parseFloat(savedPosition);
-    }
-
-    // 저장된 재생 상태를 localStorage에서 가져옴
-    var audioPlayingState = localStorage.getItem('audioPlayingState');
-
-    // 재생 상태가 true였으면 오디오를 재생하고 버튼 문구를 소리 : 꺼짐으로 변경
-    if (audioPlayingState === 'true') {
-        audio.play();
-        toggleButton.classList.remove('play');
-        toggleButton.classList.add('pause');
-    } else {
-        // 멈춤 상태였으면 오디오를 멈추고 버튼 문구를 소리 : 켜짐으로 변경
-        audio.pause();
-        toggleButton.classList.remove('pause');
-        toggleButton.classList.add('play');
-    }
-});
-
-// 오디오 재생/멈춤을 토글하는 버튼 클릭 이벤트
-document.getElementById('toggleAutoplayButton').addEventListener('click', function() {
-    // 오디오 요소를 가져옴
-    var audio = document.getElementById('audioPlayer');
-
-    // 오디오가 재생 중이면 멈추고, 버튼 상태 변경
-    if (!audio.paused) {
-        audio.pause();
-        // 재생 상태를 멈춤으로 저장
-        localStorage.setItem('audioPlayingState', false);
-        this.classList.remove('pause');
-        this.classList.add('play');
-    } else {
-        // 오디오가 멈췄으면 재생하고, 버튼 상태 변경
-        audio.play();
-        // 재생 상태를 재생 중으로 저장
-        localStorage.setItem('audioPlayingState', true);
-        this.classList.remove('play');
-        this.classList.add('pause');
-    }
-});
-</script>
 
 <%@ include file="../common/foot.jspf"%>

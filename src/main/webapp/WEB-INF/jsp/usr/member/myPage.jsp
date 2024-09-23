@@ -48,4 +48,6 @@
 	<button class="myPage_exit absolute text-center" type="button" onclick="history.back()">취소</button>
 </div>
 
-<%@ include file="../common/foot.jspf"%>
+</div>
+</body>
+</html>

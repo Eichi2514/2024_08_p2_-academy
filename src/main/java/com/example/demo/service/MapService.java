@@ -170,13 +170,9 @@ public class MapService {
 
 		/*
 		 * if (something == charac) {
-		 * System.out.println("=========================================="); 
-		 * for (int X *= 0; X < mapHeight; X++) {
-		 *     for (int Y = 0; Y < mapWidth; Y++) {
-		 *         System.err.print(map[X][Y]); 
-		 *         } System.err.println(); 
-		 *     } 
-		 * }
+		 * System.out.println("=========================================="); for (int X
+		 * *= 0; X < mapHeight; X++) { for (int Y = 0; Y < mapWidth; Y++) {
+		 * System.err.print(map[X][Y]); } System.err.println(); } }
 		 */
 		return "success";
 	}
@@ -355,13 +351,9 @@ public class MapService {
 
 		/*
 		 * if (something == charac) {
-		 * System.out.println("=========================================="); 
-		 * for (int X *= 0; X < mapHeight; X++) {
-		 *     for (int Y = 0; Y < mapWidth; Y++) {
-		 *         System.err.print(map[X][Y]); 
-		 *         } System.err.println(); 
-		 *     } 
-		 * }
+		 * System.out.println("=========================================="); for (int X
+		 * *= 0; X < mapHeight; X++) { for (int Y = 0; Y < mapWidth; Y++) {
+		 * System.err.print(map[X][Y]); } System.err.println(); } }
 		 */
 		return "success";
 	}
@@ -410,13 +402,9 @@ public class MapService {
 
 		/*
 		 * if (something == charac) {
-		 * System.out.println("=========================================="); 
-		 * for (int X *= 0; X < mapHeight; X++) {
-		 *     for (int Y = 0; Y < mapWidth; Y++) {
-		 *         System.err.print(map[X][Y]); 
-		 *         } System.err.println(); 
-		 *     } 
-		 * }
+		 * System.out.println("=========================================="); for (int X
+		 * *= 0; X < mapHeight; X++) { for (int Y = 0; Y < mapWidth; Y++) {
+		 * System.err.print(map[X][Y]); } System.err.println(); } }
 		 */
 		return "success";
 	}
@@ -437,13 +425,9 @@ public class MapService {
 			} else if (map[x][Ycode + width] != road) {
 				/*
 				 * if (something == charac) {
-				 * System.out.println("=========================================="); 
-				 * for (int X *= 0; X < mapHeight; X++) {
-				 *     for (int Y = 0; Y < mapWidth; Y++) {
-				 *         System.err.print(map[X][Y]); 
-				 *         } System.err.println(); 
-				 *     } 
-				 * }
+				 * System.out.println("=========================================="); for (int X
+				 * *= 0; X < mapHeight; X++) { for (int Y = 0; Y < mapWidth; Y++) {
+				 * System.err.print(map[X][Y]); } System.err.println(); } }
 				 */
 				return "Lost";
 			}
@@ -475,133 +459,153 @@ public class MapService {
 
 		/*
 		 * if (something == charac) {
-		 * System.out.println("=========================================="); 
-		 * for (int X *= 0; X < mapHeight; X++) {
-		 *     for (int Y = 0; Y < mapWidth; Y++) {
-		 *         System.err.print(map[X][Y]); 
-		 *         } System.err.println(); 
-		 *     } 
-		 * }
+		 * System.out.println("=========================================="); for (int X
+		 * *= 0; X < mapHeight; X++) { for (int Y = 0; Y < mapWidth; Y++) {
+		 * System.err.print(map[X][Y]); } System.err.println(); } }
 		 */
 		return "success";
 	}
 
-	public int Aattack(int something, int weaponId) {
+	public int Aattack(int something, int weaponId, int floor) {
 		int Xcode = somethingXcode(something);
 		int Ycode = somethingYcode(something);
 		int height = somethingHeight(something);
 		int width = somethingWidth(something);
-		
-		int distance = 3;
-		if (something == charac) {
-			distance = somethingdistance(weaponId);
-		}
+
+		int distance = somethingDistance(something, weaponId, floor);
 
 		// 맵 생성
 		int[][] map = mapChack(something);
 
 		int x = Xcode + ((height - 1) / 2);
-		int y = -1;
-		if (Ycode - distance >= 0)
-			y = Ycode - distance;
-		if (y == -1)
-			return -1;
-		return map[x][y];
-	}
+		int y = Ycode - distance;
 
-	public int Wattack(int something, int weaponId) {
-		int Xcode = somethingXcode(something);
-		int Ycode = somethingYcode(something);
-		int height = somethingHeight(something);
-		int width = somethingWidth(something);
-		
-		int distance = 3;
-		if (something == charac) {
-			distance = somethingdistance(weaponId);
-		}
-
-		// 맵 생성
-		int[][] map = mapChack(something);
-
-		int x = -1;
-		int y = Ycode + ((width - 1) / 2);
-		if (Xcode - distance >= 0)
-			x = Xcode - distance;
-		if (x == -1)
-			return -1;
-		return map[x][y];
-	}
-
-	public int Dattack(int something, int weaponId) {
-		int Xcode = somethingXcode(something);
-		int Ycode = somethingYcode(something);
-		int height = somethingHeight(something);
-		int width = somethingWidth(something);
-		
-		int distance = 3;
-		if (something == charac) {
-			distance = somethingdistance(weaponId);
-		}
-
-		// 맵 생성
-		int[][] map = mapChack(something);
-
-		int x = Xcode + ((height - 1) / 2);
-		int y = -1;
-		if (Ycode + width + distance < mapWidth)
-			y = Ycode + width + distance;
-		if (y == -1)
-			return -1;
-		return map[x][y];
-	}
-
-	public int Sattack(int something, int weaponId) {
-		int Xcode = somethingXcode(something);
-		int Ycode = somethingYcode(something);
-		int height = somethingHeight(something);
-		int width = somethingWidth(something);
-		
-		int distance = 3;
-		if (something == charac) {
-			distance = somethingdistance(weaponId);
-		}
-
-		// 맵 생성
-		int[][] map = mapChack(something);
-
-		int x = -1;
-		int y = Ycode + ((width - 1) / 2);
-		if (Xcode + height + distance < mapHeight) {
-			x = Xcode + height + distance;
-		}
-		if (x == -1)
-			return -1;
-		return map[x][y];
-	}
-
-	private int somethingdistance(int weaponId) {
-		if (weaponId%10 == 1) {
-			return 3;
-		} else if (weaponId%10 == 2) {
-			return 4;
-		} else if (weaponId%10 == 3) {
-			return 5;
-		} else if (weaponId%10 == 4) {
-			return 6;
-		} else if (weaponId%10 == 5) {
-			return 7;
-		} else if (weaponId%10 == 6) {
-			return 8;
-		} else if (weaponId%10 == 7) {
-			return 9;
-		} else if (weaponId%10 == 8) {
-			return 10;
-		} else if (weaponId%10 == 9) {
-			return 11;
-		} else if (weaponId%10 == 0) {
-			return 12;
+		for (int i = Ycode - 1; i > y; i--) {
+			if (map[x][i] != road) {
+				return map[x][i];
+			}
 		}
 		return 0;
+	}
+
+	public int Wattack(int something, int weaponId, int floor) {
+		int Xcode = somethingXcode(something);
+		int Ycode = somethingYcode(something);
+		int height = somethingHeight(something);
+		int width = somethingWidth(something);
+
+		int distance = somethingDistance(something, weaponId, floor);
+
+		// 맵 생성
+		int[][] map = mapChack(something);
+
+		int x = Xcode - distance;
+		int y = Ycode + ((width - 1) / 2);
+
+		for (int i = Xcode - 1; i > x; i--) {
+			if (map[i][y] != road) {
+				return map[i][y];
+			}
+		}
+		return 0;
+	}
+
+	public int Dattack(int something, int weaponId, int floor) {
+		int Xcode = somethingXcode(something);
+		int Ycode = somethingYcode(something);
+		int height = somethingHeight(something);
+		int width = somethingWidth(something);
+
+		int distance = somethingDistance(something, weaponId, floor);
+		
+		// System.out.println("층 : "+floor);
+		// System.out.println("공격범위 : "+distance);
+
+		// 맵 생성
+		int[][] map = mapChack(something);
+        
+		int x = Xcode + ((height - 1) / 2);
+		int y = Ycode + width + distance;
+
+		for (int i = Ycode + width; i < y; i++) {
+			if (map[x][i] != road) {
+				// System.out.println(something+" : "+map[x][i]);
+				return map[x][i];
+			}
+		}
+		return 0;
+	}
+
+	public int Sattack(int something, int weaponId, int floor) {
+		int Xcode = somethingXcode(something);
+		int Ycode = somethingYcode(something);
+		int height = somethingHeight(something);
+		int width = somethingWidth(something);
+
+		int distance = somethingDistance(something, weaponId, floor);
+
+		// 맵 생성
+		int[][] map = mapChack(something);
+
+		int x = Xcode + height + distance;
+		int y = Ycode + ((width - 1) / 2);
+
+		for (int i = Xcode + height; i < x; i++) {
+			if (map[i][y] != road) {
+				return map[i][y];
+			}
+		}
+		return 0;
+
+	}
+
+	private int somethingDistance(int something, int weaponId, int floor) {
+		if (something == charac) {
+			if (weaponId % 10 == 1) {
+				return 3;
+			} else if (weaponId % 10 == 2) {
+				return 4;
+			} else if (weaponId % 10 == 3) {
+				return 5;
+			} else if (weaponId % 10 == 4) {
+				return 6;
+			} else if (weaponId % 10 == 5) {
+				return 7;
+			} else if (weaponId % 10 == 6) {
+				return 8;
+			} else if (weaponId % 10 == 7) {
+				return 9;
+			} else if (weaponId % 10 == 8) {
+				return 10;
+			} else if (weaponId % 10 == 9) {
+				return 11;
+			} else if (weaponId % 10 == 0) {
+				return 12;
+			}
+		} else {
+			if (floor <= 4) {
+				return 3;
+			} else if (floor <= 5) {
+				return 4;
+			} else if (floor <= 6) {
+				return 5;
+			} else if (floor <= 7) {
+				return 6;
+			} else if (floor <= 8) {
+				return 7;
+			} else if (floor <= 9) {
+				return 8;
+			} else if (floor <= 10) {
+				return 9;
+			} else if (floor <= 11) {
+				return 10;
+			} else if (floor <= 12) {
+				return 11;
+			} else {
+				return 12;
+			}
+		}
+		return 3;
 	}
 
 	public void doDelete(int something) {

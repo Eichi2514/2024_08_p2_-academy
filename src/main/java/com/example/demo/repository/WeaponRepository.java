@@ -12,13 +12,5 @@ public interface WeaponRepository {
             WHERE id = #{weaponId} 		
 			""")
 	public String weaponImg(int weaponId);
-
 	
-	@Update("""
-			INSERT INTO find
-            SET updateDate = NOW(),
-            memberId = #{memberId},
-            weaponId = #{weaponId};
-			""")
-	public void weaponFindUpdata(int memberId, int weaponId);
 }

@@ -3,6 +3,8 @@ package com.example.demo.util;
 import java.lang.reflect.Array;
 import java.util.Map;
 
+import com.example.demo.vo.Charac;
+
 public class Ut {
 
 	public static String jsReplace(String resultCode, String msg, String replaceUri) {
@@ -77,8 +79,6 @@ public class Ut {
 	}
 
 	public static String f(String format, Object... args) {
-
 		return String.format(format, args);
 	}
-
 }

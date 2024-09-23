@@ -29,19 +29,41 @@ Map<Integer, String> weaponImgs = (Map<Integer, String>) request.getAttribute("w
 @import
 	url("https://fastly.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
 </style>
+<script src="/resource/common.js" defer="defer"></script>
 </head>
 <body>
 	<div class="bg relative mx-auto z-10">
+		<div class="loding absolute z-20">
+			<img class="loding_img"
+				src="https://github.com/user-attachments/assets/57d5f274-24c1-486b-9679-7aa7b6fa9017"
+				alt="" />
+
+			<div class="loding_text absolute">로딩중</div>
+			<div class="loding_bar absolute"></div>
+		</div>
 		<div class="bar absolute">
 			<!-- p2 나무 바 -->
+			<!-- 
 			<img class="bar"
 				src="https://github.com/user-attachments/assets/b817da40-3f88-4bac-a73c-b14853be1a36"
 				alt="" />
+			-->
+			<!-- 
+			<img class="bar"
+				src="https://github.com/user-attachments/assets/7009d4e0-e658-474a-a697-c8e6c7e2801c"
+				alt="" />
+			-->
 
-			<c:if test="${floor == 1 && room == 0}">
+			<c:if test="${floor == 1 && room == 0 }">
 				<div class="floor_room absolute">튜토리얼</div>
 			</c:if>
-			<c:if test="${floor != 1 || room != 0}">
+			<c:if test="${floor == -1}">
+				<div class="floor_room absolute">몬스터 도감</div>
+			</c:if>
+			<c:if test="${floor == -2}">
+				<div class="floor_room absolute">무기 도감</div>
+			</c:if>
+			<c:if test="${floor > 1 || room > 0}">
 				<c:if test="${floor != 1 && room == 0}">
 					<div class="floor_room absolute">${floor-1}층_보스방</div>
 				</c:if>
@@ -50,8 +72,16 @@ Map<Integer, String> weaponImgs = (Map<Integer, String>) request.getAttribute("w
 				</c:if>
 			</c:if>
 			<div class="hp absolute">
-				생명 :
+				체력 :
 				<section class="hp_count inline-block" style="padding-left: 1vh;">${charac.hp}</section>
+			</div>
+			<div class="power absolute">
+				힘 :
+				<section class="power_count inline-block" style="padding-left: 1vh;">${charac.power}</section>
+			</div>
+			<div class="speed absolute">
+				속도 :
+				<section class="speed_count inline-block" style="padding-left: 1vh;">${50 - charac.speed}</section>
 			</div>
 			<button class="mob__dictionary_bt absolute play"
 				onclick="showMob__dictionary()">몬스터 도감</button>
@@ -937,9 +967,121 @@ Map<Integer, String> weaponImgs = (Map<Integer, String>) request.getAttribute("w
 				onclick="weapon__next()">▶</button>
 
 			<div class="weapon absolute text-center">
-				착용무기
-				<img class="weapon_img absolute" src="${charac.extra__weapon}"
+				착용무기 <img class="weapon_img absolute" src="${charac.extra__weapon}"
 					alt="" />
 			</div>
 		</div>
-		<a class="ingame_logo rounded-full absolute cursor-pointer" href="/"></a>
+		<a class="ingame_logo rounded-full absolute cursor-pointer" href="/">
+			<img class="ingame_logo"
+			src="https://github.com/user-attachments/assets/8c7de13c-87f7-470f-a64e-17291ead7104"
+			alt="" />
+		</a>
+
+
+		<!--  배경음악 관련 -->
+		<c:if
+			test="${floor % 40 >= 1 && floor % 40 <= 10 && room != 0 || (floor-1) % 40 >= 0 && (floor-1) % 40 <= 10 && room == 0 || floor < 0}">
+			<audio id="audioPlayer" class="audioPlayer hidden absolute" controls
+				autoplay loop preload="auto">
+				<source src="${pageContext.request.contextPath}/audio/bg1.mp3"
+					type="audio/mpeg">
+			</audio>
+		</c:if>
+		<c:if
+			test="${floor % 40 >= 11 && floor % 40 <= 20 && room != 0 || (floor-1) % 40 >= 11 && (floor-1) % 40 <= 20 && room == 0}">
+			<audio id="audioPlayer" class="audioPlayer hidden absolute" controls
+				autoplay loop preload="auto">
+				<source src="${pageContext.request.contextPath}/audio/bg2.mp3"
+					type="audio/mpeg">
+			</audio>
+		</c:if>
+		<c:if
+			test="${floor % 40 >= 21 && floor % 40 <= 30 && room != 0 || (floor-1) % 40 >= 21 && (floor-1) % 40 <= 30 && room == 0}">
+			<audio id="audioPlayer" class="audioPlayer hidden absolute" controls
+				autoplay loop preload="auto">
+				<source src="${pageContext.request.contextPath}/audio/bg3.mp3"
+					type="audio/mpeg">
+			</audio>
+		</c:if>
+		<c:if
+			test="${floor % 40 >= 31 && floor % 40 <= 40 && room != 0 || (floor-1) % 40 >= 31 && (floor-1) % 40 <= 40 && room == 0}">
+			<audio id="audioPlayer" class="audioPlayer hidden absolute" controls
+				autoplay loop preload="auto">
+				<source src="${pageContext.request.contextPath}/audio/bg4.mp3"
+					type="audio/mpeg">
+			</audio>
+		</c:if>
+
+		<button id="toggleAutoplayButton" class="audio_bt absolute">소리</button>
+
+
+		<script>
+			// 페이지를 떠나기 전, 현재 오디오의 재생 위치와 상태를 저장
+			window.addEventListener('beforeunload', function() {
+				// 오디오 요소를 가져옴
+				var audio = document.getElementById('audioPlayer');
+				// 재생 위치를 저장할 키 설정
+				var storageKey = 'audioPlaybackPosition';
+				// 현재 재생 위치를 localStorage에 저장
+				localStorage.setItem(storageKey, audio.currentTime);
+				// 오디오 재생 상태도 저장 (재생 중이면 true, 멈춤이면 false)
+				localStorage.setItem('audioPlayingState', !audio.paused);
+			});
+
+			// 문서가 로드된 후 실행
+			document.addEventListener('DOMContentLoaded', function() {
+				// 오디오 요소를 가져옴
+				var audio = document.getElementById('audioPlayer');
+				// 투글 버튼 요소를 가져옴
+				var toggleButton = document
+						.getElementById('toggleAutoplayButton');
+				// 저장된 재생 위치를 가져올 키 설정
+				var storageKey = 'audioPlaybackPosition';
+				// 저장된 재생 위치를 가져옴
+				var savedPosition = localStorage.getItem(storageKey);
+
+				// 저장된 재생 위치가 있으면 해당 위치로 이동
+				if (savedPosition) {
+					audio.currentTime = parseFloat(savedPosition);
+				}
+
+				// 저장된 재생 상태를 localStorage에서 가져옴
+				var audioPlayingState = localStorage
+						.getItem('audioPlayingState');
+
+				// 재생 상태가 true였으면 오디오를 재생하고 버튼 문구를 소리 : 꺼짐으로 변경
+				if (audioPlayingState === 'true') {
+					audio.play();
+					toggleButton.classList.remove('play');
+					toggleButton.classList.add('pause');
+				} else {
+					// 멈춤 상태였으면 오디오를 멈추고 버튼 문구를 소리 : 켜짐으로 변경
+					audio.pause();
+					toggleButton.classList.remove('pause');
+					toggleButton.classList.add('play');
+				}
+			});
+
+			// 오디오 재생/멈춤을 토글하는 버튼 클릭 이벤트
+			document.getElementById('toggleAutoplayButton').addEventListener(
+					'click', function() {
+						// 오디오 요소를 가져옴
+						var audio = document.getElementById('audioPlayer');
+
+						// 오디오가 재생 중이면 멈추고, 버튼 상태 변경
+						if (!audio.paused) {
+							audio.pause();
+							// 재생 상태를 멈춤으로 저장
+							localStorage.setItem('audioPlayingState', false);
+							this.classList.remove('pause');
+							this.classList.add('play');
+						} else {
+							// 오디오가 멈췄으면 재생하고, 버튼 상태 변경
+							audio.play();
+							// 재생 상태를 재생 중으로 저장
+							localStorage.setItem('audioPlayingState', true);
+							this.classList.remove('play');
+							this.classList.add('pause');
+						}
+					});
+		</script>

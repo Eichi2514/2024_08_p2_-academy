@@ -8,7 +8,7 @@
 <img class="bg_img"
 	src="https://github.com/user-attachments/assets/57d5f274-24c1-486b-9679-7aa7b6fa9017"
 	alt="" />
-
+	
 <!-- p2 두루마리 -->
 <div class="TOP3 absolute">
 	<img class="TOP3_img absolute"
@@ -34,7 +34,7 @@
 		</tbody>
 	</table>
 
-	<a class="TOP3_list_bt absolute" href="../scoreboard/list">리스트</a>
+	<a class="TOP3_list_bt absolute z-30" href="../scoreboard/list">리스트</a>
 </div>
 
 <form method="POST" action="../member/doLogin">
@@ -80,6 +80,6 @@
 		</div>
 	</c:if>
 </form>
-</ div>
-
-<%@ include file="../common/foot.jspf"%>
+</div>
+</body>
+</html>

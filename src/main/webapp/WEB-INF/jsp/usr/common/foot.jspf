@@ -1,6 +1,118 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+<script>
+var loginedMemberId = ${rq.loginedMemberId};
+
+// 페이지 로드 시 스크롤을 맨 아래로 설정
+$(document).ready(function() {
+    var chat = $(".chat");
+    chat.scrollTop(chat[0].scrollHeight); // 채팅 영역을 맨 아래로 스크롤
+});
+
+// 채팅 전송 함수
+function Chat__Write(form) {
+    var formData = $(form).serialize(); // 폼 데이터를 가져오기
+    
+    // 폼 데이터를 객체로 변환
+    var formDataObj = {};
+    formData.split('&').forEach(function(part) {
+        var item = part.split('=');
+        formDataObj[item[0]] = decodeURIComponent(item[1]);
+    });
+    
+    // body가 비어있는 경우, 채팅 전송을 막음
+    if (!formDataObj.body || formDataObj.body.trim().length < 1) {
+        return false; // body가 비어있으면 폼 제출을 막음
+    }
+
+    // AJAX 요청을 통해 채팅 내용 저장
+    $.ajax({
+        type: "POST",
+        url: "/usr/chat/write",
+        data: formData,
+        success: function() {
+            // 성공적으로 채팅을 전송했을 때
+            $('input[name=body]').val(''); // 채팅 입력 필드 비우기
+
+            // 채팅 스크롤을 맨 아래로
+            var chat = $(".chat");
+            chat.scrollTop(chat[0].scrollHeight);
+        },
+        error: function(xhr, status, error) {
+            console.log("채팅 전송 중 오류 발생:", error); // 오류 로그 출력
+        }
+    });
+
+    return false; // 폼의 기본 제출 동작을 막기 위해 false 반환
+}
+
+// WebSocket 연결 설정
+var socket = new WebSocket("ws://localhost:8080/ws/chat");
+
+socket.onmessage = function(event) {
+    var data = JSON.parse(event.data);
+    console.log("받은 데이터: ", data); // 수신한 데이터 디버깅용 출력
+
+    // 메시지 작성자에 따라 CSS 클래스를 설정
+    var chatClass = data.memberId == loginedMemberId ? 'my_chat' : 'who_chat';
+            var newChat = `<div class=`+chatClass+`>
+                               <div class="chat_writer">`+data.extra__writer+`</div>
+                               <div class="chat_body">`+data.body+`</div>
+                            </div>`;
+
+    console.log("새로운 채팅: ", newChat); // 새로운 채팅 HTML 디버깅용 출력
+
+    // 새로운 채팅 메시지를 화면에 추가
+    $('.chat').append(newChat);
+
+    // 채팅 스크롤을 맨 아래로
+    var chat = $(".chat");
+    chat.scrollTop(chat[0].scrollHeight);
+};
+
+socket.onopen = function(event) {
+    console.log("WebSocket 연결 성공"); // WebSocket 연결 성공 로그
+};
+
+socket.onerror = function(event) {
+    console.log("WebSocket 오류:", event); // WebSocket 오류 로그
+};
+
+//채팅 전송 or 랜덤 아이템 먹기
+$(window).keydown(function(e) {
+	if (e.keyCode === 13) {
+		// 입력 필드가 포커스되어 있을 때만 전송 처리
+	    if ($('.chat_var').is(':focus')) {
+	    	 e.preventDefault(); // 엔터로 인한 기본 동작(폼 제출 방지)을 막음
+	    	 $(e.target).closest('form').submit();  // 현재 입력 필드와 연결된 폼만 제출
+	    }
+		// 랜덤 아이템 안내창이 보여지는중인지 확인
+		var isRandomItemHidden = $('.random_item_text').hasClass('hidden');
+		
+		// 보여질때만 실행
+	    if(!isRandomItemHidden && ${random_item_probability == 1 && param.stage > 5}){
+			Item_get();
+		}
+	}
+});
+</script>
+
+<div class="chat absolute">
+    <c:forEach var="chat" items="${chats}">
+        <div class="${chat.memberId == rq.loginedMemberId ? 'my_chat' : 'who_chat' }">
+            <div class="chat_writer">${chat.extra__writer}</div>
+            <div class="chat_body">${chat.body}</div>
+        </div>
+    </c:forEach>
+</div>
+<form action="" onSubmit="Chat__Write(this); return false;">
+    <input type="hidden" name="loginedMemberId" value="${rq.loginedMember.id}" />
+    <input class="chat_var absolute" name="body" autocomplete="off"></input>
+    <button type="submit" class="chat_bt absolute">전송</button>
+</form>
+
+
 </div>
 </body>
 </html>

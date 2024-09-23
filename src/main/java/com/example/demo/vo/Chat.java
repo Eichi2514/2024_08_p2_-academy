@@ -7,18 +7,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Charac {
+public class Chat {
 
 	private int id;
 	private String regDate;
-	private String updateDate;
 	private int memberId;
-	private int floor;
-	private int room;
-	private int hp;
-	private int power;
-	private int speed;
-	private int weaponId;
+	private String body;
 	
-	private String extra__weapon;		
+	private String extra__writer;
 }

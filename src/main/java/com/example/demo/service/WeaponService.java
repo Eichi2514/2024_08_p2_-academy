@@ -40,9 +40,5 @@ public class WeaponService {
 			weaponId -= 10;
 		}
 		return weaponId;
-	}
-
-	public void weaponFindUpdata(int memberId, int weaponId) {
-		weaponRepository.weaponFindUpdata(memberId, weaponId);		
-	}
+	}	
 }

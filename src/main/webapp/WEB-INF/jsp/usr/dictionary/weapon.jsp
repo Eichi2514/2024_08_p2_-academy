@@ -19,7 +19,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">1번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">1번 무기 <br> 데미지 1 <br> 사거리 3</div>
+			<%
+			if (weaponImgs.containsKey(1)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				1번 무기 <br> 데미지 +10 <br> 사거리 3
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(2)%>"
@@ -27,7 +35,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">2번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">2번 무기 <br> 데미지 1 <br> 사거리 4</div>
+			<%
+			if (weaponImgs.containsKey(2)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				2번 무기 <br> 데미지 +10 <br> 사거리 4
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(3)%>"
@@ -35,7 +51,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">3번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">3번 무기 <br> 데미지 1 <br> 사거리 5</div>
+			<%
+			if (weaponImgs.containsKey(3)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				3번 무기 <br> 데미지 +10 <br> 사거리 5
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(4)%>"
@@ -43,7 +67,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">4번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">4번 무기 <br> 데미지 1 <br> 사거리 6</div>
+			<%
+			if (weaponImgs.containsKey(4)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				4번 무기 <br> 데미지 +10 <br> 사거리 6
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(5)%>"
@@ -51,7 +83,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">5번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">5번 무기 <br> 데미지 1 <br> 사거리 7</div>
+			<%
+			if (weaponImgs.containsKey(5)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				5번 무기 <br> 데미지 +10 <br> 사거리 7
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(6)%>"
@@ -59,7 +99,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">6번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">6번 무기 <br> 데미지 1 <br> 사거리 8</div>
+			<%
+			if (weaponImgs.containsKey(6)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				6번 무기 <br> 데미지 +10 <br> 사거리 8
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(7)%>"
@@ -67,7 +115,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">7번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">7번 무기 <br> 데미지 1 <br> 사거리 9</div>
+			<%
+			if (weaponImgs.containsKey(7)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				7번 무기 <br> 데미지 +10 <br> 사거리 9
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(8)%>"
@@ -75,7 +131,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">8번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">8번 무기 <br> 데미지 1 <br> 사거리 10</div>
+			<%
+			if (weaponImgs.containsKey(8)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				8번 무기 <br> 데미지 +10 <br> 사거리 10
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(9)%>"
@@ -83,7 +147,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">9번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">9번 무기 <br> 데미지 1 <br> 사거리 11</div>
+			<%
+			if (weaponImgs.containsKey(9)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				9번 무기 <br> 데미지 +10 <br> 사거리 11
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(10)%>"
@@ -91,7 +163,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">10번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">10번 무기 <br> 데미지 1 <br> 사거리 12</div>
+			<%
+			if (weaponImgs.containsKey(10)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				10번 무기 <br> 데미지 +10 <br> 사거리 12
+			</div>
+			<%
+			}
+			%>
 		</div>
 	</div>
 	<div class="weapon__dictionary_inner2">
@@ -101,7 +181,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">11번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">11번 무기 <br> 데미지 2 <br> 사거리 3</div>
+			<%
+			if (weaponImgs.containsKey(11)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				11번 무기 <br> 데미지 +20 <br> 사거리 3
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(12)%>"
@@ -109,7 +197,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">12번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">12번 무기 <br> 데미지 2 <br> 사거리 4</div>
+			<%
+			if (weaponImgs.containsKey(12)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				12번 무기 <br> 데미지 +20 <br> 사거리 4
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(13)%>"
@@ -117,7 +213,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">13번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">13번 무기 <br> 데미지 2 <br> 사거리 5</div>
+			<%
+			if (weaponImgs.containsKey(13)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				13번 무기 <br> 데미지 +20 <br> 사거리 5
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(14)%>"
@@ -125,7 +229,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">14번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">14번 무기 <br> 데미지 2 <br> 사거리 6</div>
+			<%
+			if (weaponImgs.containsKey(14)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				14번 무기 <br> 데미지 +20 <br> 사거리 6
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(15)%>"
@@ -133,7 +245,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">15번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">15번 무기 <br> 데미지 2 <br> 사거리 7</div>
+			<%
+			if (weaponImgs.containsKey(15)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				15번 무기 <br> 데미지 +20 <br> 사거리 7
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(16)%>"
@@ -141,7 +261,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">16번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">16번 무기 <br> 데미지 2 <br> 사거리 8</div>
+			<%
+			if (weaponImgs.containsKey(16)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				16번 무기 <br> 데미지 +20 <br> 사거리 8
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(17)%>"
@@ -149,7 +277,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">17번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">17번 무기 <br> 데미지 2 <br> 사거리 9</div>
+			<%
+			if (weaponImgs.containsKey(17)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				17번 무기 <br> 데미지 +20 <br> 사거리 9
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(18)%>"
@@ -157,7 +293,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">18번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">18번 무기 <br> 데미지 2 <br> 사거리 10</div>
+			<%
+			if (weaponImgs.containsKey(18)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				18번 무기 <br> 데미지 +20 <br> 사거리 10
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(19)%>"
@@ -165,7 +309,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">19번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">19번 무기 <br> 데미지 2 <br> 사거리 11</div>
+			<%
+			if (weaponImgs.containsKey(19)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				19번 무기 <br> 데미지 +20 <br> 사거리 11
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(20)%>"
@@ -173,7 +325,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">20번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">20번 무기 <br> 데미지 2 <br> 사거리 12</div>
+			<%
+			if (weaponImgs.containsKey(20)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				20번 무기 <br> 데미지 +20 <br> 사거리 12
+			</div>
+			<%
+			}
+			%>
 		</div>
 	</div>
 	<div class="weapon__dictionary_inner2">
@@ -183,7 +343,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">21번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">21번 무기 <br> 데미지 3 <br> 사거리 3</div>
+			<%
+			if (weaponImgs.containsKey(21)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				21번 무기 <br> 데미지 +30 <br> 사거리 3
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(22)%>"
@@ -191,7 +359,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">22번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">22번 무기 <br> 데미지 3 <br> 사거리 4</div>
+			<%
+			if (weaponImgs.containsKey(22)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				22번 무기 <br> 데미지 +30 <br> 사거리 4
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(23)%>"
@@ -199,7 +375,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">23번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">23번 무기 <br> 데미지 3 <br> 사거리 5</div>
+			<%
+			if (weaponImgs.containsKey(23)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				23번 무기 <br> 데미지 +30 <br> 사거리 5
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(24)%>"
@@ -207,7 +391,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">24번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">24번 무기 <br> 데미지 3 <br> 사거리 6</div>
+			<%
+			if (weaponImgs.containsKey(24)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				24번 무기 <br> 데미지 +30 <br> 사거리 6
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(25)%>"
@@ -215,7 +407,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">25번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">25번 무기 <br> 데미지 3 <br> 사거리 7</div>
+			<%
+			if (weaponImgs.containsKey(25)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				25번 무기 <br> 데미지 +30 <br> 사거리 7
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(26)%>"
@@ -223,7 +423,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">26번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">26번 무기 <br> 데미지 3 <br> 사거리 8</div>
+			<%
+			if (weaponImgs.containsKey(26)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				26번 무기 <br> 데미지 +30 <br> 사거리 8
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(27)%>"
@@ -231,7 +439,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">27번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">27번 무기 <br> 데미지 3 <br> 사거리 9</div>
+			<%
+			if (weaponImgs.containsKey(27)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				27번 무기 <br> 데미지 +30 <br> 사거리 9
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(28)%>"
@@ -239,7 +455,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">28번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">28번 무기 <br> 데미지 3 <br> 사거리 10</div>
+			<%
+			if (weaponImgs.containsKey(28)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				28번 무기 <br> 데미지 +30 <br> 사거리 10
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(29)%>"
@@ -247,7 +471,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">29번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">29번 무기 <br> 데미지 3 <br> 사거리 11</div>
+			<%
+			if (weaponImgs.containsKey(29)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				29번 무기 <br> 데미지 +30 <br> 사거리 11
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(30)%>"
@@ -255,7 +487,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">30번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">30번 무기 <br> 데미지 3 <br> 사거리 12</div>
+			<%
+			if (weaponImgs.containsKey(30)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				30번 무기 <br> 데미지 +30 <br> 사거리 12
+			</div>
+			<%
+			}
+			%>
 		</div>
 	</div>
 	<div class="weapon__dictionary_inner2">
@@ -265,7 +505,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">31번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">31번 무기 <br> 데미지 4 <br> 사거리 3</div>
+			<%
+			if (weaponImgs.containsKey(31)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				31번 무기 <br> 데미지 +40 <br> 사거리 3
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(32)%>"
@@ -273,7 +521,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">32번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">32번 무기 <br> 데미지 4 <br> 사거리 4</div>
+			<%
+			if (weaponImgs.containsKey(32)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				32번 무기 <br> 데미지 +40 <br> 사거리 4
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(33)%>"
@@ -281,7 +537,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">33번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">33번 무기 <br> 데미지 4 <br> 사거리 5</div>
+			<%
+			if (weaponImgs.containsKey(33)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				33번 무기 <br> 데미지 +40 <br> 사거리 5
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(34)%>"
@@ -289,7 +553,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">34번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">34번 무기 <br> 데미지 4 <br> 사거리 6</div>
+			<%
+			if (weaponImgs.containsKey(34)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				34번 무기 <br> 데미지 +40 <br> 사거리 6
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(35)%>"
@@ -297,7 +569,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">35번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">35번 무기 <br> 데미지 4 <br> 사거리 7</div>
+			<%
+			if (weaponImgs.containsKey(35)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				35번 무기 <br> 데미지 +40 <br> 사거리 7
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(36)%>"
@@ -305,7 +585,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">36번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">36번 무기 <br> 데미지 4 <br> 사거리 8</div>
+			<%
+			if (weaponImgs.containsKey(36)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				36번 무기 <br> 데미지 +40 <br> 사거리 8
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(37)%>"
@@ -313,7 +601,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">37번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">37번 무기 <br> 데미지 4 <br> 사거리 9</div>
+			<%
+			if (weaponImgs.containsKey(37)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				37번 무기 <br> 데미지 +40 <br> 사거리 9
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(38)%>"
@@ -321,7 +617,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">38번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">38번 무기 <br> 데미지 4 <br> 사거리 10</div>
+			<%
+			if (weaponImgs.containsKey(38)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				38번 무기 <br> 데미지 +40 <br> 사거리 10
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(39)%>"
@@ -329,7 +633,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">39번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">39번 무기 <br> 데미지 4 <br> 사거리 11</div>
+			<%
+			if (weaponImgs.containsKey(39)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				39번 무기 <br> 데미지 +40 <br> 사거리 11
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(40)%>"
@@ -337,7 +649,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">40번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">40번 무기 <br> 데미지 4 <br> 사거리 12</div>
+			<%
+			if (weaponImgs.containsKey(40)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				40번 무기 <br> 데미지 +40 <br> 사거리 12
+			</div>
+			<%
+			}
+			%>
 		</div>
 	</div>
 	<div class="weapon__dictionary_inner2">
@@ -347,7 +667,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">41번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">41번 무기 <br> 데미지 5 <br> 사거리 3</div>
+			<%
+			if (weaponImgs.containsKey(41)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				41번 무기 <br> 데미지 +50 <br> 사거리 3
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(42)%>"
@@ -355,7 +683,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">42번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">42번 무기 <br> 데미지 5 <br> 사거리 4</div>
+			<%
+			if (weaponImgs.containsKey(42)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				42번 무기 <br> 데미지 +50 <br> 사거리 4
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(43)%>"
@@ -363,7 +699,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">43번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">43번 무기 <br> 데미지 5 <br> 사거리 5</div>
+			<%
+			if (weaponImgs.containsKey(43)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				43번 무기 <br> 데미지 +50 <br> 사거리 5
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(44)%>"
@@ -371,7 +715,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">44번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">44번 무기 <br> 데미지 5 <br> 사거리 6</div>
+			<%
+			if (weaponImgs.containsKey(44)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				44번 무기 <br> 데미지 +50 <br> 사거리 6
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(45)%>"
@@ -379,7 +731,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">45번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">45번 무기 <br> 데미지 5 <br> 사거리 7</div>
+			<%
+			if (weaponImgs.containsKey(45)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				45번 무기 <br> 데미지 +50 <br> 사거리 7
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(46)%>"
@@ -387,7 +747,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">46번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">46번 무기 <br> 데미지 5 <br> 사거리 8</div>
+			<%
+			if (weaponImgs.containsKey(46)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				46번 무기 <br> 데미지 +50 <br> 사거리 8
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(47)%>"
@@ -395,7 +763,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">47번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">47번 무기 <br> 데미지 5 <br> 사거리 9</div>
+			<%
+			if (weaponImgs.containsKey(47)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				47번 무기 <br> 데미지 +50 <br> 사거리 9
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(48)%>"
@@ -403,7 +779,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">48번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">48번 무기 <br> 데미지 5 <br> 사거리 10</div>
+			<%
+			if (weaponImgs.containsKey(48)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				48번 무기 <br> 데미지 +50 <br> 사거리 10
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(49)%>"
@@ -411,7 +795,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">49번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">49번 무기 <br> 데미지 5 <br> 사거리 11</div>
+			<%
+			if (weaponImgs.containsKey(49)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				49번 무기 <br> 데미지 +50 <br> 사거리 11
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(50)%>"
@@ -419,7 +811,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">50번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">50번 무기 <br> 데미지 5 <br> 사거리 12</div>
+			<%
+			if (weaponImgs.containsKey(50)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				50번 무기 <br> 데미지 +50 <br> 사거리 12
+			</div>
+			<%
+			}
+			%>
 		</div>
 	</div>
 	<div class="weapon__dictionary_inner2">
@@ -429,7 +829,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">51번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">51번 무기 <br> 데미지 6 <br> 사거리 3</div>
+			<%
+			if (weaponImgs.containsKey(51)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				51번 무기 <br> 데미지 +60 <br> 사거리 3
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(52)%>"
@@ -437,7 +845,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">52번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">52번 무기 <br> 데미지 6 <br> 사거리 4</div>
+			<%
+			if (weaponImgs.containsKey(52)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				52번 무기 <br> 데미지 +60 <br> 사거리 4
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(53)%>"
@@ -445,7 +861,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">53번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">53번 무기 <br> 데미지 6 <br> 사거리 5</div>
+			<%
+			if (weaponImgs.containsKey(53)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				53번 무기 <br> 데미지 +60 <br> 사거리 5
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(54)%>"
@@ -453,7 +877,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">54번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">54번 무기 <br> 데미지 6 <br> 사거리 6</div>
+			<%
+			if (weaponImgs.containsKey(54)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				54번 무기 <br> 데미지 +60 <br> 사거리 6
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(55)%>"
@@ -461,7 +893,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">55번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">55번 무기 <br> 데미지 6 <br> 사거리 7</div>
+			<%
+			if (weaponImgs.containsKey(55)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				55번 무기 <br> 데미지 +60 <br> 사거리 7
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(56)%>"
@@ -469,7 +909,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">56번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">56번 무기 <br> 데미지 6 <br> 사거리 8</div>
+			<%
+			if (weaponImgs.containsKey(56)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				56번 무기 <br> 데미지 +60 <br> 사거리 8
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(57)%>"
@@ -477,7 +925,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">57번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">57번 무기 <br> 데미지 6 <br> 사거리 9</div>
+			<%
+			if (weaponImgs.containsKey(57)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				57번 무기 <br> 데미지 +60 <br> 사거리 9
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(58)%>"
@@ -485,7 +941,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">58번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">58번 무기 <br> 데미지 6 <br> 사거리 10</div>
+			<%
+			if (weaponImgs.containsKey(58)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				58번 무기 <br> 데미지 +60 <br> 사거리 10
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(59)%>"
@@ -493,7 +957,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">59번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">59번 무기 <br> 데미지 6 <br> 사거리 11</div>
+			<%
+			if (weaponImgs.containsKey(59)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				59번 무기 <br> 데미지 +60 <br> 사거리 11
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(60)%>"
@@ -501,7 +973,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">60번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">60번 무기 <br> 데미지 6 <br> 사거리 12</div>
+			<%
+			if (weaponImgs.containsKey(60)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				60번 무기 <br> 데미지 +60 <br> 사거리 12
+			</div>
+			<%
+			}
+			%>
 		</div>
 	</div>
 	<div class="weapon__dictionary_inner2">
@@ -511,7 +991,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">61번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">61번 무기 <br> 데미지 7 <br> 사거리 3</div>
+			<%
+			if (weaponImgs.containsKey(61)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				61번 무기 <br> 데미지 +70 <br> 사거리 3
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(62)%>"
@@ -519,7 +1007,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">62번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">62번 무기 <br> 데미지 7 <br> 사거리 4</div>
+			<%
+			if (weaponImgs.containsKey(62)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				62번 무기 <br> 데미지 +70 <br> 사거리 4
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(63)%>"
@@ -527,7 +1023,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">63번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">63번 무기 <br> 데미지 7 <br> 사거리 5</div>
+			<%
+			if (weaponImgs.containsKey(63)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				63번 무기 <br> 데미지 +70 <br> 사거리 5
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(64)%>"
@@ -535,7 +1039,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">64번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">64번 무기 <br> 데미지 7 <br> 사거리 6</div>
+			<%
+			if (weaponImgs.containsKey(64)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				64번 무기 <br> 데미지 +70 <br> 사거리 6
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(65)%>"
@@ -543,7 +1055,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">65번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">65번 무기 <br> 데미지 7 <br> 사거리 7</div>
+			<%
+			if (weaponImgs.containsKey(65)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				65번 무기 <br> 데미지 +70 <br> 사거리 7
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(66)%>"
@@ -551,7 +1071,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">66번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">66번 무기 <br> 데미지 7 <br> 사거리 8</div>
+			<%
+			if (weaponImgs.containsKey(66)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				66번 무기 <br> 데미지 +70 <br> 사거리 8
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(67)%>"
@@ -559,7 +1087,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">67번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">67번 무기 <br> 데미지 7 <br> 사거리 9</div>
+			<%
+			if (weaponImgs.containsKey(67)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				67번 무기 <br> 데미지 +70 <br> 사거리 9
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(68)%>"
@@ -567,7 +1103,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">68번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">68번 무기 <br> 데미지 7 <br> 사거리 10</div>
+			<%
+			if (weaponImgs.containsKey(68)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				68번 무기 <br> 데미지 +70 <br> 사거리 10
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(69)%>"
@@ -575,7 +1119,15 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">69번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">69번 무기 <br> 데미지 7 <br> 사거리 11</div>
+			<%
+			if (weaponImgs.containsKey(69)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				69번 무기 <br> 데미지 +70 <br> 사거리 11
+			</div>
+			<%
+			}
+			%>
 		</div>
 		<div class="weapon__dictionary_card2 inline-block">
 			<img src="<%=weaponImgs.get(70)%>"
@@ -583,11 +1135,19 @@
 				class="weapon__dictionary_title2"
 				onerror="this.onerror=null; this.src=this.alt;">
 			<div class="weapon__dictionary_body2">70번 무기</div>
-			<div class="weapon__dictionary_body_text absolute">70번 무기 <br> 데미지 7 <br> 사거리 12</div>
+			<%
+			if (weaponImgs.containsKey(70)) {
+			%>
+			<div class="weapon__dictionary_body_text absolute">
+				70번 무기 <br> 데미지 +70 <br> 사거리 12
+			</div>
+			<%
+			}
+			%>
 		</div>
 	</div>
 </div>
 
-<a class="audio_bt absolute cursor-pointer" href="/">나가기</a>
+<a class="dictionary_exit_bt absolute cursor-pointer" href="/">나가기</a>
 
 <%@ include file="../common/foot.jspf"%>

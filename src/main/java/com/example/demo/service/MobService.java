@@ -33,7 +33,7 @@ public class MobService {
 	public int mobimgMaxChack(int floor) {
 		int mobimgMax = 53; // 몬스터 종류
 		if (floor > mobimgMax) {
-			floor = mobimgMax;
+			floor = (int) (Math.random() * 53) + 1;
 		}
 		return floor;
 	}
