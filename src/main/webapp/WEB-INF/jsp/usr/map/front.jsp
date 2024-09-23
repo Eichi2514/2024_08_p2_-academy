@@ -494,11 +494,9 @@ var stop2, stop3, stop4, stop5, stop6;
 //일정 시간마다 move 함수를 호출
 function show(){
 	console.log("페이지가 모두 로드된 후 실행됩니다.");	
-	console.log(((8 / 100) * front_hp));
+	// console.log(((8 / 100) * front_hp));
 	
-	setTimeout(function() {
-		$(".characHP_bar").css('width', ((8 / 100) * front_hp)+'vh');	
-	}, 1000);
+	setTimeout(characHpDown, 1000);
 	
 	
 	if(${param.stage <= 270}){
@@ -620,9 +618,19 @@ function BossHpDown(){
 
 // 캐릭 HP 감소 함수
 function characHpDown(){
-	let new_characHp_width = (8 / 100) * front_hp;
+	let new_characHp_width = (8 / 10) * (front_hp%10);
 	// console.log(new_characHp_width);
-	$(".characHP_bar").css('width', new_characHp_width+'vh');
+	let characHp_number = Math.floor(front_hp/10);
+	if(front_hp%10 == 0){
+		new_characHp_width = 8;
+		characHp_number--;
+	}
+	// console.log("체력 넓이 : " + new_characHp_width + ", 줄 수 : " + characHp_number);
+	$(".characHP_bar"+(characHp_number-1)).css('width', '8vh');
+	$(".characHP_bar"+(characHp_number+1)).css('width', '0vh');
+	// console.log(".characHP_bar"+(characHp_number-1));
+	$(".characHP_bar"+characHp_number).css('width', new_characHp_width+'vh');
+	$(".characHP_bar_text").text('x'+(characHp_number+1));
 }
 
 // 공격 함수
@@ -1166,8 +1174,17 @@ function damage__motion(data, damage){
 
 <!-- 캐릭터 -->
 <div class="front_charac charac absolute">
-	<div class="characHP_bar absolute"></div>
-
+	<div class="characHP_bar_text absolute"></div>
+	<div class="characHP_bar0 absolute bg-red-500"></div>
+	<div class="characHP_bar1 absolute bg-red-900"></div>
+	<div class="characHP_bar2 absolute bg-yellow-300"></div>
+	<div class="characHP_bar3 absolute bg-yellow-900"></div>
+	<div class="characHP_bar4 absolute bg-green-400"></div>
+	<div class="characHP_bar5 absolute bg-green-900"></div>
+	<div class="characHP_bar6 absolute bg-blue-500"></div>
+	<div class="characHP_bar7 absolute bg-blue-900"></div>
+	<div class="characHP_bar8 absolute bg-purple-500"></div>
+	<div class="characHP_bar9 absolute bg-purple-900"></div>
 
 	<!-- 왼쪽 공격 -->
 	<img class="attackSize Aattack1 CharacAttack hidden absolute"

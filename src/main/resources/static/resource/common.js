@@ -136,6 +136,7 @@ function Up(something) {
 					showRandomItem_text();
 					//			console.log('LR : ' + LR + ', UD : ' + UD);
 				}
+				showDoor();
 			},
 			error: function(jqXHR, textStatus, errorThrown) {
 				alert('오류 발생 : ' + textStatus);
@@ -161,6 +162,7 @@ function Down(something) {
 					showRandomItem_text();
 					//				console.log('LR : ' + LR + ', UD : ' + UD);
 				}
+				showDoor();
 			},
 			error: function(jqXHR, textStatus, errorThrown) {
 				alert('오류 발생 : ' + textStatus);
@@ -186,6 +188,7 @@ function Left(something) {
 					showRandomItem_text();
 					//					console.log('LR : ' + LR + ', UD : ' + UD);
 				}
+				showDoor();
 			},
 			error: function(jqXHR, textStatus, errorThrown) {
 				alert('오류 발생 : ' + textStatus);
@@ -211,6 +214,7 @@ function Right(something) {
 					showRandomItem_text();
 					//					console.log('LR : ' + LR + ', UD : ' + UD);
 				}
+				showDoor();
 			},
 			error: function(jqXHR, textStatus, errorThrown) {
 				alert('오류 발생 : ' + textStatus);

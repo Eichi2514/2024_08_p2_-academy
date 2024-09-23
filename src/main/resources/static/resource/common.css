@@ -185,11 +185,23 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	z-index: 10;
 }
 
+.arrow1{
+	font-size: 4.5vh;
+	transform: rotate(90deg);
+}
+
+.arrow2{
+	left: 10.6vh;
+	font-size: 4.5vh;
+	transform: rotate(180deg);
+	background: rgb(255, 71, 48);	
+}
+
 .start:hover>.start-2, .start:hover>.start-text {
 	display: block;
 }
 
-.start:hover>.start-1 {
+.start:hover>.start-1, .start:hover>.arrow1, .start:hover>.arrow2 {
 	display: none;
 }
 
@@ -818,11 +830,22 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 	height: 10vh;
 }
 
-.characHP_bar {
+.characHP_bar1, .characHP_bar2, .characHP_bar3, .characHP_bar4, .characHP_bar5, .characHP_bar6, .characHP_bar7, .characHP_bar8, .characHP_bar9, .characHP_bar0{
+	top: -2vh;
+	left: 1vh;
+	height: 1vh;		
+	transition: width 0.5s ease;
+}
+
+.characHP_bar_text{
 	top: -2vh;
 	left: 1vh;
 	height: 1vh;
-	background: red;	
+	width: 8vh;
+	text-align: right;
+	font-size:0.7vh;
+	padding-right:0.1vh;
+	z-index: 30;
 }
 
 .damage1{

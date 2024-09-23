@@ -66,6 +66,8 @@
 			<a class="start-text absolute"
 				href="../map/front?stage=${(charac.floor * 5) + charac.room}">게임시작</a>
 			<!-- p2 게임시작 호버 전 -->
+			<i class="fa-solid fa-square-up-right arrow1 absolute"></i>
+			<i class="fa-solid fa-square-up-right arrow2 absolute"></i>
 			<img class="start-1"
 				src="https://github.com/user-attachments/assets/dddce550-c44d-45df-adfb-479191d45307"
 				alt="" />
