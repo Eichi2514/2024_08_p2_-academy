@@ -95,7 +95,6 @@ gender = 1;
 INSERT INTO charac 
 SET regDate = NOW(),
 updateDate = NOW(),
-hp = 1, 
 memberId = 1;
 
 INSERT INTO find 
@@ -216,7 +215,7 @@ INSERT INTO weapon SET id = 4, img = "https://github.com/user-attachments/assets
 INSERT INTO weapon SET id = 5, img = "https://github.com/user-attachments/assets/df28a7ef-027e-4b9c-9dfe-5333945f79b4";
 INSERT INTO weapon SET id = 6, img = "https://github.com/user-attachments/assets/402dde9c-aeba-4543-a5a2-77d95ec25bba";
 INSERT INTO weapon SET id = 7, img = "https://github.com/user-attachments/assets/c9258612-c30a-4e6b-8f43-d63518485e72";
-INSERT INTO weapon SET id = 8, img = "https://github.com/user-attachments/assets/f26c953d-9444-48fb-b21a-6f5e320b7b6f";
+INSERT INTO weapon SET id = 8, img = "https://github.com/user-attachments/assets/33899c93-1223-4e71-9113-7d7702c20b03";
 INSERT INTO weapon SET id = 9, img = "https://github.com/user-attachments/assets/ead726f4-fa9f-4fd8-935a-0c665b173069";
 INSERT INTO weapon SET id = 10, img = "https://github.com/user-attachments/assets/a6dcabfb-34c7-41bc-ad0e-94228de15519";
 
@@ -227,7 +226,7 @@ INSERT INTO weapon SET id = 14, img = "https://github.com/user-attachments/asset
 INSERT INTO weapon SET id = 15, img = "https://github.com/user-attachments/assets/90731980-1fc7-49cb-8a99-f103082727ac";
 INSERT INTO weapon SET id = 16, img = "https://github.com/user-attachments/assets/74c267ea-fa2f-494b-923e-fd8728e7346c";
 INSERT INTO weapon SET id = 17, img = "https://github.com/user-attachments/assets/e3ac88c9-4c23-4f76-8a66-4780e32afcf7";
-INSERT INTO weapon SET id = 18, img = "https://github.com/user-attachments/assets/a7f55691-d69a-4088-82c3-d0c437a712a0";
+INSERT INTO weapon SET id = 18, img = "https://github.com/user-attachments/assets/47452f52-d6f9-4561-b984-59bf1abc6b0a";
 INSERT INTO weapon SET id = 19, img = "https://github.com/user-attachments/assets/6435b887-2b87-4367-a088-28e13d0a9b59";
 INSERT INTO weapon SET id = 20, img = "https://github.com/user-attachments/assets/fceed0f8-5b68-4263-b9f2-63d9dcb9eaa8";
 
@@ -238,7 +237,7 @@ INSERT INTO weapon SET id = 24, img = "https://github.com/user-attachments/asset
 INSERT INTO weapon SET id = 25, img = "https://github.com/user-attachments/assets/c6d3d271-dc7c-4cc1-908b-1960ece2ed80";
 INSERT INTO weapon SET id = 26, img = "https://github.com/user-attachments/assets/157e3ef6-ca2b-47f8-96ba-4a4451534fec";
 INSERT INTO weapon SET id = 27, img = "https://github.com/user-attachments/assets/40a08051-7223-4472-ab42-42bdbfeca35c";
-INSERT INTO weapon SET id = 28, img = "https://github.com/user-attachments/assets/427ce5f1-bca2-430d-9c88-45db15db9c1e";
+INSERT INTO weapon SET id = 28, img = "https://github.com/user-attachments/assets/62dedd0e-9806-4fca-a7fb-d06fea28d1c4";
 INSERT INTO weapon SET id = 29, img = "https://github.com/user-attachments/assets/d3e44839-8d46-4c0f-9e26-169bab080fdd";
 INSERT INTO weapon SET id = 30, img = "https://github.com/user-attachments/assets/1afae587-dff3-42dd-a663-6730f5766187";
 
@@ -249,7 +248,7 @@ INSERT INTO weapon SET id = 34, img = "https://github.com/user-attachments/asset
 INSERT INTO weapon SET id = 35, img = "https://github.com/user-attachments/assets/a8369e91-a67f-44f0-9c4a-ef8fbb8cfe2a";
 INSERT INTO weapon SET id = 36, img = "https://github.com/user-attachments/assets/388af076-05e8-452f-a501-a56f64c992c9";
 INSERT INTO weapon SET id = 37, img = "https://github.com/user-attachments/assets/96270c25-7a7b-4086-ac06-5634555b70ef";
-INSERT INTO weapon SET id = 38, img = "https://github.com/user-attachments/assets/4db8e897-789e-476f-9cc5-120d740c5d2e";
+INSERT INTO weapon SET id = 38, img = "https://github.com/user-attachments/assets/89cf8667-6f45-440e-aa48-de352197809f";
 INSERT INTO weapon SET id = 39, img = "https://github.com/user-attachments/assets/87a96719-bbac-410c-8a33-d7f67d39a2a2";
 INSERT INTO weapon SET id = 40, img = "https://github.com/user-attachments/assets/4c81b6d8-1ab6-41e3-99e8-e289eb7510de";
 
@@ -260,7 +259,7 @@ INSERT INTO weapon SET id = 44, img = "https://github.com/user-attachments/asset
 INSERT INTO weapon SET id = 45, img = "https://github.com/user-attachments/assets/076ae1bc-5a66-4db3-be82-6f22e0b52155";
 INSERT INTO weapon SET id = 46, img = "https://github.com/user-attachments/assets/c5b27034-7754-4a7c-b212-67bb919e60c1";
 INSERT INTO weapon SET id = 47, img = "https://github.com/user-attachments/assets/6e8c1158-10dd-4769-8d3f-27d0df7e1ac6";
-INSERT INTO weapon SET id = 48, img = "https://github.com/user-attachments/assets/d24b5a94-a1dc-4eea-adaf-78efea4fede6";
+INSERT INTO weapon SET id = 48, img = "https://github.com/user-attachments/assets/7cd68d64-55c6-4da3-98d6-ec641e4d139b";
 INSERT INTO weapon SET id = 49, img = "https://github.com/user-attachments/assets/7b8523d2-e443-44fc-9f79-dbebcf385b29";
 INSERT INTO weapon SET id = 50, img = "https://github.com/user-attachments/assets/2ea0d667-6c8b-42c2-9eac-435e19422256";
 
@@ -271,7 +270,7 @@ INSERT INTO weapon SET id = 54, img = "https://github.com/user-attachments/asset
 INSERT INTO weapon SET id = 55, img = "https://github.com/user-attachments/assets/87660691-5b05-427a-9471-94af0105d66d";
 INSERT INTO weapon SET id = 56, img = "https://github.com/user-attachments/assets/c1776b21-dae8-4890-a91c-c93198a28d2a";
 INSERT INTO weapon SET id = 57, img = "https://github.com/user-attachments/assets/03def50a-b4a8-4ccc-80de-e9f570d03dc5";
-INSERT INTO weapon SET id = 58, img = "https://github.com/user-attachments/assets/5b0aa8ce-90bf-4a83-b498-f3671aa4d4ff";
+INSERT INTO weapon SET id = 58, img = "https://github.com/user-attachments/assets/2ac29faa-dba5-46b1-9a15-665ce62596ba";
 INSERT INTO weapon SET id = 59, img = "https://github.com/user-attachments/assets/3e3ebf0f-e700-4a6f-91f5-ffbf9f16d69f";
 INSERT INTO weapon SET id = 60, img = "https://github.com/user-attachments/assets/383a1c05-7a15-4974-8842-a4f0d3f3b747";
 
@@ -282,7 +281,7 @@ INSERT INTO weapon SET id = 64, img = "https://github.com/user-attachments/asset
 INSERT INTO weapon SET id = 65, img = "https://github.com/user-attachments/assets/eafa86a5-ff3c-4a3d-86e9-8f485c4905e1";
 INSERT INTO weapon SET id = 66, img = "https://github.com/user-attachments/assets/fd1692a4-c906-4f24-b47d-1e2ac54fed56";
 INSERT INTO weapon SET id = 67, img = "https://github.com/user-attachments/assets/f4621a93-e6db-4003-9e49-02fe7543491f";
-INSERT INTO weapon SET id = 68, img = "https://github.com/user-attachments/assets/8f9df90b-6e2d-4304-9649-941ef896fa9e";
+INSERT INTO weapon SET id = 68, img = "https://github.com/user-attachments/assets/027a11ed-96fa-4587-9b7f-c3efde0e40b1";
 INSERT INTO weapon SET id = 69, img = "https://github.com/user-attachments/assets/f531f906-2147-45b5-8af9-e0877201552c";
 INSERT INTO weapon SET id = 70, img = "https://github.com/user-attachments/assets/dcc3fdaa-fa09-42a9-a929-3e7904925b41";
 
@@ -369,6 +368,11 @@ SELECT C.*, M.nickname extra__writer
 FROM chat C
 INNER JOIN `member` M
 ON C.memberId = M.id;
+
+## update charac
+## set `power`=999,
+## hp = 999
+## where memberId = 1;
 
 ##스코어 테스트 데이터 랜덤 생성
 ## INSERT INTO scoreboard
