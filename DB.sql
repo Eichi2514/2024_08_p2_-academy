@@ -24,7 +24,7 @@ CREATE TABLE charac(
       memberId INT(10) NOT NULL,
       `floor` INT(10) NOT NULL DEFAULT 1 COMMENT '캐릭터 도달 층 수',
       room INT(10) NOT NULL DEFAULT 0 COMMENT '캐릭터 도달 방 번호',
-      hp INT(10) NOT NULL DEFAULT 10 COMMENT '생명력',      
+      hp INT(10) NOT NULL DEFAULT 100 COMMENT '생명력',      
       `power` INT(10) NOT NULL DEFAULT 0 COMMENT '공격력',
       speed INT(10) NOT NULL DEFAULT 50 COMMENT '속도',
       weaponId INT(10) NOT NULL DEFAULT 1 COMMENT '무기번호'

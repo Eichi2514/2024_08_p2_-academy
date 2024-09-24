@@ -497,6 +497,10 @@ function show(){
 	// console.log(((8 / 100) * front_hp));
 	
 	setTimeout(characHpDown, 1000);
+	setTimeout(() => mobHpDown(2), 1000);
+	setTimeout(() => mobHpDown(3), 1000);
+	setTimeout(() => mobHpDown(4), 1000);
+	setTimeout(() => mobHpDown(5), 1000);
 	
 	
 	if(${param.stage <= 270}){
@@ -610,13 +614,30 @@ function showRandomItem(){
 	}
 }
 
-// 보스 HP 감소 함수
+// 보스 체력바 변화 함수
 function BossHpDown(){
 	let new_bossHp_width = ( ${50/ ((floor-1)*100) }*mob6_hp);
 	$(".bossHP_bar").css('width', new_bossHp_width+'vh');
 }
 
-// 캐릭 HP 감소 함수
+// 몬스터 체력바 변화 함수
+function mobHpDown(something){
+	let mob_hp = 0;
+	if(something == 2){
+		mob_hp = mob2_hp;
+	}else if(something == 3){
+		mob_hp = mob3_hp;
+	}else if(something == 4){
+		mob_hp = mob4_hp;
+	}else if(something == 5){
+		mob_hp = mob5_hp;
+	}
+	let new_mobHp_width = ( ${8/ (floor * 10) } * mob_hp);
+	console.log(".mob"+something+"HP_bar : " + new_mobHp_width+'vh');
+	$(".mob"+something+"HP_bar").css('width', new_mobHp_width+'vh'); ///////////////////////////////////////////////////////////////////////////////////////////////////////
+}
+
+// 캐릭 체력바 변화 함수
 function characHpDown(){
 	let new_characHp_width = (8 / 10) * (front_hp%10);
 	// console.log(new_characHp_width);
@@ -626,8 +647,13 @@ function characHpDown(){
 		characHp_number--;
 	}
 	// console.log("체력 넓이 : " + new_characHp_width + ", 줄 수 : " + characHp_number);
-	$(".characHP_bar"+(characHp_number-1)).css('width', '8vh');
-	$(".characHP_bar"+(characHp_number+1)).css('width', '0vh');
+	for(var i = characHp_number-1; i >= 0; i--){
+	$(".characHP_bar"+i).css('width', '8vh');
+	}
+	for(var i = characHp_number+1; i < 11; i++){
+	$(".characHP_bar"+i).css('width', '0vh');
+	}
+	
 	// console.log(".characHP_bar"+(characHp_number-1));
 	$(".characHP_bar"+characHp_number).css('width', new_characHp_width+'vh');
 	$(".characHP_bar_text").text('x'+(characHp_number+1));
@@ -693,6 +719,7 @@ function attack_motion(something, motion) {
 // 데미지 화면에 보여주기
 function damage__motion(data, damage){
 	// console.log(data, damage)
+	mobHpDown(data);
 	$(".damage"+data).text(damage);
 	setTimeout(function() {
 		$(".damage"+data).text('');	
@@ -720,7 +747,7 @@ function damage__motion(data, damage){
 								damage__motion('1', mobDamage*2);	
 								}
 						} else if (something == 1 && data == 2) {
-							mob2_hp -= damage;			
+							mob2_hp -= damage;
 							damage__motion(data, damage);
 							if(mob2_hp <= 0){
 								mobHidden(2);
@@ -1031,6 +1058,7 @@ function damage__motion(data, damage){
 <!-- 첫번째 몬스터 -->
 <c:if test="${room > 0 && room < 5}">
 	<div class="front_mob mob2 absolute">
+	<div class="mob2HP_bar absolute bg-red-500 z-30"></div>
 		<!-- 왼쪽 공격 -->
 		<img class="mobAttack Aattack2 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
@@ -1051,6 +1079,7 @@ function damage__motion(data, damage){
 <!-- 두번째 몬스터 -->
 <c:if test="${room > 1 && room < 5}">
 	<div class="front_mob mob3 absolute">
+	<div class="mob3HP_bar absolute bg-red-500"></div>
 		<!-- 왼쪽 공격 -->
 		<img class="mobAttack Aattack3 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
@@ -1071,6 +1100,7 @@ function damage__motion(data, damage){
 <!-- 세번째 몬스터 -->
 <c:if test="${room > 2 && room < 5}">
 	<div class="front_mob mob4 absolute">
+	<div class="mob4HP_bar absolute bg-red-500"></div>
 		<!-- 왼쪽 공격 -->
 		<img class="mobAttack Aattack4 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
@@ -1091,6 +1121,7 @@ function damage__motion(data, damage){
 <!-- 네번째 몬스터 -->
 <c:if test="${room > 3 && room < 5}">
 	<div class="front_mob mob5 absolute">
+	<div class="mob5HP_bar absolute bg-red-500"></div>	
 		<!-- 왼쪽 공격 -->
 		<img class="mobAttack Aattack5 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
@@ -1175,16 +1206,16 @@ function damage__motion(data, damage){
 <!-- 캐릭터 -->
 <div class="front_charac charac absolute">
 	<div class="characHP_bar_text absolute"></div>
-	<div class="characHP_bar0 absolute bg-red-500"></div>
-	<div class="characHP_bar1 absolute bg-red-900"></div>
-	<div class="characHP_bar2 absolute bg-yellow-300"></div>
-	<div class="characHP_bar3 absolute bg-yellow-900"></div>
-	<div class="characHP_bar4 absolute bg-green-400"></div>
-	<div class="characHP_bar5 absolute bg-green-900"></div>
-	<div class="characHP_bar6 absolute bg-blue-500"></div>
-	<div class="characHP_bar7 absolute bg-blue-900"></div>
-	<div class="characHP_bar8 absolute bg-purple-500"></div>
-	<div class="characHP_bar9 absolute bg-purple-900"></div>
+	<div class="characHP_bar0 absolute bg-red-300"></div>
+	<div class="characHP_bar1 absolute bg-red-500"></div>
+	<div class="characHP_bar2 absolute bg-yellow-500"></div>
+	<div class="characHP_bar3 absolute bg-yellow-300"></div>
+	<div class="characHP_bar4 absolute bg-green-300"></div>
+	<div class="characHP_bar5 absolute bg-green-500"></div>
+	<div class="characHP_bar6 absolute bg-blue-300"></div>
+	<div class="characHP_bar7 absolute bg-blue-500"></div>
+	<div class="characHP_bar8 absolute bg-purple-300"></div>
+	<div class="characHP_bar9 absolute bg-purple-500"></div>
 
 	<!-- 왼쪽 공격 -->
 	<img class="attackSize Aattack1 CharacAttack hidden absolute"
