@@ -501,8 +501,7 @@ function show(){
 	setTimeout(() => mobHpDown(3), 1000);
 	setTimeout(() => mobHpDown(4), 1000);
 	setTimeout(() => mobHpDown(5), 1000);
-	
-	
+		
 	if(${param.stage <= 270}){
 	  if(${room > 0 && room < 5}){stop2 = setInterval(move2, 1000);}
 	  if(${room > 1 && room < 5}){stop3 = setInterval(move3, 800);}
@@ -1058,7 +1057,9 @@ function damage__motion(data, damage){
 <!-- 첫번째 몬스터 -->
 <c:if test="${room > 0 && room < 5}">
 	<div class="front_mob mob2 absolute">
-	<div class="mob2HP_bar absolute bg-red-500 z-30"></div>
+		<c:if test="${floor%10 != 0}">
+			<div class="mob2HP_bar absolute bg-red-500"></div>
+		</c:if>
 		<!-- 왼쪽 공격 -->
 		<img class="mobAttack Aattack2 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
@@ -1079,7 +1080,9 @@ function damage__motion(data, damage){
 <!-- 두번째 몬스터 -->
 <c:if test="${room > 1 && room < 5}">
 	<div class="front_mob mob3 absolute">
-	<div class="mob3HP_bar absolute bg-red-500"></div>
+		<c:if test="${floor%10 != 0}">
+			<div class="mob3HP_bar absolute bg-red-500"></div>
+		</c:if>
 		<!-- 왼쪽 공격 -->
 		<img class="mobAttack Aattack3 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
@@ -1100,7 +1103,9 @@ function damage__motion(data, damage){
 <!-- 세번째 몬스터 -->
 <c:if test="${room > 2 && room < 5}">
 	<div class="front_mob mob4 absolute">
-	<div class="mob4HP_bar absolute bg-red-500"></div>
+		<c:if test="${floor%10 != 0}">
+			<div class="mob4HP_bar absolute bg-red-500"></div>
+		</c:if>
 		<!-- 왼쪽 공격 -->
 		<img class="mobAttack Aattack4 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />
@@ -1121,7 +1126,9 @@ function damage__motion(data, damage){
 <!-- 네번째 몬스터 -->
 <c:if test="${room > 3 && room < 5}">
 	<div class="front_mob mob5 absolute">
-	<div class="mob5HP_bar absolute bg-red-500"></div>	
+		<c:if test="${floor%10 != 0}">
+			<div class="mob5HP_bar absolute bg-red-500"></div>
+		</c:if>
 		<!-- 왼쪽 공격 -->
 		<img class="mobAttack Aattack5 attackSize hidden absolute"
 			src="${charac.extra__weapon}" alt="" />

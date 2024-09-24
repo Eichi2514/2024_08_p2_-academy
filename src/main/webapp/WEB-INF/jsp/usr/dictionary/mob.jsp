@@ -428,6 +428,6 @@
 	</div>
 </div>
 
-<a class="dictionary_exit_bt absolute cursor-pointer" href="/">나가기</a>
+<a class="dictionary_exit_bt absolute cursor-pointer" href="../map/front?stage=${(charac.floor * 5) + charac.room}">나가기</a>
 
 <%@ include file="../common/foot.jspf"%>
