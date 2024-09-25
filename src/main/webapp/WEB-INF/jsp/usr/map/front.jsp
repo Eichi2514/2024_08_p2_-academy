@@ -493,7 +493,7 @@ var stop2, stop3, stop4, stop5, stop6;
 
 //일정 시간마다 move 함수를 호출
 function show(){
-	console.log("페이지가 모두 로드된 후 실행됩니다.");	
+	// console.log("페이지가 모두 로드된 후 실행됩니다.");	
 	// console.log(((8 / 100) * front_hp));
 	
 	setTimeout(characHpDown, 1000);
@@ -632,8 +632,8 @@ function mobHpDown(something){
 		mob_hp = mob5_hp;
 	}
 	let new_mobHp_width = ( ${8/ (floor * 10) } * mob_hp);
-	console.log(".mob"+something+"HP_bar : " + new_mobHp_width+'vh');
-	$(".mob"+something+"HP_bar").css('width', new_mobHp_width+'vh'); ///////////////////////////////////////////////////////////////////////////////////////////////////////
+	// console.log(".mob"+something+"HP_bar : " + new_mobHp_width+'vh');
+	$(".mob"+something+"HP_bar").css('width', new_mobHp_width+'vh');
 }
 
 // 캐릭 체력바 변화 함수
@@ -1032,7 +1032,29 @@ function damage__motion(data, damage){
 					}
 				});
 			}
+	       
+	       let seconds = 0;
 
+	       function updateTime() {
+	           const hrs = Math.floor(seconds / 3600);
+	           const mins = Math.floor((seconds % 3600) / 60);
+	           const secs = seconds % 60;
+
+	           // 1초 단위로 형식화
+	           $(".time").text(
+	               hrs.toString().padStart(2, '0') + ":" + 
+	               mins.toString().padStart(2, '0') + ":" + 
+	               secs.toString().padStart(2, '0')
+	           );
+	       }
+
+	       function startTimer() {
+	           setInterval(() => {
+	               seconds++;
+	               updateTime();
+	           }, 1000);
+	       }
+	       
 	   	show();
 		
 </script>
@@ -1053,6 +1075,11 @@ function damage__motion(data, damage){
 	<div class="guide2 bg-black text-gray-400 text-center absolute">←
 		↑ → ↓ : 이동</div>
 </c:if>
+
+<!-- 타이머 -->
+<div class="timer absolute">
+    <div class="time">00:00:00</div>
+</div>
 
 <!-- 첫번째 몬스터 -->
 <c:if test="${room > 0 && room < 5}">

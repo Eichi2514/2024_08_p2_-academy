@@ -52,7 +52,7 @@ var socket = new WebSocket("ws://localhost:8080/ws/chat");
 
 socket.onmessage = function(event) {
     var data = JSON.parse(event.data);
-    console.log("받은 데이터: ", data); // 수신한 데이터 디버깅용 출력
+    // console.log("받은 데이터: ", data); // 수신한 데이터 디버깅용 출력
 
     // 메시지 작성자에 따라 CSS 클래스를 설정
     var chatClass = data.memberId == loginedMemberId ? 'my_chat' : 'who_chat';
@@ -61,7 +61,7 @@ socket.onmessage = function(event) {
                                <div class="chat_body">`+data.body+`</div>
                             </div>`;
 
-    console.log("새로운 채팅: ", newChat); // 새로운 채팅 HTML 디버깅용 출력
+    // console.log("새로운 채팅: ", newChat); // 새로운 채팅 HTML 디버깅용 출력
 
     // 새로운 채팅 메시지를 화면에 추가
     $('.chat').append(newChat);
@@ -72,7 +72,7 @@ socket.onmessage = function(event) {
 };
 
 socket.onopen = function(event) {
-    console.log("WebSocket 연결 성공"); // WebSocket 연결 성공 로그
+    // console.log("WebSocket 연결 성공"); // WebSocket 연결 성공 로그
 };
 
 socket.onerror = function(event) {

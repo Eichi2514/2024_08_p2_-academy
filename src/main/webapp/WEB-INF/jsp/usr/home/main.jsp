@@ -8,7 +8,7 @@
 <img class="bg_img"
 	src="https://github.com/user-attachments/assets/57d5f274-24c1-486b-9679-7aa7b6fa9017"
 	alt="" />
-	
+
 <!-- p2 두루마리 -->
 <div class="TOP3 absolute">
 	<img class="TOP3_img absolute"
@@ -66,8 +66,8 @@
 			<a class="start-text absolute"
 				href="../map/front?stage=${(charac.floor * 5) + charac.room}">게임시작</a>
 			<!-- p2 게임시작 호버 전 -->
-			<i class="fa-solid fa-square-up-right arrow1 absolute"></i>
-			<i class="fa-solid fa-square-up-right arrow2 absolute"></i>
+			<i class="fa-solid fa-square-up-right arrow1 absolute"></i> <i
+				class="fa-solid fa-square-up-right arrow2 absolute"></i>
 			<img class="start-1"
 				src="https://github.com/user-attachments/assets/dddce550-c44d-45df-adfb-479191d45307"
 				alt="" />
