@@ -1,3 +1,5 @@
+## DBMS_ygh
+
 DROP DATABASE IF EXISTS `24_08_p2`;
 CREATE DATABASE `24_08_p2`;
 USE `24_08_p2`;
@@ -27,7 +29,8 @@ CREATE TABLE charac(
       hp INT(10) NOT NULL DEFAULT 100 COMMENT '생명력',      
       `power` INT(10) NOT NULL DEFAULT 0 COMMENT '공격력',
       speed INT(10) NOT NULL DEFAULT 50 COMMENT '속도',
-      weaponId INT(10) NOT NULL DEFAULT 1 COMMENT '무기번호'
+      weaponId INT(10) NOT NULL DEFAULT 1 COMMENT '무기번호',
+      clearTime INT(10) NOT NULL DEFAULT 0 COMMENT '클리어까지 소요 시간'
 );
 
 CREATE TABLE weapon(
@@ -47,7 +50,8 @@ CREATE TABLE scoreboard(
       regDate DATETIME NOT NULL,
       memberId INT(10) NOT NULL,
       `floor` INT(10) NOT NULL COMMENT '캐릭터 도달 층 수',
-      room INT(10) NOT NULL COMMENT '캐릭터 도달 방 번호'      
+      room INT(10) NOT NULL COMMENT '캐릭터 도달 방 번호',
+      clearTime INT(10) NOT NULL COMMENT '클리어까지 소요 시간'
 );
 
 CREATE TABLE mob(
@@ -107,13 +111,15 @@ INSERT INTO scoreboard
 SET regDate = '2024-09-05 13:59:52',
 memberId = 3,
 `floor` = 1,
-room = 4;
+room = 4,
+clearTime = 45;
 
 INSERT INTO scoreboard
 SET regDate = '2024-09-05 14:35:58',
 memberId = 1,
 `floor` = 7,
-room = 1;
+room = 1,
+clearTime = 180;
 
 ## 테스트 채팅 생성
 INSERT INTO chat

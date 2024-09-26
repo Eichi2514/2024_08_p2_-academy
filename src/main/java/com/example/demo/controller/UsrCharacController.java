@@ -29,7 +29,7 @@ public class UsrCharacController {
 	// 캐릭터 정보 업데이트
 	@RequestMapping("/usr/charac/update")
 	@ResponseBody
-	public void update(HttpServletRequest req, int hp, int stage) {
+	public void update(HttpServletRequest req, int hp, int stage, int clearTime) {
 
 		// 받은 스테이지 정보로 층과 방 구분
 		int floor = stage / 5;
@@ -41,7 +41,7 @@ public class UsrCharacController {
 		// 로그인한 아이디의 고유번호 변수에 저장
 		int memberId = rq.getLoginedMemberId();
 		
-		characService.update(hp, floor, room, memberId);
+		characService.update(hp, floor, room, clearTime, memberId);
 	}
 
 	// 캐릭터 무기 교체

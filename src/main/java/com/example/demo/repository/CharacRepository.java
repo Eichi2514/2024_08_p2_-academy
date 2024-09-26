@@ -33,10 +33,11 @@ public interface CharacRepository {
 			SET updateDate = NOW(),
 			hp = #{hp},
 			`floor` = #{floor},
-			room = #{room}
+			room = #{room},
+			clearTime = #{clearTime}
 			WHERE memberId = #{memberId}
 			""")
-	public void update(int hp, int floor, int room, int memberId);
+	public void update(int hp, int floor, int room, int clearTime, int memberId);
 
 	@Update("""
 			UPDATE charac

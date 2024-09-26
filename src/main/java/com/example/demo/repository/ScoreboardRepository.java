@@ -32,7 +32,7 @@ public interface ScoreboardRepository {
 			FROM scoreboard S
 			LEFT JOIN `member` M
 			ON m.id = S.memberId
-			ORDER BY `floor` DESC, room DESC, regDate ASC
+			ORDER BY `floor` DESC, room DESC, clearTime ASC, regDate ASC
 			LIMIT #{limitFrom}, #{itemsInAPage}
 			""")
 	public List<Scoreboard> scoreboardList(int limitFrom, int itemsInAPage);
@@ -51,7 +51,8 @@ public interface ScoreboardRepository {
 			SET regDate = NOW(),
 			memberId = #{memberId},
 			`floor` = #{floor},
-			room = #{room}
+			room = #{room},
+			clearTime = #{clearTime}
 			""")
-	public void log(int memberId, int floor, int room);
+	public void log(int memberId, int floor, int room, int clearTime);
 }

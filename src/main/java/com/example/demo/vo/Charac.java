@@ -19,6 +19,7 @@ public class Charac {
 	private int power;
 	private int speed;
 	private int weaponId;
+	private int clearTime;
 	
 	private String extra__weapon;		
 }

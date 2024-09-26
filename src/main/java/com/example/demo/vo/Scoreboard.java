@@ -14,6 +14,7 @@ public class Scoreboard {
 	private int memberId;
 	private int floor;
 	private int room;
+	private int clearTime;
 		
 	private String extra__user;	
 }

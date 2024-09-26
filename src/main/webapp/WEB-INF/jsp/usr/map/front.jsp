@@ -83,7 +83,7 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 		var doorChack = $(".door").hasClass("hidden");
 		if (LR > 79 && 38 < UD && UD < 52 && !doorChack) {
 			windowChack = false;
-			update(front_hp, stage);						
+			update(front_hp, stage, seconds);						
 			setTimeout(function(){location.href = '../map/front?stage=' + stage;}, 100);			
 			/* console.log("HP:", front_hp);
 			console.log("Stage:", stage);
@@ -92,13 +92,14 @@ String mob6Y = (codesMap.get("mob6YCode") * 2) + (10 - 2) + "vh";
 	}  
     
     // 캐릭터 정보 업데이트
-	function update(hp, stage) {
+	function update(hp, stage, seconds) {
 		$.ajax({
 			url : '/usr/charac/update',
 			type : 'POST',
 			data : {
 				hp : hp,
-				stage : stage
+				stage : stage,
+				clearTime : seconds
 			},
 			dataType : 'text',
 			success : function(data) {
@@ -1033,7 +1034,7 @@ function damage__motion(data, damage){
 				});
 			}
 	       
-	       let seconds = 0;
+	       let seconds = ${charac.clearTime};
 
 	       function updateTime() {
 	           const hrs = Math.floor(seconds / 3600);

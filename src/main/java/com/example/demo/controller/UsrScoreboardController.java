@@ -83,11 +83,13 @@ public class UsrScoreboardController {
 		int floor = charac.getFloor();
 		// 불러온 캐릭터의 방 변수에 저장
 		int room = charac.getRoom();
+		// 불러온 캐릭터의 방 변수에 저장
+		int clearTime = charac.getClearTime();
 		/*
 		 * System.out.println(rq.getLoginedMemberId());
 		 * System.out.println(charac.getFloor()); 
 		 * System.out.println(charac.getRoom());
 		 */
-		scoreboardService.log(memberId, floor, room);
+		scoreboardService.log(memberId, floor, room, clearTime);
 	}
 }
