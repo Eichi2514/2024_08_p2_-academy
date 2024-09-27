@@ -32,6 +32,8 @@
 						</td>
 					<td  class="${scoreboard.memberId != rq.loginedMember.id ? 'text-gray-500' : '' }"
 					style="text-align: center; padding: 0;">${scoreboard.room == 0 ? '보스' : scoreboard.room}${scoreboard.room == 0 ? '방' : '번방'}</td>
+					<td  class="scoreboard_clearTime  ${scoreboard.memberId != rq.loginedMember.id ? 'text-gray-500' : '' }"
+					style="text-align: center; padding: 0;">[${scoreboard.clearTime}s]</td>
 				</tr>
 			</c:forEach>
 		</tbody>

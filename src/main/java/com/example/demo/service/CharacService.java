@@ -29,7 +29,10 @@ public class CharacService {
 
 		// 보스방 통과시에만 체력 증가
 		if (floor != 1 && room == 1 && hp < 100) {
-			hp++;
+			hp+=10;
+			if(hp > 100) {
+				hp = 100;
+			}
 		}
 		
 		characRepository.update(hp, floor, room, clearTime, memberId);

@@ -445,6 +445,9 @@ function scoreboardLog() {
     $.ajax({
         url : '/usr/scoreboard/log',
         type : 'POST',
+        data: {
+        	clearTime: seconds
+        },
         dataType : 'text',
         error : function(jqXHR, textStatus, errorThrown) {
             alert('오류 발생 : ' + textStatus);
@@ -1079,7 +1082,7 @@ function damage__motion(data, damage){
 
 <!-- 타이머 -->
 <div class="timer absolute">
-    <div class="time">00:00:00</div>
+    <div class="time"></div>
 </div>
 
 <!-- 첫번째 몬스터 -->

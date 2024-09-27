@@ -401,7 +401,14 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 
 .scoreboard_table {
 	top: 4vh;
-	left: 24vh;
+	left: 16vh;
+	width: 45vh;
+	text-align: center;
+}
+
+.scoreboard_clearTime{
+	font-size: 1.5vh;
+	bottom: 0;
 }
 
 .pagination {
@@ -422,12 +429,12 @@ input:-moz-placeholder { /* 파이어폭스 4-18 */
 
 .pagination_left {
 	top: 33vh;
-	left: 16vh;
+	left: 12vh;
 }
 
 .pagination_right {
 	top: 33vh;
-	left: 54vh;
+	left: 60vh;
 }
 
 /* 인게임 헤드 */

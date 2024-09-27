@@ -71,7 +71,7 @@ public class UsrScoreboardController {
 	// 스코어 남기기
 	@RequestMapping("/usr/scoreboard/log")
 	@ResponseBody
-	public void log(HttpServletRequest req) {
+	public void log(HttpServletRequest req, int clearTime) {
 		// Rq에 저장돼 있는 정보 가져오기
 		Rq rq = (Rq) req.getAttribute("rq");
 		// 로그인한 아이디의 고유번호 변수에 저장
@@ -83,8 +83,6 @@ public class UsrScoreboardController {
 		int floor = charac.getFloor();
 		// 불러온 캐릭터의 방 변수에 저장
 		int room = charac.getRoom();
-		// 불러온 캐릭터의 방 변수에 저장
-		int clearTime = charac.getClearTime();
 		/*
 		 * System.out.println(rq.getLoginedMemberId());
 		 * System.out.println(charac.getFloor()); 

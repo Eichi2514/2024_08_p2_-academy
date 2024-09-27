@@ -55,7 +55,8 @@ public interface CharacRepository {
 			hp = 100,
 			`power` = 0,
 			speed = 50,
-			weaponId = 1
+			weaponId = 1,
+			clearTime = 0
 			WHERE memberId = #{memberId}
 			""")
 	public void reset(int memberId);
